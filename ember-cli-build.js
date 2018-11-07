@@ -7,6 +7,13 @@ module.exports = function(defaults) {
     // Add options here
   });
 
+  let script = {
+    bootstrap:  'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+    moment:     'node_modules/moment/min/moment.min.js',
+    // chart:      'node_modules/chart.js/dist/Chart.min.js',
+    // chartLabel: 'node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js'
+  };
+
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
@@ -19,6 +26,10 @@ module.exports = function(defaults) {
   // modules that you would like to import into your application
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
+
+  for(let path in script) {
+    app.import(script[path]);
+  }
 
   return app.toTree();
 };
