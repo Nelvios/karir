@@ -1,1 +1,7 @@
 @import "bootstrap/bootstrap";
+@import "parts/navbar";
+@import "parts/main";
+
+.clickable {
+  cursor: pointer;
+}
