@@ -1,16 +1,21 @@
 <div class="container">
   <a class="navbar-brand" href="https://karir.bca.co.id">karir.bca.co.id</a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbar-menu"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbar-menu">
     <ul class="navbar-nav ml-auto">
-      {{#nav/nav-item 'index'}}Home{{/nav/nav-item}}
-      {{#nav/nav-item 'about'}}About{{/nav/nav-item}}
+      {{#nav/nav-item "index"}}Home{{/nav/nav-item}}
+      {{#nav/nav-item "about"}}About{{/nav/nav-item}}
       {{!-- <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">
           Dropdown
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
