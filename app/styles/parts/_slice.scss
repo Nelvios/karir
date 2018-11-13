@@ -1,0 +1,47 @@
+// SLICE
+
+// = Layout
+
+.slice {
+  height: 720px;
+  padding: 2rem 0;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+
+#first {
+  height: 670px;
+  padding: 5rem 0;
+
+  .title {
+    display: block;
+    margin-bottom: -3rem;
+
+    @include media-breakpoint-up(xl) {
+      margin-bottom: -4rem;
+    }
+  }
+
+  .subtitle {
+    display: block;
+    margin-bottom: 4rem;
+    padding-left: .25rem;
+    letter-spacing: .25rem;
+    text-transform: uppercase;
+  }
+}
+
+
+// = Style
+
+#first {
+  .title    { font-size: 8rem; }
+  .subtitle { font-size: 4.5rem; }
+
+  @include media-breakpoint-up(xl) {
+    .title    { font-size: 10rem; }
+    .subtitle { font-size: 6rem; }
+  }
+}
+
+
+// = Animation

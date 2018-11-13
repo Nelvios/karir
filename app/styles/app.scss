@@ -1,7 +1,16 @@
 @import "bootstrap/bootstrap";
 @import "parts/navbar";
+@import "parts/slice";
 @import "parts/main";
 
 .clickable {
   cursor: pointer;
+}
+
+.font-race {
+  font-family: $font-family-race;
+}
+
+.font-champagne {
+  font-family: $font-family-champagne;
 }

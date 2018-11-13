@@ -17,9 +17,9 @@ export default Component.extend({
       let top = jQ(window).scrollTop();
 
       if (top < SCREEN_HEIGHT) {
-        this.$().removeClass('bg-primary');
+        this.$().removeClass('bg-dark');
       } else {
-        this.$().addClass('bg-primary');
+        this.$().addClass('bg-dark');
       }
     });
   }

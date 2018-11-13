@@ -3,13 +3,32 @@
 
 // = Layout
 
+.navbar-brand {
+  img {
+    margin: -.75rem 0 -.25rem;
+    height: 40px;
+  }
+}
+
+.navbar-nav {
+  .nav-item {
+    padding-left: 1rem;
+  }
+}
+
 
 // = Style
+
+.navbar {
+  opacity: .9;
+}
 
 .navbar-nav {
   .nav-item {
     > .nav-link {
+      font-weight: bold;
       text-transform: uppercase;
+      letter-spacing: 3px;
     }
   }
 }
