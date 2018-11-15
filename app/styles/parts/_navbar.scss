@@ -1,6 +1,5 @@
 // NAVBAR
 
-
 // = Layout
 
 .navbar-brand {
@@ -20,7 +19,15 @@
 // = Style
 
 .navbar {
-  opacity: .9;
+  background-color: $dark;
+
+  @include media-breakpoint-up(md) {
+    opacity: .9;
+
+    &.top {
+      background-color: transparent;
+    }
+  }
 }
 
 .navbar-nav {

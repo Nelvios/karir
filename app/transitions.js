@@ -1,7 +1,7 @@
 export default function(){
 
   const transitions = [
-    'index|about|crossFade|crossFade',
+    'index|about|fade|fade',
     ''
   ];
 

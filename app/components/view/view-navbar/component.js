@@ -6,22 +6,32 @@ export default Component.extend({
 
   tagName: 'nav',
   classNames: [
-    'navbar',
+    'navbar top',
     'fixed-top',
     'navbar-expand-lg',
     'navbar-dark',
   ],
 
   didInsertElement () {
-    jQ(window).scroll(() => {
-      let top = jQ(window).scrollTop();
+    this._super(...arguments);
 
-      if (top < SCREEN_HEIGHT) {
-        this.$().removeClass('bg-dark');
-      } else {
-        this.$().addClass('bg-dark');
-      }
-    });
+    this.send('scroll');
+    jQ(window).scroll(() => this.send('scroll'));
+  },
+
+  actions: {
+
+    scroll() {
+      jQ(window).scroll(() => {
+        let top = jQ(window).scrollTop();
+  
+        if (top < SCREEN_HEIGHT) {
+          this.$().addClass('top');
+        } else {
+          this.$().removeClass('top');
+        }
+      });
+    }
   }
 
 });
