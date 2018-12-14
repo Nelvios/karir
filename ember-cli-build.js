@@ -11,7 +11,7 @@ module.exports = function(defaults) {
     bootstrap:  'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
     moment:     'node_modules/moment/min/moment.min.js',
     // chart:      'node_modules/chart.js/dist/Chart.min.js',
-    // chartLabel: 'node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js'
+    // chartLabel: 'node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js',
   };
 
   // Use `app.import` to add additional libraries to the generated

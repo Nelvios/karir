@@ -4,22 +4,16 @@
 
 .slice {
   display: flex;
-  min-height: 400px;
+  min-height: 500px;
   padding: 2rem 0;
 
   .title {
     display: block;
     margin-bottom: -3rem;
-
-    @include media-breakpoint-up(xl) {
-      margin-bottom: -4rem;
-    }
   }
 
   .subtitle {
     display: block;
-    padding-left: .25rem;
-    letter-spacing: .25rem;
     text-transform: uppercase;
   }
 }
@@ -34,6 +28,24 @@
   @include media-breakpoint-up(xl) {
     .title    { font-size: 10rem; }
     .subtitle { font-size: 6rem; }
+  }
+}
+
+#first {
+  // background-image: url(/assets/images/background.jpg);
+  background-color: $dark;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  .title {
+    font-weight: 900;
+    font-size: 7rem;
+  }
+
+  .subtitle {
+    font-size: 3rem;
   }
 }
 

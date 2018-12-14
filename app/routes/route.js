@@ -11,31 +11,31 @@ export default Route.extend({
 
   beforeModel() {
     this._super(...arguments);
-    jQ(window).resize(() => this.send('resize'));
-    console.log('before model');
+    // jQ(window).resize(() => this.send('resize'));
+    // console.log('before model');
   },
 
-  actions: {
+  // actions: {
 
-    resize() {
-      // run.later(() => {
-        let height = get(this, 'screenHeight');
-        console.log('height', height);
-        jQ('.slice').css('min-height', height);
-      // }, 100);
-    },
+  //   resize() {
+  //     // run.later(() => {
+  //       let height = get(this, 'screenHeight');
+  //       console.log('height', height);
+  //       jQ('.slice').css('min-height', height);
+  //     // }, 100);
+  //   },
 
-    scrollDown() {
-      jQ('html, body').animate({
-        scrollTop: `+=${get(this, 'screenHeight')}`
-      }, 'slow');
-    },
+  //   scrollDown() {
+  //     jQ('html, body').animate({
+  //       scrollTop: `+=${get(this, 'screenHeight')}`
+  //     }, 'slow');
+  //   },
 
-    scrollUp() {
-      jQ('html, body').animate({
-        scrollTop: `-=${get(this, 'screenHeight')}`
-      }, 'slow');
-    }
-  }
+  //   scrollUp() {
+  //     jQ('html, body').animate({
+  //       scrollTop: `-=${get(this, 'screenHeight')}`
+  //     }, 'slow');
+  //   }
+  // }
 
 });

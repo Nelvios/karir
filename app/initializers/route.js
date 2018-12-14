@@ -1,4 +1,5 @@
 import Route from '@ember/routing/route';
+import Controller from '@ember/controller';
 import LinkComponent from '@ember/routing/link-component';
 import { ROOT } from 'karir/utils/properties';
 
