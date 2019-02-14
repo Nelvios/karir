@@ -1,0 +1,45 @@
+// Layout
+
+.d-none   { display: none   !important; }
+.d-block  { display: block  !important; }
+.d-inline { display: inline !important; }
+.d-inline-block { display: inline-block !important; }
+.d-flex   { display: flex   !important; }
+
+.no-float { float: none !important; }
+
+
+// Styling
+
+body {
+  // background-color: color("grey", "lighten-3");
+  // background-color: color("blue-grey", "darken-4");
+}
+
+.text-italic { font-style: italic !important; }
+
+.text-light     { font-weight: 300    !important; }
+.text-normal    { font-weight: normal !important; }
+.text-medium    { font-weight: 500    !important; }
+.text-semibold  { font-weight: 600    !important; }
+.text-bold      { font-weight: bold   !important; }
+
+.justify-align  { text-align: justify !important; }
+
+.primary    { background-color: $primary-color;   }
+.secondary  { background-color: $secondary-color; }
+
+.primary-text   { color: $primary-color   !important; }
+.secondary-text { color: $secondary-color !important; }
+
+.no-wrap    { white-space: nowrap !important; }
+.clickable  { cursor: pointer !important; }
+
+
+.display {
+  font-weight: 300;
+  color: $primary-color;
+}
+
+
+// Animation
