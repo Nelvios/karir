@@ -12,14 +12,16 @@
 // Styling
 
 body {
-  // background-color: color("grey", "lighten-3");
-  // background-color: color("blue-grey", "darken-4");
+  background-color: color('grey', 'lighten-5');
   font-family: 'Montserrat', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Signika', sans-serif;
 }
+
+.text-heading { font-family: 'Signika', sans-serif    !important; }
+.text-body    { font-family: 'Montserrat', sans-serif !important; }
 
 .text-italic { font-style: italic !important; }
 
@@ -28,6 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 .text-medium    { font-weight: 500    !important; }
 .text-semibold  { font-weight: 600    !important; }
 .text-bold      { font-weight: bold   !important; }
+.text-extrabold { font-weight: 800    !important; }
 
 .justify-align  { text-align: justify !important; }
 
