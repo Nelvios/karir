@@ -5,7 +5,7 @@ export default Controller.extend({
   actions: {
 
     load() {
-      alert('Hello World!');
+      // run after page load
     }
   }
 
