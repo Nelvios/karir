@@ -1,8 +1,8 @@
 {
-  "name": "karir-v2",
-  "version": "0.0.0",
+  "name": "karir",
+  "version": "0.2.0",
   "private": true,
-  "description": "Small description for karir-v2 goes here",
+  "description": "Small description for karir goes here",
   "repository": "",
   "license": "MIT",
   "author": "",

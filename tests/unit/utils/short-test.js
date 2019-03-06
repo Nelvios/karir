@@ -1,4 +1,4 @@
-import short from 'karir-v2/utils/short';
+import short from 'karir/utils/short';
 import { module, test } from 'qunit';
 
 module('Unit | Utility | short', function(hooks) {

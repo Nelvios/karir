@@ -8,7 +8,8 @@ export {
   get, set,
   getProperties as gets,
   setProperties as sets,
-  computed
+  computed,
+  observer
 } from '@ember/object';
 export {
   alias
@@ -54,11 +55,11 @@ export { XLSX as xlsx };
 
 // Scheduler
 import {
-  join, later, cancel,
+  once, join, later, cancel,
   debounce, throttle
 } from '@ember/runloop';
 export const run = {
-  join, later, cancel,
+  once, join, later, cancel,
   debounce, throttle
 };
 
@@ -69,9 +70,9 @@ export { default as jQ } from 'jquery';
 // export {
 //   debug as log
 // } from '@ember/debug';
-
+import { ENVIRONMENT } from 'karir/utils/properties';
 export function log() {
-  console.log(...arguments);
+  if (ENVIRONMENT === 'development') console.log(...arguments);
 }
 
 // export default function short() {

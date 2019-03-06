@@ -1,4 +1,4 @@
-import properties from 'karir-v2/utils/properties';
+import properties from 'karir/utils/properties';
 import { module, test } from 'qunit';
 
 module('Unit | Utility | properties', function(hooks) {

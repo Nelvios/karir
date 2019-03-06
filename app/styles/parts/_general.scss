@@ -26,11 +26,15 @@ body {
 
 .justify-align  { text-align: justify !important; }
 
-.primary    { background-color: $primary-color;   }
-.secondary  { background-color: $secondary-color; }
+.primary-bg   { background-color: $primary-color;   }
+.secondary-bg { background-color: $secondary-color; }
+.success-bg   { background-color: $success-color;   }
+.error-bg     { background-color: $error-color;     }
 
 .primary-text   { color: $primary-color   !important; }
 .secondary-text { color: $secondary-color !important; }
+.success-text   { color: $success-color   !important; }
+.error-text     { color: $error-color     !important; }
 
 .no-wrap    { white-space: nowrap !important; }
 .clickable  { cursor: pointer !important; }
