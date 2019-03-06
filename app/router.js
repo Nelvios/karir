@@ -7,7 +7,9 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('routes', function() {});
+  this.route('routes', { path: '/' }, function() {
+    this.route('jobs');
+  });
 });
 
 export default Router;
