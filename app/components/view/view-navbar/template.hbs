@@ -1,1 +1,15 @@
-{{yield}}
+<div class="container">
+
+  <a href="https://karir.bca.co.id" class="logo">
+    <img alt="Logo" src="/assets/images/logo-blue.png">
+    <span class="text-heading text-italic">karir</span>
+  </a>
+
+  {{!-- <ul class="right hide-on-med-and-down"> --}}
+  <ul class="right">
+    <li>{{#link-to "index"}}Home{{/link-to}}</li>
+    <li><a href="#">About</a></li>
+    <li>{{#link-to "jobs"}}Jobs{{/link-to}}</li>
+  </ul>
+
+</div>

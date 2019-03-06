@@ -1,0 +1,91 @@
+// Layout
+
+#navbar {
+  position: fixed;
+  top: 0;
+
+  &.top {
+    position: relative;
+    padding-top: 1rem;
+    top: 0;
+  }
+
+  .logo {
+    position: absolute;
+    width: 200px;
+
+    span {
+      margin-left: .5rem;
+      padding-top: .15rem;
+    }
+  }
+
+  ul a {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      display: block;
+      bottom: .8rem;
+      left: 50%;
+      right: 50%;
+    }
+
+    &:hover, &.active {
+      background-color: transparent;
+
+      &::before {
+        left: 1.4rem;
+        right: 1.4rem;
+      }
+    }
+  }
+}
+
+#home-top {
+  height: 800px;
+}
+
+
+// Styling
+
+#navbar {
+  background-color: white;
+  color: $primary-color;
+
+  &.top {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .logo {
+    @extend .valign-wrapper;
+    color: $primary-color;
+
+    span {
+      font-weight: bold;
+      font-size: 2em;
+    }
+  }
+
+  ul a {
+    font-weight: bold;
+    color: $primary-color;
+
+    &::before {
+      border-bottom: .3rem solid $primary-color;
+    }
+  }
+}
+
+
+// Animation
+
+#navbar {
+  transition: background-color .4s;
+
+  ul a::before {
+    transition: left .4s, right .4s;
+  }
+}
