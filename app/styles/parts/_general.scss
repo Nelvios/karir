@@ -1,5 +1,19 @@
 // Layout
 
+body {
+  @media #{$small-and-down} { overflow-x: hidden; }
+
+  > .ember-view {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+    > section {
+      flex: 1 0 auto;
+    }
+  }
+}
+
 .d-none   { display: none   !important; }
 .d-block  { display: block  !important; }
 .d-inline { display: inline !important; }

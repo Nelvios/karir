@@ -21,28 +21,40 @@
   height: 600px;
   padding: 100px 0 60px;
 
-  > .container {
-    position: relative;
-  }
+  > .container { position: relative; }
 
   .image {
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
 
     top: -30px;
-    right: 1rem;
+    right: 50%;
+    margin-right: -125px;
+
+    @media #{$medium-and-up} {
+      width: 300px;
+      height: 300px;
+
+      right: 1rem;
+      margin-right: 0;
+    }
   }
 
   .display {
     position: relative;
+    display: block;
   }
 
-  .btn-apply {
-    height: auto;
-    margin: 2rem;
-    padding: .8rem 1.5rem;
+  .btn.apply {
+    height: inherit;
+    margin: 2rem auto;
+    padding: .7em 1.4em;
     border-radius: 3rem;
+
+    @media #{$medium-and-up} {
+      margin-left: 2rem;
+    }
   }
 }
 
@@ -52,34 +64,81 @@
 }
 
 #home-articles {
-  @extend .valign-wrapper;
   padding-top: 2rem;
+}
+
+// #home-thoughts {
+// }
+
+#home-counter {
+  @extend .valign-wrapper;
+  height: 120px;
+  padding: 1rem 0;
+
+  .text {
+    margin-left: 1rem;
+
+    .sub {
+      display: block;
+      margin-top: -.4em;
+    }
+  }
+
+  .btn.apply {
+    position: absolute;
+    right: 5%;
+    z-index: 100;
+
+    @media #{$medium-and-up} { right: 7.5%; }
+    @media #{$large-and-up} { right: 15%; }
+
+    &.float {
+      position: fixed;
+      bottom: 30px;
+
+      &.top { right: -50%; }
+    }
+  }
 }
 
 
 // Styling
 
 #home-top {
+  background-attachment: fixed;
+  background-image: url(./images/pattern.png),
+                    linear-gradient(10deg, color('teal', 'darken-4'), color('grey', 'darken-4'));
   background-color: color('grey', 'darken-4');
   // background-color: color('indigo', 'darken-4');
   // background-color: $primary-color;
+
+  text-align: center;
   color: white;
+
+  @media #{$medium-and-up} { text-align: left; }
 
   .image {
     background-image: url(./images/2_INTERNSHIP.png);
     background-size: contain;
     background-repeat: no-repeat;
+    opacity: .5;
+
+    @media #{$medium-and-up} { opacity: 1; }
   }
 
   .display {
     // font-family: $font-heading;
     font-weight: bold;
-    font-size: 3.5rem;
+    font-size: 2.5em;
+    text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
+
+    @media #{$large-and-up} { font-size: 3em; }
+    @media #{$extra-large-and-up} { font-size: 3.5em; }
   }
 
-  .btn-apply {
+  .btn.apply {
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.2em;
   }
 }
 
@@ -89,8 +148,58 @@
 }
 
 #home-articles {
+  // background-color: $primary-color;
   color: $off-black;
+}
+
+// #home-thoughts {
+// }
+
+#home-counter {
+  background-color: $secondary-color;
+
+  .number {
+    // font-family: $font-heading;
+    font-weight: bold;
+    font-size: 3.5em;
+    text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
+  }
+
+  .text {
+    // font-family: $font-heading;
+    font-weight: bold;
+    font-size: 1.5em;
+
+    .sub {
+      font-weight: normal;
+      font-size: .8em;
+      opacity: .8;
+    }
+  }
+
+  .btn.apply {
+    background-color: $primary-color;
+    font-family: $font-heading;
+    font-weight: bold;
+    color: $secondary-color;
+
+    &:hover {
+      background-color: lighten($primary-color, 5%);
+    }
+  }
 }
 
 
 // Animation
+
+#home-counter {
+  .btn.apply {
+    -webkit-transition: right ease-out .3s;
+    transition: right ease-out .3s;
+
+    &.top {
+      -webkit-transition-timing-function: ease-in;
+      transition-timing-function: ease-in;
+    }
+  }
+}

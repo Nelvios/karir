@@ -3,18 +3,23 @@
 #navbar {
   position: fixed;
   top: 0;
-  padding: .5rem 0;
+  // padding: .5rem 0;
   box-sizing: content-box;
   z-index: 100;
 
   .navbar-top & {
     position: absolute;
-    padding-top: 1.5rem;
+    // padding-top: 1.5rem;
+    padding-top: 1rem;
   }
 
   .logo {
     position: absolute;
     width: 200px;
+
+    &:hover {
+      padding-left: .5rem;
+    }
 
     .image {
       width: 120px;
@@ -31,20 +36,20 @@
     position: relative;
 
     &::before {
-      position: absolute;
       content: '';
+      position: absolute;
       display: block;
       bottom: .8rem;
       left: 50%;
-      right: 50%;
+      width: 0;
     }
 
     &:hover, &.active {
       background-color: transparent;
 
       &::before {
-        left: 1.4rem;
-        right: 1.4rem;
+        width: 3rem;
+        margin-left: -1.5rem;
       }
     }
   }
@@ -54,8 +59,7 @@
 // Styling
 
 #navbar {
-  background-color: white;
-  color: $primary-color;
+  background-color: rgba(255, 255, 255, .95);
 
   .navbar-top & {
     background-color: transparent;
@@ -80,7 +84,7 @@
 
   .logo {
     @extend .valign-wrapper;
-    color: $primary-color;
+    color: $secondary-color;
 
     .image {
       background-image: url(./images/logo-blue.png);
@@ -96,7 +100,7 @@
 
   ul a {
     font-weight: bold;
-    color: $primary-color;
+    color: $secondary-color;
 
     &::before {
       border-bottom: .25rem solid $primary-color;
@@ -108,22 +112,27 @@
 // Animation
 
 #navbar {
-  -webkit-transition: background-color .4s;
-  transition: background-color .4s;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
 
   .logo {
+    -webkit-tansition: padding-left ease-in-out .15s;
+    transition: padding-left ease-in-out .15s;
+
     .image {
-      -webkit-transition: background-image .4s;
-      transition: background-image .4s;
+      -webkit-transition: background-image .3s;
+      transition: background-image .3s;
     }
     .text {
-      -webkit-transition: color .4s;
-      transition: color .4s;
+      -webkit-transition: color .3s;
+      transition: color .3s;
     }
   }
 
   ul a::before {
-    -webkit-transition: left .2s, right .2s;
-    transition: left .2s, right .2s;
+    -webkit-transition-duration: .15s;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-duration: .15s;
+    transition-timing-function: ease-in-out
   }
 }

@@ -1,0 +1,47 @@
+// Layout
+
+footer {
+  padding: 1rem 0 .5rem;
+
+  .small {
+    flex-direction: column;
+
+    @media #{$large-and-up} {
+      flex-direction: row;
+    }
+
+    .image {
+      width: 25px;
+      height: 30px;
+    }
+
+    .copyright {
+      margin-top: .5rem;
+
+      @media #{$large-and-up} {
+        margin-top: 0;
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+
+// Styling
+
+footer {
+  // background-color: color('grey', 'lighten-5');
+  // color: $off-black;
+
+  .small {
+    font-size: .8em;
+    text-align: center;
+
+    .image {
+      background-image: url(./images/safe-ojk.png);
+    }
+  }
+}
+
+
+// Animation
