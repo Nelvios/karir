@@ -1,18 +1,78 @@
-// .center {
-// 	display: block;
-// 	margin-left: auto;
-// 	margin-right: auto;
-// 	width: 50%;
-// }
-// .display-1{
-// 	margin-left: 5rem;
-// 	font-size: 2.5rem;
-// 	font-weight: 1000;
-// 	color: black;
-// }
-// .btn-1{
+/*
 
-// }
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+.display-1{
+	margin-left: 5rem;
+	font-size: 2.5rem;
+	font-weight: 1000;
+	color: black;
+}
+.btn-1{}
+
+#home-top {
+  @extend .valign-wrapper;
+  height: 600px;
+  padding: 100px 0 60px;
+
+  > .container { position: relative; }
+
+  .image {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+
+    top: -30px;
+    right: 50%;
+    margin-right: -125px;
+
+    @media #{$medium-and-up} {
+      width: 300px;
+      height: 300px;
+
+      right: 1rem;
+      margin-right: 0;
+    }
+  }
+
+  .display {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.wrapper-tb{
+    position: absolute;
+    top: 50%;
+    height: 10em;
+    margin-top: -5em;
+}
+.display-1{
+    margin-left: 5rem;
+    font-size: 2.5rem;
+    font-weight: 1000;
+    color: black;
+}
+.btn-1{
+
+}
+.section-size{
+    height: 685px;
+    position: relative;
+}
+.centered{
+    position: absolute;
+    top: 50%;
+    height: 20em;
+    margin-top: -10em;
+}
+
+*/
 
 // Layout
 
