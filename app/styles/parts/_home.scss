@@ -2,7 +2,13 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 100%;
+}
+.wrapper-tb{
+    position: absolute;
+    top: 50%;
+    height: 10em;
+    margin-top: -5em;
 }
 .display-1{
     margin-left: 5rem;
@@ -12,4 +18,14 @@
 }
 .btn-1{
     
+}
+.section-size{
+    height: 685px;
+    position: relative;
+}
+.centered{
+    position: absolute;
+    top: 50%;
+    height: 20em;
+    margin-top: -10em;
 }
