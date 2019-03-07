@@ -12,16 +12,16 @@
 // Styling
 
 body {
-  background-color: color('grey', 'lighten-5');
-  font-family: 'Montserrat', sans-serif;
+  background-color: color('grey', 'darken-4');
+  color: white;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Signika', sans-serif;
+  font-family: $font-heading;
 }
 
-.text-heading { font-family: 'Signika', sans-serif    !important; }
-.text-body    { font-family: 'Montserrat', sans-serif !important; }
+.text-heading { font-family: $font-heading !important; }
+.text-body    { font-family: $font-stack   !important; }
 
 .text-italic { font-style: italic !important; }
 
@@ -46,12 +46,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .no-wrap    { white-space: nowrap !important; }
 .clickable  { cursor: pointer !important; }
-
-
-.display {
-  font-weight: 300;
-  color: $primary-color;
-}
 
 
 // Animation

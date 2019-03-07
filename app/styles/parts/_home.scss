@@ -1,15 +1,96 @@
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+// .center {
+// 	display: block;
+// 	margin-left: auto;
+// 	margin-right: auto;
+// 	width: 50%;
+// }
+// .display-1{
+// 	margin-left: 5rem;
+// 	font-size: 2.5rem;
+// 	font-weight: 1000;
+// 	color: black;
+// }
+// .btn-1{
+
+// }
+
+// Layout
+
+#home-top {
+  @extend .valign-wrapper;
+  height: 600px;
+  padding: 100px 0 60px;
+
+  > .container {
+    position: relative;
+  }
+
+  .image {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+
+    top: -30px;
+    right: 1rem;
+  }
+
+  .display {
+    position: relative;
+  }
+
+  .btn-apply {
+    height: auto;
+    margin: 2rem;
+    padding: .8rem 1.5rem;
+    border-radius: 3rem;
+  }
 }
-.display-1{
-    margin-left: 5rem;
-    font-size: 2.5rem;
-    font-weight: 1000;
-    color: black;
+
+#home-carousel {
+  @extend .valign-wrapper;
+  height: 500px;
 }
-.btn-1{
-    
+
+#home-articles {
+  @extend .valign-wrapper;
+  padding-top: 2rem;
 }
+
+
+// Styling
+
+#home-top {
+  background-color: color('grey', 'darken-4');
+  // background-color: color('indigo', 'darken-4');
+  // background-color: $primary-color;
+  color: white;
+
+  .image {
+    background-image: url(./images/2_INTERNSHIP.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .display {
+    // font-family: $font-heading;
+    font-weight: bold;
+    font-size: 3.5rem;
+  }
+
+  .btn-apply {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}
+
+#home-carousel {
+  background-color: color('grey', 'lighten-5');
+  color: $off-black;
+}
+
+#home-articles {
+  color: $off-black;
+}
+
+
+// Animation

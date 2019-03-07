@@ -3,18 +3,25 @@
 #navbar {
   position: fixed;
   top: 0;
+  padding: .5rem 0;
+  box-sizing: content-box;
+  z-index: 100;
 
-  &.top {
-    position: relative;
-    padding-top: 1rem;
-    top: 0;
+  .navbar-top & {
+    position: absolute;
+    padding-top: 1.5rem;
   }
 
   .logo {
     position: absolute;
     width: 200px;
 
-    span {
+    .image {
+      width: 120px;
+      height: 40px;
+    }
+
+    .text {
       margin-left: .5rem;
       padding-top: .15rem;
     }
@@ -43,10 +50,6 @@
   }
 }
 
-#home-top {
-  height: 800px;
-}
-
 
 // Styling
 
@@ -54,17 +57,39 @@
   background-color: white;
   color: $primary-color;
 
-  &.top {
+  .navbar-top & {
     background-color: transparent;
     box-shadow: none;
+
+    .logo {
+      color: white;
+
+      .image {
+        background-image: url(./images/logo-white.png);
+      }
+    }
+
+    ul a {
+      color: white;
+
+      &::before {
+        border-bottom-color: white;
+      }
+    }
   }
 
   .logo {
     @extend .valign-wrapper;
     color: $primary-color;
 
-    span {
+    .image {
+      background-image: url(./images/logo-blue.png);
+    }
+
+    .text {
+      font-family: $font-heading;
       font-weight: bold;
+      font-style: italic;
       font-size: 2em;
     }
   }
@@ -74,7 +99,7 @@
     color: $primary-color;
 
     &::before {
-      border-bottom: .3rem solid $primary-color;
+      border-bottom: .25rem solid $primary-color;
     }
   }
 }
@@ -83,9 +108,22 @@
 // Animation
 
 #navbar {
+  -webkit-transition: background-color .4s;
   transition: background-color .4s;
 
+  .logo {
+    .image {
+      -webkit-transition: background-image .4s;
+      transition: background-image .4s;
+    }
+    .text {
+      -webkit-transition: color .4s;
+      transition: color .4s;
+    }
+  }
+
   ul a::before {
-    transition: left .4s, right .4s;
+    -webkit-transition: left .2s, right .2s;
+    transition: left .2s, right .2s;
   }
 }

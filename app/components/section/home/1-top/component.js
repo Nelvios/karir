@@ -3,6 +3,7 @@ import Component from '@ember/component';
 export default Component.extend({
 
   tagName: 'section',
+  url: 'https://www.kalibrr.com/c/bank-central-asia-1/jobs/94726/bca-it-trainee?app_source=recruiter-dashboard'
 
   // Lesson - 1
   // {
@@ -19,5 +20,5 @@ export default Component.extend({
   //     this.$().append('-2')
   //   }
   // }
-  
+
 });

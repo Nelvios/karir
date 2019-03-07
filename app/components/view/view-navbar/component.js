@@ -1,21 +1,21 @@
 import Component from '@ember/component';
-import { jQ, set } from 'karir/utils/short';
+import { jQ } from 'karir/utils/short';
 
 export default Component.extend({
 
   tagName: 'nav',
-  classNameBindings: ['isTop:top'],
 
   didInsertElement() {
     this._super(...arguments);
     const THRESHOLD = 16;
+    const body = jQ('body');
 
     jQ(window).scroll(() => {
 
       if(jQ(window).scrollTop() > THRESHOLD) {
-        set(this, 'isTop', false);
+        body.removeClass('navbar-top');
       } else {
-        set(this, 'isTop', true);
+        body.addClass('navbar-top');
       }
 
     });
