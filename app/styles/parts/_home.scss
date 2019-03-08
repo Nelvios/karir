@@ -75,11 +75,24 @@
 */
 
 // Layout
+$clip-offset: 6rem;
 
 #home-top {
   @extend .valign-wrapper;
-  height: 600px;
-  padding: 100px 0 60px;
+  height: 400px;
+  padding: 100px 0 4rem;
+  box-sizing: content-box;
+
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 75% 100%, 0 calc(100% - 4rem));
+  // clip-path: ellipse(150% 100% at 70% 0);
+
+  @media #{$medium-and-up} {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6rem), 80% 100%, 0 calc(100% - 6rem));
+  }
+  @media #{$large-and-up} {
+    padding-bottom: 6rem;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8rem), 80% 100%, 0 calc(100% - 8rem));
+  }
 
   > .container { position: relative; }
 
@@ -108,7 +121,7 @@
 
   .btn.apply {
     height: inherit;
-    margin: 2rem auto;
+    margin: 2rem 0 0;
     padding: .7em 1.4em;
     border-radius: 3rem;
 
@@ -121,6 +134,18 @@
 #home-carousel {
   @extend .valign-wrapper;
   height: 500px;
+  margin-top: -4rem;
+  padding-top: 4rem;
+  box-sizing: content-box;
+
+  @media #{$medium-and-up} {
+    margin-top: -6rem;
+    padding-top: 6rem;
+  }
+  @media #{$large-and-up} {
+    margin-top: -8rem;
+    padding-top: 8rem;
+  }
 }
 
 #home-articles {

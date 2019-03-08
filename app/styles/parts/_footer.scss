@@ -12,7 +12,7 @@ footer {
 
     .image {
       width: 25px;
-      height: 30px;
+      height: 25px;
     }
 
     .copyright {
@@ -36,9 +36,12 @@ footer {
   .small {
     font-size: .8em;
     text-align: center;
+    color: color('grey', 'lighten-1');
 
     .image {
       background-image: url(./images/safe-ojk.png);
+      background-size: contain;
+      background-repeat: no-repeat;
     }
   }
 }

@@ -46,7 +46,7 @@ export default Component.extend({
     const btn = this.$('.btn.apply');
 
     return [
-      carousel.offset().top - jQ(window).height() + carousel.outerHeight() - 100,
+      carousel.offset().top - jQ(window).height() + 200,
       counter.offset().top - jQ(window).height() + counter.outerHeight()/2 + btn.height()/2 + 30
     ];
   }
