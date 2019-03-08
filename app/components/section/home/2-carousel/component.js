@@ -11,6 +11,19 @@ export default Component.extend({
       fullWidth: true,
       indicators: true
     });
+
+    let interval = setInterval(function(){
+      this.$('.carousel').carousel('next');
+    }, 4500);
+
+    this.$('.carousel').mouseenter(function(){
+      clearTimeout(interval)
+    });
+    this.$('.carousel').mouseleave(function(){
+      interval = setInterval(function(){
+        this.$('.carousel').carousel('next');
+      }, 4500);
+    });
   }
 
 });
