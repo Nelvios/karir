@@ -146,14 +146,133 @@ $clip-offset: 6rem;
     margin-top: -8rem;
     padding-top: 8rem;
   }
+
+  .display,.display1 {
+    position: relative;
+    display: block;
+    margin-left: 4rem;
+  }
+  .image1{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+
+    top: 10rem;
+    right: 50%;
+    margin-right: -125px;
+
+    @media #{$medium-and-up} {
+      width: 250px;
+      height: 250px;
+
+      right: 5rem;
+      margin-right: 0;
+    }
+  }
+  .image2 {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+
+    top: 5rem;
+    right: 40%;
+    margin-right: -125px;
+
+    @media #{$medium-and-up} {
+      width: 250px;
+      height: 250px;
+
+      right: 5rem;
+      margin-right: 0;
+    }
+  }
+  .image3 {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+
+    top: 5rem;
+    right: 50%;
+    margin-right: -100px;
+
+    @media #{$medium-and-up} {
+      width: 250px;
+      height: 250px;
+
+      right: 5rem;
+      margin-right: 0;
+    }
+  }
+  .image4{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+
+    top: 8rem;
+    right: 50%;
+    margin-right: -125px;
+
+    @media #{$medium-and-up} {
+      width: 350px;
+      height: 350px;
+
+      right: 5rem;
+      margin-right: 0;
+    }
+  }
+  .btn.apply {
+    height: inherit;
+    padding: .3em 1em;
+    margin-top: 40%;
+
+    @media #{$medium-and-up} {
+      float: left;
+      margin: 1rem 4rem 0;
+      // margin-left: 2rem;  
+    }
+  }
+  .content-wrapper{
+    margin-top: 10%;
+  }
 }
 
 #home-articles {
+  @extend .valign-wrapper;
   padding-top: 2rem;
+  padding-bottom: 3rem;
+  box-sizing: content-box;
+  // background-color: blue;
+
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 75% 100%, 0 calc(100% - 4rem));
+  // clip-path: ellipse(150% 100% at 70% 0);
+
+  @media #{$medium-and-up} {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6rem), 80% 100%, 0 calc(100% - 6rem));
+  }
+  @media #{$large-and-up} {
+    padding-bottom: 6rem;
+    // clip-path: polygon(0 0, 100% 0, calc(100% - 8rem) 100%, 80% 100%, 0 calc(100% - 8rem));
+    // clip-path: polygon(18% 100%, 100% 80%, 100% 0, 0 0, 0 84%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 20% 100%, 0 80%);
+  }
+
 }
 
-// #home-thoughts {
-// }
+#home-thoughts {
+  @extend .valign-wrapper;
+  height: 400px;
+  // padding: 100px 0 4rem;
+  box-sizing: content-box;
+
+  @media #{$medium-and-up} {
+    margin-top: -6rem;
+    padding-top: 6rem;
+  }
+  @media #{$large-and-up} {
+    margin-top: -8rem;
+    padding-top: 8rem;
+  }
+}
 
 #home-counter {
   @extend .valign-wrapper;
@@ -230,6 +349,52 @@ $clip-offset: 6rem;
 #home-carousel {
   background-color: color('grey', 'lighten-5');
   color: $off-black;
+
+  .image1,.image2,.image3,.image4{
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: .5;
+
+    @media #{$medium-and-up} { opacity: 1; }
+  }
+  .image1{
+    background-image: url(./images/BIT.png);
+  }
+  .image2{
+    background-image: url(./images/INTERNSHIP.png);
+  }
+  .image3{
+    background-image: url(./images/PPTI.png);
+  }
+  .image4{
+    background-image: url(./images/PROFESSIONAL.png);
+  }
+
+  .display {
+    // font-family: $font-heading;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
+    text-align: left;
+
+    @media #{$large-and-up} { font-size: 1.75em; }
+    @media #{$extra-large-and-up} { font-size: 2em; }
+  }
+  .display1 {
+    // font-family: $font-heading;
+    font-weight: bold;
+    font-size: 2em;
+    text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
+    text-align: left;
+
+    @media #{$large-and-up} { font-size: 2.5em; }
+    @media #{$extra-large-and-up} { font-size: 3em; }
+  }
+
+  .btn.apply {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
 }
 
 #home-articles {
@@ -237,8 +402,10 @@ $clip-offset: 6rem;
   color: $off-black;
 }
 
-// #home-thoughts {
-// }
+#home-thoughts {
+  background-color: color('grey', 'lighten-5');
+  color: $off-black;
+}
 
 #home-counter {
   background-color: $secondary-color;

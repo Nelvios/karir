@@ -47,7 +47,7 @@ export default Component.extend({
 
     return [
       carousel.offset().top - jQ(window).height() + 200,
-      counter.offset().top - jQ(window).height() + counter.outerHeight()/2 + btn.height()/2 + 30
+      counter.offset().top - jQ(window).height() + counter.outerHeight()/2 + btn.height()/2 + 100
     ];
   }
 
