@@ -1,0 +1,34 @@
+//layout
+$clip-offset: 6rem;
+#jobs-top {
+    // @extend .valign-wrapper;
+    // // height: 400px;
+    padding: 100px 0 4rem;
+    box-sizing: content-box;
+
+    > .container { position: relative; }
+
+    .display,.title {
+        position: relative;
+        display: block;
+      }
+}
+
+//styling
+#jobs-top {
+    .title {
+        // font-family: $font-heading;
+        font-weight: bold;
+        font-size: 2em;
+        text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
+        text-align: center;
+        margin-bottom: 2rem;
+        @media #{$large-and-up} { font-size: 2.5em; }
+        @media #{$extra-large-and-up} { font-size: 3em; }
+      }
+      .display{
+        font-weight: bold;
+        font-size: 1.5em;
+      }
+
+}

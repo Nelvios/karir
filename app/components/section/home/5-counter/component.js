@@ -32,7 +32,7 @@ export default Component.extend({
       jQ(window).scroll();
     });
 
-    jQ(window).on('load.apply-btn', () => jQ(window).scroll());
+    jQ(window).scroll();
 
   },
 
@@ -53,13 +53,6 @@ export default Component.extend({
       carousel.offset().top - jQ(window).height() + 200,
       counter.offset().top - jQ(window).height() + counter.outerHeight()/2 + btn.height()/2 + 30
     ];
-  },
-
-  actions: {
-
-    show() {
-      console.log(this.$().offset());
-    }
   }
 
 });
