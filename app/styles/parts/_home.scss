@@ -228,7 +228,7 @@ $clip-offset: 6rem;
     @media #{$medium-and-up} {
       float: left;
       margin: 1rem 4rem 0;
-      // margin-left: 2rem;  
+      // margin-left: 2rem;
     }
   }
   .content-wrapper{
@@ -237,32 +237,34 @@ $clip-offset: 6rem;
 }
 
 #home-articles {
-  @extend .valign-wrapper;
-  padding-top: 2rem;
-  padding-bottom: 3rem;
-  box-sizing: content-box;
-  // background-color: blue;
+  padding: 2rem 0 4rem;
 
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 75% 100%, 0 calc(100% - 4rem));
-  // clip-path: ellipse(150% 100% at 70% 0);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 25% 100%, 0 calc(100% - 4rem));
 
   @media #{$medium-and-up} {
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6rem), 80% 100%, 0 calc(100% - 6rem));
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6rem), 20% 100%, 0 calc(100% - 6rem));
   }
   @media #{$large-and-up} {
     padding-bottom: 6rem;
-    // clip-path: polygon(0 0, 100% 0, calc(100% - 8rem) 100%, 80% 100%, 0 calc(100% - 8rem));
-    // clip-path: polygon(18% 100%, 100% 80%, 100% 0, 0 0, 0 84%);
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 20% 100%, 0 80%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8rem), 20% 100%, 0 calc(100% - 8rem));
   }
 
+  .card {
+    .card-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .card-content {
+      height: 150px;
+      overflow: auto;
+    }
+  }
 }
 
 #home-thoughts {
   @extend .valign-wrapper;
   height: 400px;
-  // padding: 100px 0 4rem;
-  box-sizing: content-box;
 
   @media #{$medium-and-up} {
     margin-top: -6rem;
@@ -398,7 +400,7 @@ $clip-offset: 6rem;
 }
 
 #home-articles {
-  // background-color: $primary-color;
+  background-color: color('grey', 'darken-4');
   color: $off-black;
 }
 

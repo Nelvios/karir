@@ -26,18 +26,20 @@ export default Component.extend({
         btn.addClass('float');
       }
     });
-    jQ(window).scroll();
 
     jQ(window).on('resize.apply-btn', () => {
       threshold = this._getThreshold();
       jQ(window).scroll();
     });
+
+    jQ(window).on('load.apply-btn', () => jQ(window).scroll());
+
   },
 
   willDestroyElement() {
     this._super(...arguments);
 
-    jQ(window).off('scroll.apply-btn').off('resize.apply-btn');
+    jQ(window).off('scroll.apply-btn').off('resize.apply-btn').off('load.apply-btn');
   },
 
   _getThreshold() {
@@ -45,10 +47,19 @@ export default Component.extend({
     const counter = this.$();
     const btn = this.$('.btn.apply');
 
+    console.log(counter.offset());
+
     return [
       carousel.offset().top - jQ(window).height() + 200,
-      counter.offset().top - jQ(window).height() + counter.outerHeight()/2 + btn.height()/2 + 100
+      counter.offset().top - jQ(window).height() + counter.outerHeight()/2 + btn.height()/2 + 30
     ];
+  },
+
+  actions: {
+
+    show() {
+      console.log(this.$().offset());
+    }
   }
 
 });
