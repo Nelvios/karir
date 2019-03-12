@@ -238,16 +238,14 @@ $clip-offset: 6rem;
 
 #home-articles {
   @extend .valign-wrapper;
-  padding-top: 2rem;
-  padding-bottom: 3rem;
+  padding: 2rem 0 4rem;
   box-sizing: content-box;
-  // background-color: blue;
 
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 75% 100%, 0 calc(100% - 4rem));
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 20% 100%, 0 96%);
   // clip-path: ellipse(150% 100% at 70% 0);
 
   @media #{$medium-and-up} {
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6rem), 80% 100%, 0 calc(100% - 6rem));
+    clip-path: polygon(0 0, 100% 0, 100% 93%, 20% 100%, 0 90%);
   }
   @media #{$large-and-up} {
     padding-bottom: 6rem;
@@ -260,17 +258,24 @@ $clip-offset: 6rem;
 
 #home-thoughts {
   @extend .valign-wrapper;
-  height: 400px;
+  // height: 400px;
   // padding: 100px 0 4rem;
   box-sizing: content-box;
+  margin-top: -6rem;
+  padding-top: 6rem;
 
   @media #{$medium-and-up} {
-    margin-top: -6rem;
-    padding-top: 6rem;
-  }
-  @media #{$large-and-up} {
     margin-top: -8rem;
     padding-top: 8rem;
+  }
+  @media #{$large-and-up} {
+    margin-top: -10rem;
+    padding-top: 10rem;
+  }
+
+  .display,.title {
+    position: relative;
+    display: block;
   }
 }
 
@@ -398,13 +403,29 @@ $clip-offset: 6rem;
 }
 
 #home-articles {
-  // background-color: $primary-color;
+  // background-color: $secondary-color;
+  background-color: color('grey','darken-4');
   color: $off-black;
 }
 
 #home-thoughts {
   background-color: color('grey', 'lighten-5');
   color: $off-black;
+
+  .title {
+    // font-family: $font-heading;
+    font-weight: bold;
+    font-size: 2.5em;
+    text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
+    text-align: right;
+    margin-bottom: 2rem;
+    @media #{$large-and-up} { font-size: 3em; }
+    @media #{$extra-large-and-up} { font-size: 3.5em; }
+  }
+  .display{
+    font-weight: bold;
+    font-size: 1.5em;
+  }
 }
 
 #home-counter {
