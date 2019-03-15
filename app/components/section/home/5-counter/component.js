@@ -42,13 +42,6 @@ export default Component.extend({
     jQ(window).off('scroll.apply-btn').off('resize.apply-btn').off('load.apply-btn');
   },
 
-  actions: {
-
-    show() {
-      console.log(jQ('#home-thoughts').outerHeight());
-    }
-  },
-
   _getThreshold() {
     const articles = jQ('#home-articles');
     const counter = this.$();
