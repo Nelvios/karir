@@ -9,7 +9,7 @@ export default Component.extend({
     this._super(...arguments);
     const btn = this.$('.btn.apply');
 
-    let threshold = this._getThreshold();
+    let threshold;
 
     jQ(window).on('scroll.apply-btn', () => {
       const scroll = jQ(window).scrollTop();
@@ -32,7 +32,7 @@ export default Component.extend({
       jQ(window).scroll();
     });
 
-    jQ(window).scroll();
+    jQ(window).resize();
 
   },
 
@@ -42,15 +42,20 @@ export default Component.extend({
     jQ(window).off('scroll.apply-btn').off('resize.apply-btn').off('load.apply-btn');
   },
 
+  actions: {
+
+    show() {
+      console.log(jQ('#home-thoughts').outerHeight());
+    }
+  },
+
   _getThreshold() {
-    const carousel = jQ('#home-carousel');
+    const articles = jQ('#home-articles');
     const counter = this.$();
     const btn = this.$('.btn.apply');
 
-    console.log(counter.offset());
-
     return [
-      carousel.offset().top - jQ(window).height() + 200,
+      articles.offset().top - jQ(window).height() + 100,
       counter.offset().top - jQ(window).height() + counter.outerHeight()/2 + btn.height()/2 + 30
     ];
   }

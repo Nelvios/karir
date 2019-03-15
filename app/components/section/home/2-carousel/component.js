@@ -1,29 +1,49 @@
 import Component from '@ember/component';
+import { jQ, get, set } from 'karir/utils/short';
 
 export default Component.extend({
 
   tagName: 'section',
+  autoScroll: null,
 
   didInsertElement() {
     this._super(...arguments);
+    const carousel = this.$('.carousel');
+    const scrollTime = 4500;      // in milliseconds
 
-    this.$('.carousel').carousel({
+    carousel.carousel({
       fullWidth: true,
-      indicators: true
+      indicators: true,
+      onCycleTo: (el) => {
+        const classNames = ['ember-view'];
+        classNames.pushObject(jQ(el).attr('data-color'));
+        classNames.compact();
+
+        this.$().attr('class', classNames.join(' '));
+      }
     });
 
-    let interval = setInterval(function(){
-      this.$('.carousel').carousel('next');
-    }, 4500);
+    carousel.mouseenter(() => clearTimeout(get(this, 'autoScroll')));
+    carousel.mouseleave(() => this.send('autoScroll', scrollTime));
 
-    this.$('.carousel').mouseenter(function(){
-      clearTimeout(interval)
-    });
-    this.$('.carousel').mouseleave(function(){
-      interval = setInterval(function(){
+    carousel.mouseleave();
+  },
+
+  willDestroyElement() {
+    this._super(...arguments);
+
+    clearTimeout(get(this, 'autoScroll'));
+  },
+
+  actions: {
+
+    autoScroll(time) {
+      const interval = setInterval(() => {
         this.$('.carousel').carousel('next');
-      }, 4500);
-    });
+      }, time);
+
+      set(this, 'autoScroll', interval);
+    }
   }
 
 });

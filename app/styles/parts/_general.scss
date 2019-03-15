@@ -37,14 +37,17 @@ h1, h2, h3, h4, h5, h6 {
 .text-heading { font-family: $font-heading !important; }
 .text-body    { font-family: $font-stack   !important; }
 
-.text-italic { font-style: italic !important; }
+.text-italic      { font-style: italic            !important; }
+.text-underlined  { text-decoration: underline    !important; }
+.text-crossed     { text-decoration: line-through !important; }
 
-.text-light     { font-weight: 300    !important; }
+// .text-light     { font-weight: 300    !important; }
 .text-normal    { font-weight: normal !important; }
-.text-medium    { font-weight: 500    !important; }
-.text-semibold  { font-weight: 600    !important; }
+// .text-medium    { font-weight: 500    !important; }
+// .text-semibold  { font-weight: 600    !important; }
 .text-bold      { font-weight: bold   !important; }
-.text-extrabold { font-weight: 800    !important; }
+// .text-extrabold { font-weight: 800    !important; }
+.text-black     { font-weight: 900    !important; }
 
 .justify-align  { text-align: justify !important; }
 
