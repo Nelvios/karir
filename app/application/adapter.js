@@ -1,9 +1,11 @@
 import DS from 'ember-data';
+import host from 'karir/utils/host';
+import { MODEL_PREFIX } from 'karir/utils/properties';
 
 export default DS.RESTAdapter.extend({
-    namespace: 'api',
+    // namespace: 'api',
     // host: 'http://localhost:82',
-    host: 'http://127.0.0.1:5000',
+    // host: 'http://127.0.0.1:5000',
     primaryKey:'id',
 
     createRecord(store, type, snapshot){
@@ -18,24 +20,35 @@ export default DS.RESTAdapter.extend({
         return this.ajax(url, "POST", { data: data})
     },
 
-    findAll(store, type, sinceToken, snapshotRecordArray){
-        let query = this.buildQuery(snapshotRecordArray);
-        let url = `${this.host}/api/data/list`;
+    // findAll(store, type, sinceToken, snapshotRecordArray){
+    //     let query = this.buildQuery(snapshotRecordArray);
+    //     let url = `${this.host}/api/data/list`;
     
-        if (sinceToken) {
-          query.since = sinceToken;
-        }
+    //     if (sinceToken) {
+    //       query.since = sinceToken;
+    //     }
     
-        return this.ajax(url, 'GET', { data: query });
+    //     return this.ajax(url, 'GET', { data: query });
+    // },
+    urlForFindAll(modelName) {
+        return host(`${this._removePrefix(modelName)}.search`);
     },
 
-    findRecord(store, type, id, snapshot) {
-        // let url = this.buildURL(type.modelName, id, snapshot, 'findRecord');
-        let url = `${this.host}/api/data/get/${id}`;
-        let query = this.buildQuery(snapshot);
-    
-        return this.ajax(url, 'GET', { data: query });
+    urlForFindRecord(id, modelName) {
+        return host(`${this._removePrefix(modelName)}.find`).replace(/:id/, id);
+      },
+
+    _removePrefix(name) {
+        return name.replace(`${MODEL_PREFIX}/`, '').replace(/\//g, '.');
     },
+
+    // findRecord(store, type, id, snapshot) {
+    //     // let url = this.buildURL(type.modelName, id, snapshot, 'findRecord');
+    //     let url = `${this.host}/api/data/get/${id}`;
+    //     let query = this.buildQuery(snapshot);
+    
+    //     return this.ajax(url, 'GET', { data: query });
+    // },
     
     updateRecord(store, type, snapshot){
         let id = snapshot.id;

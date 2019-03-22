@@ -2,7 +2,7 @@
   <h2 class="section-title center">Recent Articles</h2>
 
   <div class="row">
-    {{#each this.model as |article|}}
+    {{#each this.model.articles as |article|}}
     <div class="col s12 l4">
 
       <div class="card">
@@ -19,8 +19,8 @@
           </p> --}}
         </div>
         <div class="card-action">
-          {{!-- <a href="#">This is a link</a> --}}
-          {{#link-to "coba" article.id}}Read More{{/link-to}}
+          <a href="#">This is a link</a>
+          {{!-- {{#link-to "coba" article.id}}Read More{{/link-to}} --}}
         </div>
       </div>
   

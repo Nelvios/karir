@@ -8,8 +8,9 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('routes', { path: '/' }, function() {
-    this.route('jobs');
-    this.route('coba', {path: '/:article_id'});
+    this.route('jobs', function() {
+      this.route('view-jobs', { path: '/:id' });
+    });
   });
 });
 
