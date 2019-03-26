@@ -10,7 +10,6 @@ CORS(app, resources={r"/api/*": {"origins":"*"}})
 @app.route('/api/article/post', methods=['POST'])
 def postJsonArticleHandler():
     content = request.get_json()
-    print(content)
     if os.path.exists('../public/assets/content/articles/data.json'):
       with open('../public/assets/content/articles/data.json', 'r+') as file:
         temp = {}
@@ -338,14 +337,6 @@ def articleList():
     data = json.load(read_file)
     dictData = data['articles']
     latestArticle = dictData[-3:]
-    temp = []
-    for loop in latestArticle:
-      count = loop['id']
-      f = open('../public/assets/content/articles/article/'+str(count)+'.json', 'r')
-      data2 = json.load(f)
-      outDict = data2['article']
-      loop.update(outDict)
-      f.close()
 
     dictData.clear()
     dictData.extend(latestArticle)
