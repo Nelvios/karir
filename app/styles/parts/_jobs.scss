@@ -9,6 +9,7 @@ $clip-offset: 6rem;
 }
 #jobs-list{
   @extend .valign-wrapper;
+  padding:2rem 0 3rem;
 
   .image{
     @extend .valign-wrapper;
