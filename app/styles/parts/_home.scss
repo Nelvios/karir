@@ -148,29 +148,24 @@ section .section-title::before {
   }
 
   .card {
-    max-width: 250px;
+    // max-width: 300px;
     margin: .5rem auto 1rem;
     border-radius: 6px;
     overflow: hidden;
 
     .card-image {
-      height: 200px;
+      @extend .valign-wrapper;
+      height: 250px;
       overflow: hidden;
     }
 
     .card-content {
       position: relative;
-      height: 9.2rem;
-      overflow: hidden;
 
-      &::before {
-        content: '. . .';
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 24px;
-        margin: 0 -24px;
-      }
+      @media #{$medium-and-up} { height: 11rem; }
+      @media #{$extra-large-and-up} { height: 9rem; }
+
+      .date, .title { display: block; }
     }
   }
 }
@@ -411,10 +406,26 @@ section .section-title {
     .card-content{
       color: $off-black;
 
-      &::before {
-        text-align: center;
-        background-color: white;
-        // background-image: linear-gradient(transparent 0, rgba(255, 255, 255, .75) 50%, white 100%);
+      .date {
+        font-style: italic;
+        font-size: .8em;
+        color: color('grey', 'lighten-1');
+      }
+
+      .title {
+        font-family: $font-heading;
+        font-size: 1.4em;
+      }
+    }
+
+    .card-action {
+      font-weight: bold;
+      text-transform: none;
+
+      a {
+        @extend .valign-wrapper;
+
+        i { font-size: 1.6em; }
       }
     }
   }
@@ -426,8 +437,12 @@ section .section-title {
 
   @media #{$small-and-down} { text-align: center; }
 
-  .section-title::before {
-    border-color: $secondary-color;
+  .section-title {
+    color: $secondary-color;
+
+    &::before {
+      border-color: $primary-color;
+    }
   }
 
   .image {
