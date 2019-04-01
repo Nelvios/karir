@@ -2,6 +2,9 @@ from flask import Flask, request, Response, jsonify
 from flask_cors import CORS
 import json
 import os
+import base64
+import re
+from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins":"*"}})
@@ -27,8 +30,59 @@ def postJsonArticleHandler():
             if key2 == 'title':
               temp[key2] = value2
               temp2[key2] = value2
+            elif key2 == 'thumbImage':
+              soup = BeautifulSoup(value2, "html.parser")
+              html_img_tags = soup.findAll("img")
+              if not html_img_tags:
+                pass
+              else:
+                if not os.path.isdir("../public/assets/content/articles/article-image/" + str(content['article']['id'])):
+                  os.mkdir("../public/assets/content/articles/article-image/" + str(content['article']['id']))
+                else:
+                  pass
+                tempIMG = []
+                for tag in html_img_tags:
+                  tempIMG.append(tag['src'])
+                img = re.findall(r'base64,(.*)', tempIMG[0], re.I | re.M)
+                decodeData = base64.b64decode(img[0])
+                source = "../public/assets/content/articles/article-image/" + str(
+                  content['article']['id']) + '/thumbnail-image.jpg'
+                splitSource = re.findall(r'public(.*)', source, re.I | re.M)
+                image_result = open(source, 'wb')
+                image_result.write(decodeData)
+                image_result.close()
+                temp[key2] = splitSource[0]
+                temp2[key2] = splitSource[0]
+
             elif key2 == 'article':
-              temp2[key2] = value2
+              soup = BeautifulSoup(value2, "html.parser")
+              html_img_tags = soup.findAll("img")
+              if not html_img_tags:
+                temp2[key2] = value2
+              else:
+                if not os.path.isdir("../public/assets/content/articles/article-image/" + str(content['article']['id'])):
+                  os.mkdir("../public/assets/content/articles/article-image/" + str(content['article']['id']))
+                else:
+                  pass
+                tempIMG = []
+                for tag in html_img_tags:
+                  tempIMG.append(tag['src'])
+
+                count = 1
+                tempSRC = []
+                for toLocal in tempIMG:
+                  img = re.findall(r'base64,(.*)', toLocal, re.I | re.M)
+                  decodeData = base64.b64decode(img[0])
+                  source = "../public/assets/content/articles/article-image/"+str(content['article']['id'])+'/image' + str(count) + '.jpg'
+                  splitSource = re.findall(r'public/(.*)', source, re.I | re.M)
+                  tempSRC.append(splitSource)
+                  image_result = open(source , 'wb')
+                  image_result.write(decodeData)
+                  image_result.close()
+                  count += 1
+                for iterHTML, iterSRC in zip(html_img_tags, tempSRC):
+                  iterHTML['src'] = iterSRC
+                temp2[key2] = str(soup)
             else:
               temp[key2] = value2
               temp2[key2] = value2
@@ -52,8 +106,60 @@ def postJsonArticleHandler():
             if key2 == 'title':
               temp[key2] = value2
               temp2[key2] = value2
+            elif key2 == 'thumbImage':
+              soup = BeautifulSoup(value2, "html.parser")
+              html_img_tags = soup.findAll("img")
+              if not html_img_tags:
+                pass
+              else:
+                if not os.path.isdir("../public/assets/content/articles/article-image/" + str(content['article']['id'])):
+                  os.mkdir("../public/assets/content/articles/article-image/" + str(content['article']['id']))
+                else:
+                  pass
+                tempIMG = []
+                for tag in html_img_tags:
+                  tempIMG.append(tag['src'])
+                img = re.findall(r'base64,(.*)', tempIMG[0], re.I | re.M)
+                decodeData = base64.b64decode(img[0])
+                source = "../public/assets/content/articles/article-image/" + str(
+                  content['article']['id']) + '/thumbnail-image.jpg'
+                splitSource = re.findall(r'public(.*)', source, re.I | re.M)
+                image_result = open(source, 'wb')
+                image_result.write(decodeData)
+                image_result.close()
+                temp[key2] = splitSource[0]
+                temp2[key2] = splitSource[0]
             elif key2 == 'article':
-              temp2[key2] = value2
+              soup = BeautifulSoup(value2, "html.parser")
+              html_img_tags = soup.findAll("img")
+              if not html_img_tags:
+                temp2[key2] = value2
+              else:
+                if not os.path.isdir(
+                  "../public/assets/content/articles/article-image/" + str(content['article']['id'])):
+                  os.mkdir("../public/assets/content/articles/article-image/" + str(content['article']['id']))
+                else:
+                  pass
+                tempIMG = []
+                for tag in html_img_tags:
+                  tempIMG.append(tag['src'])
+
+                count = 1
+                tempSRC = []
+                for toLocal in tempIMG:
+                  img = re.findall(r'base64,(.*)', toLocal, re.I | re.M)
+                  decodeData = base64.b64decode(img[0])
+                  source = "../public/assets/content/articles/article-image/" + str(
+                    content['article']['id']) + '/image' + str(count) + '.jpg'
+                  splitSource = re.findall(r'public/(.*)', source, re.I | re.M)
+                  tempSRC.append(splitSource)
+                  image_result = open(source, 'wb')
+                  image_result.write(decodeData)
+                  image_result.close()
+                  count += 1
+                for iterHTML, iterSRC in zip(html_img_tags, tempSRC):
+                  iterHTML['src'] = iterSRC
+                temp2[key2] = str(soup)
             else:
               temp[key2] = value2
               temp2[key2] = value2
@@ -102,7 +208,33 @@ def postJsonThoughtHandler():
               temp[key2] = value2
               temp2[key2] = value2
             elif key2 == 'thought':
-              temp2[key2] = value2
+              soup = BeautifulSoup(value2, "html.parser")
+              onlyText = soup.get_text()
+              onlyText = onlyText.replace('\n',' ')
+              temp2[key2] = onlyText
+            elif key2 == 'thumbThought':
+              soup = BeautifulSoup(value2, "html.parser")
+              html_img_tags = soup.findAll("img")
+              if not html_img_tags:
+                pass
+              else:
+                if not os.path.isdir("../public/assets/content/thoughts/thoughts-image/" + str(content['thought']['id'])):
+                  os.mkdir("../public/assets/content/thoughts/thoughts-image/" + str(content['thought']['id']))
+                else:
+                  pass
+                tempIMG = []
+                for tag in html_img_tags:
+                  tempIMG.append(tag['src'])
+                img = re.findall(r'base64,(.*)', tempIMG[0], re.I | re.M)
+                decodeData = base64.b64decode(img[0])
+                source = "../public/assets/content/thoughts/thoughts-image/" + str(
+                  content['thought']['id']) + '/thumbnail-image.jpg'
+                splitSource = re.findall(r'public(.*)', source, re.I | re.M)
+                image_result = open(source, 'wb')
+                image_result.write(decodeData)
+                image_result.close()
+                temp[key2] = splitSource[0]
+                temp2[key2] = splitSource[0]
             else:
               temp[key2] = value2
               temp2[key2] = value2
@@ -127,7 +259,33 @@ def postJsonThoughtHandler():
               temp[key2] = value2
               temp2[key2] = value2
             elif key2 == 'thought':
-              temp2[key2] = value2
+              soup = BeautifulSoup(value2, "html.parser")
+              onlyText = soup.get_text()
+              onlyText = onlyText.replace('\n', ' ')
+              temp2[key2] = onlyText
+            elif key2 == 'thumbThought':
+              soup = BeautifulSoup(value2, "html.parser")
+              html_img_tags = soup.findAll("img")
+              if not html_img_tags:
+                pass
+              else:
+                if not os.path.isdir("../public/assets/content/thoughts/thoughts-image/" + str(content['thought']['id'])):
+                  os.mkdir("../public/assets/content/thoughts/thoughts-image/" + str(content['thought']['id']))
+                else:
+                  pass
+                tempIMG = []
+                for tag in html_img_tags:
+                  tempIMG.append(tag['src'])
+                img = re.findall(r'base64,(.*)', tempIMG[0], re.I | re.M)
+                decodeData = base64.b64decode(img[0])
+                source = "../public/assets/content/thoughts/thoughts-image/" + str(
+                  content['thought']['id']) + '/thumbnail-image.jpg'
+                splitSource = re.findall(r'public(.*)', source, re.I | re.M)
+                image_result = open(source, 'wb')
+                image_result.write(decodeData)
+                image_result.close()
+                temp[key2] = splitSource[0]
+                temp2[key2] = splitSource[0]
             else:
               temp[key2] = value2
               temp2[key2] = value2
@@ -177,6 +335,29 @@ def postJsonJobHandler():
               temp2[key2] = value2
             elif key2 == 'description':
               temp2[key2] = value2
+            elif key2 == 'thumbJob':
+              soup = BeautifulSoup(value2, "html.parser")
+              html_img_tags = soup.findAll("img")
+              if not html_img_tags:
+                pass
+              else:
+                if not os.path.isdir("../public/assets/content/jobs/jobs-image/" + str(content['job']['id'])):
+                  os.mkdir("../public/assets/content/jobs/jobs-image/" + str(content['job']['id']))
+                else:
+                  pass
+                tempIMG = []
+                for tag in html_img_tags:
+                  tempIMG.append(tag['src'])
+                img = re.findall(r'base64,(.*)', tempIMG[0], re.I | re.M)
+                decodeData = base64.b64decode(img[0])
+                source = "../public/assets/content/jobs/jobs-image/" + str(
+                  content['job']['id']) + '/thumbnail-image.png'
+                splitSource = re.findall(r'public(.*)', source, re.I | re.M)
+                image_result = open(source, 'wb')
+                image_result.write(decodeData)
+                image_result.close()
+                temp[key2] = splitSource[0]
+                temp2[key2] = splitSource[0]
             else:
               temp[key2] = value2
               temp2[key2] = value2
@@ -202,6 +383,29 @@ def postJsonJobHandler():
               temp2[key2] = value2
             elif key2 == 'description':
               temp2[key2] = value2
+            elif key2 == 'thumbJob':
+              soup = BeautifulSoup(value2, "html.parser")
+              html_img_tags = soup.findAll("img")
+              if not html_img_tags:
+                pass
+              else:
+                if not os.path.isdir("../public/assets/content/jobs/jobs-image/" + str(content['job']['id'])):
+                  os.mkdir("../public/assets/content/jobs/jobs-image/" + str(content['job']['id']))
+                else:
+                  pass
+                tempIMG = []
+                for tag in html_img_tags:
+                  tempIMG.append(tag['src'])
+                img = re.findall(r'base64,(.*)', tempIMG[0], re.I | re.M)
+                decodeData = base64.b64decode(img[0])
+                source = "../public/assets/content/jobs/jobs-image/" + str(
+                  content['job']['id']) + '/thumbnail-image.png'
+                splitSource = re.findall(r'public(.*)', source, re.I | re.M)
+                image_result = open(source, 'wb')
+                image_result.write(decodeData)
+                image_result.close()
+                temp[key2] = splitSource[0]
+                temp2[key2] = splitSource[0]
             else:
               temp[key2] = value2
               temp2[key2] = value2
@@ -337,6 +541,14 @@ def articleList():
     data = json.load(read_file)
     dictData = data['articles']
     latestArticle = dictData[-3:]
+    temp = []
+    for loop in latestArticle:
+      count = loop['id']
+      f = open('../public/assets/content/articles/article/'+str(count)+'.json', 'r')
+      data2 = json.load(f)
+      outDict = data2['article']
+      loop.update(outDict)
+      f.close()
 
     dictData.clear()
     dictData.extend(latestArticle)
