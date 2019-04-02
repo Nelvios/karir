@@ -33,6 +33,10 @@ $clip-offset: 6rem;
     margin: 1rem 0 3rem;
   }
 }
+#job-view {
+  @extend .valign-wrapper;
+  padding-top: 100px;
+}
 
 //styling
 #jobs-top {
@@ -66,4 +70,14 @@ $clip-offset: 6rem;
     font-weight: bold;
     text-align: center; 
   }
+}
+#job-view {
+  .display{
+    font-weight: bold;
+    font-size: 2em;
+    text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
+
+    @media #{$large-and-up} { font-size: 2.5em; }
+    @media #{$extra-large-and-up} { font-size: 3em; }
+}
 }

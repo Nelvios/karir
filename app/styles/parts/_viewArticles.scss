@@ -1,0 +1,31 @@
+//layout
+#article-view {
+    @extend .valign-wrapper;
+    padding-top: 100px;
+
+    .date{
+        margin-top: -.5rem;
+    }
+}
+
+//styling
+#article-view{
+    p img{
+        max-width: 100%;
+        height: auto;
+    }
+    .display{
+        font-weight: bold;
+        font-size: 1.5em;
+        text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
+
+        @media #{$large-and-up} { font-size: 2em; }
+        @media #{$extra-large-and-up} { font-size: 2.5em; }
+    }
+
+    .date{
+        font-style: italic;
+        font-size: .8em;
+        color: color('grey', 'lighten-1');
+    }
+}

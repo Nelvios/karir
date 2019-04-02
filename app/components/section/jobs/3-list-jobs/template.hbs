@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         {{#each this.model as |job|}}
-        {{#link-to "jobs.view-jobs" job.id}}
+        {{#link-to "jobs.view-job" job.id}}
         <div class="col s12 m4">
             <div class="image">
                 <img src={{job.thumbJob}} alt="Photo" class="responsive-img">

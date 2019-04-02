@@ -491,15 +491,15 @@ def updateUser(user_id):
       resp = jsonify("ID Not Found")
   return resp
 
-# GET Data By ID
-@app.route('/api/data/get/<int:user_id>', methods=['GET'])
-def userListbyID(user_id):
+# GET Job By ID
+@app.route('/api/job/get/<int:job_id>', methods=['GET'])
+def jobByID(job_id):
   with open('../public/assets/content/jobs/data.json', 'r') as read_file:
     data = json.load(read_file)
     dictData = data['jobs']
     try:
       for loop in dictData:
-        if user_id == loop['id']:
+        if job_id == loop['id']:
           selectedUser = loop
       count = selectedUser['id']
       f = open('../public/assets/content/jobs/job/'+str(count)+'.json', 'r')
@@ -507,8 +507,30 @@ def userListbyID(user_id):
       outDict = data2['job']
       selectedUser.update(outDict)
       f.close()
-      resp = jsonify(selectedUser)
-      print(selectedUser)
+      forResp = dict(jobs=selectedUser)
+      resp = jsonify(forResp)
+    except:
+      resp = jsonify("ID Not Found")
+  return resp
+
+# GET Article By ID
+@app.route('/api/article/get/<int:article_id>', methods=['GET'])
+def articleByID(article_id):
+  with open('../public/assets/content/articles/data.json', 'r') as read_file:
+    data = json.load(read_file)
+    dictData = data['articles']
+    try:
+      for loop in dictData:
+        if article_id == loop['id']:
+          selectedUser = loop
+      count = selectedUser['id']
+      f = open('../public/assets/content/articles/article/'+str(count)+'.json', 'r')
+      data2 = json.load(f)
+      outDict = data2['article']
+      selectedUser.update(outDict)
+      f.close()
+      forResp = dict(articles=selectedUser)
+      resp = jsonify(forResp)
     except:
       resp = jsonify("ID Not Found")
   return resp
@@ -540,7 +562,7 @@ def articleList():
   with open('../public/assets/content/articles/data.json', 'r') as read_file:
     data = json.load(read_file)
     dictData = data['articles']
-    latestArticle = dictData[-3:]
+    latestArticle = dictData[-4:]
     temp = []
     for loop in latestArticle:
       count = loop['id']
