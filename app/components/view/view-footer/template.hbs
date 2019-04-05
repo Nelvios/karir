@@ -7,11 +7,18 @@
 
     <div class="col s12 m6 l4">
       <h5>Featured Jobs</h5>
+      {{#each this.model as |job|}}
+      {{!-- {{#if job.featured}} --}}
       <ul>
+        <li>{{job.name}}</li>
+      </ul>
+      {{!-- <ul>
         <li>Job 1</li>
         <li>Job 2</li>
         <li>Job 3</li>
-      </ul>
+      </ul> --}}
+      {{!-- {{/if}} --}}
+      {{/each}}
     </div>
 
     <div class="col s12 m6 l4">

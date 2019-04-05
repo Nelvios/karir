@@ -458,38 +458,49 @@ def deleteUser(user_id):
   return resp
 
 # PUT Data
-@app.route('/api/data/update/<int:user_id>', methods=['PUT'])
-def updateUser(user_id):
+@app.route('/api/job/update/<int:job_id>', methods=['PUT'])
+def updateJob(job_id):
   updateContent = request.get_json()
-  with open('../public/assets/content/articles/data.json', 'r+') as read_file:
+  unloadUpdate = updateContent['job']
+  with open('../public/assets/content/jobs/data.json', 'r+') as read_file:
     data = json.load(read_file)
-    loadDict = data['datas']
+    loadDict = data['jobs']
     try:
       for loop in loadDict:
-        if user_id == loop['id']:
-          selectedUser = loop
+        if job_id == loop['id']:
+          selectedJob = loop
 
-      count = selectedUser['id']
-      f = open('../public/assets/content/articles/article/' + str(count) + '.json', 'r+')
+      count = selectedJob['id']
+      f = open('../public/assets/content/jobs/job/' + str(count) + '.json', 'r+')
       data2 = json.load(f)
-      loadDict2 = data2['data']
-      loadDict2.update(updateContent['data'])
-      newDict = dict(data=loadDict2)
-
-      selectedUser['title'] = updateContent['data']['title']
+      loadDict2 = data2['job']
+      loadDict2.update(updateContent['job'])
+      newDict = dict(job=loadDict2)
 
       f.seek(0)
       f.truncate()
       read_file.seek(0)
       read_file.truncate()
-      newDict2 = dict(datas=loadDict)
-      read_file.write(json.dumps(newDict2))
       f.write(json.dumps(newDict))
       f.close()
-      resp = jsonify(selectedUser)
+      unloadUpdate.pop("description")
+      for loop2 in loadDict:
+        if job_id == loop2['id']:
+          loop2.update(unloadUpdate)
+      newDict2 = dict(jobs=loadDict)
+      read_file.write(json.dumps(newDict2))
+      read_file.close()
+
+      tempResponse = {}
+      tempID = {}
+      tempID["id"] = job_id
+      tempResponse['jobs'] = tempID
+      js = json.dumps(tempResponse)
+      resp = Response(js, status=201, mimetype='application/json')
     except:
       resp = jsonify("ID Not Found")
   return resp
+  # return "success"
 
 # GET Job By ID
 @app.route('/api/job/get/<int:job_id>', methods=['GET'])
@@ -535,30 +546,9 @@ def articleByID(article_id):
       resp = jsonify("ID Not Found")
   return resp
 
-# #GET Latest Data
-# @app.route('/api/data/list', methods=['GET'])
-# def userList():
-#   with open('../public/assets/content/articles/data.json', 'r') as read_file:
-#     data = json.load(read_file)
-#     dictData = data['datas']
-#     latestArticle = dictData[-3:]
-#     # temp = []
-#     # for loop in latestNews:
-#     #   count = loop['id']
-#     #   f = open('../public/assets/content/articles/article/'+str(count)+'.json', 'r')
-#     #   data2 = json.load(f)
-#     #   outDict = data2['data']
-#     #   loop.update(outDict)
-#     #   f.close()
-#     #
-#     dictData.clear()
-#     dictData.extend(latestArticle)
-#     with open()
-#     return jsonify(data)
-
 #GET Latest article Data
 @app.route('/api/article/list', methods=['GET'])
-def articleList():
+def latestArticleList():
   with open('../public/assets/content/articles/data.json', 'r') as read_file:
     data = json.load(read_file)
     dictData = data['articles']
@@ -578,7 +568,7 @@ def articleList():
 
 #GET Latest Thought Data
 @app.route('/api/thought/list', methods=['GET'])
-def thoughtList():
+def latestThoughtList():
   with open('../public/assets/content/thoughts/data.json', 'r') as read_file:
     data = json.load(read_file)
     dictData = data['thoughts']
@@ -596,25 +586,67 @@ def thoughtList():
     dictData.extend(latestThought)
     return jsonify(data)
 
+# #GET Featured Jobs Data
+# @app.route('/api/featjob/list', methods=['GET'])
+# def featuredJobList():
+#   with open('../public/assets/content/jobs/data.json', 'r') as read_file:
+#     data = json.load(read_file)
+#     dictData = data['jobs']
+#     # latestThought = dictData[-6:]
+#     temp = []
+#     for loop in latestThought:
+#       count = loop['id']
+#       f = open('../public/assets/content/thoughts/thought/'+str(count)+'.json', 'r')
+#       data2 = json.load(f)
+#       outDict = data2['thought']
+#       loop.update(outDict)
+#       f.close()
+#
+#     dictData.clear()
+#     dictData.extend(latestThought)
+#     return jsonify(data)
+
 #GET Latest job Data
 @app.route('/api/job/list', methods=['GET'])
-def jobList():
+def latestJobList():
   with open('../public/assets/content/jobs/data.json', 'r') as read_file:
     data = json.load(read_file)
     dictData = data['jobs']
-    latestThought = dictData[-6:]
-    temp = []
-    for loop in latestThought:
-      count = loop['id']
-      f = open('../public/assets/content/jobs/job/'+str(count)+'.json', 'r')
-      data2 = json.load(f)
-      outDict = data2['job']
-      loop.update(outDict)
-      f.close()
-
-    dictData.clear()
-    dictData.extend(latestThought)
+    # print(dictData)
+    # latestJob = dictData[-6:]
+    # temp = []
+    # for loop in latestJob:
+    #   count = loop['id']
+    #   f = open('../public/assets/content/jobs/job/'+str(count)+'.json', 'r')
+    #   data2 = json.load(f)
+    #   outDict = data2['job']
+    #   loop.update(outDict)
+    #   f.close()
+    #
+    # dictData.clear()
+    # dictData.extend(latestJob)
     return jsonify(data)
+
+# #GET all jobs Data
+# @app.route('/api/job/listall', methods=['GET'])
+# def allJobList():
+#   with open('../public/assets/content/jobs/data.json', 'r') as read_file:
+#     data = json.load(read_file)
+#     dictData = data['jobs']
+#     print(dictData)
+#     # temp = []
+#     # for loop in latestNews:
+#     #   count = loop['id']
+#     #   f = open('../public/assets/content/articles/article/'+str(count)+'.json', 'r')
+#     #   data2 = json.load(f)
+#     #   outDict = data2['data']
+#     #   loop.update(outDict)
+#     #   f.close()
+#     #
+#     dictData.clear()
+#     # dictData.extend(latestArticle)
+#     # with open()
+#     return jsonify(data)
 
 if __name__ == '__main__':
     app.run(debug=True)
