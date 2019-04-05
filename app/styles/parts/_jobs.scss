@@ -1,76 +1,123 @@
-//layout
-$clip-offset: 6rem;
-#jobs-top {
-  @extend .valign-wrapper;
-  padding-top: 100px;
-}
-#jobs-selection{
-  @extend .valign-wrapper;
-}
-#jobs-list{
-  @extend .valign-wrapper;
-  padding:2rem 0 3rem;
+// Layout
 
-  .image{
-    @extend .valign-wrapper;
+#jobs-top {
+  padding: 100px 0 2rem;
+}
+
+#jobs-selection {
+  padding: 1rem 0;
+}
+
+#jobs-list {
+  padding: 2rem 0;
+
+  .job-item {
     position: relative;
-    width: 50%;
-    border-radius: 50%;
-    overflow: hidden;
-    left: 25%;
+    display: block;
 
     &::before {
       content: '';
+      position: absolute;
       display: block;
-      padding-top: 100%;
+      bottom: -.5rem;
+      left: 50%;
+      width: 0;
     }
 
-    img { 
-      position: absolute;
+    &:hover, &.active {
+      &::before {
+        width: 3rem;
+        margin-left: -1.5rem;
+      }
+
+      .image > img {
+        width: 90%;
+        margin-left: 5%;
+      }
+    }
+
+    .image {
+      @extend .valign-wrapper;
+      position: relative;
+      width: 100%;
+      max-width: 200px;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+      }
+
+      img {
+        position: absolute;
+        width: 80%;
+        margin-left: 10%;
+      }
+    }
+
+    .display{
+      margin: 1rem 0 3rem;
     }
   }
-  .display{
-    margin: 1rem 0 3rem;
-  }
 }
+
 #job-view {
   @extend .valign-wrapper;
   padding-top: 100px;
 }
 
-//styling
+
+// Styling
+
 #jobs-top {
+  background-image: linear-gradient(10deg, rgba(color('teal', 'darken-4'), .5), color('grey', 'darken-4'));
+  // background-attachment: fixed;
+
   .title {
-      // font-family: $font-heading;
-      font-weight: bold;
-      font-size: 2em;
-      text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
-      text-align: center;
-      margin-bottom: 2rem;
-      @media #{$large-and-up} { font-size: 2.5em; }
-      @media #{$extra-large-and-up} { font-size: 3em; }
+    font-weight: bold;
+    font-size: 2em;
+    letter-spacing: .2rem;
+    text-align: center;
+    text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
+
+
+    @media #{$large-and-up} { font-size: 2.5em; }
+    @media #{$extra-large-and-up} { font-size: 3em; }
+  }
+}
+
+#jobs-selection {
+  background-color: $primary-color;
+}
+
+#jobs-list {
+  background-color: color('grey', 'lighten-5');
+
+  .job-item {
+    &::before {
+      border-bottom: .35rem solid $primary-color;
     }
 
-}
-#jobs-selection{
-  .display{
-    font-size: 1em;
-  }
-  .select-wrapper input.select-dropdown{
-    color: color('grey','darken-1');
-  }
-}
-#jobs-list{
-  .image{
-    @extend .z-depth-2;
-    
-  }
-  .display{
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center; 
+    .image{
+      @extend .z-depth-2;
+      background-color: color('grey', 'darken-4');
+      border: .5rem solid $primary-color;
+    }
+
+    .display{
+      // font-family: $font-heading;
+      font-weight: bold;
+      font-size: 1.5em;
+      text-align: center;
+      color: $secondary-color;
+    }
+
   }
 }
+
 #job-view {
   .display{
     font-weight: bold;
@@ -79,5 +126,24 @@ $clip-offset: 6rem;
 
     @media #{$large-and-up} { font-size: 2.5em; }
     @media #{$extra-large-and-up} { font-size: 3em; }
+  }
 }
+
+
+// Animation
+
+#jobs-list {
+  .job-item {
+    &::before {
+      -webkit-transition-duration: .15s;
+      -webkit-transition-timing-function: ease-in-out;
+      transition-duration: .15s;
+      transition-timing-function: ease-in-out;
+    }
+
+    .image > img {
+      -webkit-transition-duration: .3s;
+      transition-duration: .3s;
+    }
+  }
 }

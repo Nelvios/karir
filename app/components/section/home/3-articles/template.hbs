@@ -1,13 +1,13 @@
 <div class="container">
   <h2 class="section-title center">Recent Articles</h2>
 
-  <div class="row">
-    {{#each this.model.articles as |article|}}
-      <div class="col s12 m6">
+  <div class="row hide-on-med-and-down">
+    {{#each this.model.articles as |article idx|}}
+      <div class="col l4 {{if (gte idx 3) "hide"}}">
 
         <div class="card">
           <div class="card-image">
-            <img alt="img1" src={{article.thumbImage}}>
+            <img alt="thumb" src={{article.thumbImage}}>
             {{!-- <span class="card-title text-heading">Article Title {{sum idx}}</span> --}}
           </div>
           <div class="card-content">
@@ -17,7 +17,30 @@
             </p>
           </div>
           <div class="card-action">
-            {{#link-to "view-article" article.id}}<a>Read More{{icon "arrow_forward" class="ml-2"}}</a>{{/link-to}}
+            {{#link-to "view-article" article.id}}Read More{{icon "arrow_forward" class="ml-2"}}{{/link-to}}
+          </div>
+        </div>
+
+      </div>
+    {{/each}}
+  </div>
+
+  <div class="carousel carousel-slider hide-on-large-only">
+    {{#each this.model.articles as |article|}}
+      <div class="carousel-item">
+
+        <div class="card">
+          <div class="card-image">
+            <img alt="thumb" src={{article.thumbImage}}>
+          </div>
+          <div class="card-content">
+            <p>
+              <span class="date mb-2">{{date article.date}}</span>
+              <span class="title">{{article.title}}</span>
+            </p>
+          </div>
+          <div class="card-action">
+            {{#link-to "view-article" article.id}}Read More{{icon "arrow_forward" class="ml-2"}}{{/link-to}}
           </div>
         </div>
 

@@ -14,13 +14,7 @@ export default Component.extend({
     carousel.carousel({
       fullWidth: true,
       indicators: true,
-      onCycleTo: (el) => {
-        const classNames = ['ember-view'];
-        classNames.pushObject(jQ(el).attr('data-color'));
-        classNames.compact();
-
-        this.$().attr('class', classNames.join(' '));
-      }
+      onCycleTo: (el) => this.send('changeColor', jQ(el).attr('data-color'))
     });
 
     carousel.mouseenter(() => clearTimeout(get(this, 'autoScroll')));
@@ -43,6 +37,14 @@ export default Component.extend({
       }, time);
 
       set(this, 'autoScroll', interval);
+    },
+
+    changeColor(colorClass) {
+      const classNames = ['ember-view'];
+      classNames.pushObject(colorClass);
+      classNames.compact();
+
+      this.$().attr('class', classNames.join(' '));
     }
   }
 

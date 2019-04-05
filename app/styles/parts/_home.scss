@@ -58,9 +58,11 @@ section .section-title::before {
     height: inherit;
     margin: 2rem 0 0;
     padding: .6rem 1.2rem;
-    border-radius: 1rem;
+    // border-radius: 1rem;
 
     @media #{$medium-and-up} { margin-left: 2rem; }
+
+    &:hover { transform: translate(0, -.2rem); }
   }
 }
 
@@ -120,9 +122,11 @@ section .section-title::before {
   .btn.apply {
     height: inherit;
     margin-top: 4rem;
-    border-radius: 1rem;
+    // border-radius: 1rem;
 
     @media #{$medium-and-up} { margin: 2rem 2rem 0; }
+
+    &:hover { transform: translate(0, -.2rem); }
   }
 }
 
@@ -148,9 +152,9 @@ section .section-title::before {
   }
 
   .card {
-    // max-width: 300px;
+    max-width: 300px;
     margin: .5rem auto 1rem;
-    border-radius: 6px;
+    // border-radius: 6px;
     overflow: hidden;
 
     .card-image {
@@ -161,11 +165,22 @@ section .section-title::before {
 
     .card-content {
       position: relative;
+      height: 11rem;
 
-      @media #{$medium-and-up} { height: 11rem; }
       @media #{$extra-large-and-up} { height: 9rem; }
 
       .date, .title { display: block; }
+    }
+  }
+
+  .carousel {
+    height: 570px;
+    margin-top: -4rem;
+
+    .carousel-item {
+      max-width: 300px;
+      // padding-left: 6px;
+      height: auto;
     }
   }
 }
@@ -298,7 +313,8 @@ section .section-title {
 #home-top {
   background-image: url(./images/pattern.png),
                     linear-gradient(10deg, color('teal', 'darken-4'), color('grey', 'darken-4'));
-  background-attachment: fixed;
+  background-color: color('grey', 'darken-4');
+  // background-attachment: fixed;
   // background-color: color('grey', 'darken-4');
   // background-color: color('indigo', 'darken-4');
   // background-color: $primary-color;
@@ -334,17 +350,21 @@ section .section-title {
     font-weight: bold;
     font-size: 1.2em;
 
-    &:hover { background-color: white; }
+    &:hover {
+      @extend .z-depth-3;
+      background-color: white;
+    }
   }
 }
 
 #home-carousel {
+  // background-image: linear-gradient(10deg, rgba(black, 0), rgba(black, .8));
   background-color: color('grey', 'lighten-5');
-  // background-image: linear-gradient(10deg, transparent, rgba(0, 0, 0, .8));
 
   @media #{$small-and-down} { text-align: center; }
   @media #{$medium-and-up} {
-    background-image: linear-gradient(30deg, rgba(255, 255, 255, .4), transparent);
+    background-image: linear-gradient(10deg, rgba(black, 0) 50%, rgba(black, .3) 100%);
+    // background-image: linear-gradient(30deg, rgba(255, 255, 255, .4), transparent);
   }
 
   .image {
@@ -386,8 +406,12 @@ section .section-title {
   }
 
   .btn.apply {
+    background-image: linear-gradient(20deg, rgba(black, .2), rgba(white, .2));
+    border-left: 0 solid $primary-color;
     font-weight: bold;
     font-size: 1.2em;
+
+    &:hover { @extend .z-depth-3; }
   }
 }
 
@@ -517,6 +541,11 @@ section .section-title {
 #home-carousel {
   -webkit-transition: background-color .3s;
   transition: background-color .3s;
+
+  .btn.apply {
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s;
+  }
 }
 
 #home-counter {

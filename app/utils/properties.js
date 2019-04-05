@@ -5,7 +5,7 @@ export const MODEL_PREFIX = 'models';
 
 export const ENVIRONMENT = ENV.environment;
 export const HOST = {
-  'development' : 'http://127.0.0.1:5000',
+  'development' : 'http://localhost:84',
   'test'        : '',
   'production'  : ''
 };
@@ -23,4 +23,4 @@ export default {
   REQUEST_TIMEOUT,
   DELIMITER,
   DATE_FORMAT
-}
+};
