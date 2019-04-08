@@ -9,7 +9,7 @@ module.exports = function(defaults) {
 
   const imports = {
     'moment'      : 'node_modules/moment/min/moment.min.js',
-    'materialize' : 'node_modules/materialize-css/dist/js/materialize.min.js'
+    'materialize' : 'node_modules/materialize-css/dist/js/materialize.js'
   };
 
   // Use `app.import` to add additional libraries to the generated

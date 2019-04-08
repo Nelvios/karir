@@ -3,7 +3,7 @@
     {{#each this.model as |job|}}
       <div class="col s6 l4">
 
-        {{#link-to "jobs.view-job" job.id class="job-item"}}
+        {{#link-to "jobs.detail" job.id class="job-item"}}
 
           <div class="image">
             <img src={{job.thumbJob}} alt="Job Image" class="responsive-img">

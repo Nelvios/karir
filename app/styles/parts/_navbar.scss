@@ -5,11 +5,13 @@
   top: 0;
   // padding: .5rem 0;
   box-sizing: content-box;
-  z-index: 100;
+  z-index: 1000;
 
   .navbar-top & {
     position: absolute;
     padding-top: 1rem;
+
+    #nav-mobile { padding-top: calc(64px + 1rem); }
   }
 
   .logo {
@@ -31,7 +33,7 @@
     }
   }
 
-  ul a {
+  #nav-desktop a {
     position: relative;
 
     &::before {
@@ -51,6 +53,24 @@
         margin-left: -1rem;
       }
     }
+  }
+
+  #nav-mobile {
+    padding-top: 64px;
+
+    @media #{$medium-and-up} { width: 500px; }
+  }
+
+  .trigger {
+    position: relative;
+    width: 24px;
+    z-index: 1000;
+    overflow: hidden;
+
+    i { display: inline-block; }
+    i + i { margin-right: -24px; }
+
+    &.open i:first-child { margin-left: -24px; }
   }
 }
 
@@ -72,7 +92,7 @@
       }
     }
 
-    ul a {
+    #nav-desktop a {
       color: white;
 
       &::before {
@@ -97,13 +117,31 @@
     }
   }
 
-  ul a {
+  #nav-desktop a {
     font-weight: bold;
     color: $secondary-color;
 
     &::before {
       border-bottom: .25rem solid $primary-color;
     }
+  }
+
+  #nav-mobile {
+    background-color: color('grey', 'lighten-5');
+    border-left: .4rem solid $primary-color;
+
+    a {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: $secondary-color;
+    }
+  }
+
+  .trigger {
+    background-color: transparent;
+    border: none;
+    color: $primary-color;
+    cursor: pointer;
   }
 }
 
@@ -128,10 +166,15 @@
     }
   }
 
-  ul a::before {
+  #nav-desktop a::before {
     -webkit-transition-duration: .15s;
     -webkit-transition-timing-function: ease-in-out;
     transition-duration: .15s;
     transition-timing-function: ease-in-out
+  }
+
+  .trigger i {
+    -webkit-transition: margin-left .5s;
+    transition: margin-left .5s;
   }
 }
