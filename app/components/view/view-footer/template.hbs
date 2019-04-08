@@ -8,21 +8,36 @@
     <div class="col s12 m6 l4">
       <h5>Featured Jobs</h5>
       {{#each this.model as |job|}}
-      {{!-- {{#if job.featured}} --}}
       <ul>
         <li>{{job.name}}</li>
       </ul>
-      {{!-- <ul>
-        <li>Job 1</li>
-        <li>Job 2</li>
-        <li>Job 3</li>
-      </ul> --}}
-      {{!-- {{/if}} --}}
       {{/each}}
     </div>
 
     <div class="col s12 m6 l4">
       <h5>Social Media</h5>
+      <div class="social-content">
+        <div class="col s6">
+          <a href="#">
+            <img src="/assets/images/facebook.png" alt="facebook" class="img">
+          </a>
+        </div>
+        <div class="col s6">
+          <a href="#">
+            <img src="/assets/images/instagram.png" alt="facebook" class="img">
+          </a>
+        </div>
+        <div class="col s6">
+          <a href="#">
+            <img src="/assets/images/twitter.png" alt="facebook" class="img">
+          </a>
+        </div>
+        <div class="col s6">
+          <a href="#">
+            <img src="/assets/images/linkedin.png" alt="facebook" class="img">
+          </a>
+        </div>
+      </div>
     </div>
 
   </div>

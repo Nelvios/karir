@@ -3,6 +3,11 @@
 footer {
   padding: 1rem 0 .5rem;
 
+  .social-content{
+    width: 170px;
+    height: 64px;
+  }
+
   .small {
     flex-direction: column;
 
@@ -25,7 +30,6 @@ footer {
     }
   }
 }
-
 
 // Styling
 

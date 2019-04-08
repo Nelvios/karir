@@ -50,23 +50,23 @@ export default DS.RESTAdapter.extend({
     //     return this.ajax(url, 'GET', { data: query });
     // },
     
-    updateRecord(store, type, snapshot){
-        let id = snapshot.id;
-        let data = {};
-        let serializer = store.serializerFor(type.modelName);
-        const url = `${this.host}/api/data/update/${id}`
+    // updateRecord(store, type, snapshot){
+    //     let id = snapshot.id;
+    //     let data = {};
+    //     let serializer = store.serializerFor(type.modelName);
+    //     const url = `${this.host}/api/data/update/${id}`
 
-        serializer.serializeIntoHash(data, type, snapshot);
+    //     serializer.serializeIntoHash(data, type, snapshot);
 
-        return this.ajax(url, "PUT", { data: data});
-    },
+    //     return this.ajax(url, "PUT", { data: data});
+    // },
 
-    deleteRecord(store, type, snapshot){
-        let id = snapshot.id;
-        const url = `${this.host}/api/data/delete/${id}`
+    // deleteRecord(store, type, snapshot){
+    //     let id = snapshot.id;
+    //     const url = `${this.host}/api/data/delete/${id}`
 
-        return this.ajax(url, "DELETE");
-    },
+    //     return this.ajax(url, "DELETE");
+    // },
     
     query(store, type, query) {
         
