@@ -193,7 +193,7 @@ def postJsonThoughtHandler():
     if os.path.exists('../public/assets/content/thoughts/data.json'):
       with open('../public/assets/content/thoughts/data.json', 'r+') as file:
         temp = {}
-        temp2 = {}
+        # temp2 = {}
         data = json.load(file)
         loadData = data['thoughts']
         try:
@@ -206,12 +206,13 @@ def postJsonThoughtHandler():
           for key2, value2 in value.items():
             if key2 == 'name':
               temp[key2] = value2
-              temp2[key2] = value2
+              # temp2[key2] = value2
             elif key2 == 'thought':
               soup = BeautifulSoup(value2, "html.parser")
               onlyText = soup.get_text()
               onlyText = onlyText.replace('\n',' ')
-              temp2[key2] = onlyText
+              temp[key2] = onlyText
+              # temp2[key2] = onlyText
             elif key2 == 'thumbThought':
               soup = BeautifulSoup(value2, "html.parser")
               html_img_tags = soup.findAll("img")
@@ -234,35 +235,36 @@ def postJsonThoughtHandler():
                 image_result.write(decodeData)
                 image_result.close()
                 temp[key2] = splitSource[0]
-                temp2[key2] = splitSource[0]
+                # temp2[key2] = splitSource[0]
             else:
               temp[key2] = value2
-              temp2[key2] = value2
+              # temp2[key2] = value2
 
         loadData.append(temp)
         tempDict = dict(thoughts=loadData)
-        tempDict2 = dict(thought=temp2)
+        # tempDict2 = dict(thought=temp2)
         file.seek(0)
         file.truncate()
         file.write(json.dumps(tempDict))
-        f = open('../public/assets/content/thoughts/thought/' + str(content['thought']['id']) + '.json', 'w')
-        f.write(json.dumps(tempDict2))
-        f.close()
+        # f = open('../public/assets/content/thoughts/thought/' + str(content['thought']['id']) + '.json', 'w')
+        # f.write(json.dumps(tempDict2))
+        # f.close()
     else:
       with open('../public/assets/content/thoughts/data.json', 'w') as createThoughts:
         temp = {}
-        temp2 = {}
+        # temp2 = {}
         content['thought']['id'] = 1
         for key, value in content.items():
           for key2, value2 in value.items():
             if key2 == 'name':
               temp[key2] = value2
-              temp2[key2] = value2
+              # temp2[key2] = value2
             elif key2 == 'thought':
               soup = BeautifulSoup(value2, "html.parser")
               onlyText = soup.get_text()
               onlyText = onlyText.replace('\n', ' ')
-              temp2[key2] = onlyText
+              temp[key2] = onlyText
+              # temp2[key2] = onlyText
             elif key2 == 'thumbThought':
               soup = BeautifulSoup(value2, "html.parser")
               html_img_tags = soup.findAll("img")
@@ -285,19 +287,19 @@ def postJsonThoughtHandler():
                 image_result.write(decodeData)
                 image_result.close()
                 temp[key2] = splitSource[0]
-                temp2[key2] = splitSource[0]
+                # temp2[key2] = splitSource[0]
             else:
               temp[key2] = value2
-              temp2[key2] = value2
+              # temp2[key2] = value2
 
         temp = [temp]
         tempDict = dict(thoughts=temp)
-        tempDict2 = dict(thought=temp2)
+        # tempDict2 = dict(thought=temp2)
 
         createThoughts.write(json.dumps(tempDict))
-        f = open('../public/assets/content/thoughts/thought/'+str(content['thought']['id'])+'.json', 'w')
-        f.write(json.dumps(tempDict2))
-        f.close()
+        # f = open('../public/assets/content/thoughts/thought/'+str(content['thought']['id'])+'.json', 'w')
+        # f.write(json.dumps(tempDict2))
+        # f.close()
 
     tempID = {}
     tempResponse = {}

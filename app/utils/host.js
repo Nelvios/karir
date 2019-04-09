@@ -7,15 +7,15 @@ export default function host(key) {
 
   const list = {
     'article':{
-      search: `${host}/api/article/list`,
-      find: `${host}/api/article/get/:id`
+      search: `${host}/assets/content/articles/data.json`,
+      find: `${host}/assets/content/articles/article/:id.json`
     },
     'thought':{
-      search: `${host}/api/thought/list`
+      search: `${host}/assets/content/thoughts/data.json`
     },
     'job':{
-      search: `${host}/api/job/list`,
-      find: `${host}/api/job/get/:id`
+      search: `${host}/assets/content/jobs/data.json`,
+      find: `${host}/assets/content/jobs/job/:id.json`
     }
   }
 

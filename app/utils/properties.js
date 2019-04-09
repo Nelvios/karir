@@ -5,7 +5,7 @@ export const MODEL_PREFIX = 'models';
 
 export const ENVIRONMENT = ENV.environment;
 export const HOST = {
-  'development' : 'http://localhost:84',
+  'development' : 'http://localhost:4200',
   'test'        : '',
   'production'  : ''
 };

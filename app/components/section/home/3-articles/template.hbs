@@ -2,8 +2,8 @@
   <h2 class="section-title center">Recent Articles</h2>
 
   <div class="row hide-on-med-and-down">
-    {{#each this.model.articles as |article idx|}}
-      <div class="col l4 {{if (gte idx 3) "hide"}}">
+    {{#each this.sliceArticle as |article|}}
+      <div class="col l4 ">
 
         <div class="card">
           <div class="card-image">
