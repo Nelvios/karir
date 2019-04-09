@@ -38,6 +38,12 @@ export {
   pluralize
 } from 'ember-inflector';
 
+// Promises
+export {
+  Promise,
+  hash
+} from 'rsvp';
+
 // Injection
 export {
   inject as controller
