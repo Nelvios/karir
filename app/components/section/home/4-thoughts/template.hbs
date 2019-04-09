@@ -2,48 +2,17 @@
   <h2 class="section-title">Think Post</h2>
 
   <div class="row clearfix">
-    {{#each this.model.thoughts as |thought|}}
-    <div class="col s12 m6 xl4">
-      <div class="image">
-        <img src={{thought.thumbThought}} alt="Photo" class="responsive-img">
+    {{#each model.thoughts as |thought idx|}}
+
+      <div class="col s12 m6 xl4 {{if (gte idx 3) "hide-on-small-only"}}">
+        <div class="image">
+          <img src={{thought.thumbThought}} alt="Photo" class="responsive-img">
+        </div>
+
+        <h5 class="display tooltip">{{thought.name}}</h5>
+        <p>{{thought.thought}}</p>
       </div>
 
-      <h5 class="display tooltip">{{thought.name}}</h5>
-      <p>{{thought.thought}}</p>
-    </div>
     {{/each}}
-    {{!-- <div class="col s12 m6 xl4">
-      <div class="image">
-        <img src="assets/images/vito.jpg" alt="Photo" class="responsive-img">
-      </div>
-
-      <h5 class="display tooltip">Vito Vincentdo</h5>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-    </div>
-
-    <div class="col s12 m6 xl4">
-      <div class="image">
-        <img src="assets/images/elvin.jpg" alt="Photo" class="responsive-img">
-      </div>
-
-      <h5 class="display tooltip">Sheila Deasi Rahmawati</h5>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-    </div>
-
-    <div class="col s12 m6 xl4">
-      <div class="image">
-        <img src="assets/images/elvin.jpg" alt="Photo" class="responsive-img">
-      </div>
-
-      <h5 class="display tooltip">Gusti Nyoman Padma Paramitha</h5>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-    </div> --}}
-
   </div>
 </div>

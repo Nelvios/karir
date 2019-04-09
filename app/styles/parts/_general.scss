@@ -34,6 +34,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-heading;
 }
 
+:focus { outline: none; }
+
 .text-heading { font-family: $font-heading !important; }
 .text-body    { font-family: $font-stack   !important; }
 
@@ -64,9 +66,8 @@ h1, h2, h3, h4, h5, h6 {
 .no-wrap    { white-space: nowrap !important; }
 .clickable  { cursor: pointer !important; }
 
-.carousel .indicators > .indicator-item {
-  cursor: pointer;
-}
+.material-icons { vertical-align: bottom; }
+.carousel .indicators > .indicator-item { cursor: pointer; }
 
 
 // Animation

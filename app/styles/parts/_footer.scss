@@ -3,9 +3,65 @@
 footer {
   padding: 1rem 0 .5rem;
 
-  .social-content{
-    width: 170px;
-    height: 64px;
+  .featured-jobs {
+    li {
+      @media #{$small-and-down} { text-align: center; }
+    }
+
+    .more {
+      margin-top: 1rem;
+
+      > a {
+        i { margin-left: .25rem; }
+
+        &:hover i, &:focus i, &:active i { margin-left: .75rem; }
+      }
+    }
+  }
+
+  .social-content {
+    width: 135px;
+    margin: 1rem auto;
+    overflow: hidden;
+
+    @media #{$medium-and-up} { margin: 1rem 0; }
+
+    li {
+      width: 4rem;
+      margin-bottom: .5rem;
+      float: left;
+
+      &:nth-child(odd) {
+        clear: left;
+        margin-right: .5rem;
+      }
+
+      > a {
+        @extend .valign-wrapper;
+        position: relative;
+        width: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+
+        &:hover, &:focus, &:active {
+          // &::before { transform: rotateY(360deg); }
+          > img { transform: rotateY(360deg); }
+        }
+
+        &::before {
+          content: '';
+          display: block;
+          padding: 100% 50% 0;
+        }
+
+        > img {
+          position: absolute;
+          width: 70%;
+          margin-top: -1.5px;
+          margin-left: 15%;
+        }
+      }
+    }
   }
 
   .small {
@@ -34,8 +90,37 @@ footer {
 // Styling
 
 footer {
-  // background-color: color('grey', 'lighten-5');
-  // color: $off-black;
+  h5 {
+    @media #{$small-and-down} { text-align: center; }
+  }
+
+  .featured-jobs {
+    a {
+      color: white;
+
+      &:hover, &:focus, &:active { color: $secondary-color; }
+    }
+
+    .more > a {
+      font-weight: bold;
+      color: $primary-color;
+
+      &:hover, &:focus, &:active { color: $secondary-color; }
+    }
+  }
+
+  .social-content {
+    a {
+      &:hover::before { opacity: 1; }
+      &::before { opacity: 0; }
+
+      &.facebook::before  { background-color: #4267b2; }
+      &.instagram::before { background-color: #e1306c; }
+      &.twitter::before   { background-color: #38a1f3; }
+      &.linkedin::before  { background-color: #0077b5; }
+      &.youtube::before   { background-color: #ed3833; }
+    }
+  }
 
   .small {
     font-size: .8em;
@@ -52,3 +137,31 @@ footer {
 
 
 // Animation
+
+footer {
+  .featured-jobs a {
+    -webkit-transition: color .15s;
+    transition: color .15s;
+
+    i {
+      -webkit-transition: margin-left .15s;
+      transition: margin-left .15s;
+    }
+  }
+
+  .social-content {
+    a {
+      &:hover > img {
+        -webkit-transition: transform .3s;
+        transition: transform .3s;
+      }
+
+      &::before {
+        -webkit-transition-duration: .3s;
+        transition-duration: .3s;
+      }
+
+
+    }
+  }
+}

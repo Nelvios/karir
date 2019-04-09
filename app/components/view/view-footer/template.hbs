@@ -7,37 +7,39 @@
 
     <div class="col s12 m6 l4">
       <h5>Featured Jobs</h5>
-      {{#each this.model as |job|}}
-      <ul>
-        <li>{{job.name}}</li>
+      <ul class="featured-jobs">
+        {{#each jobs as |job|}}
+          <li>{{#link-to "jobs.detail" job.id}}{{job.name}}{{/link-to}}</li>
+        {{/each}}
+        <li class="separator"></li>
+        <li class="more">{{#link-to "jobs"}}More Jobs{{icon "arrow_forward"}}{{/link-to}}</li>
       </ul>
-      {{/each}}
     </div>
 
     <div class="col s12 m6 l4">
       <h5>Social Media</h5>
-      <div class="social-content">
-        <div class="col s6">
-          <a href="#">
-            <img src="/assets/images/facebook.png" alt="facebook" class="img">
+      <ul class="social-content">
+        <li>
+          <a href={{links.facebook}} class="facebook">
+            <img src="/assets/images/social/facebook-white.png" alt="facebook">
           </a>
-        </div>
-        <div class="col s6">
-          <a href="#">
-            <img src="/assets/images/instagram.png" alt="facebook" class="img">
+        </li>
+        <li>
+          <a href={{links.instagram}} class="instagram">
+            <img src="/assets/images/social/instagram-white.png" alt="instagram">
           </a>
-        </div>
-        <div class="col s6">
-          <a href="#">
-            <img src="/assets/images/twitter.png" alt="facebook" class="img">
+        </li>
+        <li>
+          <a href={{links.twitter}} class="twitter">
+            <img src="/assets/images/social/twitter-white.png" alt="twitter">
           </a>
-        </div>
-        <div class="col s6">
-          <a href="#">
-            <img src="/assets/images/linkedin.png" alt="facebook" class="img">
+        </li>
+        <li>
+          <a href={{links.linkedin}} class="linkedin">
+            <img src="/assets/images/social/linkedin-white.png" alt="linkedin">
           </a>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
 
   </div>

@@ -56,9 +56,10 @@
   }
 
   #nav-mobile {
+    width: 200px;
     padding-top: 64px;
 
-    @media #{$medium-and-up} { width: 500px; }
+    @media #{$medium-and-up} { width: 350px; }
   }
 
   .trigger {
@@ -142,6 +143,8 @@
     border: none;
     color: $primary-color;
     cursor: pointer;
+
+    i { vertical-align: middle; }
   }
 }
 
