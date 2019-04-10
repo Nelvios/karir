@@ -1,9 +1,9 @@
 <div class="container">
   <h2 class="section-title center">Recent Articles</h2>
 
-  <div class="row hide-on-med-and-down">
-    {{#each this.sliceArticle as |article|}}
-      <div class="col l4 ">
+  <div class="row hide-on-small-only">
+    {{#each model as |article|}}
+      <div class="col m4">
 
         <div class="card">
           <div class="card-image">
@@ -25,8 +25,8 @@
     {{/each}}
   </div>
 
-  <div class="carousel carousel-slider hide-on-large-only">
-    {{#each this.model.articles as |article|}}
+  {{!-- <div class="carousel carousel-slider hide-on-large-only">
+    {{#each model as |article|}}
       <div class="carousel-item">
 
         <div class="card">
@@ -46,5 +46,5 @@
 
       </div>
     {{/each}}
-  </div>
+  </div> --}}
 </div>

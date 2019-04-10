@@ -35,10 +35,12 @@
       @extend .valign-wrapper;
       position: relative;
       width: 100%;
-      max-width: 200px;
+      max-width: 125px;
       margin: 0 auto;
       border-radius: 50%;
       overflow: hidden;
+
+      @media #{$medium-and-up} { max-width: 200px; }
 
       &::before {
         content: '';
@@ -77,8 +79,9 @@
 // Styling
 
 #jobs-top {
-  background-image: linear-gradient(10deg, rgba(color('teal', 'darken-4'), .5), color('grey', 'darken-4'));
-  // background-attachment: fixed;
+  background-image: url(./images/pattern.png),
+                    linear-gradient(10deg, color('blue', 'darken-4'), color('grey', 'darken-4'));
+  background-attachment: fixed;
 
   .title {
     font-weight: bold;

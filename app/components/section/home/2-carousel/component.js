@@ -17,10 +17,10 @@ export default Component.extend({
       onCycleTo: (el) => this.send('changeColor', jQ(el).attr('data-color'))
     });
 
-    carousel.mouseenter(() => clearTimeout(get(this, 'autoScroll')));
-    carousel.mouseleave(() => this.send('autoScroll', scrollTime));
+    // carousel.mouseenter(() => clearTimeout(get(this, 'autoScroll')));
+    // carousel.mouseleave(() => this.send('autoScroll', scrollTime));
 
-    carousel.mouseleave();
+    // carousel.mouseleave();
   },
 
   willDestroyElement() {

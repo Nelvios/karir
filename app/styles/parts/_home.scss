@@ -82,6 +82,7 @@ section .section-title::before {
   .carousel-item {
     @extend .valign-wrapper;
     height: 450px;
+    overflow: hidden;
 
     .container {
       position: relative;
@@ -100,22 +101,23 @@ section .section-title::before {
 
   .image {
     position: absolute;
-    width: 250px;
-    height: 250px;
+    width: 500px;
+    height: 300px;
 
-    top: -6rem;
+    top: -5rem;
     right: 50%;
-    margin-right: -125px;
+    margin-right: -270px;
 
     @media #{$medium-and-up} {
-      top: -4rem;
       right: 2rem;
-      margin-right: 0;
+      margin-right: -100px;
     }
 
     @media #{$large-and-up} {
-      width: 300px;
-      height: 300px;
+      top: -10rem;
+      width: 600px;
+      height: 450px;
+      margin-right: -180px;
     }
   }
 
@@ -321,12 +323,9 @@ section .section-title {
 
 #home-top {
   background-image: url(./images/pattern.png),
-                    linear-gradient(10deg, color('teal', 'darken-4'), color('grey', 'darken-4'));
+                    linear-gradient(170deg, $secondary-color, color('grey', 'darken-4'));
   background-color: color('grey', 'darken-4');
-  // background-attachment: fixed;
-  // background-color: color('grey', 'darken-4');
-  // background-color: color('indigo', 'darken-4');
-  // background-color: $primary-color;
+  background-attachment: fixed;
 
   text-align: center;
   color: white;
@@ -371,7 +370,7 @@ section .section-title {
 
   @media #{$small-and-down} { text-align: center; }
   @media #{$medium-and-up} {
-    background-image: linear-gradient(10deg, rgba(black, 0) 50%, rgba(black, .3) 100%);
+    background-image: linear-gradient(170deg, rgba(black, 0) 40%, rgba(black, .3) 100%);
   }
 
   .image {
@@ -446,7 +445,7 @@ section .section-title {
       }
 
       .title {
-        font-family: $font-heading;
+        font-weight: bold;
         font-size: 1.4em;
       }
     }

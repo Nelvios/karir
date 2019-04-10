@@ -13,7 +13,6 @@ footer {
 
       > a {
         i { margin-left: .25rem; }
-
         &:hover i, &:focus i, &:active i { margin-left: .75rem; }
       }
     }
@@ -91,6 +90,10 @@ footer {
 
 footer {
   h5 {
+    font-family: $font-stack;
+    font-weight: bold;
+    // font-size: 1.8em;
+
     @media #{$small-and-down} { text-align: center; }
   }
 
@@ -160,8 +163,6 @@ footer {
         -webkit-transition-duration: .3s;
         transition-duration: .3s;
       }
-
-
     }
   }
 }

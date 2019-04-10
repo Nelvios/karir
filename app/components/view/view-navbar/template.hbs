@@ -2,24 +2,22 @@
 
   <a href="https://karir.bca.co.id/it" class="logo">
     <span class="image"></span>
-    {{!-- <span class="text">karir</span> --}}
   </a>
 
   {{!-- {{#link-to "index" class="logo"}}
     <span class="image"></span>
-    <span class="text">karir</span>
   {{/link-to}} --}}
 
   <ul id="nav-desktop" class="right hide-on-med-and-down">
     <li>{{#link-to "index"}}Home{{/link-to}}</li>
-    <li><a href="#">About</a></li>
     <li>{{#link-to "jobs"}}Jobs{{/link-to}}</li>
+    <li><a href="#">About</a></li>
   </ul>
 
   <ul id="nav-mobile" class="sidenav">
     <li>{{#link-to "index" click=(action "sidenav")}}Home{{/link-to}}</li>
-    <li><a href="#">About</a></li>
     <li>{{#link-to "jobs" click=(action "sidenav")}}Jobs{{/link-to}}</li>
+    <li><a href="#">About</a></li>
   </ul>
 
   <a href="#" class="trigger right hide-on-large-only {{if isSidenav "open"}}" {{action "sidenav"}}>

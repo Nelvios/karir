@@ -15,6 +15,7 @@
   }
 
   .logo {
+    @extend .valign-wrapper;
     position: absolute;
     width: 200px;
 
@@ -22,15 +23,21 @@
       padding-left: .5rem;
     }
 
+    &::before {
+      content: '.';
+      width: 0;
+      overflow: hidden;
+    }
+
     .image {
       width: 120px;
       height: 40px;
     }
 
-    .text {
-      margin-left: .5rem;
-      padding-top: .15rem;
-    }
+    // .text {
+    //   margin-left: .5rem;
+    //   padding-top: .15rem;
+    // }
   }
 
   #nav-desktop a {
@@ -103,19 +110,18 @@
   }
 
   .logo {
-    @extend .valign-wrapper;
     color: $secondary-color;
 
     .image {
       background-image: url(./images/logo-blue.png);
     }
 
-    .text {
-      font-family: $font-heading;
-      font-weight: bold;
-      font-style: italic;
-      font-size: 2em;
-    }
+    // .text {
+    //   font-family: $font-heading;
+    //   font-weight: bold;
+    //   font-style: italic;
+    //   font-size: 2em;
+    // }
   }
 
   #nav-desktop a {

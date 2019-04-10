@@ -1,34 +1,32 @@
 import Component from '@ember/component';
-import { jQ, get, set } from 'karir/utils/short';
+import { jQ, get, set, service } from 'karir/utils/short';
 
 export default Component.extend({
 
   tagName: 'section',
-  tooltips: null,
+  store: service(),
+
+  model: null,
+  isLoading: true,
 
   didInsertElement() {
     this._super(...arguments);
-    const tooltip = this.$('.tooltip');
-    const tooltips = get(this, 'tooltips') || [];
+    const store = this.get('store');
 
-    tooltip.each((idx, el) => {
-      tooltips.pushObject(el);
-      jQ(el).attr('data-tooltip', jQ(el).text());
-      jQ(el).tooltip();
+    store.findAll('thought').then(result => {
+      set(this, 'isLoading', false);
+      set(this, 'model', result);
     });
+  },
 
-    set(this, 'tooltips', tooltips);
+  didRender() {
+    this._super(...arguments);
+    this.$('.tooltip').tooltip();
   },
 
   willDestroyElement() {
     this._super(...arguments);
-    const tooltips = get(this, 'tooltips');
-    let tooltip;
-
-    do {
-      tooltip = tooltips.shiftObject();
-      jQ(tooltip).tooltip('destroy');
-    } while (tooltip);
+    this.$('.tooltip').tooltip('destroy');
   }
 
 });
