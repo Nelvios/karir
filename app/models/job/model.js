@@ -4,6 +4,7 @@ const { attr } = DS;
 export default DS.Model.extend({
   name: attr('string'),
   description: attr('string'),
+  qualification: attr('string'),
   thumbJob: attr('string'),
   featured: attr('boolean')
 });

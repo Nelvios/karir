@@ -337,6 +337,8 @@ def postJsonJobHandler():
               temp2[key2] = value2
             elif key2 == 'description':
               temp2[key2] = value2
+            elif key2 == 'qualification':
+              temp2[key2] = value2
             elif key2 == 'thumbJob':
               soup = BeautifulSoup(value2, "html.parser")
               html_img_tags = soup.findAll("img")
@@ -384,6 +386,8 @@ def postJsonJobHandler():
               temp[key2] = value2
               temp2[key2] = value2
             elif key2 == 'description':
+              temp2[key2] = value2
+            elif key2 == 'qualification':
               temp2[key2] = value2
             elif key2 == 'thumbJob':
               soup = BeautifulSoup(value2, "html.parser")

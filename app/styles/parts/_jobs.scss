@@ -140,6 +140,12 @@
   background-color: color('grey', 'lighten-5');
   color: $off-black;
 
+  .bullet{
+    li{
+      list-style-type: circle;
+    }
+  }
+
   .display{
     font-family: $font-stack;
     font-weight: bold;

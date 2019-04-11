@@ -184,6 +184,37 @@ section .section-title::before {
     }
   }
 
+  .card-panel{
+    padding: 0;
+    overflow: hidden;
+    .row{
+      margin-bottom: 0;
+    }
+    .reformat{
+      padding: 0;
+    }
+    .content{
+      position: relative;
+      height: 150px;
+
+      &::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30px;
+      }
+    }
+    img{
+      @extend .valign-wrapper;
+      height: 150px;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    .date, .title { display: block; }
+  }
+
   .carousel {
     height: 570px;
     margin-top: -4rem;
@@ -459,6 +490,25 @@ section .section-title {
 
         i { font-size: 1.6em; }
       }
+    }
+  }
+
+  .card-panel{
+    color: $off-black;
+
+    .content{
+      &::before{ background-color: white}
+    }
+
+    .date {
+      font-style: italic;
+      font-size: .7em;
+      color: color('grey', 'grey');
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 1em;
     }
   }
 }
