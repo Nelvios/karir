@@ -12,6 +12,7 @@ Router.map(function() {
       this.route('detail', { path: '/:id' });
     });
     this.route('view-article', { path: '/:id' });
+    this.route('about');
   });
 });
 
