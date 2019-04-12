@@ -73,6 +73,21 @@
 
 #jobs-detail {
   padding-bottom: 2rem;
+  .qualify{
+    margin-top: 1rem;
+    ul{
+      margin-top: 0;
+      margin-left: 1.5rem;
+    }
+  }
+
+  .btn.apply {
+    height: inherit;
+    margin: 1rem 0 0;
+    padding: .3rem 1.5rem;
+
+    &:hover { transform: translate(0, -.2rem); }
+  }
 }
 
 
@@ -155,6 +170,23 @@
 
     @media #{$large-and-up} { font-size: 2.5em; }
     @media #{$extra-large-and-up} { font-size: 3em; }
+  }
+
+  .qualification{
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  .btn.apply {
+    background-image: linear-gradient(20deg, rgba($secondary-color, .9), rgba(color('cyan', 'base'), .9));
+    background-color: $secondary-color;
+    // font-family: $font-heading;
+    font-weight: bold;
+    font-size: .9em;
+
+    &:hover {
+      @extend .z-depth-3;
+      background-color: white;
+    }
   }
 }
 

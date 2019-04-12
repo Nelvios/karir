@@ -1,0 +1,102 @@
+//layout
+
+#about-top{
+  @extend .valign-wrapper;
+  height: 400px;
+  padding: 100px 0 4rem;
+  box-sizing: content-box;
+
+  .container{ position: relative; }
+
+  .image{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+
+    @media #{$medium-and-up} {
+      width: 50%;
+
+      left: .5rem;
+      margin-left: 0;
+    }
+  }
+
+  .display{
+    width: 50%;
+    margin-left: 50%;
+    margin-top: 11rem;
+    // margin-right: 0;
+    // right: 1rem;;
+    display: block;
+    position: relative;
+  }
+}
+
+#about-history{
+  box-sizing: content-box;
+
+  .section-title {
+    left: 3rem;
+    position: relative;
+    margin: 3rem 0;
+    padding-bottom: 1.4rem;
+
+    @media #{$medium-and-up} {
+      float: left;
+      // margin: -1.4rem 3rem 2rem 0;
+    }
+    @media #{$large-and-up} {
+      // margin: -2rem 4rem 3rem 0;
+    }
+  }
+
+  .content{
+    width: 50%;
+  }
+}
+
+#about-statistic{
+  // box-sizing: content-box;
+}
+
+#about-location{
+  // box-sizing: content-box;
+}
+
+#about-visimisi{
+  // box-sizing: content-box;
+}
+
+
+//Styling
+section .section-title {
+  font-family: $font-stack;
+  font-weight: bold;
+  font-size: 2.4em;
+
+  @media #{$medium-and-up} { font-size: 2.8em; }
+  @media #{$extra-large-and-up} { font-size: 3.2em; }
+
+  &::before {
+    border-bottom: .5rem solid white;
+  }
+}
+
+#about-top{
+  .image{
+    background-image: url(./images/WHO-WE-ARE.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+  }
+}
+
+#about-history{
+  .section-title {
+    color: $secondary-color;
+    font-size: 4em;
+
+    &::before {
+      border-color: $primary-color;
+    }
+  }
+}
