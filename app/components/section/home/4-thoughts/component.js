@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { jQ, get, set, service } from 'karir/utils/short';
+import { jQ, set, service } from 'karir/utils/short';
 
 export default Component.extend({
 
@@ -22,6 +22,7 @@ export default Component.extend({
   didRender() {
     this._super(...arguments);
     this.$('.tooltip').tooltip();
+    jQ(window).resize();
   },
 
   willDestroyElement() {

@@ -11,8 +11,8 @@ export default Serializer.extend({
       tmp = data[i]; data[i] = data[selected]; data[selected] = tmp;
     }
 
-    payload[keys[0]] = data;
-    return this._super(store, model, payload, ...args)
+    payload[keys[0]] = data.filter((item, idx) => idx < 6);
+    return this._super(store, model, payload, ...args);
   }
 
 });

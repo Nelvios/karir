@@ -95,9 +95,7 @@
     .logo {
       color: white;
 
-      .image {
-        background-image: url(./images/logo-white.png);
-      }
+      .image { background-image: url(./images/logo-white.png); }
     }
 
     #nav-desktop a {
@@ -114,6 +112,7 @@
 
     .image {
       background-image: url(./images/logo-blue.png);
+      background-size: contain;
     }
 
     // .text {

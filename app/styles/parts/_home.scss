@@ -101,15 +101,15 @@ section .section-title::before {
 
   .image {
     position: absolute;
-    width: 500px;
+    width: 400px;
     height: 300px;
 
     top: -5rem;
     right: 50%;
-    margin-right: -270px;
+    margin-right: -200px;
 
     @media #{$medium-and-up} {
-      right: 2rem;
+      right: 15%;
       margin-right: -100px;
     }
 
@@ -133,11 +133,12 @@ section .section-title::before {
 }
 
 #home-articles {
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 25% 100%, 0 calc(100% - 4rem));
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 25% 100%, 0 calc(100% - 4rem));
 
   @media #{$medium-and-up} {
+    padding-bottom: 5rem;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6rem), 20% 100%, 0 calc(100% - 6rem));
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6rem), 20% 100%, 0 calc(100% - 6rem));
   }
@@ -154,22 +155,54 @@ section .section-title::before {
   }
 
   .card {
-    max-width: 250px;
-    margin: .5rem auto 1rem;
-    // border-radius: 6px;
+    position: relative;
     overflow: hidden;
+
+    @media #{$small-and-down} { display: flex; }
 
     .card-image {
       @extend .valign-wrapper;
-      height: 250px;
+      flex-direction: column;
+      position: relative;
+      height: 0;
+      padding-top: 75%;
       overflow: hidden;
+
+      @media #{$small-and-down} {
+        width: 40%;
+        padding-top: 40%;
+      }
+
+      .image {
+        position: absolute;
+        height: 100%;
+        top: 0;
+
+        img {
+          width: auto;
+          height: 100%;
+        }
+      }
     }
 
     .card-content {
       position: relative;
       height: 11rem;
+      overflow: hidden;
 
-      @media #{$extra-large-and-up} { height: 9rem; }
+      @media #{$small-and-down} {
+        width: 60%;
+        height: 0;
+        padding: 40% 0 0;
+
+        p {
+          position: absolute;
+          top: 0;
+          margin: .75rem;
+        }
+      }
+
+      @media #{$extra-large-and-up} { height: 8.75rem; }
 
       &::before {
         content: '';
@@ -178,53 +211,45 @@ section .section-title::before {
         left: 0;
         width: 100%;
         height: 24px;
+        z-index: 1000;
+
+        @media #{$small-and-down} { height: .75rem; }
       }
 
       .date, .title { display: block; }
     }
   }
 
-  .card-panel{
-    padding: 0;
-    overflow: hidden;
-    .row{
-      margin-bottom: 0;
-    }
-    .reformat{
-      padding: 0;
-    }
-    .content{
-      position: relative;
-      height: 150px;
+  // .card-panel{
+  //   padding: 0;
+  //   overflow: hidden;
+  //   .row{
+  //     margin-bottom: 0;
+  //   }
+  //   .reformat{
+  //     padding: 0;
+  //   }
+  //   .content{
+  //     position: relative;
+  //     height: 150px;
 
-      &::before{
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 30px;
-      }
-    }
-    img{
-      @extend .valign-wrapper;
-      height: 150px;
-      max-width: 100%;
-      overflow: hidden;
-    }
-    .date, .title { display: block; }
-  }
-
-  .carousel {
-    height: 570px;
-    margin-top: -4rem;
-
-    .carousel-item {
-      max-width: 300px;
-      // padding-left: 6px;
-      height: auto;
-    }
-  }
+  //     &::before{
+  //       content: '';
+  //       position: absolute;
+  //       bottom: 0;
+  //       left: 0;
+  //       width: 100%;
+  //       height: 30px;
+  //     }
+  //   }
+  //   img{
+  //     @extend .valign-wrapper;
+  //     height: 150px;
+  //     max-width: 100%;
+  //     overflow: hidden;
+  //   }
+  //   .date, .title { display: block; }
+  // }
 }
 
 #home-thoughts {
@@ -281,12 +306,10 @@ section .section-title::before {
   }
 
   p {
-    // height: 6rem;
     margin-bottom: 2rem;
     overflow: hidden;
 
     @media #{$medium-and-up} { height: 6rem; }
-    // @media #{$extra-large-and-up} { height:6rem; }
   }
 }
 
@@ -354,7 +377,7 @@ section .section-title {
 
 #home-top {
   background-image: url(./images/pattern.png),
-                    linear-gradient(170deg, $secondary-color, color('grey', 'darken-4'));
+                    linear-gradient(10deg, darken($secondary-color, 10%), color('grey', 'darken-4'));
   background-color: color('grey', 'darken-4');
   background-attachment: fixed;
 
@@ -460,9 +483,9 @@ section .section-title {
   }
 
   .card {
-    .card-title {
-      text-shadow: 1px 2px 2px rgba(0, 0, 0, .6);
-    }
+    // .card-title {
+    //   text-shadow: 1px 2px 2px rgba(0, 0, 0, .6);
+    // }
 
     .card-content{
       color: $off-black;
@@ -478,39 +501,40 @@ section .section-title {
       .title {
         font-weight: bold;
         font-size: 1.4em;
+
+        @media #{$small-and-down} { font-size: 1em; }
       }
     }
 
     .card-action {
       font-weight: bold;
-      text-transform: none;
+
 
       a {
-        @extend .valign-wrapper;
-
-        i { font-size: 1.6em; }
+        text-transform: capitalize;
+        font-size: 1em;
       }
     }
   }
 
-  .card-panel{
-    color: $off-black;
+  // .card-panel{
+  //   color: $off-black;
 
-    .content{
-      &::before{ background-color: white}
-    }
+  //   .content{
+  //     &::before{ background-color: white}
+  //   }
 
-    .date {
-      font-style: italic;
-      font-size: .7em;
-      color: color('grey', 'grey');
-    }
+  //   .date {
+  //     font-style: italic;
+  //     font-size: .7em;
+  //     color: color('grey', 'grey');
+  //   }
 
-    .title {
-      font-weight: bold;
-      font-size: 1em;
-    }
-  }
+  //   .title {
+  //     font-weight: bold;
+  //     font-size: 1em;
+  //   }
+  // }
 }
 
 #home-thoughts {
@@ -551,14 +575,12 @@ section .section-title {
   @media #{$large-and-up} { font-size: 1.4em; }
 
   .number {
-    // font-family: $font-heading;
     font-weight: bold;
     font-size: 2.8em;
     text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
   }
 
   .text {
-    // font-family: $font-heading;
     font-weight: bold;
     font-size: 1.2em;
 
@@ -571,7 +593,6 @@ section .section-title {
 
   .btn.apply {
     background-color: $primary-color;
-    // font-family: $font-heading;
     font-weight: bold;
     color: $secondary-color;
 

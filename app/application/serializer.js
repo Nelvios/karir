@@ -10,7 +10,7 @@ export default DS.RESTSerializer.extend({
     payload[`${MODEL_PREFIX}/${keys[0]}`] = payload[keys[0]];
     delete payload[keys[0]];
 
-    if (ENVIRONMENT === 'development') log('Response: ', payload);
+    if (ENVIRONMENT === 'development') log('Response:', payload);
     return this._super(store, model, payload, ...args);
   },
 
@@ -20,7 +20,7 @@ export default DS.RESTSerializer.extend({
     payload[`${MODEL_PREFIX}/${keys[0]}`] = payload[keys[0]];
     delete payload[keys[0]];
 
-    if (ENVIRONMENT === 'development') log('Response: ', payload);
+    if (ENVIRONMENT === 'development') log('Response:', payload);
     return this._super(store, model, payload, ...args);
   }
 

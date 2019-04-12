@@ -1,14 +1,14 @@
 <div class="container">
   <h2 class="section-title center">Recent Articles</h2>
 
-  <div class="row hide-on-small-only">
+  <div class="row">
     {{#each model as |article|}}
-      <div class="col m4">
+
+      <div class="col s12 m4 hide-on-small-only">
 
         <div class="card">
           <div class="card-image">
-            <img alt="thumb" src={{article.thumbImage}}>
-            {{!-- <span class="card-title text-heading">Article Title {{sum idx}}</span> --}}
+            <div class="image"><img alt="thumb" src={{article.thumbImage}}></div>
           </div>
           <div class="card-content">
             <p>
@@ -20,16 +20,33 @@
             {{#link-to "view-article" article.id}}Read More{{icon "arrow_forward" class="ml-2"}}{{/link-to}}
           </div>
         </div>
+      </div>
 
+      <div class="col s12 m4 hide-on-med-and-up">
+        {{#link-to "view-article" article.id}}
+          <div class="card">
+            <div class="card-image">
+              <div class="image"><img alt="thumb" src={{article.thumbImage}}></div>
+              {{!-- <span class="card-title text-heading">Article Title {{sum idx}}</span> --}}
+            </div>
+            <div class="card-content">
+              <p>
+                <span class="date mb-2">{{date article.date}}</span>
+                <span class="title">{{article.title}}</span>
+              </p>
+            </div>
+          </div>
+        {{/link-to}}
       </div>
     {{/each}}
   </div>
 
-  <div class="row hide-on-med-and-up">
+  {{!-- <div class="row hide-on-med-and-up">
 
     {{#each model as |article|}}
+
       {{#link-to "view-article" article.id}}
-        {{!-- <div class="col s12"> --}}
+        <div class="col s12">
           <div class="card-panel">
             <div class="row">
               <div class="col s6 reformat">
@@ -43,8 +60,10 @@
               </div>
             </div>
           </div>
-        {{!-- </div> --}}
+        </div>
       {{/link-to}}
+
     {{/each}}
-  </div>
+
+  </div> --}}
 </div>

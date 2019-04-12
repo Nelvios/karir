@@ -2,6 +2,7 @@ import Route from '@ember/routing/route';
 import Controller from '@ember/controller';
 import LinkComponent from '@ember/routing/link-component';
 import { ROUTE_PREFIX } from 'karir/utils/properties';
+import { jQ } from 'karir/utils/short';
 
 export function initialize(/* application */) {
   // application.inject('route', 'foo', 'service:foo');
@@ -25,6 +26,14 @@ export function initialize(/* application */) {
         }
 
         this._super(route, options, ...args);
+      }
+    },
+
+    actions: {
+
+      didTransition() {
+        this._super(...arguments);
+        jQ(window).scrollTop(0);
       }
     }
 

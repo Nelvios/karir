@@ -33,7 +33,6 @@ export default Component.extend({
     });
 
     jQ(window).resize();
-
   },
 
   willDestroyElement() {
