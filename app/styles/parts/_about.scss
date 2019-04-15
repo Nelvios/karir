@@ -1,62 +1,152 @@
 //layout
-
 #about-top{
-  @extend .valign-wrapper;
+  // @extend .valign-wrapper;
   height: 400px;
   padding: 100px 0 4rem;
   box-sizing: content-box;
 
-  .container{ position: relative; }
+  >.container{ position: relative; }
 
   .image{
     position: absolute;
     width: 250px;
     height: 250px;
 
-    @media #{$medium-and-up} {
-      width: 50%;
+    @media #{$small-and-down}{
+      left: 50%;
+      margin-left: -125px;
+    }
 
-      left: .5rem;
-      margin-left: 0;
+    @media #{$medium-and-up} {
+      width: 48%;
+      margin-top: 4rem;
     }
   }
 
   .display{
-    width: 50%;
-    margin-left: 50%;
-    margin-top: 11rem;
-    // margin-right: 0;
-    // right: 1rem;;
-    display: block;
-    position: relative;
+
+    @media #{$medium-and-up}{
+      width: 50%;
+      margin-left: 50%;
+      margin-top: 12rem;
+      display: block;
+      position: absolute;
+    }
   }
 }
 
 #about-history{
+  z-index: -2;
+  @extend .valign-wrapper;
   box-sizing: content-box;
+  padding-bottom: 3rem;
+
+  .container{ position: relative; }
 
   .section-title {
-    left: 3rem;
     position: relative;
-    margin: 3rem 0;
     padding-bottom: 1.4rem;
+    display: inline-block;
+    margin: 3rem 0 2rem 0;
 
     @media #{$medium-and-up} {
-      float: left;
-      // margin: -1.4rem 3rem 2rem 0;
+      // display: inline-block;
+      margin: 3rem 0 2rem 1rem;
     }
     @media #{$large-and-up} {
-      // margin: -2rem 4rem 3rem 0;
+      margin: 3rem 0 2rem 3rem;
+    }
+  }
+
+  .image{
+    // position: absolute;
+    width: 200px;
+    height: 100px;
+    float: right;
+
+    @media #{$medium-and-up}{
+      width: 288px;
+      height: 190px;
+      margin-top: 2rem;
+      box-shadow: 10px 10px;
+    }
+
+
+    @media #{$large-and-up} {
+      width: 342px;
+      height: 226px;
+      // right: 0;
+      // float: right;
+      box-shadow: 15px 15px;
+
+      // &::before{
+      //   content: '';
+      //   position: absolute;
+      //   width: 100%;
+      //   height: 100%;
+      //   z-index: -1;
+      //   margin-left: .6rem;
+      //   margin-top: .6rem;
+      // }
     }
   }
 
   .content{
     width: 50%;
+    display: block;
   }
 }
 
 #about-statistic{
-  // box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 3rem 0;
+
+  >.container{ position: relative; }
+
+  .image-1{
+    width: 213px;
+    height: 147px;
+    float: left;
+    clear: both;
+    @media #{$medium-and-up}{
+      width: 355px;
+      height: 245px;
+    }
+  }
+  .image-2{
+    width: 213px;
+    height: 142px;
+    float: left;
+    clear: both;
+    @media #{$medium-and-up}{
+      width: 354px;
+      height: 236px;
+    }
+  }
+  .top-title{
+    width: 50%;
+    margin-left: auto;
+    text-align: right;
+
+  }
+  .count-employee{
+    width: 50%;
+    margin-left: auto;
+    text-align: center;
+    margin-top: -4rem;
+  }
+  .bottom-title{
+    width: 50%;
+    margin-left: auto;
+    text-align: left;
+    margin-top: -3.5rem;
+  }
+
+  .content{
+    width: 50%;
+    margin-left: auto;
+    margin-top: 1rem;
+  }
 }
 
 #about-location{
@@ -69,19 +159,6 @@
 
 
 //Styling
-section .section-title {
-  font-family: $font-stack;
-  font-weight: bold;
-  font-size: 2.4em;
-
-  @media #{$medium-and-up} { font-size: 2.8em; }
-  @media #{$extra-large-and-up} { font-size: 3.2em; }
-
-  &::before {
-    border-bottom: .5rem solid white;
-  }
-}
-
 #about-top{
   .image{
     background-image: url(./images/WHO-WE-ARE.png);
@@ -91,12 +168,50 @@ section .section-title {
 }
 
 #about-history{
+  background-color: color('grey', 'lighten-5');
+  color: $off-black;
   .section-title {
     color: $secondary-color;
-    font-size: 4em;
+    font-size: 1.5em;
+
+    @media #{$medium-and-up} { font-size: 3em; }
+    @media #{$extra-large-and-up} { font-size: 5em; }
 
     &::before {
       border-color: $primary-color;
     }
+  }
+  .image{
+    background-image: url(./images/3-WITHOUT-FRAME.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    // &::before{
+    //   background-color: black;
+    // }
+  }
+}
+
+#about-statistic{
+  .image-1{
+    background-image: url(./images/stat-employee.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+  }
+  .image-2{
+    background-image: url(./images/line-chart.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+  }
+  .top-title{
+    font-weight: bold;
+    font-size: 3.5em;
+  }
+  .count-employee{
+    font-weight: bold;
+    font-size: 10em;
+  }
+  .bottom-title{
+    font-weight: bold;
+    font-size: 2em;
   }
 }
