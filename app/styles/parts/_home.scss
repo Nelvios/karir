@@ -77,6 +77,25 @@ section .section-title::before {
     padding-top: 4rem;
   }
 
+  .waves-effect{
+    overflow: visible;
+  }
+
+  .content-indicator{
+    position: absolute;
+    width: 100px;
+    height: 450px;
+    margin-top: -4rem;
+    padding-top: 4rem;
+  }
+
+  .icon-left{
+    left:0;
+  }
+  .icon-right{
+    right:0;
+  }
+
   .carousel-item {
     @extend .valign-wrapper;
     height: 450px;
@@ -420,6 +439,37 @@ section .section-title {
   @media #{$small-and-down} { text-align: center; }
   @media #{$medium-and-up} {
     background-image: linear-gradient(170deg, rgba(black, 0) 40%, rgba(black, .3) 100%);
+  }
+
+  .content-indicator{
+    background: none;
+    border: 0;
+    .icon-style{
+      font-size: 64px;
+      color:color('grey', 'darken-4');
+    }
+  }
+
+  .icon-left{
+    @media #{$medium-and-up}{
+      &:hover{
+        background-image:linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.3981967787114846) 100%);
+        .icon-style{
+          color: white
+        }
+      }
+    }
+  }
+
+  .icon-right{
+    @media #{$medium-and-up}{
+      &:hover{
+        background-image:linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.3981967787114846) 100%);
+        .icon-style{
+          color: white
+        }
+      }
+    }
   }
 
   .image {
