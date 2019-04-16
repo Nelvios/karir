@@ -19,10 +19,9 @@ export default Component.extend({
     });
   },
 
-  didRender() {
+  didUpdate() {
     this._super(...arguments);
     this.$('.tooltip').tooltip();
-    jQ(window).resize();
   },
 
   willDestroyElement() {

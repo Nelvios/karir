@@ -5,11 +5,14 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
+    fingerprint: {
+      exclude: ['assets/content']
+    }
   });
 
   const imports = {
     'moment'      : 'node_modules/moment/min/moment.min.js',
-    'materialize' : 'node_modules/materialize-css/dist/js/materialize.js'
+    'materialize' : 'node_modules/materialize-css/dist/js/materialize.min.js'
   };
 
   // Use `app.import` to add additional libraries to the generated
