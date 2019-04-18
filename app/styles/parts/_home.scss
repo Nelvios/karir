@@ -78,6 +78,25 @@ section .section-title::before {
     padding-top: 4rem;
   }
 
+  .waves-effect{
+    overflow: visible;
+  }
+
+  .content-indicator{
+    position: absolute;
+    width: 100px;
+    height: 450px;
+    margin-top: -4rem;
+    padding-top: 4rem;
+  }
+
+  .icon-left{
+    left:.5rem;
+  }
+  .icon-right{
+    right:0;
+  }
+
   .carousel-item {
     @extend .valign-wrapper;
     height: 450px;
