@@ -29,10 +29,8 @@ export default Component.extend({
 
     jQ(window).on('resize.apply-btn', () => {
       threshold = this._getThreshold();
-      jQ(window).scroll();
+      jQ(window).triggerHandler('scroll.apply-btn');
     });
-
-    jQ(window).resize();
   },
 
   willDestroyElement() {

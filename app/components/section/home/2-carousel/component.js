@@ -31,13 +31,21 @@ export default Component.extend({
 
   actions: {
 
-    // autoScroll(time) {
-    //   const interval = setInterval(() => {
-    //     this.$('.carousel').carousel('next');
-    //   }, time);
+    moveToPrev(){
+      this.$('.carousel').carousel('prev');
+    },
+    moveToNext(){
+      this.$('.carousel').carousel('next');
+    },
+
+    autoScroll(time) {
+      const interval = setInterval(() => {
+        this.$('.carousel').carousel('next');
+      }, time);
 
     //   set(this, 'autoScroll', interval);
     // },
+    },
 
     changeColor(colorClass) {
       const classNames = ['ember-view'];

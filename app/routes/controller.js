@@ -1,19 +1,24 @@
 import Controller from '@ember/controller';
-import { jQ, get, set } from 'karir/utils/short';
+import { jQ, set } from 'karir/utils/short';
 
 export default Controller.extend({
+
+  size: null,
 
   actions: {
 
     load() {
+      const small = 600;
+      const medium = 992;
+      const large = 1200;
+
       // run after page load
       jQ(window).resize(() => {
-        // alert('in');
+        const width = jQ(window).outerWidth();
+        set(this, 'size', width <= small ? 's' : width <= medium ? 'm' : width <= large ? 'l' : 'xl');
       });
 
       jQ(window).resize();
-
-      alert('load');
     }
   }
 
