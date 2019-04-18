@@ -6,5 +6,7 @@ export default DS.Model.extend({
   description: attr('string'),
   qualification: attr('string'),
   thumbJob: attr('string'),
-  featured: attr('boolean')
+  featured: attr('boolean'),
+  specialization: attr('string'),
+  location: attr()
 });
