@@ -5,6 +5,7 @@ export default Component.extend({
   tagName: 'section',
   specialization: null,
   location: null,
+  data: null,
 
   didInsertElement(){
     this._super(...arguments);
@@ -13,16 +14,61 @@ export default Component.extend({
   },
 
   actions: {
-    selectSpecialization: function(specialization){
-      const specializationSelected =  this.get('model').filterBy('specialization', specialization);
-      console.log(specializationSelected);
+    selectSpecialization: function(specializationRet){
+      this.set('specialization',specializationRet);
+      let data;
+      const model = this.get('model')
+      const locationSelected = this.get('location');
+      const specializationSelected =  model.filterBy('specialization', specializationRet);
+      if(locationSelected){
+        const filteredDataSpec = specializationSelected.filter(function(item){
+          return item.location.includes(locationSelected)
+        });
+        if(filteredDataSpec.length == 0){
+          this.set('data','empty');
+        }
+        else{
+          this.set('data', filteredDataSpec);
+        }
+      }
+      else{
+        if(specializationSelected == 0){
+          this.set('data','empty');
+        }
+        else{
+          this.set('data', specializationSelected);
+        }
+      }
+      data = this.get('data')
+      this.get('passData')(data);
     },
-    selectLocation: function(location){
-      const locationSelected = this.get('model').filter(function(item, index, enumerable){
-        return item.location == location
-        // console.log(item.location == location);
+    selectLocation: function(locationRet){
+      this.set('location', locationRet);
+      let data;
+      const model = this.get('model')
+      const specializationSelected = this.get('specialization');
+      const locationSelected = model.filter(function(item){
+        return item.location.includes(locationRet)
       });
-      console.log(locationSelected);
+      if(specializationSelected){
+        const filteredDataLoc = locationSelected.filterBy('specialization', specializationSelected);
+        if(filteredDataLoc.length == 0){
+          this.set('data','empty');
+        }
+        else{
+          this.set('data', filteredDataLoc);
+        }
+      }
+      else{
+        if(locationSelected == 0){
+          this.set('data','empty');
+        }
+        else{
+          this.set('data', locationSelected);
+        }
+      }
+      data = this.get('data')
+      this.get('passData')(data);
     }
   }
 });

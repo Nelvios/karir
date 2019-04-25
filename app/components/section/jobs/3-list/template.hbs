@@ -1,18 +1,58 @@
 <div class="container">
   <div class="row">
-    {{#each this.model as |job|}}
+    {{#if this.result}}
+      {{#each this.result as |filteredJob|}}
+        <div class="col s6 l4">
+
+          {{#link-to "jobs.detail" filteredJob.id class="job-item"}}
+
+            <div class="image">
+              <img src={{filteredJob.thumbJob}} alt="Job Image" class="responsive-img">
+            </div>
+            <div class="display">{{filteredJob.name}}</div>
+
+          {{/link-to}}
+
+        </div>
+      {{/each}}
+    {{else}}
+      {{#if this.empty}}
+        <div class="emptyJob">{{this.empty}}</div>
+      {{else}}
+        {{#each this.model as |job|}}
+          <div class="col s6 l4">
+
+            {{#link-to "jobs.detail" job.id class="job-item"}}
+
+              <div class="image">
+                <img src={{job.thumbJob}} alt="Job Image" class="responsive-img">
+              </div>
+              <div class="display">{{job.name}}</div>
+
+            {{/link-to}}
+
+          </div>
+        {{/each}}
+      {{/if}}
+    {{/if}}
+  </div>
+</div>
+
+{{!-- <div class="container">
+  <div class="row">
+    {{#each this.result as |filter|}}
       <div class="col s6 l4">
 
-        {{#link-to "jobs.detail" job.id class="job-item"}}
+        {{#link-to "jobs.detail" filter.id class="job-item"}}
 
           <div class="image">
-            <img src={{job.thumbJob}} alt="Job Image" class="responsive-img">
+            <img src={{filter.thumbJob}} alt="Job Image" class="responsive-img">
           </div>
-          <div class="display">{{job.name}}</div>
+          <div class="display">{{filter.name}}</div>
 
         {{/link-to}}
 
       </div>
     {{/each}}
   </div>
-</div>
+</div> --}}
