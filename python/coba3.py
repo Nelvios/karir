@@ -362,6 +362,9 @@ def postJsonJobHandler():
                 image_result.close()
                 temp[key2] = splitSource[0]
                 temp2[key2] = splitSource[0]
+            elif key2 == 'location':
+              splitLocation = value2.split(", ")
+              temp[key2] = splitLocation
             else:
               temp[key2] = value2
               temp2[key2] = value2
@@ -412,6 +415,9 @@ def postJsonJobHandler():
                 image_result.close()
                 temp[key2] = splitSource[0]
                 temp2[key2] = splitSource[0]
+            elif key2 == 'location':
+              splitLocation = value2.split(", ")
+              temp[key2] = splitLocation
             else:
               temp[key2] = value2
               temp2[key2] = value2

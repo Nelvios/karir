@@ -8,5 +8,6 @@ export default DS.Model.extend({
   thumbJob: attr('string'),
   featured: attr('boolean'),
   specialization: attr('string'),
-  location: attr()
+  url: attr('string'),
+  location: attr(),
 });
