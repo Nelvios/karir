@@ -38,14 +38,14 @@ export default Component.extend({
       this.$('.carousel').carousel('next');
     },
 
-    autoScroll(time) {
-      const interval = setInterval(() => {
-        this.$('.carousel').carousel('next');
-      }, time);
+    // autoScroll(time) {
+    //   const interval = setInterval(() => {
+    //     this.$('.carousel').carousel('next');
+    //   }, time);
 
     //   set(this, 'autoScroll', interval);
     // },
-    },
+    // },
 
     changeColor(colorClass) {
       const classNames = ['ember-view'];

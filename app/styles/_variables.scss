@@ -43,7 +43,8 @@ $primary-color-dark: darken($primary-color, 15%) !default;
 $secondary-color: #005caa;
 $success-color: color("green", "base") !default;
 $error-color: color("red", "base") !default;
-$link-color: color("light-blue", "darken-1") !default;
+// $link-color: color("light-blue", "darken-1") !default;
+$link-color: lighten($secondary-color, 5%);
 
 
 // 2. Badges

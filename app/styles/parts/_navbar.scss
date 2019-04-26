@@ -19,7 +19,7 @@
     position: absolute;
     width: 200px;
 
-    &:hover {
+    &:hover, &:focus, &:active {
       padding-left: .5rem;
     }
 
@@ -52,7 +52,7 @@
       width: 0;
     }
 
-    &:hover, &.active {
+    &:hover, &:focus, &:active, &.active {
       background-color: transparent;
 
       &::before {

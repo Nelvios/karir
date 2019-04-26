@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 // import FirebaseAdapter from 'emberfire/adapters/firebase';
 import host from 'karir/utils/host';
-import { ENVIRONMENT, REQUEST_TIMEOUT, MODEL_PREFIX } from 'karir/utils/properties';
+import { REQUEST_TIMEOUT, MODEL_PREFIX } from 'karir/utils/properties';
 import { log } from 'karir/utils/short';
 
 export default DS.RESTAdapter.extend({

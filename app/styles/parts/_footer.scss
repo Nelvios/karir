@@ -11,9 +11,13 @@ footer {
     li { margin-top: .5rem; }
   }
 
-  .job-highlight .more > a {
-    &:hover i, &:focus i, &:active i { margin-left: .75rem; }
-    i { margin-left: .25rem; }
+  .job-highlight .more {
+    margin-top: 1.5rem;
+
+    > a {
+      &:hover i, &:focus i, &:active i { margin-left: .75rem; }
+      i { margin-left: .25rem; }
+    }
   }
 
   .social-content {
@@ -57,6 +61,18 @@ footer {
           margin-top: -1.5px;
           margin-left: 15%;
         }
+
+        &.linkedin > img {
+          left: 1px;
+          width: 90%;
+          margin-top: -1px;
+          margin-left: 5%;
+        }
+
+        &.youtube > img {
+          left: 0;
+          margin-top: 0;
+        }
       }
     }
   }
@@ -99,14 +115,13 @@ footer {
   ul a {
     color: white;
 
-    &:hover, &:focus, &:active { color: $secondary-color; }
+    &:hover, &:focus, &:active { color: color('blue', 'lighten-1'); }
   }
 
   .job-highlight .more > a {
-    font-weight: bold;
+    font-weight: 600;
     color: $primary-color;
-
-    &:hover, &:focus, &:active { color: $secondary-color; }
+    text-transform: uppercase;
   }
 
   .social-content a {
@@ -153,7 +168,7 @@ footer {
       -webkit-transition-duration: .3s;
       transition-duration: .3s;
 
-      &:hover > img {
+      &:hover > img, &:focus > img, &:active > img {
         -webkit-transition: transform .3s;
         transition: transform .3s;
       }

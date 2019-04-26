@@ -1,5 +1,5 @@
 import Controller from '@ember/controller';
-import { jQ, set } from 'karir/utils/short';
+import { jQ } from 'karir/utils/short';
 
 export default Controller.extend({
 
@@ -15,7 +15,9 @@ export default Controller.extend({
       // run after page load
       jQ(window).resize(() => {
         const width = jQ(window).outerWidth();
-        set(this, 'size', width <= small ? 's' : width <= medium ? 'm' : width <= large ? 'l' : 'xl');
+        const size = width <= small ? 'sm' : width <= medium ? 'md' : width <= large ? 'lg' : 'xl';
+
+        jQ('body').attr('data-size', size);
       });
 
       jQ(window).resize();

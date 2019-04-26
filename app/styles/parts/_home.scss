@@ -14,7 +14,7 @@ section .section-title::before {
   height: 400px;
   padding: 100px 0 4rem;
   box-sizing: content-box;
-  z-index: 2;
+  // z-index: 2;
 
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 75% 100%, 0 calc(100% - 4rem));
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 75% 100%, 0 calc(100% - 4rem));
@@ -54,14 +54,22 @@ section .section-title::before {
     display: block;
   }
 
+  // .btn.apply {
+  //   margin: 2rem 0 0;
+  //   padding: .6rem 1.2rem;
+
+  //   @media #{$medium-and-up} { margin-left: 2rem; }
+
+  //   &:hover, &:focus, &:active {
+  //     transform: translate(0, -.2rem);
+  //   }
+  // }
+
   .btn.apply {
-    height: inherit;
     margin: 2rem 0 0;
     padding: .6rem 1.2rem;
 
     @media #{$medium-and-up} { margin-left: 2rem; }
-
-    &:hover { transform: translate(0, -.2rem); }
   }
 }
 
@@ -91,10 +99,10 @@ section .section-title::before {
   }
 
   .icon-left{
-    left:.5rem;
+    left: 0;
   }
   .icon-right{
-    right:0;
+    right: 0;
   }
 
   .carousel-item {
@@ -127,7 +135,7 @@ section .section-title::before {
     margin-right: -200px;
 
     @media #{$medium-and-up} {
-      right: 15%;
+      right: 10%;
       margin-right: -100px;
     }
 
@@ -137,6 +145,10 @@ section .section-title::before {
       height: 450px;
       margin-right: -180px;
     }
+
+    @media #{$extra-large-and-up} {
+      right: 20%;
+    }
   }
 
   .btn.apply {
@@ -145,7 +157,9 @@ section .section-title::before {
 
     @media #{$medium-and-up} { margin: 2rem 2rem 0; }
 
-    &:hover { transform: translate(0, -.2rem); }
+    &:hover, &:focus, &:active {
+      transform: translate(0, -.2rem);
+    }
   }
 }
 
@@ -204,7 +218,7 @@ section .section-title::before {
 
     .card-content {
       position: relative;
-      height: 11rem;
+      height: 10rem;
       overflow: hidden;
 
       @media #{$small-and-down} {
@@ -218,8 +232,6 @@ section .section-title::before {
           margin: .75rem;
         }
       }
-
-      @media #{$extra-large-and-up} { height: 8.75rem; }
 
       &::before {
         content: '';
@@ -237,44 +249,19 @@ section .section-title::before {
     }
 
     .card-action a {
-      &:hover > i, &:focus > i, &:active > i {
+      &:hover, &:focus, &:active {
         i { margin-left: .75rem; }
       }
 
       i { margin-left: .25rem; }
     }
+
+    .card-cover {
+      position: absolute;
+      width: 100%; height: 100%;
+      z-index: 1010;
+    }
   }
-
-  // .card-panel{
-  //   padding: 0;
-  //   overflow: hidden;
-  //   .row{
-  //     margin-bottom: 0;
-  //   }
-  //   .reformat{
-  //     padding: 0;
-  //   }
-  //   .content{
-  //     position: relative;
-  //     height: 150px;
-
-  //     &::before{
-  //       content: '';
-  //       position: absolute;
-  //       bottom: 0;
-  //       left: 0;
-  //       width: 100%;
-  //       height: 30px;
-  //     }
-  //   }
-  //   img{
-  //     @extend .valign-wrapper;
-  //     height: 150px;
-  //     max-width: 100%;
-  //     overflow: hidden;
-  //   }
-  //   .date, .title { display: block; }
-  // }
 }
 
 #home-thoughts {
@@ -341,14 +328,16 @@ section .section-title::before {
 #home-counter {
   @extend .valign-wrapper;
   position: relative;
-  height: 6em;
+  height: 8rem;
   padding: 1rem 0;
   z-index: 10;
+
+  @media #{$extra-large-and-up} { height: 10rem; }
 
   .text {
     margin-left: .5rem;
 
-    @media #{$medium-and-up} { margin-left: 1rem; }
+    @media #{$medium-and-up} { margin-left: 1.5rem; }
 
     .sub {
       display: block;
@@ -368,7 +357,9 @@ section .section-title::before {
     @media #{$medium-and-up} { right: 7.5%; }
     @media #{$large-and-up} { right: 15%; }
 
-    &:hover span { width: 72px; }
+    &:hover, &:focus, &:active {
+      span { width: 72px; }
+    }
 
     span {
       width: 0;
@@ -402,12 +393,18 @@ section .section-title {
 
 #home-top {
   background-image: url(./images/pattern.png),
-                    linear-gradient(10deg, darken($secondary-color, 10%), color('grey', 'darken-4'));
+                    linear-gradient(-10deg, $secondary-color, darken($secondary-color, 15%));
   background-color: color('grey', 'darken-4');
+  background-position: center top;
   background-attachment: fixed;
 
   text-align: center;
   color: white;
+
+  @media #{$medium-and-up} {
+    background-image: url(./images/pattern.png),
+                      linear-gradient(-10deg, $secondary-color 50%, darken($secondary-color, 15%));
+  }
 
   @media #{$medium-and-up} { text-align: left; }
 
@@ -429,21 +426,35 @@ section .section-title {
     @media #{$extra-large-and-up} { font-size: 3.5em; }
   }
 
+  // .btn.apply {
+  //   background-image: linear-gradient(20deg, rgba($secondary-color, .9), rgba(color('cyan', 'base'), .9));
+  //   background-color: $secondary-color;
+  //   font-weight: bold;
+  //   font-size: 1.2em;
+
+  //   &:hover, &:focus, &:active {
+  //     @extend .z-depth-3;
+  //     background-color: white;
+  //   }
+  // }
+
   .btn.apply {
-    background-image: linear-gradient(20deg, rgba($secondary-color, .9), rgba(color('cyan', 'base'), .9));
-    background-color: $secondary-color;
+    @extend .z-depth-1;
+    background-color: rgba(black, .1);
+    border: .2rem solid white;
     font-weight: bold;
     font-size: 1.2em;
+    // text-transform: none;
 
-    &:hover {
-      @extend .z-depth-3;
-      background-color: white;
+    &:hover, &:focus, &:active {
+      background-color: rgba(black, .3);
+      border-color: $primary-color;
     }
   }
 }
 
 #home-carousel {
-  background-image: linear-gradient(190deg, rgba(black, 0) 0%, rgba(black, .3) 100%);
+  background-image: linear-gradient(170deg, rgba(black, 0) 0%, rgba(black, .3) 100%);
 
   @media #{$small-and-down} { text-align: center; }
   @media #{$medium-and-up} {
@@ -490,9 +501,9 @@ section .section-title {
     @media #{$medium-and-up} { opacity: 1; }
   }
 
-  .img-1 { background-image: url(./images/BIT.png);          }
-  .img-2 { background-image: url(./images/PROFESSIONAL.png); }
-  .img-3 { background-image: url(./images/INTERNSHIP.png);   }
+  .img-1 { background-image: url(./images/1-BIT.png);          }
+  .img-2 { background-image: url(./images/2-PROFESSIONAL.png); }
+  .img-3 { background-image: url(./images/3-INTERNSHIP.png);   }
   .img-4 { background-image: url(./images/PPTI.png);         }
 
   .display-1 {
@@ -525,7 +536,9 @@ section .section-title {
     font-weight: bold;
     font-size: 1.2em;
 
-    &:hover { @extend .z-depth-3; }
+    &:hover, &:focus, &:active {
+      @extend .z-depth-3;
+    }
   }
 }
 
@@ -547,48 +560,29 @@ section .section-title {
       &::before { background-color: white; }
 
       .date {
-        font-style: italic;
         font-size: .8em;
         color: color('grey', 'lighten-1');
       }
 
       .title {
-        font-weight: bold;
+        font-weight: 600;
         font-size: 1.4em;
+        line-height: 1.2;
+        letter-spacing: -.025em;
 
         @media #{$small-and-down} { font-size: 1em; }
       }
     }
 
     .card-action {
-      font-weight: bold;
-
+      font-weight: 600;
 
       a {
-        text-transform: capitalize;
         font-size: 1em;
+        text-transform: uppercase;
       }
     }
   }
-
-  // .card-panel{
-  //   color: $off-black;
-
-  //   .content{
-  //     &::before{ background-color: white}
-  //   }
-
-  //   .date {
-  //     font-style: italic;
-  //     font-size: .7em;
-  //     color: grey;
-  //   }
-
-  //   .title {
-  //     font-weight: bold;
-  //     font-size: 1em;
-  //   }
-  // }
 }
 
 #home-thoughts {
@@ -625,8 +619,8 @@ section .section-title {
 #home-counter {
   background-color: $secondary-color;
 
-  @media #{$medium-and-up} { font-size: 1.2em; }
-  @media #{$large-and-up} { font-size: 1.4em; }
+  @media #{$medium-and-up} { font-size: 1.5em; }
+  @media #{$extra-large-and-up} { font-size: 1.8em; }
 
   .number {
     font-weight: bold;
@@ -649,10 +643,6 @@ section .section-title {
     background-color: $primary-color;
     font-weight: bold;
     color: $secondary-color;
-
-    &:hover {
-      background-color: lighten($primary-color, 5%);
-    }
 
     i {
       font-size: 2.2em;
@@ -683,8 +673,8 @@ section .section-title {
 
 #home-articles {
   .card-action a > i {
-    -webkit-transition: margin-left .3s;
-    transition: margin-left .3s;
+    -webkit-transition: margin-left .15s;
+    transition: margin-left .15s;
   }
 }
 

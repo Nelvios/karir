@@ -1,11 +1,20 @@
 <div class="container">
-  <h2 class="display">What it is</h2>
-  <div>
-    {{html model.description}}
+  <div class="row">
+    <div class="col s12 m5 l4 xl3 preview">
+      {{#link-to "jobs" class="back" title="Back"}}
+        {{icon "close"}}
+      {{/link-to}}
+      <div class="box"><img src={{model.thumbJob}} alt="Thumb"></div>
+      <div class="title">{{model.name}}</div>
+    </div>
+    <div class="col s12 m7 l8 xl9 content">
+      <h3 class="display">What it is</h3>
+      <div class="description">{{html model.description}}</div>
+
+      <h3 class="display">What you need</h3>
+      <div class="qualification">{{html model.qualification}}</div>
+
+      <a href="#" class="btn btn-large waves-effect waves-light apply">Apply Now</a>
+    </div>
   </div>
-  <div class="bullet qualify">
-    <span class="qualification">What you need</span>
-    {{html model.qualification}}
-  </div>
-  <a href={{url}} class="btn waves-effect waves-light apply">Apply Now</a>
 </div>

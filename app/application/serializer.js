@@ -1,5 +1,5 @@
 import DS from 'ember-data';
-import { ENVIRONMENT, MODEL_PREFIX } from 'karir/utils/properties';
+import { MODEL_PREFIX } from 'karir/utils/properties';
 import { log } from 'karir/utils/short';
 
 export default DS.RESTSerializer.extend({

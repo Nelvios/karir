@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 // .text-light     { font-weight: 300    !important; }
 .text-normal    { font-weight: normal !important; }
 // .text-medium    { font-weight: 500    !important; }
-// .text-semibold  { font-weight: 600    !important; }
+.text-semibold  { font-weight: 600    !important; }
 .text-bold      { font-weight: bold   !important; }
 // .text-extrabold { font-weight: 800    !important; }
 .text-black     { font-weight: 900    !important; }
@@ -66,8 +66,18 @@ h1, h2, h3, h4, h5, h6 {
 .no-wrap    { white-space: nowrap !important; }
 .clickable  { cursor: pointer !important; }
 
-.material-icons { vertical-align: -.4rem; }
+
+// Overrides
+
+.material-icons { vertical-align: -.45rem; }
 .carousel .indicators > .indicator-item { cursor: pointer; }
+
+.btn:hover, .btn:focus, .btn:active {
+  &.primary-bg    { background-color: lighten($primary-color, 5%) !important;   }
+  &.secondary-bg  { background-color: lighten($secondary-color, 5%) !important; }
+  &.success-bg    { background-color: lighten($success-color, 5%) !important;   }
+  &.error-bg      { background-color: lighten($error-color, 5%) !important;     }
+}
 
 
 // Animation
