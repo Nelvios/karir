@@ -2,21 +2,21 @@
   <div class="row mb-0">
 
     <div class="input-field col s12 m4">
-      <select>
+      <select onchange={{action "selectSpecialization" value="target.value"}}>
         <option value="" disabled selected>Specialization</option>
-        <option value="1">Programmer</option>
-        <option value="2">Network</option>
-        <option value="3">Data</option>
-        <option value="4">IT Infrastructure</option>
+        <option value="programmer">Programmer</option>
+        <option value="network">Network</option>
+        <option value="data">Data</option>
+        <option value="infrastructure">IT Infrastructure</option>
       </select>
     </div>
 
     <div class="input-field col s12 m4">
-      <select>
+      <select onchange={{action "selectLocation" value="target.value"}}>
         <option value="" disabled selected>Location</option>
-        <option value="1">Jabodetabek</option>
-        <option value="2">Surabaya</option>
-        <option value="3">Yogyakarta</option>
+        <option value="jabodetabek">Jabodetabek</option>
+        <option value="surabaya">Surabaya</option>
+        <option value="yogyakarta">Yogyakarta</option>
       </select>
     </div>
 
@@ -28,6 +28,5 @@
         <option value="3">Option 3</option>
       </select>
     </div>
-
   </div>
 </div>
