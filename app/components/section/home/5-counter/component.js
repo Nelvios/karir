@@ -1,13 +1,21 @@
 import Component from '@ember/component';
 import { jQ } from 'karir/utils/short';
+import { get, service, set } from '../../../../utils/short';
 
 export default Component.extend({
 
   tagName: 'section',
+  store: service(),
+
+  counters: null,
 
   didInsertElement() {
     this._super(...arguments);
     const btn = this.$('.btn.apply');
+    const store = get(this, 'store');
+
+    store.findAll('counter').then(result => set(this, 'counters', result))
+
 
     jQ(window).on('scroll.apply-btn', () => {
       const threshold = this._getThreshold() || {};
