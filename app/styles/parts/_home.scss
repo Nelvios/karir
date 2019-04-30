@@ -29,6 +29,32 @@ section .section-title::before {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8rem), 80% 100%, 0 calc(100% - 8rem));
   }
 
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    margin-top: -77.5px;
+    padding: 100px 0 4rem;
+    box-sizing: content-box;
+
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 75% 100%, 0 calc(100% - 4rem));
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 75% 100%, 0 calc(100% - 4rem));
+
+    @media #{$medium-and-up} {
+      margin-top: -77.5px;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6rem), 80% 100%, 0 calc(100% - 6rem));
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6rem), 80% 100%, 0 calc(100% - 6rem));
+    }
+    @media #{$large-and-up} {
+      margin-top: -62.5px;
+      padding-bottom: 6rem;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8rem), 80% 100%, 0 calc(100% - 8rem));
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8rem), 80% 100%, 0 calc(100% - 8rem));
+    }
+    @media #{$extra-large-and-up} { margin-top: -60px; }
+  }
+
   > .container { position: relative; }
 
   .image {
@@ -74,28 +100,20 @@ section .section-title::before {
 }
 
 #home-carousel {
-  margin-top: -4rem;
-  padding-top: 2rem;
+  margin-top: -4.5rem;
+  padding-top: 2.5rem;
   box-sizing: content-box;
 
   @media #{$medium-and-up} {
-    margin-top: -6rem;
+    margin-top: -6.5rem;
   }
   @media #{$large-and-up} {
-    margin-top: -8rem;
-    padding-top: 4rem;
+    margin-top: -8.5rem;
+    padding-top: 4.5rem;
   }
 
   .waves-effect{
     overflow: visible;
-  }
-
-  .content-indicator{
-    position: absolute;
-    width: 100px;
-    height: 450px;
-    margin-top: -4rem;
-    padding-top: 4rem;
   }
 
   .icon-left{
@@ -105,9 +123,17 @@ section .section-title::before {
     right: 0;
   }
 
+  .content-indicator{
+    position: absolute;
+    width: 100px;
+    height: 500px;
+    margin-top: -4rem;
+    padding-top: 4rem;
+  }
+
   .carousel-item {
     @extend .valign-wrapper;
-    height: 450px;
+    height: 500px;
     overflow: hidden;
 
     .container {
@@ -140,9 +166,9 @@ section .section-title::before {
     }
 
     @media #{$large-and-up} {
-      top: -10rem;
+      top: -9rem;
       width: 600px;
-      height: 450px;
+      height: 400px;
       margin-right: -180px;
     }
 
@@ -392,21 +418,24 @@ section .section-title {
 }
 
 #home-top {
-  background-image: url(./images/pattern.png),
-                    linear-gradient(-10deg, $secondary-color, darken($secondary-color, 15%));
-  background-color: color('grey', 'darken-4');
-  background-position: center top;
-  background-attachment: fixed;
-
+  background-color: rgba(black, .3);
   text-align: center;
   color: white;
 
-  @media #{$medium-and-up} {
-    background-image: url(./images/pattern.png),
-                      linear-gradient(-10deg, $secondary-color 50%, darken($secondary-color, 15%));
-  }
-
   @media #{$medium-and-up} { text-align: left; }
+
+  &::before {
+    background-image: url(./images/pattern.png),
+                      linear-gradient(-10deg, $secondary-color, darken($secondary-color, 15%));
+    background-color: color('grey', 'darken-4');
+    background-position: center top;
+    background-attachment: fixed;
+
+    @media #{$medium-and-up} {
+      background-image: url(./images/pattern.png),
+                        linear-gradient(-10deg, $secondary-color 50%, darken($secondary-color, 15%));
+    }
+  }
 
   .image {
     background-image: url(./images/2_INTERNSHIP.png);
@@ -424,6 +453,9 @@ section .section-title {
 
     @media #{$large-and-up} { font-size: 3em; }
     @media #{$extra-large-and-up} { font-size: 3.5em; }
+
+    .d-1 { color: color('teal', 'lighten-2'); }
+    .d-2 { color: color('amber', 'lighten-2'); }
   }
 
   // .btn.apply {
@@ -455,11 +487,12 @@ section .section-title {
 
 #home-carousel {
   background-image: linear-gradient(170deg, rgba(black, 0) 0%, rgba(black, .3) 100%);
+  background-color: color('grey', 'darken-4');
 
   @media #{$small-and-down} { text-align: center; }
-  @media #{$medium-and-up} {
-    background-image: linear-gradient(170deg, rgba(black, 0) 40%, rgba(black, .3) 100%);
-  }
+  // @media #{$medium-and-up} {
+  //   background-image: linear-gradient(170deg, rgba(black, 0) 40%, rgba(black, .3) 100%);
+  // }
 
   .content-indicator{
     background: none;
@@ -504,15 +537,15 @@ section .section-title {
   .img-1 { background-image: url(./images/1-BIT.png);          }
   .img-2 { background-image: url(./images/2-PROFESSIONAL.png); }
   .img-3 { background-image: url(./images/3-INTERNSHIP.png);   }
-  .img-4 { background-image: url(./images/PPTI.png);         }
+  .img-4 { background-image: url(./images/4-PPTI.png);         }
 
   .display-1 {
     font-family: $font-heading;
     font-weight: bold;
     font-size: 1.6em;
     line-height: 1.2em;
-    color: $off-black;
-    text-shadow: 0 .2rem 0rem rgba(black, .2);
+    color: $primary-color;
+    text-shadow: .05em .1em 0rem rgba(black, .2);
 
     @media #{$large-and-up} { font-size: 1.8em; }
     @media #{$extra-large-and-up} { font-size: 2em; }
@@ -524,7 +557,7 @@ section .section-title {
     line-height: 1.2em;
     letter-spacing: .1rem;
     color: white;
-    text-shadow: 0 .2rem .3rem rgba(black, .4);
+    text-shadow: 0 .1em .2em rgba(black, .4);
 
     @media #{$large-and-up} { font-size: 2.5em; }
     @media #{$extra-large-and-up} { font-size: 3em; }
@@ -543,6 +576,7 @@ section .section-title {
 }
 
 #home-articles {
+  border-top: .25rem solid black;
   background-color: color('grey', 'darken-4');
 
   .section-title::before {
@@ -600,7 +634,7 @@ section .section-title {
   }
 
   .image {
-    border: 3px solid $secondary-color;
+    border: .4rem solid $secondary-color;
 
     @media #{$small-and-down} { margin: 0 auto; }
   }
@@ -625,6 +659,7 @@ section .section-title {
   .number {
     font-weight: bold;
     font-size: 2.8em;
+    color: $primary-color-light;
     text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
   }
 
@@ -640,14 +675,11 @@ section .section-title {
   }
 
   .btn.apply {
-    background-color: $primary-color;
-    font-weight: bold;
-    color: $secondary-color;
+    background-color: $tertiary-color;
+    font-weight: 600;
+    color: white;
 
-    i {
-      font-size: 2.2em;
-      color: $secondary-color;
-    }
+    i { font-size: 2.2em; }
   }
 }
 

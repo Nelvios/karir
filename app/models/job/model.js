@@ -10,6 +10,6 @@ export default DS.Model.extend({
   location: attr(),
   description: attr('string'),
   qualification: attr('string'),
-  featured: attr('boolean'),
+  featured: attr('boolean')
 
 });

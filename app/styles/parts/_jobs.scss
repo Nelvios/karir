@@ -10,6 +10,7 @@
 
 #jobs-list {
   padding: 2rem 0;
+  flex-grow: 1000;
 
   .job-item {
     display: block;
@@ -123,7 +124,9 @@
   .content {
     padding-bottom: 2rem;
 
-    @media #{$medium-and-up} { padding: 0 2rem 2rem; }
+    @media #{$medium-and-up} {
+      padding-left: 2rem;
+    }
 
     .qualification > ul {
       padding-left: 1.5rem;
@@ -183,7 +186,7 @@
     .image{
       @extend .z-depth-2;
       background-color: $off-black;
-      border: .35rem solid $primary-color;
+      border: .35rem solid $secondary-color;
 
       @media #{$medium-and-up} { border-width: .5rem; }
     }
@@ -193,7 +196,7 @@
       font-weight: bold;
       font-size: 1.2em;
       text-align: center;
-      color: $secondary-color;
+      color: $off-black;
 
       @media #{$medium-and-up} { font-size: 1.5em; }
 
@@ -202,6 +205,7 @@
       }
     }
   }
+
   .emptyJob{
       font-weight: bold;
       font-size: 3em;
@@ -215,17 +219,19 @@
   color: $off-black;
 
   .preview {
+    .back { color: $tertiary-color; }
+
     .box {
       @extend .valign-wrapper, .z-depth-2;
       background-color: $off-black;
-      border: .5rem solid $primary-color;
+      border: .5rem solid $secondary-color;
     }
 
     .title {
       font-weight: bold;
       font-size: 1.8em;
       text-align: center;
-      color: $secondary-color;
+      color: $off-black;
 
       &::before {
         border-bottom: .35rem solid $primary-color;
@@ -235,6 +241,7 @@
 
   .content {
     text-align: center;
+    color: $text-color;
 
     @media #{$medium-and-up} {
       text-align: left;
@@ -243,6 +250,7 @@
 
     .display {
       font-size: 1.8em;
+      color: $off-black;
       text-shadow: .05em .08em 0 rgba($off-black, .15);
 
       @media #{$large-and-up} { font-size: 2.2em; }

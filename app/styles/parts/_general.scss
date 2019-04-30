@@ -53,13 +53,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .justify-align  { text-align: justify !important; }
 
-.primary-bg   { background-color: $primary-color !important;   }
-.secondary-bg { background-color: $secondary-color !important; }
-.success-bg   { background-color: $success-color !important;   }
-.error-bg     { background-color: $error-color !important;     }
+.primary-bg         { background-color: $primary-color          !important; }
+.primary-light-bg   { background-color: $primary-color-light    !important; }
+.primary-dark-bg    { background-color: $primary-color-dark     !important; }
+.secondary-bg       { background-color: $secondary-color        !important; }
+.secondary-light-bg { background-color: $secondary-color-light  !important; }
+.secondary-dark-bg  { background-color: $secondary-color-dark   !important; }
+.tertiary-bg        { background-color: $tertiary-color         !important; }
+.success-bg         { background-color: $success-color          !important; }
+.error-bg           { background-color: $error-color            !important; }
 
 .primary-text   { color: $primary-color   !important; }
 .secondary-text { color: $secondary-color !important; }
+.tertiary-text  { color: $tertiary-color  !important; }
 .success-text   { color: $success-color   !important; }
 .error-text     { color: $error-color     !important; }
 

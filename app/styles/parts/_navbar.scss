@@ -86,7 +86,7 @@
 // Styling
 
 #navbar {
-  background-color: rgba(255, 255, 255, .95);
+  background-color: rgba(white, .95);
 
   .navbar-top & {
     background-color: transparent;
@@ -125,7 +125,7 @@
 
   #nav-desktop a {
     font-weight: bold;
-    color: $secondary-color;
+    color: $off-black;
 
     &::before {
       border-bottom: .25rem solid $primary-color;
@@ -139,17 +139,19 @@
     a {
       font-size: 1.5em;
       font-weight: bold;
-      color: $secondary-color;
+      color: $off-black;
     }
   }
 
   .trigger {
     background-color: transparent;
     border: none;
-    color: $primary-color;
     cursor: pointer;
 
-    i { vertical-align: middle; }
+    i {
+      vertical-align: middle;
+      color: $tertiary-color;
+    }
   }
 }
 
