@@ -15,13 +15,13 @@
   .card {
     position: relative;
     overflow: hidden;
-    -webkit-transition: border-radius .5s;
+    transition: border-radius .5s;
 
     @media #{$small-and-down} { display: flex; }
 
     &:hover{
       border-radius: 15%;
-      -webkit-transition: border-radius .5s
+      transition: border-radius .5s;
     }
 
     .card-image {

@@ -1,6 +1,7 @@
 import Component from '@ember/component';
 import { jQ } from 'karir/utils/short';
-import { get, service, set } from '../../../../utils/short';
+import { get, service } from '../../../../utils/short';
+import { getProperties } from '@ember/object';
 
 export default Component.extend({
 
@@ -14,7 +15,10 @@ export default Component.extend({
     const btn = this.$('.btn.apply');
     const store = get(this, 'store');
 
-    store.findAll('counter').then(result => set(this, 'counters', result))
+    // store.findAll('counter').then(result => set(this, 'counters', result))
+    store.findAll('counter').then(result => result.forEach((item) => {
+      this.set('counters', getProperties(item,'employCount'));
+    }))
 
 
     jQ(window).on('scroll.apply-btn', () => {
