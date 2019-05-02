@@ -444,6 +444,32 @@ def postJsonJobHandler():
     resp.headers['Link'] = 'http://localhost:81'
     return resp
 
+# POST counter Data
+@app.route('/api/counter/post', methods=['POST'])
+def postJsonCounterHandler():
+    content = request.get_json()
+    if os.path.exists('../public/assets/content/counter/data.json'):
+      resp = "Fail"
+    else:
+      with open('../public/assets/content/counter/data.json', 'w') as createCounter:
+        temp = {}
+        content['counter']['id'] = 1
+        for key, value in content.items():
+          for key2, value2 in value.items():
+            temp[key2] = value2
+
+        temp = [temp]
+        tempDict = dict(counters=temp)
+
+        createCounter.write(json.dumps(tempDict))
+
+        tempResponse = {}
+        tempResponse['counters'] = content['counter']['id']
+        js = json.dumps(tempResponse)
+        resp = Response(js, status=201, mimetype='application/json')
+        resp.headers['Link'] = 'http://localhost:81'
+    return resp
+
 # DELETE Data
 @app.route('/api/data/delete/<int:user_id>', methods=['DELETE'])
 def deleteUser(user_id):

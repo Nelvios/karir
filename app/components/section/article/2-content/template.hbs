@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    {{#each articles as |article|}}
+      <div class="col s12 m4 hide-on-small-only">
+
+        <div class="card">
+          <div class="card-image">
+            <div class="image"><img alt="thumb" src={{article.thumbImage}}></div>
+          </div>
+          <div class="card-content">
+            <p>
+              <span class="date mb-2">{{date article.date}}</span>
+              <span class="title">{{article.title}}</span>
+            </p>
+          </div>
+          <div class="card-action">
+            {{#link-to "view-article" article.id}}Read More{{icon "arrow_forward" class="ml-2"}}{{/link-to}}
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4 hide-on-med-and-up">
+        {{#link-to "view-article" article.id}}
+          <div class="card">
+            <div class="card-image">
+              <div class="image"><img alt="thumb" src={{article.thumbImage}}></div>
+              {{!-- <span class="card-title text-heading">Article Title {{sum idx}}</span> --}}
+            </div>
+            <div class="card-content">
+              <p>
+                <span class="date mb-2">{{date article.date}}</span>
+                <span class="title">{{article.title}}</span>
+              </p>
+            </div>
+          </div>
+        {{/link-to}}
+      </div>
+    {{/each}}
+  </div>
+</div>

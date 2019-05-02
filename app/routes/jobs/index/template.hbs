@@ -1,3 +1,4 @@
 {{section/jobs/1-top elementId="jobs-top"}}
-{{section/jobs/2-filter elementId="jobs-filter" model=model passData=(action "handleData")}}
-{{section/jobs/3-list elementId="jobs-list" model=model result=result empty=empty}}
+{{!-- {{section/jobs/2-filter elementId="jobs-filter" passData=(action "handleData")}} --}}
+{{section/jobs/2-filter elementId="jobs-filter" specialization=specialization location=location}}
+{{section/jobs/3-list elementId="jobs-list" jobs=jobs}}

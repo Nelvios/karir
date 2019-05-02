@@ -2,31 +2,28 @@
   <div class="row mb-0">
 
     <div class="input-field col s12 m4">
-      <select onchange={{action "selectSpecialization" value="target.value"}}>
-        <option value="" disabled selected>Specialization</option>
+      {{!-- <select onchange={{action "selectSpecialization" value="target.value"}}> --}}
+      {{#input/input-select value=specialization placeholder="Specialization"}}
         <option value="programmer">Programmer</option>
         <option value="network">Network</option>
         <option value="data">Data</option>
         <option value="infrastructure">IT Infrastructure</option>
-      </select>
+      {{/input/input-select}}
+      {{!-- </select> --}}
     </div>
 
     <div class="input-field col s12 m4">
-      <select onchange={{action "selectLocation" value="target.value"}}>
-        <option value="" disabled selected>Location</option>
+      {{!-- <select onchange={{action "selectLocation" value="target.value"}}> --}}
+      {{#input/input-select value=location placeholder="Location"}}
         <option value="jabodetabek">Jabodetabek</option>
         <option value="surabaya">Surabaya</option>
         <option value="yogyakarta">Yogyakarta</option>
-      </select>
+      {{/input/input-select}}
+      {{!-- </select> --}}
     </div>
 
     <div class="input-field col s12 m4">
-      <select>
-        <option value="" disabled selected>Something</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-      </select>
+      <button class="btn btn-large clear" {{action "clear"}}>Clear Filter {{icon "close"}}</button>
     </div>
   </div>
 </div>

@@ -17,6 +17,10 @@ export default function host(key) {
 
     'thought': {
       search: `${host}/assets/content/thoughts/data.json`
+    },
+
+    'counter': {
+      search: `${host}/assets/content/counter/data.json`
     }
 
   }

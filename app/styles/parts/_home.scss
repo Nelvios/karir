@@ -454,7 +454,7 @@ section .section-title {
     @media #{$large-and-up} { font-size: 3em; }
     @media #{$extra-large-and-up} { font-size: 3.5em; }
 
-    .d-1 { color: color('teal', 'lighten-2'); }
+    .d-1 { color: color('pink', 'lighten-2'); }
     .d-2 { color: color('amber', 'lighten-2'); }
   }
 
@@ -487,7 +487,7 @@ section .section-title {
 
 #home-carousel {
   background-image: linear-gradient(170deg, rgba(black, 0) 0%, rgba(black, .3) 100%);
-  background-color: color('grey', 'darken-4');
+  background-color: color('grey', 'darken-3');
 
   @media #{$small-and-down} { text-align: center; }
   // @media #{$medium-and-up} {
@@ -544,7 +544,7 @@ section .section-title {
     font-weight: bold;
     font-size: 1.6em;
     line-height: 1.2em;
-    color: $primary-color;
+    color: $off-black;
     text-shadow: .05em .1em 0rem rgba(black, .2);
 
     @media #{$large-and-up} { font-size: 1.8em; }
@@ -659,7 +659,7 @@ section .section-title {
   .number {
     font-weight: bold;
     font-size: 2.8em;
-    color: $primary-color-light;
+    color: color('yellow', 'base');
     text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
   }
 
