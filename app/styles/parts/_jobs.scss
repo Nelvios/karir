@@ -2,6 +2,8 @@
 
 #jobs-top {
   padding: 100px 0 2rem;
+
+  .title { margin: 0; }
 }
 
 #jobs-filter {
@@ -13,7 +15,7 @@
 }
 
 #jobs-list {
-  padding: 2rem 0;
+  padding: 3rem 0 2rem;
   flex-grow: 1000;
 
   .job-item {
@@ -158,7 +160,13 @@
   background-position: center top;
   background-attachment: fixed;
 
+  @media #{$medium-and-up} {
+    background-image: url(./images/pattern.png),
+                      linear-gradient(-10deg, $secondary-color 50%, darken($secondary-color, 15%));
+  }
+
   .title {
+    font-family: $font-stack;
     font-weight: bold;
     font-size: 2.2em;
     letter-spacing: .2rem;
@@ -189,6 +197,7 @@
     box-shadow: none;
 
     font-weight: bold;
+    font-size: 16px;
     color: $off-black;
     text-transform: none;
 
@@ -225,11 +234,10 @@
     }
   }
 
-  .emptyJob{
-      font-weight: bold;
-      font-size: 3em;
-      text-align: center;
-      color: color('grey','darken-4');
+  .not-found {
+    font-size: 1.2em;
+    text-align: center;
+    color: $text-color;
   }
 }
 

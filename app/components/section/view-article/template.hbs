@@ -1,5 +1,6 @@
 <div class="container">
-  <div class="display">{{model.title}}</div>
-  <div class="date">Created At: {{model.date}}</div>
-  <div>{{html model.article}}</div>
+  <h3 class="display">{{model.title}}</h3>
+  <div class="date">Written on {{date model.date}}</div>
+
+  <div class="content">{{html model.article}}</div>
 </div>

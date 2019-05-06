@@ -4,7 +4,7 @@
       {{#each this.result as |filteredJob|}}
         <div class="col s6 l4">
 
-          {{#link-to "jobs.detail" filteredJob.id class="job-item"}}
+          {{#link-to "jobs.view" filteredJob.id class="job-item"}}
 
             <div class="image">
               <img src={{filteredJob.thumbJob}} alt="Job Image" class="responsive-img">
@@ -22,7 +22,7 @@
         {{#each this.model as |job|}}
           <div class="col s6 l4">
 
-            {{#link-to "jobs.detail" job.id class="job-item"}}
+            {{#link-to "jobs.view" job.id class="job-item"}}
 
               <div class="image">
                 <img src={{job.thumbJob}} alt="Job Image" class="responsive-img">
@@ -39,7 +39,7 @@
     {{#each jobs as |job|}}
       <div class="col s6 l4">
 
-        {{#link-to "jobs.detail" job.id class="job-item"}}
+        {{#link-to "jobs.view" job.id class="job-item"}}
 
           <div class="image">
             <img src={{job.thumbJob}} alt="Job Image" class="responsive-img">
@@ -51,7 +51,12 @@
       </div>
     {{else}}
 
-      <div class="emptyJob">Data not found</div>
+      <div class="not-found">
+        <p>We are so sorry that the position you are looking for is currently not available at the moment.</p>
+        <img src="./assets/images/sad-fox.png" alt="Sad Fox" width="200">
+        <p class="text-bold"><big>But please don't give up just yet!</big></p>
+        <p>You can always look for <a href="./jobs" {{action clear}}>other positions available</a> or just <span class="text-semibold">stalk us</span> at the links below to receive updates on our new position.</p>
+      </div>
 
     {{/each}}
   </div>
@@ -62,7 +67,7 @@
     {{#each this.result as |filter|}}
       <div class="col s6 l4">
 
-        {{#link-to "jobs.detail" filter.id class="job-item"}}
+        {{#link-to "jobs.view" filter.id class="job-item"}}
 
           <div class="image">
             <img src={{filter.thumbJob}} alt="Job Image" class="responsive-img">

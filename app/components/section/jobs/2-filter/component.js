@@ -1,9 +1,9 @@
 import Component from '@ember/component';
-import { jQ, set } from 'karir/utils/short'
 
 export default Component.extend({
 
-  tagName: 'section',
+  tagName: 'section'
+
   // specialization: null,
   // location: null,
   // data: null,
@@ -15,12 +15,7 @@ export default Component.extend({
   //   this.$('select').formSelect();
   // },
 
-  actions: {
-
-    clear() {
-      set(this, 'specialization', null);
-      set(this, 'location', null);
-    }
+  // actions: {
 
     // selectSpecialization(specializationRet) {
     //   // this.set('specialization',specializationRet);
@@ -87,5 +82,5 @@ export default Component.extend({
     //   data = this.get('data')
     //   this.get('passData')(data);
     // }
-  }
+  // }
 });

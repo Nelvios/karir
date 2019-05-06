@@ -9,11 +9,12 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('routes', { path: '/' }, function() {
     this.route('jobs', function() {
-      this.route('detail', { path: '/:id' });
+      this.route('view', { path: '/:id' });
     });
-    this.route('view-article', { path: '/:id' });
     this.route('about');
-    this.route('articles');
+    this.route('articles', function() {
+      this.route('view', { path: '/:id' });
+    });
   });
 });
 

@@ -1,8 +1,9 @@
 import Controller from '@ember/controller';
-import { get, computed } from 'karir/utils/short';
+import { get, set, computed } from 'karir/utils/short';
 
 export default Controller.extend({
 
+  queryParams: ['specialization', 'location'],
   specialization: null,
   location: null,
 
@@ -17,9 +18,14 @@ export default Controller.extend({
 
       return jobs;
     }
-  })
+  }),
 
-  // actions:{
+  actions: {
+
+    clear() {
+      set(this, 'specialization', null);
+      set(this, 'location', null);
+    }
 
   //   handleData(data){
   //     const model = this.get('model');
@@ -63,6 +69,6 @@ export default Controller.extend({
   //       this.set('result', tempData);
   //     }
   //   }
-  // }
+  }
 
 });

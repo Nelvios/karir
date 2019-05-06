@@ -17,11 +17,6 @@ export default Component.extend({
       set(this, 'isLoading', false);
       set(this, 'model', result.filter((item, idx) => idx < 3));
     });
-  },
-
-  willDestroyElement() {
-    this._super(...arguments);
-    this.$('.card').off('click.article-detail');
   }
 
 });

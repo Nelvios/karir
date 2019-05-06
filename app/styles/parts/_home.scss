@@ -14,6 +14,7 @@ section .section-title::before {
   height: 400px;
   padding: 100px 0 4rem;
   box-sizing: content-box;
+  overflow: hidden;
   // z-index: 2;
 
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 75% 100%, 0 calc(100% - 4rem));
@@ -59,19 +60,35 @@ section .section-title::before {
 
   .image {
     position: absolute;
-    width: 250px;
-    height: 250px;
+    width: 320px;
+    height: 240px;
 
-    top: -30px;
+    top: -1.5rem;
     right: 50%;
-    margin-right: -125px;
+    margin-right: -180px;
 
     @media #{$medium-and-up} {
-      width: 300px;
+      width: 360px;
+      height: 270px;
+
+      top: -4rem;
+      right: 0;
+      margin-right: -2rem;
+    }
+
+    @media #{$large-and-up} {
+      width: 400px;
       height: 300px;
 
-      right: 1rem;
-      margin-right: 0;
+      margin-right: -6rem;
+    }
+
+    @media #{$extra-large-and-up} {
+      width: 500px;
+      height: 375px;
+
+      top: -6rem;
+      right: 5%;
     }
   }
 
@@ -112,9 +129,9 @@ section .section-title::before {
     padding-top: 4.5rem;
   }
 
-  .waves-effect{
-    overflow: visible;
-  }
+  // .waves-effect{
+  //   overflow: visible;
+  // }
 
   .icon-left{
     left: 0;
@@ -438,18 +455,19 @@ section .section-title {
   }
 
   .image {
-    background-image: url(./images/2_INTERNSHIP.png);
+    background-image: url(./images/home-title.png);
     background-size: contain;
     background-repeat: no-repeat;
     opacity: .5;
 
-    @media #{$medium-and-up} { opacity: 1; }
+    @media #{$medium-and-up} { opacity: .9; }
   }
 
   .display {
     font-weight: bold;
     font-size: 2.5em;
-    text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
+    text-shadow: .2rem .3rem .3rem rgba(black, .7),
+                 .3rem .5rem .8rem rgba(black, .4);
 
     @media #{$large-and-up} { font-size: 3em; }
     @media #{$extra-large-and-up} { font-size: 3.5em; }
