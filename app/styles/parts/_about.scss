@@ -198,13 +198,35 @@
 
 #about-visimisi{
   @extend .valign-wrapper;
-  .section-1{
-    float: left;
+  padding: 3rem 0;
+
+  .title{
+    padding-bottom: 2rem;
   }
-  .section-2{
-    float: right;
+  .content-title{
+    padding-top: 1rem;
   }
-  // box-sizing: content-box;
+  .imageFormat{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    &:hover, &:focus, &:active {
+      transform: translate(0, -.6rem);
+    }
+  }
+  .openSpace{
+    width: 250px;
+    height: 200px;
+  }
+  .flexiTime{
+    width: 200px;
+    height: 200px;
+  }
+  .smartCasual{
+    width: 150px;
+    height: 200px;
+  }
 }
 
 
@@ -303,5 +325,47 @@
 
       @media #{$large-and-up}{ font-size: 1em; }
     }
+  }
+}
+
+#about-visimisi{
+  .title{
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+
+    @media #{$medium-and-up} { font-size: 3em; }
+    @media #{$extra-large-and-up} { font-size: 4em; }
+  }
+  .content-title{
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+
+    @media #{$medium-and-up} { font-size: 1.5em; }
+    @media #{$extra-large-and-up} { font-size: 2em; }
+  }
+  .openSpace{
+    background-image: url(./images/openspace.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+  }
+  .flexiTime{
+    background-image: url(./images/flexitime.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+  }
+  .smartCasual{
+    background-image: url(./images/smartcasual.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+  }
+}
+
+//Animation
+#about-visimisi{
+  .imageFormat{
+    -webkit-transition: transform .3s;
+    transition: transform .3s;
   }
 }
