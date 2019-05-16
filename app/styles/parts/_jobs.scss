@@ -78,7 +78,7 @@
   }
 }
 
-#jobs-detail {
+#jobs-view {
   padding: 2rem 0;
 
   .preview {
@@ -87,6 +87,7 @@
     .back {
       position: absolute;
       right: .75rem;
+      vertical-align: middle;
     }
 
     .box {
@@ -241,12 +242,18 @@
   }
 }
 
-#jobs-detail {
+#jobs-view {
   background-color: color('grey', 'lighten-5');
   color: $off-black;
 
   .preview {
-    .back { color: $tertiary-color; }
+    .back {
+      line-height: 2rem;
+      font-weight: 600;
+      color: $tertiary-color;
+
+      i { line-height: 2rem; }
+    }
 
     .box {
       @extend .valign-wrapper, .z-depth-2;

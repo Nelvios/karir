@@ -77,6 +77,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .material-icons { vertical-align: -.25em; }
 .carousel .indicators > .indicator-item { cursor: pointer; }
+i.right { margin-left: .5rem; }
+i.left { margin-right: .5rem; }
 
 .btn:hover, .btn:focus, .btn:active {
   &.primary-bg    { background-color: lighten($primary-color, 5%) !important;   }
