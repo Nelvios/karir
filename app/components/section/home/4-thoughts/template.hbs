@@ -1,18 +1,23 @@
 <div class="container">
-  <h2 class="section-title">Think Post</h2>
+  <div class="row">
+    <div class="col m4">
+      <div class="section-title">What They Say</div>
+    </div>
 
-  <div class="row clearfix">
-    {{#each model as |thought idx|}}
+    <div class="row col m8 container-thought">
+      <span class="thought-box"></span>
+      {{#each model as |thought idx|}}
 
-      <div class="col s12 m6 xl4 {{if (gte idx 3) "hide-on-small-only"}}">
-        <div class="image">
-          <img src={{thought.thumbThought}} alt="Photo" class="responsive-img">
+        <div class="col s12 m6 thought-content {{if (gte idx 3) "hide-on-small-only"}}">
+          <div class="image">
+            <img src={{thought.thumbThought}} alt="Photo" class="responsive-img">
+          </div>
+
+          <h5 class="display tooltip" data-tooltip={{thought.name}}>{{thought.name}}</h5>
+          <p>{{thought.thought}}</p>
         </div>
 
-        <h5 class="display tooltip" data-tooltip={{thought.name}}>{{thought.name}}</h5>
-        <p>{{thought.thought}}</p>
-      </div>
-
-    {{/each}}
+      {{/each}}
+    </div>
   </div>
 </div>

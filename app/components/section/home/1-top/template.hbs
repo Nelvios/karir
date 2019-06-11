@@ -1,10 +1,19 @@
+<span class="background-1"></span>
+<span class="background-2"></span>
+<span class="background-3"></span>
+<span class="background-4"></span>
 <div class="container">
 
-  <span class="image"></span>
+  {{!-- <span class="image"></span> --}}
 
-  <div class="display">CHOOSE YOUR <span class="text-black d-1">PATH</span></div>
-  <div class="display">SHAPE YOUR <span class="text-black d-2">FUTURE</span></div>
+  {{!-- <div class="display">CHOOSE YOUR <span class="head-1"></span></div>
+  <div class="display">SHAPE YOUR <span class="head-2"></span></div> --}}
+  <div class="display">CHOOSE YOUR <img class="head-1" src="assets/images/Header_SVG-PATH.svg" alt=""></div>
+  <div class="display">SHAPE YOUR <img class="head-2" src="assets/images/Header_SVG-FUTURE.svg" alt=""></div>
+  <div class="sub-text">Be part of BCA IT family</div>
   {{!-- <a href={{url}} class="btn waves-effect waves-light apply">Apply Now</a> --}}
-  {{#link-to "jobs" class="btn waves-effect waves-light apply"}}Apply Now{{/link-to}}
+  <div class="center-align">
+    {{#link-to "jobs" class="btn waves-effect waves-light apply"}}Apply Now{{/link-to}}
+  </div>
 
 </div>
