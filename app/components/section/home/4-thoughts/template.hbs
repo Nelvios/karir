@@ -1,12 +1,37 @@
-<div class="container">
+<span class="background">
+  <div class="container">
+    <div class="row">
+      <div class="col s8">
+        <div class="section-title">What They Say</div>
+      </div>
+      <div class="col s4 slider container-slider">
+        <ul class="slides">
+          <li>
+            <img src="assets/images/smartcasual.png" alt="">
+          </li>
+          <li>
+            <img src="assets/images/sad-fox.png" alt="">
+          </li>
+        </ul>
+      </div>
+      <div class="col s4 container-indicator">
+        <button class="waves-effect waves-black content-indicator icon-left" {{action "moveToPrev"}}><i class="material-icons icon-style">chevron_left</i></button>
+        <button class="waves-effect waves-black content-indicator icon-right" {{action "moveToNext"}}><i class="material-icons icon-style">chevron_right</i></button>
+      </div>
+    </div>
+  </div>
+</span>
+
+{{!-- <span class="background"></span> --}}
+{{!-- <div class="container">
   <div class="row">
     <div class="col m4">
       <div class="section-title">What They Say</div>
     </div>
 
-    <div class="row col m8 container-thought">
-      <span class="thought-box"></span>
-      {{#each model as |thought idx|}}
+    <div class="row col m8 container-thought"> --}}
+      {{!-- <span class="thought-box"></span> --}}
+      {{!-- {{#each model as |thought idx|}}
 
         <div class="col s12 m6 thought-content {{if (gte idx 3) "hide-on-small-only"}}">
           <div class="image">
@@ -19,5 +44,5 @@
 
       {{/each}}
     </div>
-  </div>
-</div>
+  </div> --}}
+{{!-- </div> --}}
