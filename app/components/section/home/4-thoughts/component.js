@@ -14,7 +14,7 @@ export default Component.extend({
     const store = this.get('store');
     const slider = this.$('.slider');
 
-    slider.slider({indicators: false});
+    slider.slider({indicators: false, height: 350});
     slider.slider('pause');
 
     store.findAll('thought').then(result => {
