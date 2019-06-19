@@ -1,9 +1,42 @@
 // Layout
 
 #jobs-top {
-  padding: 100px 0 2rem;
+  @extend .valign-wrapper;
+  height: 300px;
+  padding: 100px 0 4rem;
+  box-sizing: content-box;
+  // overflow: hidden;
+
+  &::before{
+    content: "";
+    position: absolute;
+    height: 400px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#015daa 0%, #0094d6 50%, #00b7f1 100%);
+
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 75% 100%, 0 calc(100% - 4rem));
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 75% 100%, 0 calc(100% - 4rem));
+
+  @media #{$medium-and-up} {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6rem), 80% 100%, 0 calc(100% - 6rem));
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6rem), 80% 100%, 0 calc(100% - 6rem));
+  }
+  @media #{$large-and-up} {
+    padding-bottom: 6rem;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8rem), 80% 100%, 0 calc(100% - 8rem));
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8rem), 80% 100%, 0 calc(100% - 8rem));
+  }
+  }
 
   .title { margin: 0; }
+
+  .clear {
+    @media #{$medium-and-down} { padding: 0; }
+  }
 }
 
 #jobs-filter {
@@ -15,6 +48,17 @@
 }
 
 #jobs-list {
+  margin-top: -4.5rem;
+  padding-top: 2.5rem;
+  box-sizing: content-box;
+
+  @media #{$medium-and-up} {
+    margin-top: -6.5rem;
+  }
+  @media #{$large-and-up} {
+    margin-top: -8.5rem;
+    padding-top: 10rem;
+  }
   padding: 3rem 0 2rem;
   flex-grow: 1000;
 
@@ -155,16 +199,16 @@
 // Styling
 
 #jobs-top {
-  background-image: url(./images/pattern.png),
-                    linear-gradient(-10deg, $secondary-color, darken($secondary-color, 15%));
-  background-color: color('grey', 'darken-4');
-  background-position: center top;
-  background-attachment: fixed;
+  // background-image: url(./images/pattern.png),
+  //                   linear-gradient(-10deg, $secondary-color, darken($secondary-color, 15%));
+  // background: linear-gradient(#015daa 0%, #0094d6 50%, #00b7f1 100%);
+  // background-position: center top;
+  // background-attachment: fixed;
 
-  @media #{$medium-and-up} {
-    background-image: url(./images/pattern.png),
-                      linear-gradient(-10deg, $secondary-color 50%, darken($secondary-color, 15%));
-  }
+  // @media #{$medium-and-up} {
+  //   background-image: url(./images/pattern.png),
+  //                     linear-gradient(-10deg, $secondary-color 50%, darken($secondary-color, 15%));
+  // }
 
   .title {
     font-family: $font-stack;
@@ -177,6 +221,30 @@
 
     @media #{$large-and-up} { font-size: 2.5em; }
     @media #{$extra-large-and-up} { font-size: 3em; }
+  }
+
+  .input-field .select-dropdown {
+    border-bottom: .2rem solid $off-black;
+    font-weight: bold;
+    color: $off-black;
+
+    &:hover, &:focus, &:active {
+      border-bottom-color: $secondary-color;
+    }
+  }
+
+  .clear {
+    background-color: transparent;
+    box-shadow: none;
+
+    font-weight: bold;
+    font-size: 16px;
+    color: $off-black;
+    text-transform: none;
+
+    &:hover, &:focus, &:active {
+      color: $secondary-color;
+    }
   }
 }
 
