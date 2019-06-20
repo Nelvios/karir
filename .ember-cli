@@ -5,6 +5,7 @@
 
     Setting `disableAnalytics` to true will prevent any data from being sent.
   */
-  "disableAnalytics": false
+  "disableAnalytics": false,
+  "port":4201
   // "proxy":"http://127.0.0.1:5000"
 }

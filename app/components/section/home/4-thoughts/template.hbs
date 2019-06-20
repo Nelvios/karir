@@ -2,20 +2,20 @@
   <div class="container">
     <div class="row">
       <div class="section-title">What They Say</div>
-        <div class="container-slider-name">
-          <div class="name-content">{{showModel.name}}</div>
+      <div class="container-slider-name">
+        <div class="name-content">{{showModel.name}}</div>
+      </div>
+      <div class="container-slider-position">
+        <div class="position-content">{{showModel.position}}</div>
+      </div>
+      <div class="container-slider-textbox">
+        <div class="textbox-content">
+          {{showModel.thought}}
         </div>
-        <div class="container-slider-position">
-          <div class="position-content">{{showModel.position}}</div>
-        </div>
-        <div class="container-slider-textbox">
-          <div class="textbox-content">
-          {{showModel.thought}}.
-          </div>
-        </div>
-        <div class="container-slider-image">
-          <img src="{{showModel.thumbThought}}" alt="">
-        </div>
+      </div>
+      <div class="container-slider-image">
+        <img src={{showModel.thumbThought}} alt="">
+      </div>
       {{!-- <div class="slider container-slider-name">
         <ul class="slides">
           <li>
@@ -39,9 +39,9 @@
       <div class="slider container-slider-textbox">
         <ul class="slides">
           <li> --}}
-            {{!-- <span class="title-content">INTERN</span> --}}
-            {{!-- <div class="slider-content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
+      {{!-- <span class="title-content">INTERN</span> --}}
+      {{!-- <div class="slider-content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </div>
           </li>
           <li>
@@ -63,11 +63,13 @@
       </div> --}}
       <div class="container-indicator">
         <div class="left hide-on-small-only">
-          <button class="waves-effect waves-black content-indicator icon-left" {{action "moveToPrev"}}><i class="material-icons icon-style">chevron_left</i></button>
+          <button class="waves-effect waves-black content-indicator icon-left" {{action "moveToPrev"}}><i
+              class="material-icons icon-style">chevron_left</i></button>
         </div>
 
         <div class="right hide-on-small-only">
-          <button class="waves-effect waves-black content-indicator icon-right" {{action "moveToNext"}}><i class="material-icons icon-style">chevron_right</i></button>
+          <button class="waves-effect waves-black content-indicator icon-right" {{action "moveToNext"}}><i
+              class="material-icons icon-style">chevron_right</i></button>
         </div>
       </div>
     </div>
@@ -82,8 +84,8 @@
     </div>
 
     <div class="row col m8 container-thought"> --}}
-      {{!-- <span class="thought-box"></span> --}}
-      {{!-- {{#each model as |thought idx|}}
+{{!-- <span class="thought-box"></span> --}}
+{{!-- {{#each model as |thought idx|}}
 
         <div class="col s12 m6 thought-content {{if (gte idx 3) "hide-on-small-only"}}">
           <div class="image">

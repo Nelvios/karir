@@ -405,7 +405,7 @@ section .section-title::before {
           // min-height: 350px;
           // top: 50%;
           // transform: translateY(-50%);
-        } 
+        }
       }
 
       .container-slider-name{
@@ -644,7 +644,7 @@ section .section-title {
       @extend .z-depth-3;
       background-color: rgba(black, .3);
       border-color: $primary-color;
-      background-image: radial-gradient(circle at center, rgba(243, 153, 52, .75) 25%, rgba(246, 125, 80, .75) 85%) 
+      background-image: radial-gradient(circle at center, rgba(243, 153, 52, .75) 25%, rgba(246, 125, 80, .75) 85%)
     }
   }
 }
@@ -827,7 +827,7 @@ section .section-title {
 
   .container-slider-textbox{
     background-color: #fff;
-    box-shadow: 4px 8px 7px color('grey', 'lighten-1'); 
+    box-shadow: 4px 8px 7px color('grey', 'lighten-1');
     .textbox-content{
       text-align: left;
     }
