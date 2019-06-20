@@ -14,7 +14,7 @@ export default Component.extend({
     carousel.carousel({
       fullWidth: true,
       indicators: true,
-      onCycleTo: (el) => this.send('changeColor', jQ(el).attr('data-color'))
+      // onCycleTo: (el) => this.send('changeColor', jQ(el).attr('data-color'))
     });
 
     // carousel.mouseenter(() => clearTimeout(get(this, 'autoScroll')));
