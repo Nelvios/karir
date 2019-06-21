@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { jQ, get } from 'karir/utils/short';
+import { get } from 'karir/utils/short';
 
 export default Component.extend({
 
@@ -31,10 +31,11 @@ export default Component.extend({
 
   actions: {
 
-    moveToPrev(){
+    prev() {
       this.$('.carousel').carousel('prev');
     },
-    moveToNext(){
+
+    next() {
       this.$('.carousel').carousel('next');
     },
 

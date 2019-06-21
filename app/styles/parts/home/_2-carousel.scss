@@ -1,0 +1,190 @@
+// Layout
+
+#home-carousel {
+  box-sizing: content-box;
+
+  > .container {
+    position: relative;
+    margin-top: -8.5rem;
+    z-index: 1;
+    border-radius: 4em;
+  }
+
+  .btn-floating {
+    position: absolute;
+    top: 50%;
+    margin: -12px 1rem 0;
+
+    &.btn-prev { left: 0; }
+    &.btn-next { right: 0; }
+  }
+
+  .carousel-item {
+    @extend .valign-wrapper;
+    height: 500px;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    .container {
+      position: relative;
+      padding: 0 2rem;
+    }
+  }
+
+  .image {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+
+    top: -5rem;
+    right: 50%;
+    margin-right: -200px;
+
+    @media #{$medium-and-up} {
+      right: 25%;
+      margin-right: -100px;
+    }
+
+    @media #{$large-and-up} {
+      top: -7rem;
+      width: 550px;
+      height: 350px;
+      margin-right: -275px;
+    }
+
+    @media #{$extra-large-and-up} {
+      right: 20%;
+    }
+  }
+
+  .display-1, .display-2 {
+    position: relative;
+    z-index: 5;
+
+    @media #{$medium-and-up} { margin-left: 1rem; }
+    @media #{$large-and-up} { margin-left: -2rem; }
+  }
+
+  .display-1 {
+    @media #{$small-and-down} { margin-bottom: 1rem; }
+  }
+
+  .indicators .indicator-item {
+    margin: 3em 1em;
+  }
+
+  .btn.apply {
+    height: inherit;
+    margin-top: 4rem;
+    padding: .3rem 1.5rem;
+
+    @media #{$medium-and-up} { margin: 2rem 2rem 0; }
+
+    &:hover, &:focus, &:active {
+      transform: translate(0, -.2rem);
+    }
+  }
+}
+
+
+// Styling
+
+#home-carousel {
+
+  @media #{$small-and-down} { text-align: center; }
+
+  .box {
+    background-color: #e2ebf4;
+    box-shadow: 0 .2rem 1.4rem .1rem rgba(#555, .1);
+  }
+
+  .btn-floating {
+    background-color: #f8f8f8;
+    color: $off-black;
+
+    &:hover, &:focus, &:active {
+      background-color: white;
+    }
+
+    i {
+      font-size: 2em;
+      color: $off-black;
+    }
+  }
+
+  .image {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: .3;
+
+    @media #{$medium-and-up} { opacity: 1; }
+  }
+
+  .img-1 { background-image: url(./images/1-BIT.png);          }
+  .img-2 { background-image: url(./images/2-PROFESSIONAL.png); }
+  .img-3 { background-image: url(./images/3-INTERNSHIP.png);   }
+  .img-4 { background-image: url(./images/4-PPTI.png);         }
+
+  .display-1 {
+    font-family: $font-heading;
+    font-weight: bold;
+    font-size: 1.6em;
+    line-height: 1.2em;
+    color: $off-black;
+    text-shadow: .05em .1em 0rem rgba(black, .2);
+
+    @media #{$large-and-up} { font-size: 1.8em; }
+    @media #{$extra-large-and-up} { font-size: 2em; }
+  }
+
+  .display-2 {
+    font-weight: 900;
+    font-size: 2.2em;
+    line-height: 1.2em;
+    letter-spacing: .1rem;
+    color: $off-black;
+    text-shadow: 0 .1em .2em rgba(black, .4);
+
+    @media #{$large-and-up} { font-size: 2.5em; }
+    @media #{$extra-large-and-up} { font-size: 3em; }
+  }
+
+  .indicators {
+    .indicator-item {
+      background-color: transparent;
+      border: .15em solid white;
+      box-shadow: .4em .4em .8em .2em rgba(black, .12);
+
+      &.active {
+        background-color: #00b7f1;
+        border: .15em solid #00b7f1;
+      }
+    }
+  }
+
+  .btn.apply {
+    background-image: radial-gradient(circle at center, #f39934 25%, #f67d50 85%);
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.2em;
+
+    &:hover, &:focus, &:active {
+      @extend .z-depth-3;
+    }
+  }
+}
+
+
+// Animation
+
+#home-carousel {
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+
+  .btn.apply {
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s;
+  }
+}
