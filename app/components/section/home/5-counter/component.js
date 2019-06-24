@@ -53,12 +53,12 @@ export default Component.extend({
   },
 
   _getThreshold() {
-    const articles = jQ('#home-articles');
+    const benefits = jQ('#home-benefits');
     const counter = this.$();
     const btn = this.$('.btn.apply');
 
     return {
-      top:    articles.offset().top - jQ(window).height() + 100,
+      top:    benefits.offset().top - jQ(window).height() + 100,
       bottom: counter.offset().top - jQ(window).height() + counter.outerHeight()/2 + btn.height()/2 + 30
     };
   }

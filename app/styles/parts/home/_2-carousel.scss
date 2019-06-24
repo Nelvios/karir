@@ -103,13 +103,14 @@
     background-color: #f8f8f8;
     color: $off-black;
 
-    &:hover, &:focus, &:active {
-      background-color: white;
-    }
-
     i {
       font-size: 2em;
       color: $off-black;
+    }
+
+    &:hover, &:focus, &:active {
+      background-color: white;
+      i { color: black; }
     }
   }
 
@@ -182,6 +183,16 @@
 #home-carousel {
   -webkit-transition: background-color .3s;
   transition: background-color .3s;
+
+  .btn-floating {
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+
+    i {
+      -webkit-transition: color .15s;
+      transition: color .15s;
+    }
+  }
 
   .btn.apply {
     -webkit-transition-duration: .15s;
