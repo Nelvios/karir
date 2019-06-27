@@ -198,16 +198,18 @@
       padding: 24px 24px 10px 24px;
 
       @media #{$small-and-down} {
-        margin-left: -140px;
+        left: unset;
+        margin-left: unset;
         height: 0;
         padding: 30% 0 0;
+        order: 2;
 
         p {
           position: absolute;
           top: .5rem;
-          margin: .75rem;
+          margin: 1.5rem .75rem;
           z-index: 1;
-          padding: 0 .5rem;
+          padding: 0 1rem;
         }
       }
 
@@ -230,9 +232,11 @@
       padding: 10px 24px 30px 24px;
 
       @media #{$small-and-down}{
-        margin-left: auto;
+        right: 1rem;
+        bottom: 1.5rem;
         align-self: flex-end;
         padding: 0;
+        position: absolute;
       }
 
       .learn-more{
@@ -537,7 +541,7 @@
         line-height: 1.2;
         letter-spacing: -.025em;
 
-        @media #{$small-and-down} { font-size: 1.2em; }
+        @media #{$small-and-down} { font-size: 1.5em; }
       }
     }
 
@@ -545,9 +549,9 @@
       font-weight: 600;
       border-top: unset;
 
-      @media #{$small-and-down}{
-        font-size: .7em;
-      }
+      // @media #{$small-and-down}{
+      //   font-size: .7em;
+      // }
 
       a {
         font-size: 1em;
