@@ -21,6 +21,13 @@
     clip-path: url(#clip-top3);
   }
 
+  @media #{$small-and-down}{
+    &::before{
+      -webkit-clip-path: url(#clip-top4);
+      clip-path: url(#clip-top4);
+    }
+  }
+
   > .container { position: relative; z-index: 1; }
 
   .title { margin: 0; }
@@ -58,7 +65,6 @@
     line-height: unset;
     padding: 7px 20px;
     margin-top: .2rem;
-    @media #{$medium-and-down} { padding: 0; }
   }
 }
 
@@ -79,6 +85,10 @@
     margin-top: -18rem;
     padding-top: 8rem;
   }
+  @media #{$small-and-down}{
+    margin-top: -14rem;
+    padding-top: 2rem;
+  }
   // margin-top: -4.5rem;
   // padding-top: 2.5rem;
   // box-sizing: content-box;
@@ -97,6 +107,15 @@
     padding: .5rem 1.5rem;
     @media #{$small-and-down}{
       padding: 0;
+    }
+  }
+
+  .section-title {
+    position: relative;
+    margin: 3rem 0 3rem 0;
+    padding-bottom: 1.4rem;
+    @media #{$small-and-down}{
+      margin: 3rem 0 1.5rem 0
     }
   }
 
@@ -207,7 +226,7 @@
         p {
           position: absolute;
           top: .5rem;
-          margin: 1.5rem .75rem;
+          margin: .75rem;
           z-index: 1;
           padding: 0 1rem;
         }
@@ -232,8 +251,8 @@
       padding: 10px 24px 30px 24px;
 
       @media #{$small-and-down}{
-        right: 1rem;
-        bottom: 1.5rem;
+        right: 5vw;
+        bottom: 10%;
         align-self: flex-end;
         padding: 0;
         position: absolute;
@@ -243,6 +262,11 @@
         height: 30px;
         line-height: 30px;
         padding: 0 20px;
+        @media #{$small-and-down}{
+          width: 35vw;
+          height: 8vw;
+          line-height: 8vw;
+        }
       }
       a {
         left: 50%;
@@ -254,10 +278,6 @@
 
         i { margin-left: .25rem; }
       }
-      @media #{$small-and-down}{
-        height: 25px;
-        padding: 0 10px;
-      }
     }
 
     .card-cover {
@@ -265,12 +285,6 @@
       width: 100%; height: 100%;
       z-index: 1010;
     }
-  }
-
-  .section-title {
-    position: relative;
-    margin: 3rem 0 3rem 0;
-    padding-bottom: 1.4rem;
   }
 
   // .job-item {
@@ -541,7 +555,7 @@
         line-height: 1.2;
         letter-spacing: -.025em;
 
-        @media #{$small-and-down} { font-size: 1.5em; }
+        @media #{$small-and-down} { font-size: 6vw; }
       }
     }
 
@@ -563,6 +577,9 @@
         border-radius: 50px;
         font-weight: bold;
         font-size: 1em;
+        @media #{$small-and-down}{
+          font-size: 3vw;
+        }
       }
     }
   }
