@@ -1,4 +1,33 @@
-<span class="background">
+<div class="container">
+
+  <h2 class="section-title">What They Say</h2>
+
+  <div class="screen">
+    <div class="thought">
+      <div class="name">{{showModel.name}}</div>
+      <div class="position">{{showModel.position}}</div>
+
+      {{showModel.thought}}
+    </div>
+
+    <div class="photo"><img src={{showModel.thumbThought}} alt="Photo"></div>
+  </div>
+
+  <div class="slider">
+    <div class="left mr-6">
+      <button class="btn-floating btn-small" {{action "moveToPrev"}}>{{icon "chevron_left"}}</button>
+    </div>
+
+    <div class="left">
+      <button class="btn-floating btn-small" {{action "moveToNext"}}>{{icon "chevron_right"}}</button>
+    </div>
+  </div>
+
+</div>
+
+{{!-- <br><br><br><br><br><br><br><br><br><br> --}}
+
+<span class="background d-none">
   <div class="container">
     <div class="row">
       <div class="section-title">What They Say</div>
@@ -39,8 +68,8 @@
       <div class="slider container-slider-textbox">
         <ul class="slides">
           <li> --}}
-      {{!-- <span class="title-content">INTERN</span> --}}
-      {{!-- <div class="slider-content">
+            {{!-- <span class="title-content">INTERN</span> --}}
+            {{!-- <div class="slider-content">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </div>
           </li>

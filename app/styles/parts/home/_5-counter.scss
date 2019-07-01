@@ -1,0 +1,126 @@
+// Layout
+
+#home-counter {
+  @extend .valign-wrapper;
+  position: relative;
+  height: 8rem;
+  padding: 1rem 0;
+  z-index: 10;
+
+  @media #{$extra-large-and-up} { height: 10rem; }
+
+  .box{
+    border-radius: 1rem;
+    padding: 0 2rem;
+    margin-top: -10rem;
+    // &::before{
+    //   content:"";
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 100%;
+    //   left: -1rem;
+    //   background-image: url(./images/counter-back-img.png);
+    //   background-position: center top;
+    // }
+  }
+
+  .text {
+    margin-left: .5rem;
+
+    @media #{$medium-and-up} { margin-left: 1.5rem; }
+
+    .sub {
+      display: block;
+      margin-top: -.4em;
+    }
+  }
+
+  .btn.apply {
+    @extend .valign-wrapper;
+    position: absolute;
+    right: 5%;
+
+    padding: 0 10.5px;
+    z-index: 100;
+    border-radius: 2rem;
+
+    @media #{$medium-and-up} { right: 7.5%; }
+    @media #{$large-and-up} { right: 17%; }
+
+    &:hover, &:focus, &:active {
+      span { width: 72px; }
+    }
+
+    span {
+      width: 0;
+      overflow: hidden;
+    }
+
+    &.float {
+      position: fixed;
+      bottom: 30px;
+
+      &.top { right: -50%; }
+    }
+  }
+}
+
+
+// Styling
+
+#home-counter {
+  background-color: #03a9f5;
+
+  @media #{$medium-and-up} { font-size: 1.5em; }
+  @media #{$extra-large-and-up} { font-size: 1.8em; }
+
+  .box{
+    background-color: $secondary-color;
+  }
+
+  .number {
+    font-weight: bold;
+    font-size: 2.8em;
+    color: color('yellow', 'base');
+    text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
+  }
+
+  .text {
+    font-weight: bold;
+    font-size: 1.2em;
+
+    .sub {
+      font-weight: normal;
+      font-size: .8em;
+      opacity: .8;
+    }
+  }
+
+  .btn.apply {
+    background-color: $tertiary-color;
+    font-weight: 600;
+    color: white;
+
+    i { font-size: 2.2em; }
+  }
+}
+
+
+// Animation
+
+#home-counter {
+  .btn.apply {
+    -webkit-transition: right ease-out .3s;
+    transition: right ease-out .3s;
+
+    &.top {
+      -webkit-transition-timing-function: ease-in;
+      transition-timing-function: ease-in;
+    }
+
+    span {
+      -webkit-transition: width .3s;
+      transition: width .3s;
+    }
+  }
+}
