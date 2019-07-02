@@ -3,6 +3,17 @@
   <div class="row">
     <div class="slider-photo">
       <img src={{showModel.thumbImage}} alt="">
+      <div class="container-indicator">
+        <div class="left hide-on-small-only">
+          <button class="waves-effect waves-black content-indicator icon-left" {{action "moveToPrev"}}><i
+              class="material-icons icon-style">chevron_left</i></button>
+        </div>
+
+        <div class="right hide-on-small-only">
+          <button class="waves-effect waves-black content-indicator icon-right" {{action "moveToNext"}}><i
+              class="material-icons icon-style">chevron_right</i></button>
+        </div>
+      </div>
     </div>
     <div class="slider-content">
       <div class="content-title">

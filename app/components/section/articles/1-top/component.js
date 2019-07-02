@@ -23,6 +23,29 @@ export default Component.extend({
       set(this, 'showModel', filter.get('firstObject'));
       set(this, 'filtered', filter)
     });
+  },
+
+  actions: {
+    moveToPrev(){
+      const filtered = this.get('filtered');
+      let counter = this.get('counter');
+      counter += 1;
+      if(counter < 0){
+        counter = 5
+      }
+      this.set('showModel', filtered.objectAt(counter));
+      this.set('counter', counter);
+    },
+    moveToNext(){
+      const filtered = this.get('filtered');
+      let counter = this.get('counter');
+      counter += 1;
+      if(counter > 5){
+        counter = 0
+      }
+      this.set('showModel', filtered.objectAt(counter));
+      this.set('counter', counter);
+    }
   }
 
 });
