@@ -29,20 +29,25 @@ export default Component.extend({
     moveToPrev(){
       const filtered = this.get('filtered');
       let counter = this.get('counter');
-      counter += 1;
+      this.$('#indicator-'+counter.toString()).removeClass("active");
+      counter -= 1;
       if(counter < 0){
         counter = 5
       }
+      this.$('#indicator-'+counter.toString()).addClass("active");
       this.set('showModel', filtered.objectAt(counter));
       this.set('counter', counter);
     },
     moveToNext(){
       const filtered = this.get('filtered');
       let counter = this.get('counter');
+      this.$('#indicator-'+counter.toString()).removeClass("active");
+      // console.log(indicatorNow);
       counter += 1;
       if(counter > 5){
         counter = 0
       }
+      this.$('#indicator-'+counter.toString()).addClass("active");
       this.set('showModel', filtered.objectAt(counter));
       this.set('counter', counter);
     }
