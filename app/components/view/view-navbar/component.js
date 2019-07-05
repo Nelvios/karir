@@ -10,6 +10,7 @@ export default Component.extend({
     this._super(...arguments);
     const THRESHOLD = 16;
     const body = jQ('body');
+    console.log(jQ(window).scroll());
 
     jQ(window).scroll(() => {
 
