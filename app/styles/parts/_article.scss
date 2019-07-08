@@ -11,6 +11,9 @@
     width: 100%;
     text-align: right;
   }
+  &.invisible{
+    opacity: 0;
+  }
 }
 
 #articles-top {
@@ -472,6 +475,10 @@
 
 
 // Animation
+.table-of-contents{
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
 
 #articles-top{
   .slider-action a > i {

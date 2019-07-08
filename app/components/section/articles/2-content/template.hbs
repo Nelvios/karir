@@ -73,7 +73,7 @@
 
 <ul id="toc" class="table-of-contents">
   {{#each tableOfContents as |tableOfContent|}}
-  <li><a href="">{{tableOfContent}}</a></li>
+  <li><a href="#" {{action "tocPicked" tableOfContent}}>{{tableOfContent}}</a></li>
   {{!-- <li><a href="#toc" class="active">March 2019</a></li>
   <li><a href="#sass">April 2019</a></li>
   <li><a href="#palette">June 2019</a></li>
@@ -84,7 +84,7 @@
 <div id="containerContent" class="container">
   <div class="row">
     <h2 class="section-title center">All Articles</h2>
-    {{#each articles as |article|}}
+    {{#each showArticle as |article|}}
       {{!-- <div class="col s12 m4 xl3 hide-on-small-only">
 
         <div class="card">
