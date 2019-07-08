@@ -70,15 +70,19 @@
   </div>
 </div> --}}
 
+
 <ul id="toc" class="table-of-contents">
-  <li><a href="#toc" class="active">March 2019</a></li>
+  {{#each tableOfContents as |tableOfContent|}}
+  <li><a href="">{{tableOfContent}}</a></li>
+  {{!-- <li><a href="#toc" class="active">March 2019</a></li>
   <li><a href="#sass">April 2019</a></li>
   <li><a href="#palette">June 2019</a></li>
-  <li><a href="#palette">September 2019</a></li>
+  <li><a href="#palette">September 2019</a></li> --}}
+  {{/each}}
 </ul>
 
-<div class="container">
-  <div id="rows" class="row">
+<div id="containerContent" class="container">
+  <div class="row">
     <h2 class="section-title center">All Articles</h2>
     {{#each articles as |article|}}
       {{!-- <div class="col s12 m4 xl3 hide-on-small-only">
