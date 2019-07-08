@@ -1,6 +1,7 @@
 // Layout
 
 .table-of-contents{
+  // display: none;
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
@@ -13,6 +14,9 @@
   }
   &.invisible{
     opacity: 0;
+  }
+  &.none{
+    display: none;
   }
 }
 

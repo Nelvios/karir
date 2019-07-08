@@ -54,24 +54,24 @@ export default Component.extend({
       set(this, 'showArticle', results);
     });
 
-    jQ(window).on('scroll.animate', () => {
-      const threshold = this._getThreshold() || {};
-      const scroll = jQ(window).scrollTop();
-      const toc = this.$('#toc');
-      console.log(scroll);
+    // jQ(window).on('scroll.animate', () => {
+    //   const threshold = this._getThreshold() || {};
+    //   const scroll = jQ(window).scrollTop();
+    //   const toc = this.$('#toc');
+    //   console.log(scroll);
 
-      if(scroll > threshold.top && scroll < threshold.bottom) {
-        toc.stop(true).fadeIn(300);
-      } else {
-        toc.stop(true).fadeOut(300);
-      }
+    //   if(scroll > threshold.top && scroll < threshold.bottom) {
+    //     toc.stop(true).fadeIn(300);
+    //   } else {
+    //     toc.stop(true).fadeOut(300);
+    //   }
 
       // if(scroll > threshold.bottom) {
       //   toc.stop(true).fadeOut();
       // } else {
       //   toc.stop(true).fadeIn();
       // }
-    });
+    // });
 
 
     // const containerTop = $('#containerContent').offset().top;
@@ -98,17 +98,19 @@ export default Component.extend({
 
       if(scroll > threshold.top && scroll < threshold.bottom) {
         toc.removeClass('invisible')
-        // toc.stop(true).fadeIn(300);
-      } else {
-        toc.addClass('invisible')
-        // toc.stop(true).fadeOut(300);
       }
+      else {
+        toc.addClass('invisible')
+      } 
 
-      // if(scroll > threshold.bottom) {
-      //   toc.stop(true).fadeOut();
-      // } else {
-      //   toc.stop(true).fadeIn();
-      // }
+
+      if(scroll < threshold.topPlus || scroll > threshold.bottomPlus){
+        console.log("masuk sini")
+        toc.addClass('none')
+      }
+      else{
+        toc.removeClass('none')
+      }
     });
   },
 
@@ -124,13 +126,17 @@ export default Component.extend({
     const footer = jQ('#footer');
     // const btn = this.$('.btn.apply');
     console.log({
-      top:    container.offset().top,
-      bottom: footer.offset().top - jQ(window).height()
+      top:    container.offset().top - 200,
+      bottom: footer.offset().top - jQ(window).height() + 200,
+      topPlus: container.offset().top - 300,
+      bottomPlus: footer.offset().top - jQ(window).height() + 300
     })
 
     return {
       top:    container.offset().top - 200,
-      bottom: footer.offset().top - jQ(window).height() + 200
+      bottom: footer.offset().top - jQ(window).height() + 200,
+      topPlus: container.offset().top - 350,
+      bottomPlus: footer.offset().top - jQ(window).height() + 350
     };
   },
 
