@@ -34,7 +34,7 @@ export default Component.extend({
 
   didInsertElement(){
     this._super(...arguments);
-    // this.$('#toc').hide();
+    this.$('#toc').addClass('none');
     const store = get(this, 'store');
     const arrays = [];
 
@@ -94,7 +94,6 @@ export default Component.extend({
       const threshold = this._getThreshold() || {};
       const scroll = jQ(window).scrollTop();
       const toc = this.$('#toc');
-      console.log(scroll);
 
       if(scroll > threshold.top && scroll < threshold.bottom) {
         toc.removeClass('invisible')
@@ -105,7 +104,6 @@ export default Component.extend({
 
 
       if(scroll < threshold.topPlus || scroll > threshold.bottomPlus){
-        console.log("masuk sini")
         toc.addClass('none')
       }
       else{
@@ -125,18 +123,12 @@ export default Component.extend({
     const container = jQ('#containerContent');
     const footer = jQ('#footer');
     // const btn = this.$('.btn.apply');
-    console.log({
-      top:    container.offset().top - 200,
-      bottom: footer.offset().top - jQ(window).height() + 200,
-      topPlus: container.offset().top - 300,
-      bottomPlus: footer.offset().top - jQ(window).height() + 300
-    })
 
     return {
       top:    container.offset().top - 200,
       bottom: footer.offset().top - jQ(window).height() + 200,
-      topPlus: container.offset().top - 350,
-      bottomPlus: footer.offset().top - jQ(window).height() + 350
+      topPlus: container.offset().top - 300,
+      bottomPlus: footer.offset().top - jQ(window).height() + 300
     };
   },
 
@@ -192,7 +184,6 @@ export default Component.extend({
 
   actions: {
     tocPicked(tableOfContent){
-      console.log(tableOfContent);
       const filteredArray = [];
       const model = this.get('model');
       const filtered = model.filter((result) => {
@@ -202,15 +193,12 @@ export default Component.extend({
         const month = dateFormatted.toLocaleString('en-us', { month: 'long' });
         const monthData = dateFormattedData.toLocaleString('en-us', { month: 'long' });
         // const dateTest = new Date(tableOfContent);
-        console.log(month);
         if(monthData == month){
-          console.log("masuk sini")
           filteredArray.push(result)
         }
         // console.log(dateTest);
       })
       set(this, 'showArticle', filteredArray);
-      console.log(filteredArray);
     }
   }
 

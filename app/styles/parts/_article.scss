@@ -32,13 +32,14 @@
     position: absolute;
     top: 0;
     width: 100%;
-    height: 35vw;
+    height: 40vw;
+    min-height: 315px;
     // z-index: -1;
     background: linear-gradient(#015daa 0%, #0094d6 50%, #00b7f1 100%);
     z-index: 1;
-    // @media #{$large-and-up}{
-    //   height: 35vw;
-    // }
+    @media #{$large-and-up}{
+      height: 35vw;
+    }
     // @media #{$small-and-down}{
 
     // }
@@ -97,8 +98,8 @@
   }
 
   .slider-content{
-    width: 450px;
-    height: 100px;
+    width: 30vw;
+    height: 9vw;
     left: 50%;
     transform: translateX(-50%);
     // margin-left: 10%;
@@ -109,40 +110,55 @@
     z-index: 1;
     top: -5rem;
 
-    &::before{
-      content: "";
-      position: absolute;
-      width: 100%;
-      bottom: 3rem;
-      left: 0;
-      border-bottom: .1rem solid #eee;
-    }
-
     .content-title{
       position: relative;
       color: $off-black;
       font-weight: bold;
-      font-size: 1.7em;
+      font-size: 2vw;
       line-height: 1.2;
       letter-spacing: -.025em;
+      
+      // @media #{$large-and-up}{
+      //   font-size: 
+      // }
 
       @media #{$small-and-down} { font-size: 1em; }
+
+      &::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        bottom: -.5rem;
+        left: 0;
+        z-index: 2;
+        border-bottom: .1rem solid #eee;
+      }
     }
     .content-date{
       color: $off-black;
       position: absolute;
-      bottom: .6rem;
+      bottom: .4rem;
       left: 2rem;
+      z-index: 2;
       .date {
+        font-size: .8em;
+        @media #{$large-and-up}{
+          font-size: inherit;
+          bottom: .6rem;
+        }
         color: color('grey', 'lighten-1');
       }
     }
     .slider-action{
       position: absolute;
-      bottom: .6rem;
+      bottom: .4rem;
       right: 2rem;
+      z-index: 2;
       &:hover, &:focus, &:active {
         i { margin-left: .75rem; }
+      }
+      @media #{$large-and-up}{
+        bottom: .6rem;
       }
     }
     // bottom: 0;
@@ -175,8 +191,8 @@
 #articles-content {
   background: linear-gradient(#aabcd0 0%, #fefeff 50%, #ffffff 100%)  ;
   // padding: 1rem 0;
-  margin-top: -15rem;
-  padding-top: 6rem;
+  margin-top: -40rem;
+  padding-top: 50vw;
   // box-sizing: content-box;
 
   @media #{$large-and-up} {
@@ -378,8 +394,17 @@
     font-weight: 600;
 
       a {
-        font-size: 1em;
+        font-size: .7em;
         text-transform: uppercase;
+        @media #{$large-and-up}{
+          font-size: 1em
+        }
+        i{
+          font-size: 15px;
+          @media #{$large-and-up}{
+            font-size: inherit;
+          }
+        }
       }
   }
 }
