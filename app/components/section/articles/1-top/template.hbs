@@ -4,12 +4,12 @@
     <div class="slider-photo">
       <img src={{showModel.thumbImage}} alt="">
       <div class="container-indicator">
-        <div class="left hide-on-small-only">
+        <div class="left">
           <button class="waves-effect waves-black content-indicator icon-left" {{action "moveToPrev"}}><i
               class="material-icons icon-style">chevron_left</i></button>
         </div>
 
-        <div class="right hide-on-small-only">
+        <div class="right">
           <button class="waves-effect waves-black content-indicator icon-right" {{action "moveToNext"}}><i
               class="material-icons icon-style">chevron_right</i></button>
         </div>
@@ -19,11 +19,15 @@
       <div class="content-title">
         {{showModel.title}}
       </div>
-      <div class="content-date">
-        <span class="date">{{date showModel.date}}</span>
-      </div>
-      <div class="slider-action">
-        {{#link-to "articles.view" showModel.id}}Read More{{icon "arrow_forward" class="ml-2"}}{{/link-to}}
+      <div class="content-bottom">
+        <div class="row">
+          <div class="content-date">
+            <span class="date">{{date showModel.date}}</span>
+          </div>
+          <div class="slider-action">
+            {{#link-to "articles.view" showModel.id}}Read More{{icon "arrow_forward" class="ml-2 hide-on-small-only"}}{{/link-to}}
+          </div>
+        </div>
       </div>
     </div>
     <ul class="indicators">
