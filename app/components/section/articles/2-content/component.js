@@ -4,9 +4,9 @@ import { jQ, get, set, service } from 'karir/utils/short';
 export default Component.extend({
 
   tagName: 'section',
-  store: service(),
+  // store: service(),
 
-  model:null,
+  // model:null,
   showArticle: null,
   tableOfContents: [],
 
@@ -35,24 +35,40 @@ export default Component.extend({
   didInsertElement(){
     this._super(...arguments);
     this.$('#toc').addClass('none');
-    const store = get(this, 'store');
+    // const store = get(this, 'store');
+    const model = this.get('model');
     const arrays = [];
 
-    store.findAll('article').then(results => {
-      const filter = results.filter((result) => {
-        const getDate = result.get('date');
-        const dateFormatted = new Date(getDate);
-        const month = dateFormatted.toLocaleString('en-us', { month: 'long' });
-        const year = dateFormatted.getUTCFullYear()
-        const toc = month+" "+year
-        if(!arrays.includes(toc)){
-          arrays.push(toc);
-        }
-      });
-      set(this, 'tableOfContents', arrays);
-      set(this, 'model', results);
-      set(this, 'showArticle', results);
+    const filter = model.filter((result) => {
+      const getDate = result.get('date');
+      const dateFormatted = new Date(getDate);
+      const month = dateFormatted.toLocaleString('en-us', { month: 'long' });
+      const year = dateFormatted.getUTCFullYear()
+      const toc = month+" "+year
+      if(!arrays.includes(toc)){
+        arrays.push(toc);
+      }
     });
+
+    set(this, 'tableOfContents', arrays);
+    set(this, 'showArticle', model);
+
+
+    // store.findAll('article').then(results => {
+    //   const filter = results.filter((result) => {
+    //     const getDate = result.get('date');
+    //     const dateFormatted = new Date(getDate);
+    //     const month = dateFormatted.toLocaleString('en-us', { month: 'long' });
+    //     const year = dateFormatted.getUTCFullYear()
+    //     const toc = month+" "+year
+    //     if(!arrays.includes(toc)){
+    //       arrays.push(toc);
+    //     }
+    //   });
+    //   set(this, 'tableOfContents', arrays);
+    //   set(this, 'model', results);
+    //   set(this, 'showArticle', results);
+    // });
 
     // jQ(window).on('scroll.animate', () => {
     //   const threshold = this._getThreshold() || {};
@@ -117,6 +133,12 @@ export default Component.extend({
 
     jQ(window).off('scroll.animate');
     jQ(window).triggerHandler('scroll.animate');
+  },
+
+  willDestroyElement(){
+    this._super(...arguments);
+
+    jQ(window).off('scroll.animate');
   },
 
   _getThreshold() {
