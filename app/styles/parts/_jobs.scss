@@ -63,18 +63,17 @@
       padding-left: 1rem;
       z-index: 0;
     }
+    .select-dropdown{
+      padding: 6px 8px;
+      height: unset;
+      line-height: unset;
+    }
     .caret{
       top: 50%;
       bottom: unset;
       margin-top: -1rem;
       margin-right: 1rem;
     }
-  }
-
-  .select-dropdown{
-    padding: 6px 8px;
-    height: unset;
-    line-height: unset;
   }
 
   .clear {

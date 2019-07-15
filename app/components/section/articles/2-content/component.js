@@ -1,39 +1,15 @@
 import Component from '@ember/component';
-import { jQ, get, set, service } from 'karir/utils/short';
+import { jQ, get, set, computed } from 'karir/utils/short';
 
 export default Component.extend({
-  // store: service(),
 
-  // model:null,
+  tagName: 'section',
   showArticle: null,
   tableOfContents: [],
-
-  // init(){
-
-  //   this._super(...arguments);
-  //   const arrays = [];
-
-  //   this.store.findAll('article').then(results => {
-  //     const filter = results.filter((result) => {
-  //       const getDate = result.get('date');
-  //       const dateFormatted = new Date(getDate);
-  //       const month = dateFormatted.toLocaleString('en-us', { month: 'long' });
-  //       const year = dateFormatted.getUTCFullYear()
-  //       const toc = month+" "+year
-  //       if(!arrays.includes(toc)){
-  //         arrays.push(toc);
-  //       }
-  //     });
-  //     set(this, 'tableOfContents', arrays);
-  //     set(this, 'model', results);
-  //     set(this, 'showArticle', results);
-  //   });
-  // },
 
   didInsertElement(){
     this._super(...arguments);
     this.$('#toc').addClass('none');
-    // const store = get(this, 'store');
     const model = this.get('model');
     const arrays = [];
 
@@ -50,56 +26,6 @@ export default Component.extend({
 
     set(this, 'tableOfContents', arrays);
     set(this, 'showArticle', model);
-
-
-    // store.findAll('article').then(results => {
-    //   const filter = results.filter((result) => {
-    //     const getDate = result.get('date');
-    //     const dateFormatted = new Date(getDate);
-    //     const month = dateFormatted.toLocaleString('en-us', { month: 'long' });
-    //     const year = dateFormatted.getUTCFullYear()
-    //     const toc = month+" "+year
-    //     if(!arrays.includes(toc)){
-    //       arrays.push(toc);
-    //     }
-    //   });
-    //   set(this, 'tableOfContents', arrays);
-    //   set(this, 'model', results);
-    //   set(this, 'showArticle', results);
-    // });
-
-    // jQ(window).on('scroll.animate', () => {
-    //   const threshold = this._getThreshold() || {};
-    //   const scroll = jQ(window).scrollTop();
-    //   const toc = this.$('#toc');
-    //   console.log(scroll);
-
-    //   if(scroll > threshold.top && scroll < threshold.bottom) {
-    //     toc.stop(true).fadeIn(300);
-    //   } else {
-    //     toc.stop(true).fadeOut(300);
-    //   }
-
-      // if(scroll > threshold.bottom) {
-      //   toc.stop(true).fadeOut();
-      // } else {
-      //   toc.stop(true).fadeIn();
-      // }
-    // });
-
-
-    // const containerTop = $('#containerContent').offset().top;
-    // const footerTop = $('#containerFooter').offset().top;
-    // console.log($('#containerContent').offset().top);
-    // console.log($('#containerFooter').offset().top);
-    // jQ(window).scroll(() =>{
-    //   console.log(jQ(window).scrollTop());
-    //   console.log(jQ(window).height());
-    //   console.log(jQ(window).scrollTop() + jQ(window).height())
-    //   console.log($('#containerContent').offset().top);
-    //   console.log($('#containerFooter').offset().top);
-    //   console.log("===========")
-    // });
   },
 
   didRender(){
@@ -142,7 +68,6 @@ export default Component.extend({
   _getThreshold() {
     const container = jQ('#containerContent');
     const footer = jQ('#footer');
-    // const btn = this.$('.btn.apply');
 
     return {
       top:    container.offset().top - 200,
@@ -152,73 +77,32 @@ export default Component.extend({
     };
   },
 
-  // didRender(){
-  //   this._super(...arguments);
-  //   const containerTop = $('#containerContent').offset().top;
-  //   const footerTop = $('#containerFooter').offset().top;
-  //   const bottom = 2921;
-  //   // console.log($('#containerContent').offset().top);
-  //   // console.log($('#containerFooter').offset().top);
-  //   // console.log(bottom)
+  articles: computed('month', {
+    get() {
+      const month = get(this, 'month');
+      let articles = this.get('model');
 
-  //   jQ(window).scroll(() =>{
-  //     // console.log(jQ(window).scrollTop());
-  //     // console.log(jQ(window).height());
-  //     // console.log(jQ(window).scrollTop() + jQ(window).height())
-  //     // console.log($('#containerContent').offset().top);
-  //     // console.log($('#containerFooter').offset().top);
-  //     // console.log("===========")
-  //     if(jQ(window).scrollTop() > containerTop && jQ(window).scrollTop() + jQ(window).height() < footerTop){
-  //       console.log("masuk")
-  //       console.log("===========")
-  //       this.$('#toc').fadeIn();
-  //     }
-  //     else if(jQ(window).scrollTop() < containerTop){
-  //       console.log("keluar")
-  //       console.log("===========")
-  //       this.$('#toc').fadeOut();
-  //     }
-  //     else if (jQ(window).scrollTop() + jQ(window).height() > bottom){
-  //       console.log("keluar")
-  //       console.log("===========")
-  //       this.$('#toc').fadeOut();
-  //     }
-  //     // else{
-  //     //   console.log("keluar")
-  //     //   console.log("===========")
-  //     // }
-  //     // if(jQ(window).scrollTop() + jQ(window).height() > footerTop){
-  //     //   console.log("keluar")
-  //     //   console.log("===========")
-  //     // }
-  //     // if(jQ(window).scrollTop() + jQ(window).height() < footerTop){
-  //     //   console.log("masuk");
-  //     // }
-  //     // else{
-  //     //   console.log("keluar")
-  //     //   console.log("===========")
-  //     //   // this.$('#toc').fadeOut();
-  //     // }
-  //   });
-  // },
+      if(month){
+        articles = articles.filter((result) => {
+          const getDate = result.get('date');
+          const dateFormatted = new Date(getDate);
+          const dateFormattedData = new Date(month);
+          const monthModel = dateFormatted.toLocaleString('en-us', { month: 'long' });
+          const monthData = dateFormattedData.toLocaleString('en-us', { month: 'long' });
+          if (monthData == monthModel){
+            return result
+          }
+        })
+      }
+
+      return articles;
+    }
+  }),
 
   actions: {
-    tocPicked(tableOfContent){
-      const filteredArray = [];
-      const model = this.get('model');
-      const filtered = model.filter((result) => {
-        const getDate = result.get('date');
-        const dateFormatted = new Date(getDate);
-        const dateFormattedData = new Date(tableOfContent);
-        const month = dateFormatted.toLocaleString('en-us', { month: 'long' });
-        const monthData = dateFormattedData.toLocaleString('en-us', { month: 'long' });
-        // const dateTest = new Date(tableOfContent);
-        if(monthData == month){
-          filteredArray.push(result)
-        }
-        // console.log(dateTest);
-      })
-      set(this, 'showArticle', filteredArray);
+    tocPicked(month){
+      set(this, 'month', month);
+      console.log(get(this, 'month'));
     }
   }
 

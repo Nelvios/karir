@@ -84,6 +84,7 @@
   <div class="row">
     <h2 class="section-title center">All Articles</h2>
     <div class="input-field hide-on-med-and-up">
+      <span class="title-format">Sort By:</span>
       {{#input/input-select value=month placeholder="Month"}}
         {{#each tableOfContents as |tableOfContent|}}
         <option value={{tableOfContent}}>{{tableOfContent}}</option>
@@ -91,7 +92,7 @@
       {{/input/input-select}}
     </div>
 
-    {{#each showArticle as |article|}}
+    {{#each articles as |article|}}
       {{!-- <div class="col s12 m4 xl3 hide-on-small-only">
 
         <div class="card">
