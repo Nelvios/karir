@@ -9,9 +9,9 @@ export default Controller.extend({
   viewByMonth: computed('month', {
     get(){
       const month = get(this, 'month');
-      let jobs = get(this, 'model');
+      let model = get(this, 'model');
 
-
+      console.log(model);
     }
   }),
 
