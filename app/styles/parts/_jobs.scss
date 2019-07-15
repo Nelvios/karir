@@ -8,6 +8,23 @@
   box-sizing: content-box;
   overflow: hidden;
 
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    -webkit-clip-path: url(#clip-top3);
+    clip-path: url(#clip-top3);
+
+    @media #{$small-and-down}{
+      -webkit-clip-path: url(#clip-top4);
+      clip-path: url(#clip-top4);
+    }
+  }
+
   .ornament{
     position: absolute;
     &.ornament-1{
@@ -25,24 +42,6 @@
       width: 150px; height: 150px;
       right: 35%;
       top: -3rem;
-    }
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    background: linear-gradient(#015daa 0%, #0094d6 50%, #00b7f1 100%);
-
-    -webkit-clip-path: url(#clip-top3);
-    clip-path: url(#clip-top3);
-
-    @media #{$small-and-down}{
-      -webkit-clip-path: url(#clip-top4);
-      clip-path: url(#clip-top4);
     }
   }
 
@@ -86,13 +85,13 @@
   }
 }
 
-#jobs-filter {
-  // padding: 1rem 0;
+// #jobs-filter {
+//   // padding: 1rem 0;
 
-  .clear {
-    @media #{$medium-and-down} { padding: 0; }
-  }
-}
+//   .clear {
+//     @media #{$medium-and-down} { padding: 0; }
+//   }
+// }
 
 #jobs-list {
   margin-top: -17rem;
@@ -331,6 +330,9 @@
 // Styling
 
 #jobs-top {
+  &::before{
+    background: linear-gradient(#015daa 0%, #0094d6 50%, #00b7f1 100%);
+  }
   .ornament{
     background-size: contain;
     background-position: center;
@@ -392,33 +394,33 @@
   }
 }
 
-#jobs-filter {
-  background-color: $primary-color;
+// #jobs-filter {
+//   background-color: $primary-color;
 
-  .input-field .select-dropdown {
-    border-bottom: .2rem solid $off-black;
-    font-weight: bold;
-    color: $off-black;
+//   .input-field .select-dropdown {
+//     border-bottom: .2rem solid $off-black;
+//     font-weight: bold;
+//     color: $off-black;
 
-    &:hover, &:focus, &:active {
-      border-bottom-color: $secondary-color;
-    }
-  }
+//     &:hover, &:focus, &:active {
+//       border-bottom-color: $secondary-color;
+//     }
+//   }
 
-  .clear {
-    background-color: transparent;
-    box-shadow: none;
+//   .clear {
+//     background-color: transparent;
+//     box-shadow: none;
 
-    font-weight: bold;
-    font-size: 16px;
-    color: $off-black;
-    text-transform: none;
+//     font-weight: bold;
+//     font-size: 16px;
+//     color: $off-black;
+//     text-transform: none;
 
-    &:hover, &:focus, &:active {
-      color: $secondary-color;
-    }
-  }
-}
+//     &:hover, &:focus, &:active {
+//       color: $secondary-color;
+//     }
+//   }
+// }
 
 #jobs-list {
   background-color: color('grey', 'lighten-5');

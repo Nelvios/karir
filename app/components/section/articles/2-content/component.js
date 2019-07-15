@@ -2,8 +2,6 @@ import Component from '@ember/component';
 import { jQ, get, set, service } from 'karir/utils/short';
 
 export default Component.extend({
-
-  tagName: 'section',
   // store: service(),
 
   // model:null,
@@ -116,7 +114,7 @@ export default Component.extend({
       }
       else {
         toc.addClass('invisible')
-      } 
+      }
 
 
       if(scroll < threshold.topPlus || scroll > threshold.bottomPlus){

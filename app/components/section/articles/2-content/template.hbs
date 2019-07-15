@@ -70,8 +70,7 @@
   </div>
 </div> --}}
 
-
-<ul id="toc" class="table-of-contents">
+<ul id="toc" class="table-of-contents hide-on-small-only">
   {{#each tableOfContents as |tableOfContent|}}
   <li><a href="#" {{action "tocPicked" tableOfContent}}>{{tableOfContent}}</a></li>
   {{!-- <li><a href="#toc" class="active">March 2019</a></li>
@@ -84,6 +83,14 @@
 <div id="containerContent" class="container">
   <div class="row">
     <h2 class="section-title center">All Articles</h2>
+    <div class="input-field hide-on-med-and-up">
+      {{#input/input-select value=month placeholder="Month"}}
+        {{#each tableOfContents as |tableOfContent|}}
+        <option value={{tableOfContent}}>{{tableOfContent}}</option>
+        {{/each}}
+      {{/input/input-select}}
+    </div>
+
     {{#each showArticle as |article|}}
       {{!-- <div class="col s12 m4 xl3 hide-on-small-only">
 
