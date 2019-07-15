@@ -4,9 +4,11 @@
   @extend .valign-wrapper;
   position: relative;
   height: 500px;
-  padding: 100px 0 200px;
+  padding: 100px 0 150px;
   box-sizing: content-box;
   overflow: hidden;
+
+  @media #{$medium-and-up} { padding-bottom: 200px; }
 
   // .ornaments {
   //   position: absolute;

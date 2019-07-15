@@ -35,14 +35,7 @@ export default Component.extend({
       }
     });
 
-    jQ(window).on('resize.apply-btn', () => {
-      const size = jQ('body').attr('data-size');
-
-      if(size === 'sm') btn.addClass('btn-small');
-      else btn.removeClass('btn-small');
-
-      jQ(window).triggerHandler('scroll.apply-btn');
-    });
+    jQ(window).on('resize.apply-btn', () => jQ(window).triggerHandler('scroll.apply-btn'));
   },
 
   didUpdate() {
