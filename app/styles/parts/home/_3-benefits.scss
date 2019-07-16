@@ -2,8 +2,10 @@
 
 #home-benefits {
   margin-top: -450px;
-  padding-top: calc(450px + 10rem);
+  padding-top: calc(450px + 5rem);
   padding-bottom: 5rem;
+
+  @media #{$medium-and-up} { padding-top: calc(450px + 10rem); }
 
   .section-title {
     position: relative;
@@ -13,10 +15,10 @@
     &::before {
       content: '';
       position: absolute;
-      width: 8rem;
+      width: 2em;
       left: 50%;
-      bottom: -.6rem;
-      margin-left: -4rem;
+      bottom: -.25em;
+      margin-left: -1em;
     }
   }
 
@@ -131,11 +133,13 @@
     text-align: center;
     font-family: $font-stack;
     font-weight: 900;
-    font-size: 3rem;
+    font-size: 2.4em;
     color: $off-black;
 
+    @media #{$medium-and-up} { font-size: 3em; }
+
     &::before {
-      border-top: .6rem solid $primary-color;
+      border-top: .5rem solid $primary-color;
     }
   }
 

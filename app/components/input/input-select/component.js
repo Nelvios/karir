@@ -5,6 +5,9 @@ export default Component.extend({
 
   tagName: 'select',
 
+  value: null,
+  placeholder: null,
+
   didInsertElement() {
     this._super(...arguments);
 

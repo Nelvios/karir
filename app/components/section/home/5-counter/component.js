@@ -1,24 +1,22 @@
 import Component from '@ember/component';
-import { jQ, get, service } from 'karir/utils/short';
-import { getProperties } from '@ember/object';
+import { jQ, get, set, service } from 'karir/utils/short';
 
 export default Component.extend({
 
   tagName: 'section',
   store: service(),
 
-  counters: null,
+  counter: 0,
 
   didInsertElement() {
     this._super(...arguments);
     const btn = this.$('.btn.apply');
     const store = get(this, 'store');
 
-    // store.findAll('counter').then(result => set(this, 'counters', result))
-    store.findAll('counter').then(result => result.forEach((item) => {
-      this.set('counters', getProperties(item,'employCount'));
-    }))
-
+    store.findAll('counter').then(result => {
+      const counter = get(result.objectAt(0), 'employCount');
+      set(this, 'counter', counter);
+    });
 
     jQ(window).on('scroll.apply-btn', () => {
       const threshold = this._getThreshold() || {};
@@ -58,8 +56,8 @@ export default Component.extend({
     const btn = this.$('.btn.apply');
 
     return {
-      top:    benefits.offset().top - jQ(window).height() + 100,
-      bottom: counter.offset().top - jQ(window).height() + counter.outerHeight()/2 + btn.height()/2 + 30
+      top:    benefits.offset().top - jQ(window).height() + 200,
+      bottom: counter.offset().top - jQ(window).height() /* + counter.outerHeight()/2 */ + btn.height()/2 + 30
     };
   }
 
