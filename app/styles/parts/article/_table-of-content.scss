@@ -1,0 +1,25 @@
+//Layout
+.table-of-contents{
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 140px;
+  margin-right: 1rem;
+  a{
+    width: 100%;
+    text-align: right;
+  }
+  &.invisible{
+    opacity: 0;
+  }
+  &.none{
+    display: none;
+  }
+}
+
+//Animation
+.table-of-contents{
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}

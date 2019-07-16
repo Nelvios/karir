@@ -5,7 +5,7 @@ export default Component.extend({
 
   tagName: 'section',
   showArticle: null,
-  tableOfContents: [],
+  tableOfContents: null,
 
   didInsertElement(){
     this._super(...arguments);

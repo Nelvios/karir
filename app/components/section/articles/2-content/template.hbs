@@ -72,11 +72,7 @@
 
 <ul id="toc" class="table-of-contents hide-on-small-only">
   {{#each tableOfContents as |tableOfContent|}}
-  <li><a href="#" {{action "tocPicked" tableOfContent}}>{{tableOfContent}}</a></li>
-  {{!-- <li><a href="#toc" class="active">March 2019</a></li>
-  <li><a href="#sass">April 2019</a></li>
-  <li><a href="#palette">June 2019</a></li>
-  <li><a href="#palette">September 2019</a></li> --}}
+    <li><a href="#" {{action "tocPicked" tableOfContent}}>{{tableOfContent}}</a></li>
   {{/each}}
 </ul>
 
@@ -87,7 +83,7 @@
       <span class="title-format">Sort By:</span>
       {{#input/input-select value=month placeholder="Month"}}
         {{#each tableOfContents as |tableOfContent|}}
-        <option value={{tableOfContent}}>{{tableOfContent}}</option>
+          <option value={{tableOfContent}}>{{tableOfContent}}</option>
         {{/each}}
       {{/input/input-select}}
     </div>

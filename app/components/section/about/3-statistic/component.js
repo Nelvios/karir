@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { jQ, get, service } from 'karir/utils/short';
+import { get, service } from 'karir/utils/short';
 import { getProperties } from '@ember/object';
 
 export default Component.extend({
