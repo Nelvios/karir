@@ -1,0 +1,135 @@
+//Layout
+#about-visimisi{
+  @extend .valign-wrapper;
+  padding: 3rem 0;
+  position: relative;
+
+  .part{
+    @extend .valign-wrapper;
+    position: relative;
+    .group{
+      background-color: #03a9f5;
+      @extend .valign-wrapper;
+      // color: $off-black;
+      // @extend .z-depth-2;
+      // padding: 40px 30px;
+      // font-weight: bold;
+      // font-size: 1.3em;
+      border-radius: 10px;
+      box-shadow: 0 0 2px 0 color('grey', 'lighten-1') ,10px 10px 10px color('grey','lighten-2');
+      width: 50%;
+      margin: 20px;
+      flex-direction: column;
+
+      .section-title {
+        position: relative;
+        width: 100%;
+        margin: 1rem 0 2rem 0;
+        // padding-bottom: .5rem;
+        // padding-top: 2rem;
+
+        text-align: center;
+        font-family: $font-stack;
+        font-weight: bold;
+        font-size: 1.5em;
+        // color: $off-black;
+
+        &::before{
+          border-top: .3rem solid #ffffff;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 4rem;
+          left: 50%;
+          bottom: -.3rem;
+          margin-left: -2rem;
+        }
+      }
+      .content{
+        padding: 0 2rem 2rem 2rem;
+      }
+    }
+    .group:nth-child(1){
+      .section-title{
+       &::before{
+         width: 5.5rem;
+         margin-left: -3.5rem;
+       }
+      }
+    }
+  }
+
+  // .title{
+  //   padding-bottom: 2rem;
+  // }
+  // .content-title{
+  //   padding-top: 1rem;
+  // }
+  // .imageFormat{
+  //   position: relative;
+  //   display: block;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  //   &:hover, &:focus, &:active {
+  //     transform: translate(0, -.6rem);
+  //   }
+  // }
+  // .openSpace{
+  //   width: 250px;
+  //   height: 200px;
+  // }
+  // .flexiTime{
+  //   width: 200px;
+  //   height: 200px;
+  // }
+  // .smartCasual{
+  //   width: 150px;
+  //   height: 200px;
+  // }
+}
+
+//Styling
+#about-visimisi{
+  background-color: #ffffff;
+  // .title{
+  //   font-weight: bold;
+  //   font-size: 2em;
+  //   text-align: center;
+
+  //   @media #{$medium-and-up} { font-size: 3em; }
+  //   @media #{$extra-large-and-up} { font-size: 4em; }
+  // }
+  // .content-title{
+  //   font-weight: bold;
+  //   font-size: 1em;
+  //   text-align: center;
+
+  //   @media #{$medium-and-up} { font-size: 1.5em; }
+  //   @media #{$extra-large-and-up} { font-size: 2em; }
+  // }
+  // .openSpace{
+  //   background-image: url(./images/openspace.png);
+  //   background-size:contain;
+  //   background-repeat: no-repeat;
+  // }
+  // .flexiTime{
+  //   background-image: url(./images/flexitime.png);
+  //   background-size:contain;
+  //   background-repeat: no-repeat;
+  // }
+  // .smartCasual{
+  //   background-image: url(./images/smartcasual.png);
+  //   background-size:contain;
+  //   background-repeat: no-repeat;
+  // }
+}
+
+//Animation
+#about-visimisi{
+  .imageFormat{
+    -webkit-transition: transform .3s;
+    transition: transform .3s;
+  }
+}
