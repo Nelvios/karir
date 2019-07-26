@@ -10,16 +10,6 @@
     // padding-bottom: 1.2rem;
     padding-top: 2rem;
 
-    text-align: center;
-    font-family: $font-stack;
-    font-weight: bold;
-    font-size: 2.5em;
-    color: $off-black;
-
-    &::before{
-      border-top: .5rem solid $primary-color;
-    }
-
     &::before {
       content: '';
       position: absolute;
@@ -34,7 +24,6 @@
   .content{
     clear: both;
     text-align: end;
-    color: $off-black;
     margin-bottom: 2rem;
   }
 
@@ -55,14 +44,10 @@
     // margin-top: 5rem;
     .city{
       @extend .valign-wrapper;
-      color: $off-black;
       // @extend .z-depth-2;
       padding: 40px 30px;
-      font-weight: bold;
-      font-size: 1.3em;
       height: 150px;
       border-radius: 10px;
-      box-shadow: 0 0 2px 0 color('grey', 'lighten-1') ,10px 10px 10px color('grey','lighten-2');
       width: 33.3333333333%;
       margin: 20px 10px;
     }
@@ -137,6 +122,30 @@
 //Styling
 #about-location{
   background: linear-gradient(#ffffff 40%, #f0f4f7 100%);
+
+  .section-title{
+    text-align: center;
+    font-family: $font-stack;
+    font-weight: bold;
+    font-size: 2.5em;
+    color: $off-black;
+
+    &::before{
+      border-top: .5rem solid $primary-color;
+    }
+  }
+
+  .content{
+    color: $off-black;
+  }
+
+  .city{
+    color: $off-black;
+    background-color: #ffffff;
+    font-weight: bold;
+    font-size: 1.3em;
+    box-shadow: 0 0 2px 0 color('grey', 'lighten-1') ,10px 10px 10px color('grey','lighten-2');
+  }
   // background-color: #ffffff;
   // background-color: color('grey', 'lighten-5');
   // // background-color: black;

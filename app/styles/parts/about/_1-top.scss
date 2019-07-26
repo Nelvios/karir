@@ -1,124 +1,130 @@
 //Layout
 #about-top{
   position: relative;
-  height: 750px;
-  padding: 100px 0 4rem;
+  // height: 80%;
+  padding: 100px 0 8rem;
   box-sizing: content-box;
-  background-color: #f0f4f7;
 
   // background: linear-gradient(#aabcd0 50%, #fefeff 100%);
 
-  &::after{
+  @media #{$medium-and-up}{
+    padding: 100px 0 10rem;
+  }
+
+  &::before{
     content: '';
     position: absolute;
     top: 0;
     width: 100%;
-    height: 450px;
+    height: 350px;
     z-index: 0;
 
     -webkit-clip-path: url(#clip-top5);
     clip-path: url(#clip-top5);
-
-    background: linear-gradient(#015daa 0%, #0094d6 50%, #00b7f1 100%);
+    @media #{$medium-and-up}{
+      height: 450px;
+    }
   }
 
   .ornament{
     position: absolute;
     &.ornament-1{
-      width: 320px; height: 320px;
+      width: 320px;
+      height: 320px;
       top: -6rem;
       transform: rotate(180deg);
       margin-left: -3rem;
       z-index: 1;
     }
     &.ornament-2{
-      width: 200px; height: 200px;
+      width: 200px;
+      height: 200px;
       right: -2rem;
       z-index: 1;
     }
   }
 
   .container{
-    margin-top: 7rem;
-    .center-align{
+    margin-top: -2rem;
+    @media #{$medium-and-up}{
+      margin-top: 7rem;
+    }
+  }
+
+  .image-wrap{
+    position: relative;
+    width: 100%;
+    top: 0;
+    &::before{
+      content: '';
+      position: absolute;
+      width: 650px;
+      height: 500px;
+      max-width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -2rem;
+      z-index: 1;
+    }
+
+    .gsit-pict{
       position: relative;
-      .image-wrap{
-        position: relative;
-        width: 100%;
-        top: 0;
-        &::before{
-          content: '';
-          position: absolute;
-          width: 650px;
-          height: 500px;
-          max-width: 100%;
-          background-image: url(./images/about/GSIT-background.png);
-          background-position: center;
-          background-size: contain;
-          background-repeat: no-repeat;
-          left: 50%;
-          transform: translateX(-50%);
-          top: -2rem;
-          z-index: 1;
-        }
-        .gsit-pict{
-          position: relative;
-          display: inline-block;
-          width: 550px;
-          height: 350px;
-          max-width: 100%;
-          top: 6rem;
-          z-index: 3;
-          background-image: url(./images/about/GSIT-logo.png);
-          background-position: center;
-          background-size: contain;
-          background-repeat: no-repeat;
-        }
-      }
-      .box{
-        box-shadow: 5px 5px 10px color('grey', 'lighten-1');
-        position: relative;
-        width: 100%;
-        height: 200px;
-        background-color: #ffffff;
-        border-radius: 10px;
-        z-index: 2;
-        .content{
-          padding: 10px 20px;
-          .title{
-            margin-top: 2.5rem;
-            color: $off-black;
-            text-align: left;
-          }
-          .description{
-            color: $off-black;
-            text-align: left;
-            font-size: 1.1em;
-          }
-        }
+      display: inline-block;
+      width: 80%;
+      height: 350px;
+      max-width: 100%;
+      top: 6rem;
+      z-index: 3;
+
+      @media #{$medium-and-up}{
+        width: 550px;
+        height: 350px;
       }
     }
   }
 
-  // .image{
-  //   position: absolute;
-  //   width: 250px;
-  //   height: 250px;
+  .box{
+    position: relative;
+    margin-top: -4rem;
+    width: 100%;
+    // height: 200px;
+    z-index: 2;
+    border-radius: 10px;
 
-  //   left: 50%;
-  //   margin-left: -125px;
+    @media #{$medium-and-up}{
+      margin-top: 0;
+    }
 
-  //   @media #{$medium-and-up} {
-  //     width: 500px;
-  //     left: 50%;
-  //     margin-left: -250px;
-  //     bottom: 2rem;
-  //   }
-  // }
+    .content{
+      // padding: 10px 20px;
+      padding: 10px 20px 30px 20px;
+      .title{
+        margin-top: 1rem;
+        text-align: left;
+      }
+      .description{
+        text-align: left;
+        font-size: 1.1em;
+      }
+
+      @media #{$medium-and-up}{
+        padding: 10px 20px 40px 20px;
+        .title{
+          margin-top: 2.5rem
+        }
+      }
+
+    }
+  }
 }
 
 //Styling
 #about-top{
+  background-color: #f0f4f7;
+
+  &::before{
+    background: linear-gradient(#015daa 0%, #0094d6 50%, #00b7f1 100%);
+  }
 
   .ornament{
     background-size: contain;
@@ -129,9 +135,35 @@
     &.ornament-2 { background-image:url(./images/home/home-top-ornament-3.png); opacity: .3;}
   }
 
+  .image-wrap{
+    &::before{
+      background-image: url(./images/about/GSIT-background.png);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .gsit-pict{
+      background-image: url(./images/about/GSIT-logo.png);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .box{
+    box-shadow: 5px 5px 10px color('grey', 'lighten-1');
+    background-color: #ffffff;
+    color: $off-black;
+  }
+
   .title {
     font-weight: bold;
-    font-size: 1.8em;
+    font-size: 1.5em;
+
+    @media #{$medium-and-up}{
+      font-size: 1.8em;
+    }
     // letter-spacing: .2rem;
     // text-align: right;
     // text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);

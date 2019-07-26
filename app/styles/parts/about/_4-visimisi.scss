@@ -7,8 +7,11 @@
   .part{
     @extend .valign-wrapper;
     position: relative;
+    display: block;
+    @media #{$medium-and-up}{
+      display: flex;
+    }
     .group{
-      background-color: #03a9f5;
       @extend .valign-wrapper;
       // color: $off-black;
       // @extend .z-depth-2;
@@ -16,10 +19,14 @@
       // font-weight: bold;
       // font-size: 1.3em;
       border-radius: 10px;
-      box-shadow: 0 0 2px 0 color('grey', 'lighten-1') ,10px 10px 10px color('grey','lighten-2');
-      width: 50%;
-      margin: 20px;
+      width: 100%;
       flex-direction: column;
+      margin: 20px 0;
+
+      @media #{$medium-and-up}{
+        width: 50%;
+        margin: 20px;
+      }
 
       .section-title {
         position: relative;
@@ -27,16 +34,7 @@
         margin: 1rem 0 2rem 0;
         // padding-bottom: .5rem;
         // padding-top: 2rem;
-
-        text-align: center;
-        font-family: $font-stack;
-        font-weight: bold;
-        font-size: 1.5em;
         // color: $off-black;
-
-        &::before{
-          border-top: .3rem solid #ffffff;
-        }
 
         &::before {
           content: '';
@@ -93,6 +91,22 @@
 //Styling
 #about-visimisi{
   background-color: #ffffff;
+
+  .group{
+    background-color: #03a9f5;
+    box-shadow: 0 0 2px 0 color('grey', 'lighten-1') ,10px 10px 10px color('grey','lighten-2');
+
+    .section-title{
+      text-align: center;
+      font-family: $font-stack;
+      font-weight: bold;
+      font-size: 1.5em;
+
+      &::before{
+        border-top: .3rem solid #ffffff;
+      }
+    }
+  }
   // .title{
   //   font-weight: bold;
   //   font-size: 2em;

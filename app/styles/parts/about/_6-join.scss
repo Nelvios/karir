@@ -11,14 +11,6 @@
     // padding-top: 2rem;
 
     // text-align: center;
-    font-family: $font-stack;
-    font-weight: bold;
-    font-size: 1.5em;
-    color: $off-black;
-
-    &::before{
-      border-top: .2rem solid $primary-color;
-    }
 
     &::before {
       content: '';
@@ -32,21 +24,13 @@
   }
 
   .center-content{
-    color: $off-black;
-    text-align: center;
     span{
       display: block;
     }
   }
 
   .link-to{
-    color: $off-black;
-    text-align: center;
     margin-top: 1em;
-    span{
-      font-style: italic;
-      color: #55acd9;
-    }
   }
 }
 
@@ -54,5 +38,30 @@
 #about-join{
   background: linear-gradient(#f0f4f7 0%, #cedce5 100%);
   // background-color: #ffffff;
+
+  .section-title{
+    font-family: $font-stack;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: $off-black;
+
+    &::before{
+      border-top: .2rem solid $primary-color;
+    }
+  }
+
+  .center-content{
+    color: $off-black;
+    text-align: center;
+  }
+
+  .link-to{
+    color: $off-black;
+    text-align: center;
+    span{
+      font-style: italic;
+      color: #55acd9;
+    }
+  }
 
 }

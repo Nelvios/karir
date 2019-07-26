@@ -4,6 +4,7 @@
   // z-index: -1;
   box-sizing: content-box;
   padding: 5rem 0 2rem 0;
+  margin-top: -1rem;
 
   >.container{ position: relative; }
 
@@ -31,14 +32,10 @@
     // flex-direction: row;
     .group{
       @extend .valign-wrapper;
-      color: $off-black;
       // @extend .z-depth-2;
       padding: 40px 30px;
-      font-weight: bold;
-      font-size: 1.3em;
       height: 75px;
       border-radius: 10px;
-      box-shadow: 0 0 2px 0 color('grey', 'lighten-1') ,10px 10px 10px color('grey','lighten-2');
     }
     .three-content{
       width: 33.3333333333%;
@@ -69,19 +66,11 @@
     left: -3rem;
     img{
       width: 100%;
-
-    }
-    .generation{
-      color: $off-black;
     }
   }
 
   .ornament{
     position: absolute;
-
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
 
     &.ornament-1{
       width: 300px;
@@ -89,8 +78,6 @@
       bottom: 0;
       left: 5rem;
     }
-
-    &.ornament-1 { background-image:url(./images/about/IT-populations.png);}
   }
 
 
@@ -115,30 +102,30 @@
   //     height: 236px;
   //   }
   // }
-  .top-title{
-    width: 50%;
-    margin-left: auto;
-    text-align: right;
+  // .top-title{
+  //   width: 50%;
+  //   margin-left: auto;
+  //   text-align: right;
 
-  }
-  .count-employee{
-    width: 50%;
-    margin-left: auto;
-    text-align: center;
-    margin-top: -4rem;
-  }
-  .bottom-title{
-    width: 50%;
-    margin-left: auto;
-    text-align: left;
-    margin-top: -3.5rem;
-  }
+  // }
+  // .count-employee{
+  //   width: 50%;
+  //   margin-left: auto;
+  //   text-align: center;
+  //   margin-top: -4rem;
+  // }
+  // .bottom-title{
+  //   width: 50%;
+  //   margin-left: auto;
+  //   text-align: left;
+  //   margin-top: -3.5rem;
+  // }
 
-  .content{
-    width: 50%;
-    margin-left: auto;
-    margin-top: 1rem;
-  }
+  // .content{
+  //   width: 50%;
+  //   margin-left: auto;
+  //   margin-top: 1rem;
+  // }
 }
 
 //Styling
@@ -160,28 +147,44 @@
       border-top: .5rem solid $primary-color;
     }
   }
-  .image-1{
-    background-image: url(./images/stat-employee.png);
-    background-size:contain;
+
+  .group{
+    color: $off-black;
+    font-weight: bold;
+    font-size: 1.3em;
+    box-shadow: 0 0 2px 0 color('grey', 'lighten-1') ,10px 10px 10px color('grey','lighten-2');
+  }
+
+  .ornament{
+    background-size: contain;
+    background-position: center;
     background-repeat: no-repeat;
+
+    &.ornament-1 { background-image:url(./images/about/IT-populations.png);}
   }
-  .image-2{
-    background-image: url(./images/line-chart.png);
-    background-size:contain;
-    background-repeat: no-repeat;
-  }
-  .top-title{
-    font-weight: bold;
-    font-size: 3.5em;
-  }
-  .count-employee{
-    font-weight: bold;
-    font-size: 10em;
-  }
-  .bottom-title{
-    font-weight: bold;
-    font-size: 2em;
-  }
+
+  // .image-1{
+  //   background-image: url(./images/stat-employee.png);
+  //   background-size:contain;
+  //   background-repeat: no-repeat;
+  // }
+  // .image-2{
+  //   background-image: url(./images/line-chart.png);
+  //   background-size:contain;
+  //   background-repeat: no-repeat;
+  // }
+  // .top-title{
+  //   font-weight: bold;
+  //   font-size: 3.5em;
+  // }
+  // .count-employee{
+  //   font-weight: bold;
+  //   font-size: 10em;
+  // }
+  // .bottom-title{
+  //   font-weight: bold;
+  //   font-size: 2em;
+  // }
 }
 
 //Animation
