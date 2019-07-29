@@ -33,6 +33,7 @@ export default Component.extend({
       } else {
         btn.addClass('float');
       }
+
     });
 
     jQ(window).on('resize.apply-btn', () => jQ(window).triggerHandler('scroll.apply-btn'));
@@ -56,8 +57,8 @@ export default Component.extend({
     const btn = this.$('.btn.apply');
 
     return {
-      top:    benefits.offset().top - jQ(window).height() + 200,
-      bottom: counter.offset().top - jQ(window).height() /* + counter.outerHeight()/2 */ + btn.height()/2 + 30
+      top:    benefits.offset().top - jQ(window).outerHeight() + 200,
+      bottom: counter.offset().top - jQ(window).outerHeight() /* + counter.outerHeight()/2 */ + btn.height()/2 + 30
     };
   }
 

@@ -31,6 +31,7 @@
     position: absolute;
     right: 7.5%;
     padding: 0 5.7px;
+
     z-index: 100;
     border-radius: 2rem;
 
@@ -41,20 +42,36 @@
     }
     @media #{$large-and-up} { right: 17%; }
 
-    &:hover, &:focus, &:active {
-      span { width: 72px; }
-    }
-
     span {
       width: 0;
       overflow: hidden;
+    }
+
+    @media #{$medium-and-up} {
+      &:hover, &:focus, &:active {
+        &.float span, span { width: 72px; }
+      }
     }
 
     &.float {
       position: fixed;
       bottom: 30px;
 
-      &.top { right: -50%; }
+      &.top {
+        right: -50%;
+        span { width: 0; }
+      }
+
+      span {
+        width: 60px;
+        @media #{$medium-and-up} { width: 0; }
+      }
+
+      // @media #{$medium-and-up} {
+      //   &:hover, &:focus, &:active {
+      //     span { width: 72px; }
+      //   }
+      // }
     }
   }
 }
