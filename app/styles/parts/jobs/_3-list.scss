@@ -90,12 +90,9 @@
       }
 
       @media #{$small-and-down} {
-        // left: 50%;
-        // margin-left: unset;
         width: 60%;
         height: 100%;
         padding: 1em;
-        // order: 2;
         box-sizing: border-box;
       }
     }
@@ -121,24 +118,8 @@
           padding: .25em 2em;
         }
 
-        @media #{$small-and-down}{
-        // width: 8em;
-        //   height: 8vw;
-        //   line-height: 8vw;
-          padding: 0 1rem;
-        }
+        @media #{$small-and-down} { padding: 0 1rem; }
       }
-
-      // a {
-      //   left: 50%;
-      //   transform: translateX(-50%);
-
-      //   &:hover, &:focus, &:active {
-      //     i { margin-left: .75rem; }
-      //   }
-
-      //   i { margin-left: .25rem; }
-      // }
     }
 
     .card-cover {
@@ -184,7 +165,6 @@
   }
 
   .card {
-    // box-shadow: 4px 4px 15px rgba(0, 0, 0, .3);
     border-radius: 15px;
 
     &:hover, &:focus, &:active {
@@ -193,7 +173,6 @@
 
     .card-image {
       .image {
-        // @extend .z-depth-2;
         background-color: $off-black;
         border: .35rem solid $primary-color;
 
@@ -236,22 +215,6 @@
           line-height: 2.5em;
         }
       }
-
-      // a {
-      //   font-size: 1em;
-      //   text-transform: unset;
-      // }
-
-      // .learn-more{
-      //   background-image: radial-gradient(circle at center, #f39934 25%, #f67d50 85%);
-      //   border-left: 0 solid $primary-color;
-      //   border-radius: 50px;
-      //   font-weight: bold;
-      //   font-size: 1em;
-      //   @media #{$small-and-down}{
-      //     font-size: 3vw;
-      //   }
-      // }
     }
   }
 
@@ -264,42 +227,10 @@
     text-transform: none;
 
     &:hover, &:focus, &:active {
-      background-color: white;
       @extend .z-depth-3;
-      // color: white;
+      background-color: white;
     }
   }
-
-  // .section-title{
-  //   color: color('grey', 'darken-3');
-  //   &::before{
-  //     border-color: $primary-color;
-  //   }
-  // }
-
-  // .job-item {
-  //   .image{
-  //     @extend .z-depth-2;
-  //     background-color: $off-black;
-  //     border: .35rem solid $primary-color;
-
-  //     @media #{$medium-and-up} { border-width: .5rem; }
-  //   }
-
-  //   .display{
-  //     // font-family: $font-heading;
-  //     font-weight: bold;
-  //     font-size: 1.2em;
-  //     text-align: center;
-  //     color: $off-black;
-
-  //     @media #{$medium-and-up} { font-size: 1.5em; }
-
-  //     &::before {
-  //       border-bottom: .35rem solid $primary-color;
-  //     }
-  //   }
-  // }
 
   .not-found {
     font-size: 1.2em;
