@@ -88,6 +88,13 @@
       {{/input/input-select}}
     </div>
 
+    <div class="tag">
+      {{#each tags as |tag|}}
+        {{!-- <div>{{tag}}</div> --}}
+        <a href="#" {{action "tagPicked" tag}}>{{tag}}</a>
+      {{/each}}
+    </div>
+
     {{#each articles as |article|}}
       {{!-- <div class="col s12 m4 xl3 hide-on-small-only">
 

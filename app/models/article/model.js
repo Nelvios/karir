@@ -5,5 +5,6 @@ export default DS.Model.extend({
   title: attr('string'),
   date: attr('string'),
   article: attr('string'),
-  thumbImage: attr('string')
+  thumbImage: attr('string'),
+  tag: attr('string')
 });

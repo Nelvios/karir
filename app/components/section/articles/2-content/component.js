@@ -4,28 +4,35 @@ import { jQ, get, set, computed } from 'karir/utils/short';
 export default Component.extend({
 
   tagName: 'section',
-  showArticle: null,
+  // showArticle: null,
   tableOfContents: null,
+  tags: null,
 
   didInsertElement(){
     this._super(...arguments);
     this.$('#toc').addClass('none');
     const model = this.get('model');
-    const arrays = [];
+    const arraysTOC = [];
+    const arraysTag = [];
 
     const filter = model.filter((result) => {
+      const tag = result.get('tag');
       const getDate = result.get('date');
       const dateFormatted = new Date(getDate);
       const month = dateFormatted.toLocaleString('en-us', { month: 'long' });
-      const year = dateFormatted.getUTCFullYear()
-      const toc = month+" "+year
-      if(!arrays.includes(toc)){
-        arrays.push(toc);
+      const year = dateFormatted.getUTCFullYear();
+      const toc = month+" "+year;
+      if(!arraysTOC.includes(toc)){
+        arraysTOC.push(toc);
+      }
+      if(!arraysTag.includes(tag)){
+        arraysTag.push(tag);
       }
     });
 
-    set(this, 'tableOfContents', arrays);
-    set(this, 'showArticle', model);
+    set(this, 'tableOfContents', arraysTOC);
+    set(this, 'tags', arraysTag);
+    // set(this, 'showArticle', model);
   },
 
   didRender(){
@@ -77,32 +84,14 @@ export default Component.extend({
     };
   },
 
-  articles: computed('month', {
-    get() {
-      const month = get(this, 'month');
-      let articles = this.get('model');
-
-      if(month){
-        articles = articles.filter((result) => {
-          const getDate = result.get('date');
-          const dateFormatted = new Date(getDate);
-          const dateFormattedData = new Date(month);
-          const monthModel = dateFormatted.toLocaleString('en-us', { month: 'long' });
-          const monthData = dateFormattedData.toLocaleString('en-us', { month: 'long' });
-          if (monthData == monthModel){
-            return result
-          }
-        })
-      }
-
-      return articles;
-    }
-  }),
-
   actions: {
     tocPicked(month){
       set(this, 'month', month);
       console.log(get(this, 'month'));
+    },
+    tagPicked(pickedTag){
+      set(this, 'pickedTags', pickedTag);
+      console.log(get(this, 'pickedTags'));
     }
   }
 

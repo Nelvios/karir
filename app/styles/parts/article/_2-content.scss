@@ -70,9 +70,33 @@
     }
   }
 
+  .tag{
+    display: flex;
+    flex-flow: row wrap;
+    a{
+      background-color: #00b6f0;
+      margin: 10px 5px;
+      padding: 2px 0;
+      width: 75px;
+      border-radius: 20px;
+      text-align: center;
+      font-size: 1em;
+      font-weight: bold;
+      color: $off-black;
+      @extend .z-depth-2;
+      &:hover{
+        transform: translate(0, -.4rem);
+      }
+      &:hover{
+        @extend .z-depth-3;
+      }
+    }
+  }
+
   .card {
     position: relative;
     overflow: hidden;
+    margin-top: 1.5rem;
     // box-shadow: 8px 5px 20px rgba(0, 0, 0, 0.14);
     // border: 0.1rem solid #eee;
 
@@ -283,6 +307,12 @@
 
 //Animation
 #articles-content {
+  .tag{
+    >a{
+      -webkit-transition: transform .3s, box-shadow .3s;
+      transition: transform .3s, box-shadow .3s;
+    }
+  }
   .card {
     -webkit-transition: transform .3s, box-shadow .3s;
     transition: transform .3s, box-shadow .3s;
