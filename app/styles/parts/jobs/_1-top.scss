@@ -1,151 +1,94 @@
-//Layout
+// Layout
+
 #jobs-top {
-  @extend .valign-wrapper;
-  position: relative;
-  height: 300px;
-  padding: 100px 0 12rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 450px;
+  padding: 100px 0 6rem;
   box-sizing: content-box;
   overflow: hidden;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+  -webkit-clip-path: url(#clip-top-jobs-sm);
+  clip-path: url(#clip-top-jobs-sm);
 
-    -webkit-clip-path: url(#clip-top3);
-    clip-path: url(#clip-top3);
+  @media #{$medium-and-up} {
+    height: 300px;
 
-    @media #{$small-and-down}{
-      -webkit-clip-path: url(#clip-top4);
-      clip-path: url(#clip-top4);
-    }
+    -webkit-clip-path: url(#clip-top-jobs);
+    clip-path: url(#clip-top-jobs);
   }
 
-  .ornament{
+  @media #{$large-and-up} { height: 330px; }
+
+  .ornament {
     position: absolute;
-    &.ornament-1{
+
+    &.ornament-1 {
       width: 320px; height: 320px;
       top: -6rem;
+      left: -3rem;
       transform: rotate(180deg);
-      margin-left: -3rem;
     }
-    &.ornament-2{
-      width: 150px; height: 150px;
+
+    &.ornament-2 {
+      width: 250px; height: 250px;
+      bottom: 4rem;
       right: -2rem;
-      margin-top: -4rem;
     }
-    &.ornament-3{
+
+    &.ornament-3 {
       width: 150px; height: 150px;
+      top: 1rem;
       right: 35%;
-      top: -3rem;
     }
   }
 
-  > .container { position: relative; z-index: 1; }
+  .title, .sub-title { position: relative; }
 
-  .title { margin: 0; }
-
-  .title-format{
-    margin: 1rem;
-  }
-
-  .input-field{
-    margin-top: 0;
-  }
-
-  .select-wrapper{
-    display: flex;
-    .dropdown-trigger{
-      padding-left: 1rem;
-      z-index: 0;
-    }
-    .select-dropdown{
-      padding: 6px 8px;
-      height: unset;
-      line-height: unset;
-    }
-    .caret{
-      top: 50%;
-      bottom: unset;
-      margin-top: -1rem;
-      margin-right: 1rem;
-    }
-  }
-
-  .clear {
-    height: unset;
-    line-height: unset;
-    padding: 7px 20px;
-    margin-top: .2rem;
+  .title {
+    @media #{$small-and-down} { margin-top: 1rem; }
   }
 }
 
+
 //Styling
+
 #jobs-top {
-  &::before{
-    background: linear-gradient(#015daa 0%, #0094d6 50%, #00b7f1 100%);
-  }
+  background-color: #015daa;
+  background-image: linear-gradient(#015daa 0%, #0094d6 75%, #00b7f1 100%);
+  font-size: .55em;
+
+  @media #{$medium-and-up} { font-size: .7em; }
+  @media #{$large-and-up} { font-size: .8em; }
+  @media #{$extra-large-and-up} { font-size: 1em; }
+
   .ornament{
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 
-    &.ornament-1 { background-image:url(./images/home/home-top-ornament-4.png); opacity: .4;}
-    &.ornament-2 { background-image:url(./images/home/home-top-ornament-3.png); opacity: .5;}
+    &.ornament-1 { background-image:url(./images/home/home-top-ornament-4.png); opacity: .5;}
+    &.ornament-2 { background-image:url(./images/home/home-top-ornament-3.png); opacity: .7;}
     &.ornament-3 { background-image:url(./images/home/home-top-ornament-2.png); opacity: .4;}
   }
 
-  .title-format{
-    font-family: $font-stack;
-    font-weight: bold;
-    text-align: left;
-  }
-
   .title {
-    font-size: 2.2em;
-    letter-spacing: .2rem;
-    text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
-
-
-    @media #{$large-and-up} { font-size: 2.5em; }
-    @media #{$extra-large-and-up} { font-size: 3em; }
+    font-family: $font-stack;
+    font-weight: 900;
+    font-size: 4em;
+    letter-spacing: .07em;
+    text-shadow: .09em .12em rgba(black, .25);
   }
 
-  .input-field .select-dropdown {
-    border: .1rem solid color('grey', 'darken-1');
-    border-radius: 2rem;
-    font-weight: bold;
-    color: grey;
-    background-color: color('grey', 'lighten-4');
-    box-shadow: 2px 3px 7px color('grey', 'darken-2');
+  .sub-title {
+    font-size: 1.6em;
+    letter-spacing: .05em;
+    text-shadow: 0 0 2px white,
+                 0 0 2px white,
+                 0 0 6px rgba(white, .5);
 
-    &:hover, &:focus, &:active {
-      // border-bottom-color: $secondary-color;
-    }
-  }
-
-  .clear {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
-    border: 0.1rem solid white;
-    box-shadow: none;
-
-    line-height: 1rem;
-    // font-weight: bold;
-    font-size: 13px;
-    color: white;
-    text-transform: none;
-
-    &:hover, &:focus, &:active {
-      color: $secondary-color;
-    }
-  }
-
-  .right{
-    font-size: 1.1rem;
+    @media #{$small-and-down} { font-size: 2em; }
   }
 }
 

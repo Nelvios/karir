@@ -1,5 +1,5 @@
 import Controller from '@ember/controller';
-import { get, set, computed } from 'karir/utils/short';
+import { get, set, computed, alias } from 'karir/utils/short';
 
 export default Controller.extend({
 
@@ -7,16 +7,41 @@ export default Controller.extend({
   specialization: null,
   location: null,
 
-  jobs: computed('specialization', 'location', {
+  length: 0,
+  increment: 6,
+  counter: 1,
+
+  jobs: computed('specialization', 'location', 'size', {
     get() {
       const spec = get(this, 'specialization');
       const loc = get(this, 'location');
+      const size = get(this, 'size');
       let jobs = get(this, 'model');
 
       if(spec) jobs = jobs.filterBy('specialization', spec);
       if(loc) jobs = jobs.filter(({ location }) => location.includes(loc));
 
-      return jobs;
+      if(get(this, 'isMore')) set(this, 'isMore', false);
+      else set(this, 'counter', 1);
+
+      set(this, 'length', jobs.length);
+      return jobs.filter((item, index) => index < size);
+    }
+  }),
+
+  size: computed('increment', 'counter', {
+    get() {
+      const inc = get(this, 'increment');
+      const counter = get(this, 'counter');
+      return inc * counter;
+    }
+  }),
+
+  isEnd: computed('length', 'size', {
+    get() {
+      const length = get(this, 'length');
+      const size = get(this, 'size');
+      return length <= size;
     }
   }),
 
@@ -25,50 +50,13 @@ export default Controller.extend({
     clear() {
       set(this, 'specialization', null);
       set(this, 'location', null);
+    },
+
+    more() {
+      const counter = get(this, 'counter')*1 + 1;
+      set(this, 'counter', counter);
+      set(this, 'isMore', true);
     }
-
-  //   handleData(data){
-  //     const model = this.get('model');
-  //     let tempData;
-
-  //     if(data == "programmer" || data == "network" || data == "data" || data == "infrastructure"){
-  //       this.set('specialization', data);
-  //     }
-  //     else if(data == "jabodetabek" || data == "surabaya" || data == "yogyakarta"){
-  //       this.set('location',data);
-  //     }
-
-  //     const specializationData = this.get('specialization');
-  //     const locationData = this.get('location');
-
-  //     if(specializationData){
-  //       tempData = null;
-  //       tempData = model.filterBy('specialization', specializationData);
-  //     }
-  //     else if(locationData){
-  //       tempData = null;
-  //       tempData = model.filter(function(item){
-  //             return item.location.includes(locationData);
-  //           });
-  //     }
-
-  //     if(specializationData && locationData){
-  //       tempData = null;
-  //       tempData = model.filterBy('specialization', specializationData);
-  //       tempData = tempData.filter(function(item){
-  //         return item.location.includes(locationData);
-  //       });
-  //     }
-
-  //     if(tempData.length == 0){
-  //       this.set('result', null);
-  //       this.set('empty',"Data Not Found!");
-  //     }
-  //     else{
-  //       this.set('empty', null);
-  //       this.set('result', tempData);
-  //     }
-  //   }
   }
 
 });

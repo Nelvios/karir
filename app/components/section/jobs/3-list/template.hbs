@@ -1,45 +1,7 @@
-{{!-- <div class="container">
-  <div class="row">
-    <h2 class="section-title center">Available Jobs</h2> --}}
-    {{!-- {{#if this.result}}
-      {{#each this.result as |filteredJob|}}
-        <div class="col s6 l4">
-
-          {{#link-to "jobs.view" filteredJob.id class="job-item"}}
-
-            <div class="image">
-              <img src={{filteredJob.thumbJob}} alt="Job Image" class="responsive-img">
-            </div>
-            <div class="display">{{filteredJob.name}}</div>
-
-          {{/link-to}}
-
-        </div>
-      {{/each}}
-    {{else}}
-      {{#if this.empty}}
-        <div class="emptyJob">{{this.empty}}</div>
-      {{else}}
-        {{#each this.model as |job|}}
-          <div class="col s6 l4">
-
-            {{#link-to "jobs.view" job.id class="job-item"}}
-
-              <div class="image">
-                <img src={{job.thumbJob}} alt="Job Image" class="responsive-img">
-              </div>
-              <div class="display">{{job.name}}</div>
-
-            {{/link-to}}
-
-          </div>
-        {{/each}}
-      {{/if}}
-    {{/if}} --}}
-
 <div class="container">
   <div class="row">
     <h2 class="section-title center">Available Jobs</h2>
+
     {{#each jobs as |job|}}
       <div class="col s12 m6 l4">
 
@@ -50,51 +12,29 @@
             </div>
           </div>
           <div class="card-content">
-            <p><span class="title">{{job.name}}</span></p>
+            <span class="title">{{truncate job.name}}</span>
           </div>
           <div class="card-action">
-            {{#link-to "jobs.view" job.id}}<a class="btn learn-more waves-effect waves-light">Learn More</a>{{/link-to}}
+            {{#link-to "jobs.view" job.id class="btn waves-effect waves-light detail"}}Learn More{{/link-to}}
           </div>
         </div>
-
-        {{!-- {{#link-to "jobs.view" job.id class="job-item"}}
-
-          <div class="image">
-            <img src={{job.thumbJob}} alt="Job Image" class="responsive-img">
-          </div>
-          <div class="display">{{job.name}}</div>
-
-        {{/link-to}} --}}
 
       </div>
     {{else}}
 
       <div class="not-found">
-        <p>We are so sorry that the position you are looking for is currently not available at the moment.</p>
+        <p>We are so sorry that the position you are looking for is currently not available.</p>
         <img src="./assets/images/sad-fox.png" alt="Sad Fox" width="200">
         <p class="text-bold"><big>But please don't give up just yet!</big></p>
-        <p>You can always look for <a href="./jobs" {{action clear}}>other positions available</a> or just <span class="text-semibold">stalk us</span> at the links below to receive updates on our new position.</p>
+        <p>You can always look for <a href="./jobs" class="text-bold" {{action clear}}>other positions available</a> or just <span class="text-bold">stalk us</span> at the links below to receive updates on our new position.</p>
       </div>
 
     {{/each}}
+
   </div>
+
+  {{#unless isEnd}}
+    <button class="btn waves-effect waves-light more" {{action more}}>View More {{icon "arrow_downward"}}</button>
+  {{/unless}}
+
 </div>
-
-{{!-- <div class="container">
-  <div class="row">
-    {{#each this.result as |filter|}}
-      <div class="col s6 l4">
-
-        {{#link-to "jobs.view" filter.id class="job-item"}}
-
-          <div class="image">
-            <img src={{filter.thumbJob}} alt="Job Image" class="responsive-img">
-          </div>
-          <div class="display">{{filter.name}}</div>
-
-        {{/link-to}}
-
-      </div>
-    {{/each}}
-  </div>
-</div> --}}

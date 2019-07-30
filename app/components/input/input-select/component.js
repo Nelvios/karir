@@ -24,7 +24,8 @@ export default Component.extend({
   },
 
   change() {
-    set(this, 'value', this.$().val());
+    const val = this.$().val();
+    set(this, 'value', val);
   }
 
 });

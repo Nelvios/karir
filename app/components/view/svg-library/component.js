@@ -2,9 +2,6 @@ import Component from '@ember/component';
 
 export default Component.extend({
 
-  tagName: 'section',
-
-  specialization: null,
-  location: null
+  classNames: ['svg-container']
 
 });
