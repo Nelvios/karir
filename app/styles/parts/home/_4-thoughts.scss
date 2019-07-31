@@ -175,7 +175,7 @@
   color: $off-black;
 
   &::before {
-    // background-image: url(./images/home/pattern-thoughts.png);
+    background-image: url(./images/home/pattern-thoughts.png);
     background-color: #03a9f5;
     background-attachment: fixed;
     background-position: center;
@@ -190,9 +190,7 @@
 
     @media #{$medium-and-up} { font-size: 3em; }
 
-    &::before {
-      border-top: .5rem solid white;
-    }
+    &::before { border-top: .5rem solid white; }
   }
 
   .screen {

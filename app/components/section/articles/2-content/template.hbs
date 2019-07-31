@@ -77,30 +77,70 @@
 </ul>
 
 <div id="containerContent" class="container">
-  <div class="row">
-    <h2 class="section-title center">All Articles</h2>
-    <div class="input-field hide-on-med-and-up">
-      <span class="title-format">Sort By:</span>
-      {{#input/input-select value=month placeholder="Month"}}
-        {{#each tableOfContents as |tableOfContent|}}
-          <option value={{tableOfContent}}>{{tableOfContent}}</option>
-        {{/each}}
-      {{/input/input-select}}
-    </div>
 
-    <div class="tag">
-      {{#each tags as |tag|}}
-        {{!-- <div>{{tag}}</div> --}}
-        <a href="#" {{action "tagPicked" tag}}>{{tag}}</a>
+  <h2 class="section-title">News &amp; Articles</h2>
+
+  <div class="input-field hide-on-med-and-up">
+    <span class="title-format">Sort By:</span>
+    {{#input/input-select value=month placeholder="Month"}}
+      {{#each tableOfContents as |tableOfContent|}}
+        <option value={{tableOfContent}}>{{tableOfContent}}</option>
       {{/each}}
+    {{/input/input-select}}
+  </div>
+
+  <div class="tag">
+    {{#each tags as |tag|}}
+      {{!-- <div>{{tag}}</div> --}}
+      <a href="#" {{action "tagPicked" tag}}>{{tag}}</a>
+    {{/each}}
+  </div>
+
+  {{#each articles as |article|}}
+    {{!-- <div class="col s12 m4 xl3 hide-on-small-only">
+
+      <div class="card">
+        <div class="card-image">
+          <div class="image"><img alt="thumb" src={{article.thumbImage}}></div>
+        </div>
+        <div class="card-content">
+          <p>
+            <span class="date mb-2">{{date article.date}}</span>
+            <span class="title">{{article.title}}</span>
+          </p>
+        </div>
+        <div class="card-action">
+          {{#link-to "articles.view" article.id}}Read More{{icon "arrow_forward" class="ml-2"}}{{/link-to}}
+        </div>
+      </div>
+
+    </div> --}}
+
+    <div class="col s12 m6 hide-on-small-only">
+
+      <div class="card">
+        <div class="card-image">
+          <div class="image"><img alt="thumb" src={{article.thumbImage}}></div>
+        </div>
+        <div class="card-content">
+          <p>
+            <span class="title">{{article.title}}</span>
+          </p>
+        </div>
+        <div class="card-action">
+          <span class="date">{{date article.date}}</span>
+          {{#link-to "articles.view" article.id}}Read More{{icon "arrow_forward" class="ml-2"}}{{/link-to}}
+        </div>
+      </div>
+
     </div>
 
-    {{#each articles as |article|}}
-      {{!-- <div class="col s12 m4 xl3 hide-on-small-only">
-
+    <div class="col s12 m4 hide-on-med-and-up">
+      {{#link-to "articles.view" article.id}}
         <div class="card">
           <div class="card-image">
             <div class="image"><img alt="thumb" src={{article.thumbImage}}></div>
+            {{!-- <span class="card-title text-heading">Article Title {{sum idx}}</span> --}}
           </div>
           <div class="card-content">
             <p>
@@ -108,48 +148,9 @@
               <span class="title">{{article.title}}</span>
             </p>
           </div>
-          <div class="card-action">
-            {{#link-to "articles.view" article.id}}Read More{{icon "arrow_forward" class="ml-2"}}{{/link-to}}
-          </div>
         </div>
+      {{/link-to}}
+    </div>
+  {{/each}}
 
-      </div> --}}
-
-      <div class="col s12 m6 hide-on-small-only">
-
-        <div class="card">
-          <div class="card-image">
-            <div class="image"><img alt="thumb" src={{article.thumbImage}}></div>
-          </div>
-          <div class="card-content">
-            <p>
-              <span class="title">{{article.title}}</span>
-            </p>
-          </div>
-          <div class="card-action">
-            <span class="date">{{date article.date}}</span>
-            {{#link-to "articles.view" article.id}}Read More{{icon "arrow_forward" class="ml-2"}}{{/link-to}}
-          </div>
-        </div>
-
-      </div>
-
-      <div class="col s12 m4 hide-on-med-and-up">
-        {{#link-to "articles.view" article.id}}
-          <div class="card">
-            <div class="card-image">
-              <div class="image"><img alt="thumb" src={{article.thumbImage}}></div>
-              {{!-- <span class="card-title text-heading">Article Title {{sum idx}}</span> --}}
-            </div>
-            <div class="card-content">
-              <p>
-                <span class="date mb-2">{{date article.date}}</span>
-                <span class="title">{{article.title}}</span>
-              </p>
-            </div>
-          </div>
-        {{/link-to}}
-      </div>
-    {{/each}}
-  </div>
 </div>

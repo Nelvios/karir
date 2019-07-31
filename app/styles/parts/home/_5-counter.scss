@@ -66,12 +66,6 @@
         width: 60px;
         @media #{$medium-and-up} { width: 0; }
       }
-
-      // @media #{$medium-and-up} {
-      //   &:hover, &:focus, &:active {
-      //     span { width: 72px; }
-      //   }
-      // }
     }
   }
 }

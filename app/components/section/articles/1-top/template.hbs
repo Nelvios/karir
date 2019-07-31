@@ -4,48 +4,39 @@
 </div>
 
 <div class="container">
-  <h2 class="main-title">Recent Articles</h2>
-  <div class="row">
-    <div class="slider-photo">
-      <img src={{showModel.thumbImage}} alt="">
-      <div class="container-indicator">
-        <div class="left">
-          <button class="waves-effect waves-black content-indicator icon-left" {{action "moveToPrev"}}>
-            <i class="material-icons icon-style">chevron_left</i>
-          </button>
-        </div>
+  <h2 class="title">Wanna Know More ?</h2>
 
-        <div class="right">
-          <button class="waves-effect waves-black content-indicator icon-right" {{action "moveToNext"}}>
-            <i class="material-icons icon-style">chevron_right</i>
-          </button>
-        </div>
+  <div class="featured">
+
+    <span class="featured-title">Check it Out</span>
+    <div class="photo"><img src={{top.thumbImage}} alt="article-image"></div>
+
+    <div class="card">
+      <div class="card-content">{{truncate top.title 50}}</div>
+      <div class="card-action">
+        <span class="date">{{date top.date}}</span>
+        {{#link-to "articles.view" top.id class="read-more"}}
+          Read More{{icon "arrow_forward"}}
+        {{/link-to}}
       </div>
     </div>
-    <div class="slider-content">
-      <div class="content-title">
-        {{showModel.title}}
+
+    <div class="slider">
+      <div class="btn-prev">
+        <button class="btn-floating waves-effect btn-small" {{action "prev"}}>{{icon "chevron_left"}}</button>
       </div>
-      <div class="content-bottom">
-        <div class="row">
-          <div class="content-date">
-            <span class="date">{{date showModel.date}}</span>
-          </div>
-          <div class="slider-action">
-            {{#link-to "articles.view" showModel.id}}
-              Read More{{icon "arrow_forward" class="ml-2 hide-on-small-only"}}
-            {{/link-to}}
-          </div>
-        </div>
+
+      <div class="btn-next">
+        <button class="btn-floating waves-effect btn-small" {{action "next"}}>{{icon "chevron_right"}}</button>
       </div>
     </div>
+
     <ul class="indicators">
-      <li id="indicator-0" class="indicator-item active"></li>
-      <li id="indicator-1" class="indicator-item"></li>
-      <li id="indicator-2" class="indicator-item"></li>
-      <li id="indicator-3" class="indicator-item"></li>
-      <li id="indicator-4" class="indicator-item"></li>
-      <li id="indicator-5" class="indicator-item"></li>
+      <li class="indicator-item {{if (eq index 0) "active"}}"><a href="" {{action "jump" 0}}> </a></li>
+      <li class="indicator-item {{if (eq index 1) "active"}}"><a href="" {{action "jump" 1}}> </a></li>
+      <li class="indicator-item {{if (eq index 2) "active"}}"><a href="" {{action "jump" 2}}> </a></li>
+      <li class="indicator-item {{if (eq index 3) "active"}}"><a href="" {{action "jump" 3}}> </a></li>
     </ul>
+
   </div>
 </div>

@@ -1,55 +1,43 @@
 import Component from '@ember/component';
-import { set } from 'karir/utils/short';
+import { get, set, computed } from 'karir/utils/short';
 
 export default Component.extend({
 
   tagName: 'section',
-  showModel: null,
-  filtered: null,
-  // isLoading:true,
-  counter: 0,
 
-  didInsertElement(){
-    this._super(...arguments);
-    const model = this.get('model');
-    const filter = model.filter((item, idx) => idx < 6);
-    set(this, 'showModel', filter.get('firstObject'));
-    set(this, 'filtered', filter);
+  model: null,
+  // isLoading: true,
 
-    // store.findAll('article').then(result => {
-    //   let filter = result.filter((item, idx) => idx < 6);
-    //   set(this, 'isLoading', false);
-    //   set(this, 'model', result);
-    //   set(this, 'showModel', filter.get('firstObject'));
-    //   set(this, 'filtered', filter)
-    // });
-  },
+  size: 4,
+  index: 0,
+
+  top: computed('model', 'index', {
+    get() {
+      const model = get(this, 'model');
+      const index = get(this, 'index');
+
+      return model ? model.objectAt(index) : {};
+    }
+  }),
 
   actions: {
-    moveToPrev(){
-      const filtered = this.get('filtered');
-      let counter = this.get('counter');
-      this.$('#indicator-'+counter.toString()).removeClass("active");
-      counter -= 1;
-      if(counter < 0){
-        counter = 5
-      }
-      this.$('#indicator-'+counter.toString()).addClass("active");
-      this.set('showModel', filtered.objectAt(counter));
-      this.set('counter', counter);
+
+    prev() {
+      const size = get(this, 'size') - 1;
+      const idx = get(this, 'index') - 1;
+
+      set(this, 'index', idx < 0 ? size : idx);
     },
-    moveToNext(){
-      const filtered = this.get('filtered');
-      let counter = this.get('counter');
-      this.$('#indicator-'+counter.toString()).removeClass("active");
-      // console.log(indicatorNow);
-      counter += 1;
-      if(counter > 5){
-        counter = 0
-      }
-      this.$('#indicator-'+counter.toString()).addClass("active");
-      this.set('showModel', filtered.objectAt(counter));
-      this.set('counter', counter);
+
+    next() {
+      const size = get(this, 'size') - 1;
+      const idx = get(this, 'index') + 1;
+
+      set(this, 'index', idx > size ? 0 : idx);
+    },
+
+    jump(idx) {
+      set(this, 'index', idx);
     }
   }
 

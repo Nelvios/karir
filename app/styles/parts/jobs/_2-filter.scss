@@ -1,7 +1,10 @@
 // Layout
 
 #jobs-filter {
+  position: relative;
   margin-top: 250px;
+  z-index: 1;
+
   @media #{$large-and-up} { margin-top: 270px; }
   @media #{$extra-large-and-up} { margin-top: 300px; }
 
