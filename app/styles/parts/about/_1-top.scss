@@ -19,8 +19,8 @@
     height: 350px;
     z-index: 0;
 
-    -webkit-clip-path: url(#clip-top5);
-    clip-path: url(#clip-top5);
+    -webkit-clip-path: url(#clip-top-about);
+    clip-path: url(#clip-top-about);
     @media #{$medium-and-up}{
       height: 450px;
     }

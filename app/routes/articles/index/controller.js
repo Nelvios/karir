@@ -1,5 +1,5 @@
 import Controller from '@ember/controller';
-import { get, computed } from 'karir/utils/short';
+import { get, computed, set } from 'karir/utils/short';
 
 export default Controller.extend({
 
@@ -38,4 +38,13 @@ export default Controller.extend({
       return articles;
     }
   }),
+
+  actions:{
+    clearMonth(){
+      set(this, 'month', null);
+    },
+    clearPickedTags(){
+      set(this, 'pickedTags', null);
+    }
+  }
 });

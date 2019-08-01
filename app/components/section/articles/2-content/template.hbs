@@ -71,8 +71,8 @@
 </div> --}}
 
 <ul id="toc" class="table-of-contents hide-on-small-only">
-  {{#each tableOfContents as |tableOfContent|}}
-    <li><a href="#" {{action "tocPicked" tableOfContent}}>{{tableOfContent}}</a></li>
+  {{#each tableOfContents as |tableOfContent index|}}
+    <li><a href="#" {{action "tocPicked" index tableOfContent}}>{{tableOfContent}}</a></li>
   {{/each}}
 </ul>
 
@@ -89,9 +89,9 @@
     </div>
 
     <div class="tag">
-      {{#each tags as |tag|}}
+      {{#each tags as |tag index|}}
         {{!-- <div>{{tag}}</div> --}}
-        <a href="#" {{action "tagPicked" tag}}>{{tag}}</a>
+        <a href="#" {{action "tagPicked" index tag}}>{{tag}}</a>
       {{/each}}
     </div>
 
