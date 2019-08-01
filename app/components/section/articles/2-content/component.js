@@ -95,19 +95,15 @@ export default Component.extend({
         a.removeClass('active');
         a.eq(index).addClass('active');
       }
-      // this.$('a:eq('+index+')').addClass('active');
-      // console.log(this.$().index())
-      // this.$('a').eq($(this).index()).addClass('active');
       set(this, 'month', month);
       console.log(get(this, 'month'));
     },
     tagPicked(index, pickedTag){
       const a = this.$('div > a');
-      // console.log(a.eq(index).children())
       if(a.eq(index).find('i').length){
         a.eq(index).children().remove();
         a.eq(index).removeAttr("style");
-        this.clearMonth();
+        this.clearPickedTags();
       }
       else{
         a.children().remove();
