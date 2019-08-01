@@ -1,5 +1,5 @@
 import Controller from '@ember/controller';
-import { get, set, computed, alias } from 'karir/utils/short';
+import { get, set, computed } from 'karir/utils/short';
 
 export default Controller.extend({
 

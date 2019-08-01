@@ -4,9 +4,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  height: 400px;
-  padding: 100px 0 6rem;
-  box-sizing: content-box;
+  height: 580px;
   overflow: hidden;
   z-index: 1;
 
@@ -14,14 +12,14 @@
   clip-path: url(#clip-top-jobs-sm);
 
   @media #{$medium-and-up} {
-    height: 260px;
+    height: 440px;
 
     -webkit-clip-path: url(#clip-top-jobs);
     clip-path: url(#clip-top-jobs);
   }
 
-  @media #{$large-and-up} { height: 300px; }
-  @media #{$extra-large-and-up} { height: 320px; }
+  @media #{$large-and-up} { height: 470px; }
+  @media #{$extra-large-and-up} { height: 500px; }
 
   .ornament {
     position: absolute;
@@ -46,8 +44,12 @@
     }
   }
 
-  .title, .sub-title { position: relative; }
+  > .container {
+    margin-top: 95px;
+    padding-top: 5px;
+  }
 
+  .title, .sub-title { position: relative; }
   .title {
     @media #{$small-and-down} { margin-top: 1rem; }
   }

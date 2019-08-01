@@ -2,7 +2,6 @@ import { helper } from '@ember/component/helper';
 
 export function truncate(params/*, hash*/) {
   const limit = isNaN(params[1]) ? 30 : params[1];
-  console.log(arguments);
 
   if(params[0]) {
     let str = params[0];
