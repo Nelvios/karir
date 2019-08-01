@@ -1,5 +1,4 @@
-// Layout
-
+//Layout
 #articles-content {
   position: relative;
 
@@ -25,18 +24,23 @@
     z-index: 0;
   }
 
+  > .container {
+    position: relative;
+  }
+
   .section-title {
     position: relative;
-    margin: 4rem 0;
+    margin: 2rem 0 4rem 0;
     padding-bottom: 1.2rem;
+    padding-top: 2rem;
 
     &::before {
       content: '';
       position: absolute;
-      width: 2em;
+      width: 8rem;
       left: 50%;
-      bottom: -.25em;
-      margin-left: -1em;
+      bottom: -.6rem;
+      margin-left: -4rem;
     }
   }
 
@@ -108,6 +112,7 @@
   }
 
   .tag{
+    position: relative;
     display: flex;
     flex-flow: row wrap;
     a{
@@ -231,11 +236,9 @@
   }
 }
 
-
-// Styling
-
+//Styling
 #articles-content {
-  background-color: white;
+  background: white;
 
   &:before {
     background-color: white;
@@ -243,21 +246,18 @@
   }
 
   > .container {
-    position: relative;
     border-top: 1px solid color('grey', 'lighten-1');
   }
 
-  .section-title {
+  .section-title{
     text-align: center;
     font-family: $font-stack;
     font-weight: 900;
-    font-size: 2.4em;
+    font-size: 3rem;
     color: $off-black;
 
-    @media #{$medium-and-up} { font-size: 3em; }
-
-    &:before {
-      border-top: .5rem solid $primary-color;
+    &:before{
+      border-top: .6rem solid $primary-color;
     }
   }
 
@@ -377,9 +377,7 @@
   // }
 }
 
-
-// Animation
-
+//Animation
 #articles-content {
   .tag{
     >a{

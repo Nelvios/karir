@@ -85,11 +85,32 @@ export default Component.extend({
   },
 
   actions: {
-    tocPicked(month){
+    tocPicked(index,month){
+      const a = this.$('li > a');
+      if(a.eq(index).attr('class') == "active"){
+        a.eq(index).removeClass('active');
+        this.clearMonth();
+      }
+      else{
+        a.removeClass('active');
+        a.eq(index).addClass('active');
+      }
       set(this, 'month', month);
       console.log(get(this, 'month'));
     },
-    tagPicked(pickedTag){
+    tagPicked(index, pickedTag){
+      const a = this.$('div > a');
+      if(a.eq(index).find('i').length){
+        a.eq(index).children().remove();
+        a.eq(index).removeAttr("style");
+        this.clearPickedTags();
+      }
+      else{
+        a.children().remove();
+        a.removeAttr("style");
+        a.eq(index).append(' <i class="material-icons icon-right">check</i>');
+        a.eq(index).css("width", "100px");
+      }
       set(this, 'pickedTags', pickedTag);
       console.log(get(this, 'pickedTags'));
     }

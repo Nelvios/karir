@@ -21,21 +21,10 @@
       </div>
     </div>
 
-    <div class="slider">
-      <div class="btn-prev">
-        <button class="btn-floating waves-effect btn-small" {{action "prev"}}>{{icon "chevron_left"}}</button>
-      </div>
-
-      <div class="btn-next">
-        <button class="btn-floating waves-effect btn-small" {{action "next"}}>{{icon "chevron_right"}}</button>
-      </div>
-    </div>
-
     <ul class="indicators">
       {{#each counters as |count idx|}}
         <li class="indicator-item {{if (eq index idx) "active"}}"><a href="" {{action "jump" idx}}> </a></li>
       {{/each}}
     </ul>
-
   </div>
 </div>
