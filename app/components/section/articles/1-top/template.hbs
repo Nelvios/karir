@@ -12,11 +12,11 @@
     <div class="photo"><img src={{top.thumbImage}} alt="article-image"></div>
 
     <div class="card">
-      <div class="card-content">{{truncate top.title 50}}</div>
+      <div class="card-content">{{truncate top.title 60}}</div>
       <div class="card-action">
         <span class="date">{{date top.date}}</span>
-        {{#link-to "articles.view" top.id class="read-more"}}
-          Read More{{icon "arrow_forward"}}
+        {{#link-to "articles.view" top.id class="read"}}
+          Read{{icon "arrow_forward"}}
         {{/link-to}}
       </div>
     </div>
@@ -32,10 +32,9 @@
     </div>
 
     <ul class="indicators">
-      <li class="indicator-item {{if (eq index 0) "active"}}"><a href="" {{action "jump" 0}}> </a></li>
-      <li class="indicator-item {{if (eq index 1) "active"}}"><a href="" {{action "jump" 1}}> </a></li>
-      <li class="indicator-item {{if (eq index 2) "active"}}"><a href="" {{action "jump" 2}}> </a></li>
-      <li class="indicator-item {{if (eq index 3) "active"}}"><a href="" {{action "jump" 3}}> </a></li>
+      {{#each counters as |count idx|}}
+        <li class="indicator-item {{if (eq index idx) "active"}}"><a href="" {{action "jump" idx}}> </a></li>
+      {{/each}}
     </ul>
 
   </div>

@@ -20,6 +20,15 @@ export default Component.extend({
     }
   }),
 
+  counters: computed('size', {
+    get() {
+      const arr = [], size = get(this, 'size');
+      for(let i = 0; i < size; i++) arr.pushObject('');
+
+      return arr;
+    }
+  }),
+
   actions: {
 
     prev() {

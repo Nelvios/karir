@@ -73,7 +73,7 @@ export default Component.extend({
   },
 
   _getThreshold() {
-    const container = jQ('#containerContent');
+    const container = this.$('.container');
     const footer = jQ('#footer');
 
     return {
