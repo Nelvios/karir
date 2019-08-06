@@ -1,165 +1,63 @@
-{{!-- <div class="large-12 left border-blue-bottom keseharian-bca small-12">
-  <!-- keseharian-bca -->
-  <h2>Keseharian di BCA</h2>
-  <p></p>
-  <p><span>Setiap orang tentunya ingin mendapatkan lingkungan kerja yang menyenangkan tetapi juga menantang. Dalam
-      lingkungan yang ramah dan terbuka dengan perkembangan zaman, kami memastikan bahwa setiap individu mendapatkan
-      kesempatan yang sama untuk terus mengembangkan diri serta karir mereka.&nbsp;</span></p>
-  <p></p>
-
-
-
-  <div class="large-12 left keseharian-list small-12">
-    <div class="large-5 left height-243 pad-right small-12">
-      <img src="/imagegen.ashx?width=366&amp;height=243&amp;image=/media/125409/baru-2.jpg" alt="">
-    </div>
-    <div class="large-7 left pad-left small-12">
-      <h3>Friendly Environment</h3>
-      <p></p>
-      <p>BCA memiliki lingkungan kerja yang ramah, bersahabat, dan saling mendukung. Para pimpinan di BCA juga secara
-        aktif membimbing, mendukung, dan menghargai setiap ide positif yang diberikan karyawannya. Kami percaya bahwa
-        setiap karyawan membutuhkan kehidupan yang seimbang. Untuk itu BCA juga menyediakan berbagai komunitas sebagai
-        wadah para karyawan untuk menyalurkan hobbynya seperti AsiaLens untuk para pencinta fotografi, Asia Bike untuk
-        kegiatan bersepeda, dan banyak komunitas lainnya.&nbsp;</p>
-      <p></p>
-
-      <div class="large-12 left accordion-detail small-12" style="display:none">
-        <p>BCA tidak hanya peduli pada setiap karyawan, tetapi juga memberikan kontribusi bagi komunitas sekitar.
-          Beberapa bentuk kontribusi yang kami berikan untuk masyarakat adalah &nbsp;mengadakan program BCA Day Care,
-          Bakti BCA, dan juga membangun Menara BCA Green Building.&nbsp;</p>
-      </div>
-
-      <a href="#" class="expander"><span class="open-acc">Selengkapnya &gt;</span> <span class="close-acc">Tutup
-          &gt;</span> </a>
-
-
-
-    </div>
-  </div>
-  <div class="large-12 left keseharian-list small-12">
-    <div class="large-5 left height-243 pad-right small-12">
-      <img src="/imagegen.ashx?width=366&amp;height=243&amp;image=/media/125411/baru-3.jpg" alt="">
-    </div>
-    <div class="large-7 left pad-left small-12">
-      <h3>Continuous Improvement</h3>
-      <p></p>
-      <p>Sebagai perusahaan yang terus berkembang, BCA selalu terbuka akan inovasi dan ide-ide baru yang membantu kami
-        untuk tetap menjadi yang terdepan dalam industrinya. Para karyawan kami memiliki berbagai kesempatan untuk
-        mengikuti program-program pengembangan diri baik secara profesional maupun personal dan juga mendapatkan
-        bimbingan dari para pemimpin BCA.&nbsp;Kami percaya bahwa cara terbaik untuk mengembangkan bisnis adalah
-        dengan&nbsp;membantu para karyawan berkembang dan mengoptimalkan potensinya.</p>
-      <p></p>
-
-      <div class="large-12 left accordion-detail small-12" style="display:none">
-        <p>Untuk memastikan pengembangan setiap karyawan, BCA mempersiapkan berbagai pelatihan internal maupun eksternal
-          melalui BCA Learning Center. BCA memiliki metode belajar e-learning dan Program BCA Innovation Award yang
-          dapat menjadi wadah bagi para karyawan berinovasi dan mengekspresikan kreativitasnya. BCA juga telah
-          mengimplementasikan Reward Management System yang memberikan kesempatan kepada setiap karyawan untuk
-          mendapatkan bonus berdasarkan evaluasi dari performa kerja, misalnya melalui pengukuran KPI pada aspek
-          Customer Relationship dan Service Excellence. Kebijakan yang transparan ini berlaku untuk seluruh karyawan dan
-          masing-masing dari mereka dapat mengukur kemajuan kinerjanya sepanjang tahun.</p>
-        <p>Kami bangga dengan usaha kami yang telah diakui dengan berbagai penghargaan yang kami dapatkan, antara lain
-          HR Excellence Award 2014 dalam kategori People Development, Gallup Great Workplace Award 2015,
-          dan&nbsp;<span>Best Stellar Workplace Award 2016.</span></p>
-        <p class="MsoNormal">&nbsp;</p>
-      </div>
-
-      <a href="#" class="expander"><span class="open-acc">Selengkapnya &gt;</span> <span class="close-acc">Tutup
-          &gt;</span></a>
-    </div>
-  </div>
-</div> --}}
-
-{{!-- <ul id="toc" class="table-of-contents hide-on-small-only">
-  {{#each tableOfContents as |tableOfContent index|}}
-    <li><a href="#" {{action "tocPicked" index tableOfContent}}>{{tableOfContent}}</a></li>
+<ul id="month-list" class="top hide-on-med-and-down">
+  <li>{{#link-to "articles.index" (query-params month=null)}}All Months{{/link-to}}</li>
+  {{#each monthList as |m|}}
+    <li>{{#link-to "articles.index" (query-params month=(date m "MMMYY"))}}{{date m "MMMM 'YY"}}{{/link-to}}</li>
   {{/each}}
-</ul> --}}
+</ul>
 
 <div class="container">
 
   <h2 class="section-title">News &amp; Articles</h2>
 
-  <div class="input-field hide-on-med-and-up">
+  <div class="input-field hide-on-large-only">
     {{#input/input-select value=month placeholder="Release Month"}}
-      {{#each tableOfContents as |tableOfContent|}}
-        <option value={{tableOfContent}}>{{tableOfContent}}</option>
+      {{#each monthList as |m|}}
+        <option value={{date m "MMMYY"}}>{{date m "MMMM YYYY"}}</option>
       {{/each}}
     {{/input/input-select}}
   </div>
 
-  {{!-- <div class="input-field hide-on-med-and-up">
-    {{#input/input-select value=month placeholder="Tags"}}
-      {{#each tableOfContents as |tableOfContent|}}
-        <option value={{tableOfContent}}>{{tableOfContent}}</option>
-      {{/each}}
-    {{/input/input-select}}
-  </div> --}}
-
-  <div class="tag">
-    {{#each tags as |tag index|}}
-      {{!-- <div>{{tag}}</div> --}}
-      <a href="#" {{action "tagPicked" index tag}}>{{tag}}</a>
+  <div class="tags">
+    {{#each tagList as |tag|}}
+      <button class="btn btn-small waves-effect waves-light tag {{if tag.isActive "active"}}" {{action "tagToggle" tag.name}}>{{tag.name}}</button>
     {{/each}}
   </div>
 
   <div class="row">
     {{#each articles as |article|}}
 
-      {{!-- <div class="col s12 m4 xl3 hide-on-small-only">
+      <div class="col s12 m6">
 
         <div class="card">
           <div class="card-image">
             <div class="image"><img alt="thumb" src={{article.thumbImage}}></div>
           </div>
-          <div class="card-content">
-            <p>
-              <span class="date mb-2">{{date article.date}}</span>
-              <span class="title">{{article.title}}</span>
-            </p>
+          <div class="card-content" title={{article.title}}>
+            <span class="date mb-2 hide-on-med-and-up">{{date article.date}}</span>
+            <span class="title">{{truncate article.title 40}}</span>
           </div>
-          <div class="card-action">
-            {{#link-to "articles.view" article.id}}Read More{{icon "arrow_forward" class="ml-2"}}{{/link-to}}
-          </div>
-        </div>
-
-      </div> --}}
-
-      <div class="col s12 m6 hide-on-small-only">
-
-        <div class="card">
-          <div class="card-image">
-            <div class="image"><img alt="thumb" src={{article.thumbImage}}></div>
-          </div>
-          <div class="card-content">
-            <p>
-              <span class="title">{{article.title}}</span>
-            </p>
-          </div>
-          <div class="card-action">
+          <div class="card-action hide-on-small-only">
             <span class="date">{{date article.date}}</span>
-            {{#link-to "articles.view" article.id}}Read More{{icon "arrow_forward" class="ml-2"}}{{/link-to}}
+            {{#link-to "articles.view" article.id class="read"}}Read{{icon "chevron_right"}}{{/link-to}}
           </div>
+          {{#link-to "articles.view" article.id class="cover hide-on-med-and-up"}}{{/link-to}}
         </div>
 
       </div>
 
-      <div class="col s12 m4 hide-on-med-and-up">
-        {{#link-to "articles.view" article.id}}
-          <div class="card">
-            <div class="card-image">
-              <div class="image"><img alt="thumb" src={{article.thumbImage}}></div>
-              {{!-- <span class="card-title text-heading">Article Title {{sum idx}}</span> --}}
-            </div>
-            <div class="card-content">
-              <p>
-                <span class="date mb-2">{{date article.date}}</span>
-                <span class="title">{{article.title}}</span>
-              </p>
-            </div>
-          </div>
-        {{/link-to}}
+    {{else}}
+
+      <div class="not-found">
+        <p>Oh no! The articles you are looking for were stolen ...</p>
+        <img src="./assets/images/thief-fox.png" alt="Thief Fox" width="200">
+        <p class="text-bold"><big>Don't worry, it will be recovered soon.</big></p>
+        <p>You can always read <a href="./jobs" class="text-bold" {{action clear}}>other news &amp; articles</a> or just <span class="text-bold">stalk us</span> at the links below to receive updates on our newest articles.</p>
       </div>
+
     {{/each}}
   </div>
+
+  {{#unless isEnd}}
+    <button class="btn waves-effect waves-light more" {{action more}}>View More {{icon "arrow_downward"}}</button>
+  {{/unless}}
 </div>

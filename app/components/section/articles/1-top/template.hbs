@@ -16,8 +16,18 @@
       <div class="card-action">
         <span class="date">{{date top.date}}</span>
         {{#link-to "articles.view" top.id class="read"}}
-          Read{{icon "arrow_forward"}}
+          Read{{icon "chevron_right"}}
         {{/link-to}}
+      </div>
+    </div>
+
+    <div class="slider">
+      <div class="btn-prev">
+        <button class="btn-floating waves-effect btn-small" {{action "prev"}}>{{icon "chevron_left"}}</button>
+      </div>
+
+      <div class="btn-next">
+        <button class="btn-floating waves-effect btn-small" {{action "next"}}>{{icon "chevron_right"}}</button>
       </div>
     </div>
 

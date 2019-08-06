@@ -1,13 +1,15 @@
 // Layout
 
 #jobs-list {
+  position: relative;
   margin-top: -1rem;
   padding-top: 8rem;
   padding-bottom: 2rem;
+  overflow: hidden;
 
   @media #{$medium-and-up} { padding-top: 10rem; }
 
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -30,6 +32,8 @@
       margin-left: -1em;
     }
   }
+
+  .row { position: relative; }
 
   .card {
     position: relative;
@@ -149,10 +153,9 @@
     padding: 2.5px 1.2rem 2.5px 1.6rem;
     border-radius: 25px;
 
-    &:hover, &:focus, &:active {
-      transform: translate(0, -.4rem);
-      @media #{$small-and-down} { transform: none; }
-    }
+    // &:hover, &:focus, &:active {
+    //   transform: translate(0, -.3rem);
+    // }
   }
 }
 
@@ -162,7 +165,7 @@
 #jobs-list {
   background-color: white;
 
-  &:before {
+  &::before {
     background-color: white;
     background-image: linear-gradient(#d8e2eb, white);
   }
@@ -176,7 +179,7 @@
 
     @media #{$medium-and-up} { font-size: 3em; }
 
-    &:before {
+    &::before {
       border-top: .5rem solid $primary-color;
     }
   }
@@ -236,16 +239,16 @@
   }
 
   .btn.more {
-    background-color: #0094d6;
-    background-image: linear-gradient(30deg, #015daadd 0%, #0094d6dd 75%, #00b7f1dd 100%);
+    background-color: #015daa;
+    background-image: linear-gradient(30deg, #015daaaa 0%, #0094d6aa 75%, #00b7f1aa 100%);
     font-weight: bold;
     letter-spacing: .08rem;
     color: color('grey', 'lighten-5');
     text-transform: none;
 
     &:hover, &:focus, &:active {
-      @extend .z-depth-3;
-      background-color: white;
+      // @extend .z-depth-3;
+      background-color: #00b7f1;
     }
   }
 

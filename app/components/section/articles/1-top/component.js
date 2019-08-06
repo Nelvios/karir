@@ -5,15 +5,15 @@ export default Component.extend({
 
   tagName: 'section',
 
-  model: null,
+  articles: null,
   // isLoading: true,
 
   size: 4,
   index: 0,
 
-  top: computed('model', 'index', {
+  top: computed('articles', 'index', {
     get() {
-      const model = get(this, 'model');
+      const model = get(this, 'articles');
       const index = get(this, 'index');
 
       return model ? model.objectAt(index) : {};

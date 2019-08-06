@@ -1,2 +1,10 @@
-{{section/articles/1-top elementId="articles-top" model=model}}
-{{section/articles/2-content elementId="articles-content" model=model month=month pickedTags=pickedTags articles=articles clearMonth=(action "clearMonth") clearPickedTags=(action "clearPickedTags")}}
+{{section/articles/1-top elementId="articles-top" articles=model}}
+{{section/articles/2-content elementId="articles-content"
+    model=model
+    articles=articles
+    isEnd=isEnd
+    month=month
+    tags=tags
+    clear=(action "clear")
+    more=(action "more")
+}}

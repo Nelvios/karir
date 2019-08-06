@@ -22,17 +22,11 @@ export default Component.extend({
       const threshold = this._getThreshold() || {};
       const scroll = jQ(window).scrollTop();
 
-      if(scroll > threshold.top) {
-        btn.removeClass('top');
-      } else {
-        btn.addClass('top');
-      }
+      if(scroll > threshold.top) btn.removeClass('top');
+      else btn.addClass('top');
 
-      if(scroll > threshold.bottom) {
-        btn.removeClass('float');
-      } else {
-        btn.addClass('float');
-      }
+      if(scroll > threshold.bottom) btn.removeClass('float');
+      else btn.addClass('float');
 
     });
 
@@ -58,7 +52,7 @@ export default Component.extend({
 
     return {
       top:    benefits.offset().top - jQ(window).outerHeight() + 200,
-      bottom: counter.offset().top - jQ(window).outerHeight() /* + counter.outerHeight()/2 */ + btn.height()/2 + 30
+      bottom: counter.offset().top - jQ(window).outerHeight() + btn.height()/2 + 30
     };
   }
 
