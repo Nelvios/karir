@@ -1,9 +1,10 @@
 // Layout
 
 footer {
+  position: relative;
   padding: 2rem 0 1rem;
 
-  h5 { 
+  h5 {
     margin-bottom: 2rem;
     color: #0094d6;
   }
@@ -106,6 +107,8 @@ footer {
 // Styling
 
 footer {
+  background-color: color('grey', 'darken-4');
+
   h5 {
     font-family: $font-stack;
     font-weight: bold;

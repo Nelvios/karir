@@ -38,7 +38,7 @@
   .select-wrapper {
     border: 1px solid color('grey', 'darken-1');
     background-color: color('grey', 'lighten-4');
-    box-shadow: 2px 3px 7px color('grey', 'darken-2');
+    box-shadow: 2px 3px 7px rgba(black, .3);
 
     .dropdown-trigger {
       border-bottom: none;
@@ -58,12 +58,12 @@
   .clear {
     background-color: transparent;
     border: 2px solid color('grey', 'lighten-3');
-    box-shadow: 2px 3px 7px color('grey', 'darken-2'),
-                inset 2px 3px 7px color('grey', 'darken-1');
+    box-shadow: 2px 3px 7px rgba(black, .3),
+                inset 2px 3px 7px rgba(black, .2);
 
     font-weight: bold;
     color: color('grey', 'lighten-3');
-    text-shadow: 2px 3px 3px color('grey', 'darken-1');
+    text-shadow: 2px 3px 3px rgba(black, .3);
     text-transform: none;
 
     &:hover, &:focus, &:active {

@@ -1,0 +1,28 @@
+<div class="ornaments">
+  <span class="ornament ornament-1"></span>
+  <span class="ornament ornament-2 hide-on-small-only"></span>
+</div>
+
+<div class="container">
+
+  <div class="title">
+    <span class="date">{{date article.date}}</span>
+    <h3 class="display">{{article.title}}</h3>
+
+    <div class="image"><img src={{article.thumbImage}} alt="Article Image"></div>
+  </div>
+
+  <div class="content">{{html model.article}}</div>
+
+  <div class="tags">
+    <label>Tags:</label>
+    {{#each tags as |tag|}}
+      <button class="btn btn-small tag">{{tag}}</button>
+    {{else}}
+    &nbsp; -
+    {{/each}}
+  </div>
+
+  {{#link-to "articles.index" class="back"}}{{icon "chevron_left"}}Back to Articles{{/link-to}}
+
+</div>

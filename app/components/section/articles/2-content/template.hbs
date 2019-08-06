@@ -10,7 +10,7 @@
   <h2 class="section-title">News &amp; Articles</h2>
 
   <div class="input-field hide-on-large-only">
-    {{#input/input-select value=month placeholder="Release Month"}}
+    {{#input/input-select value=month placeholder="All Month" isPlaceholderDisabled=false}}
       {{#each monthList as |m|}}
         <option value={{date m "MMMYY"}}>{{date m "MMMM YYYY"}}</option>
       {{/each}}

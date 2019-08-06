@@ -88,7 +88,7 @@ export default Component.extend({
 
     return {
       top:    tags.offset().top - 101,
-      bottom: footer.offset().top - list.outerHeight() - 130
+      bottom: footer.offset().top - list.outerHeight() - 250
     };
   },
 

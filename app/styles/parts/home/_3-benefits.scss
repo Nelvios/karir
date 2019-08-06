@@ -54,18 +54,18 @@
       }
 
       .line-1 {
-        width: 17rem; height: 8.5rem;
-        top: 0; left: 40%;
-      }
-
-      .line-2 {
         width: 15rem; height: 8rem;
         top: 0; right: 25%;
       }
 
-      .line-3 {
+      .line-2 {
         width: 15rem; height: 8.5rem;
         top: 2rem; left: 20%;
+      }
+
+      .line-3 {
+        width: 17rem; height: 8.5rem;
+        top: 0; left: 40%;
       }
 
       .title {
@@ -154,9 +154,9 @@
         background-size: contain;
         background-repeat: no-repeat;
 
-        &.image-1 { background-image: url(./images/home/open-space.png); }
-        &.image-2 { background-image: url(./images/home/flexi-time.png); }
-        &.image-3 { background-image: url(./images/home/smart-casual-attire.png); }
+        &.image-1 { background-image: url(./images/home/flexi-time.png); }
+        &.image-2 { background-image: url(./images/home/smart-casual-attire.png); }
+        &.image-3 { background-image: url(./images/home/open-space.png); }
       }
     }
 

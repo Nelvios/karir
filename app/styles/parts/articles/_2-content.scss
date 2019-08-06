@@ -174,25 +174,26 @@
 
     width: 15%;
     margin: 0;
-    padding: 0 .75rem 0 1.5rem;
+    padding: 0 .75rem;
 
     &.top {
       position: absolute;
-      top: 40.2rem;
+      top: 37.5rem;
+      @media #{$extra-large-and-up} { top: 40.5rem; }
     }
 
     &.bottom {
       position: absolute;
       top: initial;
-      bottom: 2rem;
+      bottom: 10rem;
     }
 
     > li > a {
       display: block;
-      padding: .25em 0;
+      padding: .25em .5em .25em 0;
 
       &:hover, &:focus, &:active {
-        padding-right: .5em;
+        padding-right: 1em;
       }
     }
   }
@@ -228,7 +229,7 @@
   .select-wrapper {
     border: 1px solid color('grey', 'base');
     background-color: color('grey', 'lighten-4');
-    box-shadow: 2px 3px 7px color('grey', 'base');
+    box-shadow: 2px 3px 7px rgba(black, .3);
 
     .dropdown-trigger {
       border-bottom: none;
@@ -328,13 +329,14 @@
   }
 
   ul#month-list > li > a {
-    border-left: 0 solid $primary-color;
+    // border-left: .3em solid transparent;
+    border-right: .3em solid transparent;
     text-align: right;
-    font-size: 1.2em;
+    font-size: 1em;
     color: $off-black;
 
     &.active {
-      border-left: .3em solid $primary-color;
+      border-color: $primary-color;
       color: $primary-color;
     }
   }
