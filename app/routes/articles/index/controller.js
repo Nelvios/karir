@@ -11,12 +11,12 @@ export default Controller.extend({
   increment: 4,
   counter: 1,
 
-  articles: computed('month', 'tags.[]', 'size', {
+  articles: computed('model.[]', 'month', 'tags.[]', 'size', {
     get() {
       const month = get(this, 'month');
       const tags = get(this, 'tags') ? get(this, 'tags').split(',') : null;
       const size = get(this, 'size');
-      let articles = get(this, 'model');
+      let articles = get(this, 'model').sortBy('date', 'id').reverseObjects();
 
       if(month) {
         articles = articles.filter(({ date }) => {

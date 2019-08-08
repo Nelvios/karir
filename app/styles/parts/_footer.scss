@@ -18,9 +18,8 @@ footer {
   .job-highlight .more {
     margin-top: 1.5rem;
 
-    > a {
-      &:hover i, &:focus i, &:active i { margin-left: .75rem; }
-      i { margin-left: .25rem; }
+    > a:hover, a:focus, a:active {
+      i { transform: translate(.5rem, 0); }
     }
   }
 
@@ -110,8 +109,7 @@ footer {
   background-color: color('grey', 'darken-4');
 
   h5 {
-    font-family: $font-stack;
-    font-weight: bold;
+    font-weight: $font-bold;
     font-size: 1.2em;
 
     @media #{$medium-and-up} { font-size: 1.4em; }
@@ -125,7 +123,7 @@ footer {
   }
 
   .job-highlight .more > a {
-    font-weight: 600;
+    font-weight: $font-semibold;
     color: $primary-color;
     text-transform: uppercase;
   }
@@ -159,13 +157,15 @@ footer {
 // Animation
 
 footer {
-  .job-highlight a {
-    -webkit-transition: color .15s;
-    transition: color .15s;
+  .job-highlight {
+    a {
+      -webkit-transition: color .15s;
+      transition: color .15s;
+    }
 
-    i {
-      -webkit-transition: margin-left .15s;
-      transition: margin-left .15s;
+    .more i {
+      -webkit-transition: transform .15s;
+      transition: transform .15s;
     }
   }
 

@@ -88,7 +88,7 @@
   .preview {
     .back {
       line-height: 2rem;
-      font-weight: 600;
+      // font-weight: 600;
       color: $tertiary-color;
 
       i { line-height: 2rem; }
@@ -134,20 +134,18 @@
   }
 
   // .display{
-  //   font-family: $font-stack;
   //   font-weight: bold;
   //   font-size: 2em;
   //   color: $secondary-color;
-  //   // text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
+  //   text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
 
-  //   // @media #{$large-and-up} { font-size: 2.5em; }
-  //   // @media #{$extra-large-and-up} { font-size: 3em; }
+  //   @media #{$large-and-up} { font-size: 2.5em; }
+  //   @media #{$extra-large-and-up} { font-size: 3em; }
   // }
 
   .btn.apply {
     background-image: linear-gradient(20deg, rgba($secondary-color, .9), rgba(color('cyan', 'base'), .9));
     background-color: $secondary-color;
-    // font-family: $font-heading;
     font-weight: bold;
     font-size: .9em;
 

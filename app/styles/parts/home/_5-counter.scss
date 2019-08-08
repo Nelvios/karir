@@ -85,26 +85,29 @@
   }
 
   .number {
-    font-weight: bold;
+    font-weight: $font-bold;
     font-size: 2.8em;
     color: color('yellow', 'base');
     text-shadow: .1em .1em 0 rgba(0, 0, 0, .2);
   }
 
   .text {
-    font-weight: bold;
+    font-weight: $font-bold;
     font-size: 1.2em;
+    letter-spacing: -.025rem;
+    white-space: nowrap;
 
     .sub {
-      font-weight: normal;
+      font-weight: $font-normal;
       font-size: .8em;
-      opacity: .8;
+      opacity: .7;
     }
   }
 
   .btn.apply {
     background-color: $tertiary-color;
-    font-weight: 600;
+
+    font-weight: $font-bold;
     font-size: .8rem;
     color: white;
 

@@ -117,14 +117,14 @@
 
     // .text {
     //   font-family: $font-heading;
-    //   font-weight: bold;
+    //   font-weight: $font-bold;
     //   font-style: italic;
     //   font-size: 2em;
     // }
   }
 
   #nav-desktop a {
-    font-weight: bold;
+    font-weight: $font-bold;
     color: $off-black;
 
     &::before {
@@ -137,8 +137,8 @@
     border-left: .4rem solid $primary-color;
 
     a {
+      font-weight: $font-bold;
       font-size: 1.5em;
-      font-weight: bold;
       color: $off-black;
     }
   }

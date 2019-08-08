@@ -131,8 +131,8 @@
 
   .section-title {
     text-align: center;
-    font-family: $font-stack;
-    font-weight: 900;
+    font-family: $font-heading;
+    font-weight: $font-extrabold;
     font-size: 2.4em;
     color: $off-black;
 
@@ -168,13 +168,13 @@
     .desc {
       .title {
         font-family: $font-stack;
-        font-weight: bold;
+        font-weight: $font-bold;
         font-size: 2.4em;
 
-        &::before {
-          border-top: .12em solid #9bc8e7;
-        }
+        &::before { border-top: .12em solid #9bc8e7; }
       }
+
+      .text { color: $text-color; }
     }
 
     @media #{$medium-and-up} {

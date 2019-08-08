@@ -173,8 +173,8 @@
 
   .section-title {
     text-align: center;
-    font-family: $font-stack;
-    font-weight: 900;
+    font-family: $font-heading;
+    font-weight: $font-extrabold;
     font-size: 2.4em;
     color: $off-black;
 
@@ -194,7 +194,7 @@
 
     .card-image {
       .image {
-        background-color: $off-black;
+        background-color: color('grey', 'darken-4');
         border: .35rem solid $primary-color;
 
         @media #{$medium-and-up} { border-width: .5rem; }
@@ -207,7 +207,7 @@
 
       .title {
         text-align: center;
-        font-weight: bold;
+        font-weight: $font-bold;
         font-size: 1.6em;
         line-height: 1.2em;
         letter-spacing: -.025em;
@@ -224,7 +224,7 @@
         background-color: #f67d50;
         background-image: radial-gradient(circle at center, #f3993488 25%, #f67d50 100%);
 
-        font-weight: bold;
+        font-weight: $font-bold;
         text-transform: none;
 
         &:hover, &:focus, &:active {
@@ -240,16 +240,19 @@
   }
 
   .btn.more {
-    background-color: #015daa;
-    background-image: linear-gradient(30deg, #015daaaa 0%, #0094d6aa 75%, #00b7f1aa 100%);
-    font-weight: bold;
-    letter-spacing: .08rem;
-    color: color('grey', 'lighten-5');
+    background-color: transparent;
+    border: .15em solid $primary-color;
+    box-shadow: 2px 3px 7px rgba(black, .3),
+                inset 2px 3px 7px rgba(black, .2);
+
+    font-weight: $font-semibold;
+    letter-spacing: .05em;
+    color: $primary-color;
+    text-shadow: 1px 2px 3px rgba(black, .3);
     text-transform: none;
 
     &:hover, &:focus, &:active {
-      // @extend .z-depth-3;
-      background-color: #00b7f1;
+      background-color: rgba(black, .07);
     }
   }
 

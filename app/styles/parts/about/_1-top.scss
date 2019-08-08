@@ -1,50 +1,44 @@
-//Layout
-#about-top{
-  position: relative;
-  // height: 80%;
-  padding: 100px 0 8rem;
-  box-sizing: content-box;
+// Layout
 
-  // background: linear-gradient(#aabcd0 50%, #fefeff 100%);
+#about-top {
+  position: relative;
+  padding: 100px 0 8rem;
 
   @media #{$medium-and-up}{
     padding: 100px 0 10rem;
   }
 
-  &::before{
+  &::before {
     content: '';
     position: absolute;
     top: 0;
     width: 100%;
     height: 350px;
-    z-index: 0;
 
     -webkit-clip-path: url(#clip-top-about);
     clip-path: url(#clip-top-about);
-    @media #{$medium-and-up}{
-      height: 450px;
-    }
+
+    @media #{$medium-and-up} { height: 450px; }
   }
 
-  .ornament{
+  .ornament {
     position: absolute;
-    &.ornament-1{
-      width: 320px;
-      height: 320px;
+
+    &.ornament-1 {
+      width: 320px; height: 320px;
       top: -6rem;
+      left: -3rem;
       transform: rotate(180deg);
-      margin-left: -3rem;
-      z-index: 1;
     }
-    &.ornament-2{
-      width: 200px;
-      height: 200px;
+
+    &.ornament-2 {
+      width: 200px; height: 200px;
+      top: 10rem;
       right: -2rem;
-      z-index: 1;
     }
   }
 
-  .container{
+  .container {
     margin-top: -2rem;
     @media #{$medium-and-up}{
       margin-top: 7rem;
@@ -118,21 +112,23 @@
   }
 }
 
-//Styling
-#about-top{
+
+// Styling
+
+#about-top {
   background-color: #f0f4f7;
 
-  &::before{
+  &::before {
     background: linear-gradient(#015daa 0%, #0094d6 50%, #00b7f1 100%);
   }
 
-  .ornament{
+  .ornament {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 
-    &.ornament-1 { background-image:url(./images/home/home-top-ornament-4.png); opacity: .2;}
-    &.ornament-2 { background-image:url(./images/home/home-top-ornament-3.png); opacity: .3;}
+    &.ornament-1 { background-image:url(./images/home/home-top-ornament-4.png); opacity: .5;}
+    &.ornament-2 { background-image:url(./images/home/home-top-ornament-3.png); opacity: .7;}
   }
 
   .image-wrap{
@@ -158,7 +154,7 @@
   }
 
   .title {
-    font-weight: bold;
+    font-weight: $font-bold;
     font-size: 1.5em;
 
     @media #{$medium-and-up}{
@@ -174,4 +170,5 @@
   }
 }
 
-//Animation
+
+// Animation

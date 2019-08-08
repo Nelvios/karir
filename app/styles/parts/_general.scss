@@ -29,6 +29,10 @@ body {
   background-color: color('grey', 'darken-4');
   font-family: $font-stack;
   color: white;
+
+  &.navbar-top {
+    background-color: #015daa;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,20 +41,9 @@ h1, h2, h3, h4, h5, h6 {
 
 :focus { outline: none; }
 
-.text-heading { font-family: $font-heading !important; }
-.text-body    { font-family: $font-stack   !important; }
-
 .text-italic      { font-style: italic            !important; }
 .text-underlined  { text-decoration: underline    !important; }
 .text-crossed     { text-decoration: line-through !important; }
-
-// .text-light     { font-weight: 300    !important; }
-.text-normal    { font-weight: normal !important; }
-// .text-medium    { font-weight: 500    !important; }
-.text-semibold  { font-weight: 600    !important; }
-.text-bold      { font-weight: bold   !important; }
-// .text-extrabold { font-weight: 800    !important; }
-.text-black     { font-weight: 900    !important; }
 
 .justify-align  { text-align: justify !important; }
 
@@ -76,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
 
 // Overrides
 
-.material-icons { vertical-align: -.25em; }
+.material-icons { width: 1em; vertical-align: -.25em; }
 .carousel .indicators > .indicator-item { cursor: pointer; }
 i.right { margin-left: .5rem; }
 i.left { margin-right: .5rem; }

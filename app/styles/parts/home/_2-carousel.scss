@@ -101,16 +101,15 @@
 
   .btn-floating {
     background-color: #f8f8f8;
-    color: $off-black;
 
     i {
       font-size: 2em;
-      color: $off-black;
+      color: $text-color;
     }
 
     &:hover, &:focus, &:active {
       background-color: white;
-      i { color: black; }
+      i { color: $off-black; }
     }
   }
 
@@ -128,25 +127,29 @@
   .img-3 { background-image: url(./images/3-INTERNSHIP.png);   }
   .img-4 { background-image: url(./images/4-PPTI.png);         }
 
+  .display-1, .display-2 {
+    line-height: 1.2;
+    user-select: none;
+  }
+
   .display-1 {
     font-family: $font-heading;
-    font-weight: bold;
+    font-weight: $font-semibold;
     font-size: 1.6em;
-    line-height: 1.2em;
-    color: $off-black;
-    text-shadow: .05em .1em 0rem rgba(black, .2);
+    letter-spacing: -.03rem;
+    color: $primary-color;
+    text-shadow: .03em .06em 0 rgba(black, .2);
 
     @media #{$large-and-up} { font-size: 1.8em; }
     @media #{$extra-large-and-up} { font-size: 2em; }
   }
 
   .display-2 {
-    font-weight: 900;
+    font-weight: $font-black;
     font-size: 2.2em;
-    line-height: 1.2em;
     letter-spacing: .1rem;
     color: $off-black;
-    text-shadow: 0 .1em .2em rgba(black, .4);
+    text-shadow: 0.09em 0.12em rgba(black, .25);
 
     @media #{$large-and-up} { font-size: 2.5em; }
     @media #{$extra-large-and-up} { font-size: 3em; }
@@ -168,7 +171,7 @@
   .btn.apply {
     background-image: radial-gradient(circle at center, #f39934 25%, #f67d50 85%);
     border-radius: 50px;
-    font-weight: bold;
+    font-weight: $font-bold;
     font-size: 1.2em;
 
     &:hover, &:focus, &:active {

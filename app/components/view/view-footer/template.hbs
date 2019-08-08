@@ -5,7 +5,7 @@
       <h5>Site Map</h5>
       <ul class="site-map">
         <li><a href="https://bca.co.id">BCA</a></li>
-        <li><a href="https://karir.bca.co.id">Karir</a></li>
+        <li><a href="https://karir.bca.co.id">Careers</a></li>
         <li><a href="mailto://recruitment@bca.co.id">Contact Us</a></li>
       </ul>
     </div>
@@ -16,7 +16,7 @@
         {{#each jobs as |job|}}
           <li>{{#link-to "jobs.view" job.id}}{{job.name}}{{/link-to}}</li>
         {{/each}}
-        <li class="more">{{#link-to "jobs"}}More Jobs{{icon "arrow_forward"}}{{/link-to}}</li>
+        <li class="more">{{#link-to "jobs"}}More Jobs{{icon "arrow_forward" class="ml-1"}}{{/link-to}}</li>
       </ul>
     </div>
 

@@ -42,8 +42,8 @@
 
     .dropdown-trigger {
       border-bottom: none;
-      font-weight: bold;
-      color: color('grey', 'base');
+      font-weight: $font-semibold;
+      color: $text-color;
 
       &::selection { background-color: transparent; }
 
@@ -52,24 +52,26 @@
       }
     }
 
-    .dropdown-content { font-weight: bold; }
+    .dropdown-content {
+      font-weight: $font-semibold;
+
+      li:not(.disabled) > span { color: $off-black; }
+    }
   }
 
   .clear {
     background-color: transparent;
-    border: 2px solid color('grey', 'lighten-3');
+    border: 2px solid white;
     box-shadow: 2px 3px 7px rgba(black, .3),
                 inset 2px 3px 7px rgba(black, .2);
 
-    font-weight: bold;
-    color: color('grey', 'lighten-3');
+    font-weight: $font-semibold;
+    color: white;
     text-shadow: 2px 3px 3px rgba(black, .3);
     text-transform: none;
 
     &:hover, &:focus, &:active {
       background-color: rgba(black, .2);
-      border-color: white;
-      color: white;
     }
   }
 }

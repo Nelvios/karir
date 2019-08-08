@@ -170,10 +170,9 @@
   }
 
   .title {
-    font-family: $font-stack;
-    font-weight: 900;
+    font-weight: $font-extrabold;
     font-size: 4em;
-    letter-spacing: .07em;
+    letter-spacing: .05em;
     text-shadow: .09em .12em rgba(black, .25);
   }
 
@@ -184,7 +183,7 @@
       @extend .z-depth-2;
       background-color: $primary-color;
 
-      font-weight: bold;
+      font-weight: $font-semibold;
       font-size: 1.6em;
       color: white;
     }
@@ -192,21 +191,22 @@
     .card {
       .card-content {
         text-align: left;
-        font-family: $font-stack;
-        font-weight: bold;
+        font-weight: $font-bold;
         font-size: 2em;
+        letter-spacing: -.025em;
         color: $off-black;
       }
 
       .card-action {
         text-align: left;
-        font-size: 1.4em;
+        font-size: 1.2em;
 
-        @media #{$medium-and-up} { font-size: 1.2em; }
+        @media #{$small-and-down} { font-size: 1.4em; }
 
         .date { color: color('grey', 'base'); }
 
         .read {
+          color: $primary-color;
           text-transform: none;
           i { font-size: 1.5em; }
         }
@@ -219,12 +219,12 @@
 
         i {
           font-size: 2em;
-          color: $off-black;
+          color: $text-color;
         }
 
         &:hover, &:focus, &:active {
           background-color: white;
-          i { color: black; }
+          i { color: $off-black; }
         }
       }
     }

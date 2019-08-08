@@ -38,6 +38,6 @@ $percents: (
 }
 
 @each $percent_num, $percent in $percents {
-  .w-#{$percent_num} { height: $percent }
+  .w-#{$percent_num} { width: $percent }
   .h-#{$percent_num} { height: $percent }
 }

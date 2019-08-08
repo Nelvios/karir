@@ -26,7 +26,7 @@ export default Component.extend({
         if(!months.includes(date)) months.pushObject(date);
       });
 
-      return months;
+      return months.sort().reverseObjects();
     }
   }),
 

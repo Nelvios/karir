@@ -172,7 +172,6 @@
 #home-thoughts {
   background-color: color('grey', 'lighten-5');
   background: linear-gradient(#ffffff 70%, #d1dde7 100%);
-  color: $off-black;
 
   &::before {
     background-image: url(./images/home/pattern-thoughts.png);
@@ -183,10 +182,9 @@
 
   .section-title {
     text-align: center;
-    font-family: $font-stack;
-    font-weight: 900;
+    font-family: $font-heading;
+    font-weight: $font-extrabold;
     font-size: 2.4em;
-    color: white;
 
     @media #{$medium-and-up} { font-size: 3em; }
 
@@ -200,6 +198,7 @@
 
     .thought {
       background-color: white;
+      color: $text-color;
       box-shadow: 0 5px 7px rgba(black, .15);
 
       @media #{$medium-and-up} {
@@ -207,16 +206,20 @@
       }
     }
 
+    .name, .position { user-select: none; }
+
     .name {
       text-align: center;
-      line-height: 1em;
-      font-weight: bold;
+      font-weight: $font-bold;
       font-size: 1.6em;
+      line-height: 1em;
+      color: $off-black;
+      text-shadow: .05em .1em 0 rgba(black, .2);
 
       @media #{$medium-and-up} {
         text-align: right;
-        line-height: initial;
         font-size: 2em;
+        line-height: initial;
 
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -225,7 +228,7 @@
 
     .position {
       background-color: #f37e31;
-      font-weight: bold;
+      font-weight: $font-semibold;
       color: white;
 
       letter-spacing: .05em;
@@ -239,12 +242,12 @@
 
       i {
         font-size: 2em;
-        color: $off-black;
+        color: $text-color;
       }
 
       &:hover, &:focus, &:active {
         background-color: white;
-        i { color: black; }
+        i { color: $off-black; }
       }
     }
   }

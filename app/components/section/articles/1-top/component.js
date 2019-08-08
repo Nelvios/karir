@@ -5,11 +5,17 @@ export default Component.extend({
 
   tagName: 'section',
 
-  articles: null,
+  model: null,
   // isLoading: true,
 
   size: 4,
   index: 0,
+
+  articles: computed('model.[]', {
+    get() {
+      return get(this, 'model').sortBy('date', 'id').reverseObjects().filter((item, idx) => idx < get(this, 'size'));
+    }
+  }),
 
   top: computed('articles', 'index', {
     get() {

@@ -14,50 +14,46 @@
     @media #{$small-and-down} { margin-top: -5rem; }
   }
 
-  // .ornaments {
-  //   @extend .container;
-  //   position: absolute;
-  // }
-
   .ornament {
     position: absolute;
 
     &.ornament-1 {
       width: 320px; height: 320px;
       top: -1.5rem;
-      margin-left: -8.5rem;
+      left: -3rem;
     }
 
     &.ornament-2 {
       width: 150px; height: 150px;
-      right: 35%;
       top: .2rem;
+      right: 35%;
+
     }
 
     &.ornament-3 {
       width: 200px; height: 200px;
+      top: 15rem;
       right: -4rem;
-      margin-top: -5rem;
     }
 
     &.ornament-4 {
       width: 150px; height: 150px;
-      left: 30%;
       bottom: 20rem;
+      left: 30%;
     }
   }
 
   .display {
     position: relative;
     display: block;
-    margin-bottom: .5em;
+    margin-bottom: .2em;
 
     .d-1, .d-2 { height: .7em; }
   }
 
   .sub-text {
     position: relative;
-    padding-top: .5em;
+    margin-top: 1.6em;
   }
 
   .btn.apply {
@@ -101,7 +97,7 @@
   }
 
   .display {
-    font-weight: 900;
+    font-weight: $font-black;
     font-size: 4em;
     letter-spacing: .07em;
     text-shadow: .09em .12em rgba(black, .25);
@@ -113,8 +109,8 @@
   }
 
   .sub-text {
-    font-style: italic;
-    font-size: 1.6em;
+    font-weight: $font-normal;
+    font-size: 1.8em;
     letter-spacing: .05em;
     text-shadow: 0 0 2px white,
                  0 0 2px white,
@@ -130,9 +126,9 @@
     background-color: darken(#f67d50, 20%);
     background-image: radial-gradient(circle at center, rgba(#f39934, .8) 25%, #f67d50 85%);
 
-    font-weight: bold;
+    font-weight: $font-bold;
     font-size: 1.3em;
-    letter-spacing: .07em;
+    letter-spacing: .05em;
 
     @media #{$small-and-down} { font-size: 1.8em; }
 

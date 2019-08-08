@@ -12,17 +12,17 @@
     <div class="image"><img src={{article.thumbImage}} alt="Article Image"></div>
   </div>
 
-  <div class="content">{{html model.article}}</div>
+  <div class="content">{{html article.article}}</div>
 
   <div class="tags">
     <label>Tags:</label>
     {{#each tags as |tag|}}
       <button class="btn btn-small tag">{{tag}}</button>
     {{else}}
-    &nbsp; -
+      <span>- none -</span>
     {{/each}}
   </div>
 
-  {{#link-to "articles.index" class="back"}}{{icon "chevron_left"}}Back to Articles{{/link-to}}
+  {{#link-to "articles.index" class="back"}}{{icon "arrow_backward" class="mr-1"}}Back to Articles{{/link-to}}
 
 </div>

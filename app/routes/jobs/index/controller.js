@@ -11,7 +11,7 @@ export default Controller.extend({
   increment: 6,
   counter: 1,
 
-  jobs: computed('specialization', 'location', 'size', {
+  jobs: computed('model.[]', 'specialization', 'location', 'size', {
     get() {
       const spec = get(this, 'specialization');
       const loc = get(this, 'location');
