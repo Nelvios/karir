@@ -1,6 +1,5 @@
 import Component from '@ember/component';
-import { get, service } from 'karir/utils/short';
-import { getProperties } from '@ember/object';
+import { get, set, service } from 'karir/utils/short';
 
 export default Component.extend({
 
@@ -13,9 +12,7 @@ export default Component.extend({
     this._super(...arguments);
     const store = get(this, 'store');
 
-    store.findAll('counter').then(result => result.forEach((item) => {
-      this.set('counters', getProperties(item,'employCount'));
-    }))
+    store.findAll('counter').then(result => set(this, 'counters', get(result[0], 'employCount')));
   }
 
 });

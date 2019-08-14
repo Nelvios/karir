@@ -1,32 +1,40 @@
 import Component from '@ember/component';
-import { get } from 'karir/utils/short';
+import { jQ, get, set } from 'karir/utils/short';
 
 export default Component.extend({
 
   tagName: 'section',
-  // autoScroll: null,
+  autoScroll: null,
 
   didInsertElement() {
     this._super(...arguments);
     const carousel = this.$('.carousel');
-    // const scrollTime = 4500;      // in milliseconds
+    const scrollTime = 4500;      // in milliseconds
 
-    carousel.carousel({
-      fullWidth: true,
-      indicators: true,
-      // onCycleTo: (el) => this.send('changeColor', jQ(el).attr('data-color'))
+    jQ(window).on('resize.carousel', () => {
+      carousel.carousel({
+        fullWidth: true,
+        indicators: true
+      });
+
+      // Remove extra indicators
+      carousel.find('.indicators').last().siblings('.indicators').remove();
     });
 
-    // carousel.mouseenter(() => clearTimeout(get(this, 'autoScroll')));
-    // carousel.mouseleave(() => this.send('autoScroll', scrollTime));
+    jQ(window).triggerHandler('resize.carousel');
 
-    // carousel.mouseleave();
+
+    carousel.mouseenter(() => clearTimeout(get(this, 'autoScroll')));
+    carousel.mouseleave(() => this.send('autoScroll', scrollTime));
+
+    carousel.mouseleave();
   },
 
   willDestroyElement() {
     this._super(...arguments);
 
     clearTimeout(get(this, 'autoScroll'));
+    jQ(window).off('resize.carousel');
   },
 
   actions: {
@@ -39,21 +47,13 @@ export default Component.extend({
       this.$('.carousel').carousel('next');
     },
 
-    // autoScroll(time) {
-    //   const interval = setInterval(() => {
-    //     this.$('.carousel').carousel('next');
-    //   }, time);
+    autoScroll(time) {
+      const carousel = this.$('.carousel');
+      const interval = setInterval(() => {
+        carousel.carousel('next');
+      }, time);
 
-    //   set(this, 'autoScroll', interval);
-    // },
-    // },
-
-    changeColor(colorClass) {
-      const classNames = ['ember-view'];
-      classNames.pushObject(colorClass);
-      classNames.compact();
-
-      this.$().attr('class', classNames.join(' '));
+      set(this, 'autoScroll', interval);
     }
   }
 

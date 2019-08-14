@@ -25,8 +25,8 @@ export default Component.extend({
       if(scroll > threshold.top) btn.removeClass('top');
       else btn.addClass('top');
 
-      if(scroll > threshold.bottom) btn.removeClass('float');
-      else btn.addClass('float');
+      if(scroll > threshold.bottom) btn.addClass('bottom');
+      else btn.removeClass('bottom');
 
     });
 
@@ -46,12 +46,12 @@ export default Component.extend({
   },
 
   _getThreshold() {
-    const benefits = jQ('#home-benefits');
+    const benefits = jQ('#home-benefits > .container');
     const counter = this.$();
     const btn = this.$('.btn.apply');
 
     return {
-      top:    benefits.offset().top - jQ(window).outerHeight() + 200,
+      top:    benefits.offset().top - jQ(window).outerHeight() - 30,
       bottom: counter.offset().top - jQ(window).outerHeight() + btn.height()/2 + 30
     };
   }

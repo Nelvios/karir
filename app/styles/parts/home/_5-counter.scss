@@ -1,18 +1,21 @@
 // Layout
 
 #home-counter {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   height: 100px;
-  z-index: 10;
 
   @media #{$medium-and-up} { height: 200px; }
 
-  .box{
-    padding: .4rem 2rem;
+  .box {
+    @extend .valign-wrapper;
     margin-top: -2.4rem;
+    padding: .4rem 2rem;
     border-radius: 1.2rem;
 
-    @media #{$medium-and-up} { margin-top: -3.8rem; }
+    @media #{$medium-and-up} { margin-top: -3.5rem; }
+    @media #{$extra-large-and-up} { margin-top: -4rem; }
   }
 
   .text {
@@ -28,7 +31,8 @@
 
   .btn.apply {
     @extend .valign-wrapper;
-    position: absolute;
+    position: fixed;
+    bottom: 30px;
     right: 7.5%;
     padding: 0 5.7px;
 
@@ -41,10 +45,13 @@
       padding: 0 10.5px;
     }
     @media #{$large-and-up} { right: 17%; }
+    @media #{$extra-large-and-up} { right: 18%; }
 
     span {
-      width: 0;
+      width: 60px;
       overflow: hidden;
+
+      @media #{$medium-and-up} { width: 0; }
     }
 
     @media #{$medium-and-up} {
@@ -53,18 +60,16 @@
       }
     }
 
-    &.float {
-      position: fixed;
-      bottom: 30px;
+    &.top {
+      right: -50%;
+    }
 
-      &.top {
-        right: -50%;
+    &.bottom {
+      position: absolute;
+      bottom: initial;
+
+      @media #{$small-and-down} {
         span { width: 0; }
-      }
-
-      span {
-        width: 60px;
-        @media #{$medium-and-up} { width: 0; }
       }
     }
   }
@@ -74,13 +79,15 @@
 // Styling
 
 #home-counter {
-  background-color: #03a9f5;
-
   @media #{$medium-and-up} { font-size: 1.5em; }
   @media #{$extra-large-and-up} { font-size: 1.8em; }
 
   .box{
     background-color: $secondary-color;
+    background-image: url(./images/home/counter-bg.png);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
     box-shadow: 0 1rem 1.5rem 0 rgba(black, .35);
   }
 

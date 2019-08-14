@@ -1,19 +1,27 @@
 // Layout
 
-#home-carousel {
-  box-sizing: content-box;
+.liquid-container {
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  transform: none !important;
+}
 
-  > .container {
+#home-carousel {
+  margin-top: -150px;
+  margin-bottom: -350px;
+
+  box-sizing: content-box;
+  z-index: 1;
+
+  .box {
     position: relative;
-    margin-top: -8.5rem;
-    z-index: 1;
     border-radius: 4em;
   }
 
   .btn-floating {
     position: absolute;
     top: 50%;
-    margin: -12px 1rem 0;
+    margin: -15px 1rem 0;
 
     &.btn-prev { left: 0; }
     &.btn-next { right: 0; }
@@ -52,10 +60,6 @@
       height: 350px;
       margin-right: -275px;
     }
-
-    @media #{$extra-large-and-up} {
-      right: 20%;
-    }
   }
 
   .display-1, .display-2 {
@@ -63,10 +67,12 @@
     z-index: 5;
 
     @media #{$medium-and-up} { margin-left: 1rem; }
-    @media #{$large-and-up} { margin-left: -2rem; }
+    @media #{$large-and-up} { margin-left: -7.5%; }
   }
 
   .display-1 {
+    margin-bottom: .3em;
+
     @media #{$small-and-down} { margin-bottom: 1rem; }
   }
 
@@ -91,7 +97,6 @@
 // Styling
 
 #home-carousel {
-
   @media #{$small-and-down} { text-align: center; }
 
   .box {
@@ -135,13 +140,13 @@
   .display-1 {
     font-family: $font-heading;
     font-weight: $font-semibold;
-    font-size: 1.6em;
+    font-size: 1.2em;
     letter-spacing: -.03rem;
-    color: $primary-color;
-    text-shadow: .03em .06em 0 rgba(black, .2);
+    color: $off-black;
+    text-shadow: .05em .1em 0 rgba(black, .15);
 
-    @media #{$large-and-up} { font-size: 1.8em; }
-    @media #{$extra-large-and-up} { font-size: 2em; }
+    @media #{$large-and-up} { font-size: 1.4em; }
+    @media #{$extra-large-and-up} { font-size: 1.6em; }
   }
 
   .display-2 {
@@ -149,7 +154,7 @@
     font-size: 2.2em;
     letter-spacing: .1rem;
     color: $off-black;
-    text-shadow: 0.09em 0.12em rgba(black, .25);
+    text-shadow: 0.09em 0.12em rgba(black, .1);
 
     @media #{$large-and-up} { font-size: 2.5em; }
     @media #{$extra-large-and-up} { font-size: 3em; }

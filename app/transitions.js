@@ -12,11 +12,21 @@ export default function(){
   const simple = (from, to, use, rev) => {
     const params = [];
 
-    if(from)  this.pushObject(this.fromRoute(`${ROUTE_PREFIX}.${from}`));
-    if(to)    this.pushObject(this.toRoute(`${ROUTE_PREFIX}.${to}`));
-    if(use)   this.pushObject(this.use(use));
-    if(rev)   this.pushObject(this.reverse(rev));
+    if(from)  params.pushObject(this.fromRoute(`${ROUTE_PREFIX}.${from}`));
+    if(to)    params.pushObject(this.toRoute(`${ROUTE_PREFIX}.${to}`));
+    if(use)   params.pushObject(this.use(use));
+    if(rev)   params.pushObject(this.reverse(rev));
 
     this.transition(...params);
-  }
+  };
+
+  simple('index', 'about', 'crossFade', 'crossFade');
+  simple('index', 'jobs', 'crossFade', 'crossFade');
+  simple('index', 'articles', 'crossFade', 'crossFade');
+
+  simple('about', 'jobs', 'crossFade', 'crossFade');
+  simple('about', 'articles', 'crossFade', 'crossFade');
+
+  simple('jobs', 'articles', 'crossFade', 'crossFade');
+
 }

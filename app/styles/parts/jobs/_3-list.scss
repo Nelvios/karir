@@ -1,11 +1,9 @@
 // Layout
 
 #jobs-list {
-  position: relative;
   margin-top: -1rem;
   padding-top: 8rem;
   padding-bottom: 2rem;
-  overflow: hidden;
 
   @media #{$medium-and-up} { padding-top: 10rem; }
 

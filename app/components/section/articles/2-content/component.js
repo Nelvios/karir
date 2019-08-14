@@ -1,12 +1,14 @@
 import Component from '@ember/component';
-import { jQ, get, set, computed } from 'karir/utils/short';
+import Pagination from 'karir/mixins/pagination';
+import { jQ, get, set, computed, alias } from 'karir/utils/short';
 
-export default Component.extend({
+export default Component.extend(Pagination, {
 
   tagName: 'section',
 
   model: null,
   articles: null,
+
   month: null,
   tags: null,
 
@@ -55,6 +57,18 @@ export default Component.extend({
       return tags.map(tag => {
         return { name: tag, isActive: activeTags.includes(tag) };
       });
+    }
+  }),
+
+  total: alias('articles.length'),
+  pageSize: 4,
+
+  showArticles: computed('articles.[]', 'size', {
+    get() {
+      const articles = get(this, 'articles') || [];
+      const size = get(this, 'size');
+
+      return articles.filter((item, idx) => idx < size);
     }
   }),
 

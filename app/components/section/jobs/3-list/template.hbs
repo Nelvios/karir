@@ -3,7 +3,7 @@
 
   <div class="row">
 
-    {{#each jobs as |job|}}
+    {{#each showJobs as |job|}}
       <div class="col s12 m6 l4">
 
         <div class="card">
@@ -35,8 +35,8 @@
 
   </div>
 
-  {{#unless isEnd}}
-    <button class="btn waves-effect waves-light more" {{action more}}>View More {{icon "arrow_downward"}}</button>
-  {{/unless}}
+  {{#if isMore}}
+    <button class="btn waves-effect more" {{action "more"}}>View More {{icon "arrow_downward"}}</button>
+  {{/if}}
 
 </div>

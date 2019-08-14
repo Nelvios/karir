@@ -1,19 +1,15 @@
 // Layout
 
 #about-top {
-  position: relative;
-  padding: 100px 0 8rem;
+  padding: 100px 0 5rem;
+  @media #{$medium-and-up} { padding-bottom: 8rem; }
 
-  @media #{$medium-and-up}{
-    padding: 100px 0 10rem;
-  }
-
-  &::before {
-    content: '';
+  .ornaments {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 350px;
+    height: 280px;
+    overflow: hidden;
 
     -webkit-clip-path: url(#clip-top-about);
     clip-path: url(#clip-top-about);
@@ -32,83 +28,57 @@
     }
 
     &.ornament-2 {
-      width: 200px; height: 200px;
-      top: 10rem;
+      width: 250px; height: 250px;
+      top: 15rem;
       right: -2rem;
     }
-  }
 
-  .container {
-    margin-top: -2rem;
-    @media #{$medium-and-up}{
-      margin-top: 7rem;
+    &.ornament-3 {
+      width: 150px; height: 150px;
+      top: .2rem;
+      right: 35%;
     }
   }
 
-  .image-wrap{
+  .box {
     position: relative;
-    width: 100%;
-    top: 0;
-    &::before{
+    margin-top: -10rem;
+    padding-top: 320px;
+
+    @media #{$medium-and-up} {
+      margin: 4rem 5% 0;
+      padding-top: 360px;
+    }
+    @media #{$large-and-up} {
+      margin: 5rem 10% 0;
+      padding-top: 380px;
+    }
+
+    &::before {
       content: '';
       position: absolute;
-      width: 650px;
+      top: 0;
+      width: 100%;
       height: 500px;
-      max-width: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      top: -2rem;
-      z-index: 1;
     }
 
-    .gsit-pict{
-      position: relative;
-      display: inline-block;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 120px;
+      left: 10%; right: 10%;
       width: 80%;
       height: 350px;
-      max-width: 100%;
-      top: 6rem;
-      z-index: 3;
-
-      @media #{$medium-and-up}{
-        width: 550px;
-        height: 350px;
-      }
     }
   }
 
-  .box{
+  .text {
     position: relative;
-    margin-top: -4rem;
     width: 100%;
-    // height: 200px;
-    z-index: 2;
-    border-radius: 10px;
+    padding: 4rem 2rem 1rem;
+    border-radius: 15px;
 
-    @media #{$medium-and-up}{
-      margin-top: 0;
-    }
-
-    .content{
-      // padding: 10px 20px;
-      padding: 10px 20px 30px 20px;
-      .title{
-        margin-top: 1rem;
-        text-align: left;
-      }
-      .description{
-        text-align: left;
-        font-size: 1.1em;
-      }
-
-      @media #{$medium-and-up}{
-        padding: 10px 20px 40px 20px;
-        .title{
-          margin-top: 2.5rem
-        }
-      }
-
-    }
+    @media #{$large-and-up} { padding-top: 3rem; }
   }
 }
 
@@ -118,7 +88,7 @@
 #about-top {
   background-color: #f0f4f7;
 
-  &::before {
+  .ornaments {
     background: linear-gradient(#015daa 0%, #0094d6 50%, #00b7f1 100%);
   }
 
@@ -129,44 +99,39 @@
 
     &.ornament-1 { background-image:url(./images/home/home-top-ornament-4.png); opacity: .5;}
     &.ornament-2 { background-image:url(./images/home/home-top-ornament-3.png); opacity: .7;}
+    &.ornament-3 { background-image:url(./images/home/home-top-ornament-2.png); opacity: .4;}
   }
 
-  .image-wrap{
-    &::before{
+  .box {
+    &::before {
       background-image: url(./images/about/GSIT-background.png);
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
     }
 
-    .gsit-pict{
+    &::after {
       background-image: url(./images/about/GSIT-logo.png);
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
     }
-  }
 
-  .box{
-    box-shadow: 5px 5px 10px color('grey', 'lighten-1');
-    background-color: #ffffff;
-    color: $off-black;
-  }
+    .text {
+      box-shadow: 4px 8px 7px rgba(0, 0, 0, 0.15);
+      background-color: #ffffff;
 
-  .title {
-    font-weight: $font-bold;
-    font-size: 1.5em;
+      .title {
+        font-weight: $font-extrabold;
+        font-size: 1.5em;
+        color: $off-black;
+        text-transform: uppercase;
 
-    @media #{$medium-and-up}{
-      font-size: 1.8em;
+        @media #{$medium-and-up} { font-size: 1.8em; }
+      }
+
+      .description { color: $text-color; }
     }
-    // letter-spacing: .2rem;
-    // text-align: right;
-    // text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .7);
-
-
-    // @media #{$large-and-up} { font-size: 2.5em; }
-    // @media #{$extra-large-and-up} { font-size: 3em; }
   }
 }
 

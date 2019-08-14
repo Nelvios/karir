@@ -16,11 +16,11 @@ export default Component.extend({
     store.findAll('job').then(result => set(this, 'jobs', result.filterBy('featured', true)));
 
     set(this, 'links', {
-      facebook:   'https://www.facebook.com/GoodLifeBCA',
-      instagram:  'https://www.instagram.com/goodlifeBCA',
+      facebook:   'https://www.facebook.com/hashtag/itbca',
+      instagram:  'https://www.instagram.com/tags/itbca',
       twitter:    'https://twitter.com/GoodLifeBCA',
-      linkedin:   'https://www.linkedin.com/company/pt-bank-central-asia-tbk',
-      youtube:    'https://www.youtube.com/solusiBCA'
+      linkedin:   'https://www.linkedin.com/feed/hashtag/itbca',
+      youtube:    'https://www.youtube.com/solusiBCA/search?query=%23ITBCA'
     });
   }
 

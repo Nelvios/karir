@@ -2,13 +2,12 @@
 
 #home-top {
   @extend .valign-wrapper;
-  position: relative;
   height: 500px;
   padding: 100px 0 150px;
   box-sizing: content-box;
   overflow: hidden;
 
-  @media #{$medium-and-up} { padding-bottom: 200px; }
+  @media #{$medium-and-up} { padding-bottom: 250px; }
 
   > .container {
     @media #{$small-and-down} { margin-top: -5rem; }
@@ -19,7 +18,7 @@
 
     &.ornament-1 {
       width: 320px; height: 320px;
-      top: -1.5rem;
+      top: -3rem;
       left: -3rem;
     }
 
@@ -27,13 +26,12 @@
       width: 150px; height: 150px;
       top: .2rem;
       right: 35%;
-
     }
 
     &.ornament-3 {
-      width: 200px; height: 200px;
+      width: 250px; height: 250px;
       top: 15rem;
-      right: -4rem;
+      right: -2rem;
     }
 
     &.ornament-4 {
@@ -90,9 +88,9 @@
     background-position: center;
     background-repeat: no-repeat;
 
-    &.ornament-1 { background-image:url(./images/home/home-top-ornament-1.png); opacity: .7; }
+    &.ornament-1 { background-image:url(./images/home/home-top-ornament-1.png); opacity: .6; }
     &.ornament-2 { background-image:url(./images/home/home-top-ornament-2.png); opacity: .4; }
-    &.ornament-3 { background-image:url(./images/home/home-top-ornament-3.png); opacity: .7; }
+    &.ornament-3 { background-image:url(./images/home/home-top-ornament-3.png); opacity: .6; }
     &.ornament-4 { background-image:url(./images/home/home-top-ornament-4.png); opacity: .4; }
   }
 

@@ -24,7 +24,7 @@
   </div>
 
   <div class="row">
-    {{#each articles as |article|}}
+    {{#each showArticles as |article|}}
 
       <div class="col s12 m6">
 
@@ -57,7 +57,8 @@
     {{/each}}
   </div>
 
-  {{#unless isEnd}}
-    <button class="btn waves-effect waves-light more" {{action more}}>View More {{icon "arrow_downward"}}</button>
-  {{/unless}}
+  {{#if isMore}}
+    <button class="btn waves-effect more" {{action "more"}}>View More {{icon "arrow_downward"}}</button>
+  {{/if}}
+
 </div>

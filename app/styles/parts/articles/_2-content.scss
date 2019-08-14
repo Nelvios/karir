@@ -1,8 +1,6 @@
 // Layout
 
 #articles-content {
-  position: relative;
-
   margin-top: -17rem;
   padding-top: 19rem;
   padding-bottom: 2rem;
@@ -88,7 +86,7 @@
 
     @media #{$medium-and-up} {
       flex-direction: column;
-      margin: 1.2rem .5rem;
+      margin: 1.4rem .7rem;
     }
 
     &:hover, &:focus, &:active {
@@ -321,7 +319,7 @@
     font-weight: $font-semibold;
     letter-spacing: .05em;
     color: $primary-color;
-    text-shadow: 1px 2px 3px rgba(black, .3);
+    text-shadow: 1px 2px 3px rgba(black, .2);
     text-transform: none;
 
     &:hover, &:focus, &:active {
