@@ -20,7 +20,8 @@ export default function host(key) {
     },
 
     'counter': {
-      search: `${host}/assets/content/counter/data.json`
+      search: `${host}/assets/content/counter/data.json`,
+      find:   `${host}/assets/content/counter/data.json`
     }
 
   }

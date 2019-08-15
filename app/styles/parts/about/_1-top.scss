@@ -89,7 +89,7 @@
   background-color: #f0f4f7;
 
   .ornaments {
-    background: linear-gradient(#015daa 0%, #0094d6 50%, #00b7f1 100%);
+    background: linear-gradient(#015daa 0%, #0094d6 85%);
   }
 
   .ornament {
@@ -118,8 +118,8 @@
     }
 
     .text {
-      box-shadow: 4px 8px 7px rgba(0, 0, 0, 0.15);
-      background-color: #ffffff;
+      box-shadow: 4px 8px 7px rgba(black, .15);
+      background-color: white;
 
       .title {
         font-weight: $font-extrabold;

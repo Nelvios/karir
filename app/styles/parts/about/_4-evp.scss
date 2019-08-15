@@ -1,0 +1,83 @@
+// Layout
+
+#about-evp {
+  padding: 1rem 0;
+
+  .section-title {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-bottom: .5rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 2em;
+      left: 50%;
+      bottom: -.25em;
+      margin-left: -1em;
+    }
+  }
+
+  .card-panel {
+    border-radius: 10px;
+
+    @media #{$medium-and-up} {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    .title {
+      position: relative;
+      margin: .5rem 0 2rem;
+      padding-bottom: .5rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 3em;
+        left: 50%;
+        bottom: -.25em;
+        margin-left: -1.5em;
+      }
+    }
+  }
+}
+
+
+// Styling
+
+#about-evp {
+  background-color: white;
+
+  .section-title {
+    text-align: center;
+    font-family: $font-heading;
+    font-weight: $font-extrabold;
+    font-size: 2.4em;
+    color: $off-black;
+
+    @media #{$medium-and-up} { font-size: 3em; }
+
+    &::before { border-top: .5rem solid $primary-color; }
+  }
+
+  .card-panel {
+    background-color: #03a9f5;
+
+    @media #{$medium-and-up} {
+      box-shadow: 4px 8px 7px rgba(black, .15);
+    }
+
+    .title {
+      text-align: center;
+      font-weight: $font-bold;
+      font-size: 1.6em;
+      letter-spacing: .025em;
+
+      &::before { border-top: .25rem solid white; }
+    }
+  }
+}
+
+
+// Animation

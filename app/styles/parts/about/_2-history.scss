@@ -96,7 +96,17 @@
   }
 
   .screen {
+    @extend .z-depth-1;
     background-color: white;
+
+    @media #{$medium-and-up} {
+      box-shadow: 4px 8px 7px rgba(black, .15);
+    }
+
+    .photo {
+      @extend .z-depth-2;
+    }
+
     .text { color: $text-color; }
   }
 }

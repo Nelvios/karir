@@ -1,138 +1,116 @@
-//Layout
-#about-location{
-  display: none;
+// Layout
+
+#about-location {
   padding: 3rem 0;
 
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 400px;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    clear: both;
+  }
+
+  > .container { position: relative; }
 
   .section-title {
-    float: right;
     position: relative;
-    margin: 0 0 2rem 0;
-    // padding-bottom: 1.2rem;
-    padding-top: 2rem;
+    margin-bottom: 3rem;
+    padding-bottom: .5rem;
+
+    @media #{$small-and-down} { margin-top: 0; }
 
     &::before {
       content: '';
       position: absolute;
-      width: 5rem;
-      // left: 50%;
-      bottom: -.5rem;
-      right: 1.5rem;
-      // margin-left: -2.5rem;
+      width: 2em;
+      right: 50%;
+      bottom: -.25em;
+      margin-right: -1em;
+
+      @media #{$medium-and-up} { right: 8rem; }
     }
   }
 
-  .content{
-    clear: both;
-    text-align: end;
-    margin-bottom: 2rem;
-  }
-
-  .image-wrap{
-    @extend .valign-wrapper;
+  .section-text {
     position: relative;
-    height: 35vw;
-    width: 35vw;
-    left: 50%;
-    transform: translateX(-50%);
-    @media #{$small-and-down}{
-      height: 65vw;
-      width: 65vw;
-      img{
-        padding: 0 20px;
-      }
+
+    @media #{$medium-and-up} {
+      float: right;
+      width: 50%;
     }
-    .title{
+  }
+
+  .image {
+    position: relative;
+    width: 100%;
+    margin: 2rem 0;
+
+    @media #{$medium-and-up} {
       position: absolute;
-      top: 1.8rem;
-      left: 50%;
-      transform: translateX(-50%);
+      top: 3.5rem;
+      width: 48%;
     }
-    img{
-      position: relative;
-      max-width: 100%;
-      max-height: 100%;
-      padding: 0 30px;
-      z-index: 1;
-    }
-  }
 
-  .map{
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 700px;
-    margin-bottom: 5rem;
-    img{
-      width: 100%
-    }
-  }
-
-  .part{
-    @extend .valign-wrapper;
-    position: relative;
-    // margin-top: 5rem;
-    .city{
-      @extend .valign-wrapper;
-      // @extend .z-depth-2;
-      padding: 40px 30px;
-      height: 150px;
-      border-radius: 10px;
-      width: 33.3333333333%;
-      margin: 20px 10px;
-    }
-    .city:nth-child(1){
-      margin-left: 10rem;
-    }
-    .city:nth-child(3){
-      margin-right: 10rem;
+    img {
+      width: 100%;
+      @media #{$medium-and-up} { margin-top: -2rem; }
+      @media #{$extra-large-and-up} { margin-top: -4rem; }
     }
   }
 }
 
-//Styling
-#about-location{
-  background: linear-gradient(#ffffff 40%, #f0f4f7 100%);
 
-  .section-title{
+// Styling
+
+#about-location {
+  background-color: #f0f4f7;
+
+  &::before {
+    background-image: linear-gradient(white, #f0f4f7);
+  }
+
+  .section-title {
     text-align: center;
-    font-family: $font-stack;
-    font-weight: bold;
-    font-size: 2.5em;
+    font-family: $font-heading;
+    font-weight: $font-extrabold;
+    font-size: 2.4em;
     color: $off-black;
 
-    &::before{
-      border-top: .5rem solid $primary-color;
+    @media #{$medium-and-up} {
+      text-align: right;
+      font-size: 3em;
     }
+
+    &::before { border-top: .5rem solid $primary-color; }
   }
 
-  .content{
-    color: $off-black;
+  .section-text {
+    color: $text-color;
+    @media #{$medium-and-up} { text-align: right; }
   }
 
-  .image-wrap{
-    background-color: #e7f3ff;
-    border: 5px solid #03a9f5;
-    border-radius: 50%;
-    .title{
-      font-weight: 900;
-      font-size: 2em;
+  .image {
+    .title {
       text-align: center;
+      font-weight: $font-black;
+      font-size: 2em;
+      text-transform: uppercase;
+
       color: #0070b8;
-      text-shadow: 0.09em 0.12em rgba(0, 0, 0, 0.25);
+      text-shadow: .06em .08em rgba(black, .25);
 
-      @media #{$medium-and-up}{font-size: 2.5em;}
-      @media #{$large-and-up}{font-size: 3em;}
+      @media #{$medium-and-up} { font-size: 2.5em; }
     }
-  }
-
-  .city{
-    color: $off-black;
-    background-color: #ffffff;
-    font-weight: bold;
-    font-size: 1.3em;
-    box-shadow: 0 0 2px 0 color('grey', 'lighten-1') ,10px 10px 10px color('grey','lighten-2');
   }
 }
 
-//Animation
+
+// Animation

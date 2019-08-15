@@ -2,19 +2,27 @@
 
 #about-statistic {
   box-sizing: content-box;
-  padding: 5rem 0 2rem 0;
+  padding: 3rem 0 2rem;
   margin-top: -1rem;
 
-  >.container { position: relative; }
+  @media #{$medium-and-up} {
+    padding-bottom: 350px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 800px;
+  }
 
   .section-title {
     position: relative;
+    margin-bottom: 3rem;
     padding-bottom: .5rem;
 
-    @media #{$medium-and-up} {
-      // float: right;
-      // margin: 6rem 2rem 3rem 0;
-    }
+    @media #{$small-and-down} { margin-top: 1rem; }
 
     &::before {
       content: '';
@@ -24,14 +32,31 @@
       bottom: -.25em;
       margin-left: -1em;
 
-      @media #{$medium-and-up} { left: 3rem; }
+      @media #{$medium-and-up} { left: 8rem; }
     }
+  }
+
+  .section-text {
+    position: relative;
+    @media #{$small-and-down} { margin-bottom: 2rem; }
   }
 
   .card-panel {
     position: relative;
-    // height: 30vw;
-    margin-top: 80px;
+    margin: 4rem 0 2rem;
+    border-radius: 10px;
+    z-index: 1;
+
+    @media #{$medium-and-up} {
+      height: 350px;
+      margin-top: 6rem;
+    }
+    @media #{$large-and-up} { height: 300px; }
+    @media #{$extra-large-and-up} { height: 320px; }
+
+    &:hover, &:focus, &:active {
+      transform: translate(0, -.3rem);
+    }
 
     .image {
       @extend .valign-wrapper;
@@ -52,181 +77,30 @@
     }
   }
 
-
-
-
-
-
-
-  .part{
-    // @extend .valign-wrapper;
-    display: flex;
+  .population {
     position: relative;
-    z-index: 1;
-    margin-top: 75px;
-    @media #{$medium-and-down}{
-      flex-wrap: wrap;
-      margin-top: 0;
-      justify-content: space-evenly;
-    }
-    // flex-direction: row;
-    .group{
-      // @extend .valign-wrapper;
-      @extend .valign-wrapper;
-      justify-content: center;
-      flex-wrap: wrap;
-      @extend .z-depth-2;
-      position: relative;
-      padding: 42.5px 10px 20px 10px;
-      // flex-wrap: wrap;
-      // padding: 40px 30px;
-      // height: 75px;
-      border-radius: 10px;
-      .icon{
-        position: absolute;
-        width: 50%;
-        max-width: 95px;
-        min-width: 92px;
-        height: 85px;
-        top: -42.5px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: blue;
-        border-radius: 50%;
-      }
-      .title{
-        // @extend .valign-wrapper;
-        // justify-content: center;
-        // height: 100px;
-        // margin-top: 1rem;
+    width: 80%;
+    margin: -2rem auto 0;
 
-        // position: absolute;
-        // width: 100%;
-      }
-      // .content{
-      //   @extend .valign-wrapper;
-      //   justify-content: center;
-      // }
+    @media #{$medium-and-up} {
+      position: absolute;
+      bottom: 2rem;
+      width: 400px;
     }
-    .three-content{
-      width: 100%;
-      margin-top: 70px;
-      @media #{$medium-and-up}{
-        width: 40%;
-      }
-      @media #{$large-and-up}{
-        width: 33.3333333333%;
-        margin: 20px 30px;
-      }
-    }
-    // .three-content:nth-child(1){
-    //   @media #{$large-and-up}{
-    //     margin-left: 15px;
-    //   }
-    // }
-    // .three-content:nth-child(3){
-    //   @media #{$large-and-up}{
-    //     margin-right: 15px;
-    //   }
-    // }
-    .two-content{
-      width: 100%;
-      margin-top: 70px;
-      @media #{$medium-and-up}{
-        width: 40%;
-      }
-      @media #{$large-and-up}{
-        width: 50%;
-        margin: 30px;
-      }
-    }
-    // .two-content:nth-child(1){
-    //   @media #{$large-and-up}{
-    //     margin-left: 10.8rem;
-    //   }
-    // }
-    // .two-content:nth-child(2){
-    //   @media #{$large-and-up}{
-    //     margin-right: 10.8rem;
-    //   }
-    // }
+
+    img { width: 100%; }
   }
-
-  .image-population{
-    position: relative;
-    width: 350px;
-    margin-top: -7rem;
-    left: -3rem;
-    img{
-      width: 100%;
-    }
-  }
-
-  .ornament{
-    position: absolute;
-
-    &.ornament-1{
-      width: 300px;
-      height: 300px;
-      bottom: 0;
-      left: 5rem;
-    }
-  }
-
-
-
-  // .image-1{
-  //   width: 213px;
-  //   height: 147px;
-  //   float: left;
-  //   clear: both;
-  //   @media #{$medium-and-up}{
-  //     width: 355px;
-  //     height: 245px;
-  //   }
-  // }
-  // .image-2{
-  //   width: 213px;
-  //   height: 142px;
-  //   float: left;
-  //   clear: both;
-  //   @media #{$medium-and-up}{
-  //     width: 354px;
-  //     height: 236px;
-  //   }
-  // }
-  // .top-title{
-  //   width: 50%;
-  //   margin-left: auto;
-  //   text-align: right;
-
-  // }
-  // .count-employee{
-  //   width: 50%;
-  //   margin-left: auto;
-  //   text-align: center;
-  //   margin-top: -4rem;
-  // }
-  // .bottom-title{
-  //   width: 50%;
-  //   margin-left: auto;
-  //   text-align: left;
-  //   margin-top: -3.5rem;
-  // }
-
-  // .content{
-  //   width: 50%;
-  //   margin-left: auto;
-  //   margin-top: 1rem;
-  // }
 }
 
 
 // Styling
 
 #about-statistic {
-  background-image: linear-gradient(#f0f4f7, white);
   background-color: white;
+
+  &::before {
+    background-image: linear-gradient(#f0f4f7, white);
+  }
 
   .section-title {
     text-align: center;
@@ -243,53 +117,44 @@
     &::before { border-top: .5rem solid $primary-color; }
   }
 
+  .section-text { color: $text-color; }
+
   .card-panel {
+
+    &:hover, &:focus, &:active {
+      @extend .z-depth-3;
+      .image { @extend .z-depth-3; }
+    }
 
     .image {
       @extend .z-depth-2;
-      background-color: color('grey', 'darken-4');
+      background-color: color('grey', 'darken-1');
     }
 
     .title {
       text-align: center;
-      font-weight: bold;
+      font-weight: $font-bold;
       font-size: 1.4em;
       color: $off-black;
     }
 
     .desc { color: $text-color; }
   }
-
-  .ornament{
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    &.ornament-1 { background-image:url(./images/about/IT-populations.png);}
-  }
-
-  // .image-1{
-  //   background-image: url(./images/stat-employee.png);
-  //   background-size:contain;
-  //   background-repeat: no-repeat;
-  // }
-  // .image-2{
-  //   background-image: url(./images/line-chart.png);
-  //   background-size:contain;
-  //   background-repeat: no-repeat;
-  // }
-  // .top-title{
-  //   font-weight: bold;
-  //   font-size: 3.5em;
-  // }
-  // .count-employee{
-  //   font-weight: bold;
-  //   font-size: 10em;
-  // }
-  // .bottom-title{
-  //   font-weight: bold;
-  //   font-size: 2em;
-  // }
 }
 
+
 // Animation
+
+#about-statistic {
+  .card-panel {
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+
+    .image {
+      -webkit-transition-duration: .3s;
+      transition-duration: .3s;
+    }
+  }
+}

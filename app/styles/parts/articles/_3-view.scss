@@ -1,6 +1,8 @@
 // Layout
 
 #articles-view {
+  padding: 2rem 0;
+
   .ornaments {
     position: absolute;
     top: 0;
@@ -31,17 +33,23 @@
     }
 
     &.ornament-2 {
-      width: 200px; height: 200px;
+      width: 250px; height: 250px;
       top: 15rem;
       right: -2rem;
+    }
+
+    &.ornament-3 {
+      width: 150px; height: 150px;
+      top: .2rem;
+      right: 35%;
     }
   }
 
   .title {
     position: relative;
-    margin: 8rem 0 3rem;
+    margin: 5rem 0 3rem;
 
-    @media #{$medium-and-up} { margin-top: 12rem; }
+    @media #{$medium-and-up} { margin-top: 10rem; }
 
     .date {
       display: block;
@@ -102,7 +110,7 @@
   .back {
     position: relative;
     display: block;
-    margin: 2rem auto 5rem;
+    margin: 2rem auto;
     clear: both;
 
     &:hover, &:focus, &:active {
@@ -132,8 +140,9 @@
     background-position: center;
     background-repeat: no-repeat;
 
-    &.ornament-1 { background-image:url(./images/home/home-top-ornament-4.png); opacity: .5;}
-    &.ornament-2 { background-image:url(./images/home/home-top-ornament-3.png); opacity: .7;}
+    &.ornament-1 { background-image:url(./images/home/home-top-ornament-4.png); opacity: .5; }
+    &.ornament-2 { background-image:url(./images/home/home-top-ornament-3.png); opacity: .7; }
+    &.ornament-3 { background-image:url(./images/home/home-top-ornament-2.png); opacity: .4; }
   }
 
   .title {

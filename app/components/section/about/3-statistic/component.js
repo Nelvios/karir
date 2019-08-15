@@ -12,7 +12,9 @@ export default Component.extend({
     this._super(...arguments);
     const store = get(this, 'store');
 
-    store.findAll('counter').then(result => set(this, 'counters', get(result[0], 'employCount')));
+    store.findRecord('counter', 1).then(result => {
+      set(this, 'counters', get(result, 'employCount'));
+    });
   }
 
 });

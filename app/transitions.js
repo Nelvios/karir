@@ -23,10 +23,9 @@ export default function(){
   simple('index', 'about', 'crossFade', 'crossFade');
   simple('index', 'jobs', 'crossFade', 'crossFade');
   simple('index', 'articles', 'crossFade', 'crossFade');
-
   simple('about', 'jobs', 'crossFade', 'crossFade');
   simple('about', 'articles', 'crossFade', 'crossFade');
-
   simple('jobs', 'articles', 'crossFade', 'crossFade');
+  simple('articles.index', 'articles.view', 'crossFade', 'crossFade');
 
 }
