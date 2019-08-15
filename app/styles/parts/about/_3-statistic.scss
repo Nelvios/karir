@@ -28,6 +28,30 @@
     }
   }
 
+  .card-panel {
+    position: relative;
+    // height: 30vw;
+    margin-top: 80px;
+
+    .image {
+      @extend .valign-wrapper;
+      flex-direction: column;
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: -80px auto 2rem;
+
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        top: 0;
+        height: 100%;
+      }
+    }
+  }
+
 
 
 
@@ -73,7 +97,7 @@
       .title{
         // @extend .valign-wrapper;
         // justify-content: center;
-        height: 100px;
+        // height: 100px;
         // margin-top: 1rem;
 
         // position: absolute;
@@ -219,23 +243,21 @@
     &::before { border-top: .5rem solid $primary-color; }
   }
 
+  .card-panel {
 
+    .image {
+      @extend .z-depth-2;
+      background-color: color('grey', 'darken-4');
+    }
 
+    .title {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.4em;
+      color: $off-black;
+    }
 
-
-
-
-  .title{
-    color: $off-black;
-    font-weight: bold;
-    font-size: 1.3em;
-    text-align: center;
-    // box-shadow: 0 0 2px 0 color('grey', 'lighten-1') ,10px 10px 10px color('grey','lighten-2');
-  }
-  .content{
-    color: $off-black;
-    font-size: 1em;
-    text-align: center;
+    .desc { color: $text-color; }
   }
 
   .ornament{
