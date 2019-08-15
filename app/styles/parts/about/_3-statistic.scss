@@ -157,8 +157,23 @@
     width: 350px;
     margin-top: -7rem;
     left: -3rem;
+    span{
+      position: relative;
+    }
     img{
       width: 100%;
+    }
+    .twenty{
+      left: 10%;
+    }
+    .thirty{
+      left: 25%;
+    }
+    .forty{
+      left: 35%;
+    }
+    .fifties{
+      left: 40%;
     }
   }
 
@@ -247,7 +262,7 @@
 
     .image {
       @extend .z-depth-2;
-      background-color: color('grey', 'darken-4');
+      background-color: #a7d3ef;
     }
 
     .title {
@@ -266,6 +281,12 @@
     background-repeat: no-repeat;
 
     &.ornament-1 { background-image:url(./images/about/IT-populations.png);}
+  }
+
+  .image-population{
+    div{
+      color: $off-black
+    }
   }
 
   // .image-1{
