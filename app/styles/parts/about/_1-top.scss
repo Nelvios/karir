@@ -65,10 +65,13 @@
     &::after {
       content: '';
       position: absolute;
-      top: 120px;
+      top: 0;
       left: 10%; right: 10%;
       width: 80%;
       height: 350px;
+
+      @media #{$medium-and-up} { top: 40px; }
+      @media #{$large-and-up} { top: 60px; }
     }
   }
 
@@ -112,7 +115,7 @@
 
     &::after {
       background-image: url(./images/about/GSIT-logo.png);
-      background-position: center;
+      background-position: bottom center;
       background-size: contain;
       background-repeat: no-repeat;
     }

@@ -192,8 +192,8 @@
 
     .card-image {
       .image {
-        background-color: color('grey', 'darken-4');
-        border: .35rem solid $primary-color;
+        background-color: #a7d3ef;
+        border: .35rem solid $secondary-color;
 
         @media #{$medium-and-up} { border-width: .5rem; }
       }
