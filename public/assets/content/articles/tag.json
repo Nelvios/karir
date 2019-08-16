@@ -1,1 +1,1 @@
-{"tags": [{"id": 1, "name": "news"}, {"id": 1, "name": "article"}, {"id": 2, "name": "news"}, {"id": 2, "name": "article"}, {"id": 3, "name": "news"}, {"id": 3, "name": "article"}]}
+{"tags": [{"name": "news", "id": 1}, {"name": "article", "id": 1}, {"name": "news", "id": 2}, {"name": "article", "id": 2}, {"name": "news", "id": 3}, {"name": "article", "id": 3}]}
