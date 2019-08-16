@@ -73,7 +73,7 @@
     @media #{$large-and-up} { margin-left: -7.5%; }
   }
 
-  .display-1 { margin-bottom: .3em; }
+  .display-1 { margin-bottom: .5em; }
 
   .indicators .indicator-item {
     margin: 3em 1em;
@@ -142,6 +142,7 @@
   .display-1 {
     font-family: $font-heading;
     font-weight: $font-bold;
+    font-size: 1.1em;
     letter-spacing: -.03rem;
     color: $text-color;
 

@@ -58,15 +58,12 @@
       @media #{$medium-and-up} {
         float: left;
         width: 50%;
-        margin-top: -3rem;
+        margin: -3rem 2rem 1rem 0;
       }
     }
 
     .text {
-      @media #{$medium-and-up} {
-        margin-left: 55%;
-        padding-top: 3rem;
-      }
+      @media #{$medium-and-up} { padding-top: 3rem; }
     }
   }
 }

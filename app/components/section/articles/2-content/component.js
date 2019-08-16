@@ -24,7 +24,7 @@ export default Component.extend(Pagination, {
       const months = [];
 
       articles.forEach(({ date }) => {
-        date = `${date.substr(0, 7)}-01`;
+        date = date ? `${date.substr(0, 7)}-01` : '-';
         if(!months.includes(date)) months.pushObject(date);
       });
 

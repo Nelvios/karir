@@ -52,7 +52,7 @@
       margin-top: 6rem;
     }
     @media #{$large-and-up} { height: 300px; }
-    @media #{$extra-large-and-up} { height: 320px; }
+    @media #{$extra-large-and-up} { height: 350px; }
 
     &:hover, &:focus, &:active {
       transform: translate(0, -.3rem);
