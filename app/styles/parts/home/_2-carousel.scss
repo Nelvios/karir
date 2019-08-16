@@ -36,20 +36,23 @@
 
     .container {
       position: relative;
-      padding: 0 2rem;
     }
   }
 
   .image {
-    position: absolute;
-    width: 400px;
-    height: 300px;
-
-    top: -5rem;
-    right: 50%;
-    margin-right: -200px;
+    @media #{$small-and-down} {
+      position: relative;
+      display: block;
+      margin: -1rem 0 1rem;
+      padding-top: 75%;
+    }
 
     @media #{$medium-and-up} {
+      position: absolute;
+      width: 400px;
+      height: 300px;
+
+      top: -5rem;
       right: 25%;
       margin-right: -100px;
     }
@@ -70,11 +73,7 @@
     @media #{$large-and-up} { margin-left: -7.5%; }
   }
 
-  .display-1 {
-    margin-bottom: .3em;
-
-    @media #{$small-and-down} { margin-bottom: 1rem; }
-  }
+  .display-1 { margin-bottom: .3em; }
 
   .indicators .indicator-item {
     margin: 3em 1em;
@@ -82,10 +81,13 @@
 
   .btn.apply {
     height: inherit;
-    margin-top: 4rem;
-    padding: .3rem 1.5rem;
+    margin-top: 1.5rem;
+    padding: 0 1.5rem;
 
-    @media #{$medium-and-up} { margin: 2rem 2rem 0; }
+    @media #{$medium-and-up} {
+      margin: 2rem 2rem 0;
+      padding: .3rem 1.5rem;
+    }
 
     &:hover, &:focus, &:active {
       transform: translate(0, -.2rem);
@@ -122,37 +124,35 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: .3;
 
     @media #{$medium-and-up} { opacity: 1; }
   }
 
-  .img-1 { background-image: url(./images/home/1-BIT.png);          }
-  .img-2 { background-image: url(./images/home/2-PROFESSIONAL.png); }
-  .img-3 { background-image: url(./images/home/3-INTERNSHIP.png);   }
-  .img-4 { background-image: url(./images/home/4-PPTI.png);         }
+  .img-1 { background-image: url(./images/home/5-MASCOT.png);          }
+  .img-2 { background-image: url(./images/home/1-BIT.png);          }
+  .img-3 { background-image: url(./images/home/2-PROFESSIONAL.png); }
+  // .img-4 { background-image: url(./images/home/3-INTERNSHIP.png);   }
+  // .img-5 { background-image: url(./images/home/4-PPTI.png);         }
 
   .display-1, .display-2 {
-    line-height: 1.2;
+    line-height: 1.2em;
     user-select: none;
   }
 
   .display-1 {
     font-family: $font-heading;
-    font-weight: $font-semibold;
-    font-size: 1.2em;
+    font-weight: $font-bold;
     letter-spacing: -.03rem;
-    color: $off-black;
-    text-shadow: .05em .1em 0 rgba(black, .15);
+    color: $text-color;
 
     @media #{$large-and-up} { font-size: 1.4em; }
     @media #{$extra-large-and-up} { font-size: 1.6em; }
   }
 
   .display-2 {
+    line-height: 1em;
     font-weight: $font-black;
     font-size: 2.2em;
-    letter-spacing: .1rem;
     color: $off-black;
     text-shadow: 0.09em 0.12em rgba(black, .1);
 
@@ -177,10 +177,11 @@
     background-image: radial-gradient(circle at center, #f39934 25%, #f67d50 85%);
     border-radius: 50px;
     font-weight: $font-bold;
-    font-size: 1.2em;
+
+    @media #{$medium-and-up} { font-size: 1.2em; }
 
     &:hover, &:focus, &:active {
-      @extend .z-depth-3;
+      @extend .z-depth-2;
     }
   }
 }

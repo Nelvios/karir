@@ -3,13 +3,13 @@
 #about-location {
   padding: 3rem 0;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 400px;
-  }
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 12rem;
+  //   bottom: 0;
+  //   width: 100%;
+  // }
 
   &::after {
     content: '';
@@ -40,8 +40,6 @@
   }
 
   .section-text {
-    position: relative;
-
     @media #{$medium-and-up} {
       float: right;
       width: 50%;
@@ -52,6 +50,7 @@
     position: relative;
     width: 100%;
     margin: 2rem 0;
+    z-index: 1;
 
     @media #{$medium-and-up} {
       position: absolute;
@@ -72,10 +71,15 @@
 
 #about-location {
   background-color: #f0f4f7;
+  background-image: linear-gradient(white, #f0f4f7);
 
-  &::before {
-    background-image: linear-gradient(white, #f0f4f7);
-  }
+  // &::before {
+  //   background-color: #a7d3ef;
+  //   background-image: url(./images/home/pattern-thoughts.png);
+  //   background-attachment: fixed;
+  //   background-position: center;
+  //   opacity: .8;
+  // }
 
   .section-title {
     text-align: center;
@@ -93,7 +97,7 @@
   }
 
   .section-text {
-    color: $text-color;
+    color: $off-black;
     @media #{$medium-and-up} { text-align: right; }
   }
 

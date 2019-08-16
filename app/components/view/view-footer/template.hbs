@@ -14,7 +14,7 @@
       <h5>Job Highlight</h5>
       <ul class="job-highlight">
         {{#each jobs as |job|}}
-          <li>{{#link-to "jobs.view" job.id}}{{job.name}}{{/link-to}}</li>
+          <li><a href={{job.url}} target="_blank" rel="noopener">{{job.name}}</a></li>
         {{/each}}
         <li class="more">{{#link-to "jobs"}}More Jobs{{icon "arrow_forward" class="ml-1"}}{{/link-to}}</li>
       </ul>

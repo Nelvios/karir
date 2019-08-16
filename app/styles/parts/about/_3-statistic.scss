@@ -96,7 +96,7 @@
         width: auto;
         margin: 0 2.2rem;
       }
-      @media #{$large-and-up} { margin: 0 2rem; }
+      @media #{$large-and-up} { margin: 0 1.85rem; }
     }
   }
 }
@@ -149,9 +149,18 @@
   .population {
     font-weight: $font-semibold;
     font-size: 1.2em;
-    color: $text-color;
 
-    span { text-align: center; }
+    span {
+      text-align: center;
+      color: $text-color;
+    }
+
+    .title {
+      text-align: center;
+      font-weight: $font-bold;
+      font-size: 1.15em;
+      color: $tertiary-color;
+    }
   }
 }
 

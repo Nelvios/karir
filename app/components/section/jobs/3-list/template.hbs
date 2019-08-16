@@ -9,11 +9,11 @@
         <div class="card">
           <div class="card-image">
             <div class="image">
-              <img src={{job.thumbJob}} alt="Job Image" class="responsive-img">
+              <img src={{job.jobImage}} alt="Job Image" class="responsive-img">
             </div>
           </div>
           <div class="card-content">
-            <span class="title">{{truncate job.name}}</span>
+            <span class="title">{{truncate job.name 25}}</span>
           </div>
           <div class="card-action">
             {{!-- {{#link-to "jobs.view" job.id class="btn waves-effect waves-light detail"}}Learn More{{/link-to}} --}}

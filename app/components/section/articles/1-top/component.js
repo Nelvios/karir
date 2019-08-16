@@ -8,7 +8,7 @@ export default Component.extend({
   model: null,
   // isLoading: true,
 
-  size: 4,
+  size: 3,
   index: 0,
 
   articles: computed('model.[]', {

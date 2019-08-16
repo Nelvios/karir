@@ -35,7 +35,7 @@ export function initialize(/* application */) {
         this._super(...arguments);
         // jQ(window).scrollTop(0);
         // run.later(() => jQ(window).scrollTop(0), 500);
-        run.later(() => jQ('html').animate({ scrollTop: 0 }, 300), 500);
+        run.later(() => jQ('html, body').animate({ scrollTop: 0 }, 300), 500);
       }
     }
 
