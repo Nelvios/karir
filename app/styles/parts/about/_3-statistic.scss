@@ -150,16 +150,16 @@
     font-weight: $font-semibold;
     font-size: 1.2em;
 
-    span {
-      text-align: center;
-      color: $text-color;
-    }
-
     .title {
       text-align: center;
       font-weight: $font-bold;
       font-size: 1.15em;
       color: $tertiary-color;
+    }
+
+    .numbers {
+      text-align: center;
+      color: $text-color;
     }
   }
 }

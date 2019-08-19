@@ -26,7 +26,7 @@
   <div class="row">
     {{#each showArticles as |article|}}
 
-      <div class="col s12 m6">
+      <div class="col s12 m6 xl4">
 
         <div class="card">
           <div class="card-image">
@@ -34,7 +34,7 @@
           </div>
           <div class="card-content" title={{article.title}}>
             <span class="date mb-2 hide-on-med-and-up">{{date article.date}}</span>
-            <span class="title">{{truncate article.title 40}}</span>
+            <span class="title">{{truncate article.title 35}}</span>
           </div>
           <div class="card-action hide-on-small-only">
             <span class="date">{{date article.date}}</span>

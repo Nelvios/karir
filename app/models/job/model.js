@@ -1,5 +1,5 @@
 import DS from 'ember-data';
-import { get, computed, isEmpty, isArray } from 'karir/utils/short';
+import { get, computed, isEmpty } from 'karir/utils/short';
 const { attr } = DS;
 
 export default DS.Model.extend({

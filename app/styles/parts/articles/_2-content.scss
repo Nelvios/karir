@@ -160,10 +160,6 @@
     margin: 2rem auto;
     padding: 2.5px 1.2rem 2.5px 1.6rem;
     border-radius: 25px;
-
-    // &:hover, &:focus, &:active {
-    //   transform: translate(0, -.3rem);
-    // }
   }
 
   ul#month-list {
@@ -276,7 +272,6 @@
 
     @media #{$medium-and-up} { font-size: .7em; }
     @media #{$large-and-up} { font-size: .8em; }
-    @media #{$extra-large-and-up} { font-size: 1em; }
 
     &:hover, &:focus, &:active {
       @extend .z-depth-3;
@@ -324,7 +319,12 @@
     text-transform: none;
 
     &:hover, &:focus, &:active {
-      background-color: rgba(black, .07);
+      // background-color: rgba(black, .07);
+      background-color: $primary-color;
+      box-shadow: 1px 2px 7px rgba(black, .3);
+
+      color: white;
+      text-shadow: -1px -2px 1px rgba(black, .1);
     }
   }
 
@@ -370,6 +370,8 @@
   .btn.more {
     -webkit-transition-duration: .15s;
     transition-duration: .15s;
+    -webkit-transition-property: background-color, box-shadow, color, text-shadow;
+    transition-property: background-color, box-shadow, color, text-shadow;
   }
 
   ul#month-list > li > a {

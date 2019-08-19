@@ -6,11 +6,11 @@ export default Component.extend({
   tagName: 'section',
   article: alias('model'),
 
-  tags: computed('article.tags', {
+  tags: computed('article.tag', {
     get() {
-      const tags = get(this, 'article.tags') ? get(this, 'article.tags').split(',') : [];
+      const tags = get(this, 'article.tag') ? get(this, 'article.tag').split(',') : [];
 
-      return tags.map(tag => tag.trim());
+      return tags.map(tag => tag.trim()).sort();
     }
   }),
 

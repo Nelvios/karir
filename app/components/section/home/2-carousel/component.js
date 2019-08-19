@@ -50,7 +50,7 @@ export default Component.extend({
     autoScroll(time) {
       const carousel = this.$('.carousel');
       const interval = setInterval(() => {
-        carousel.carousel('next');
+        // carousel.carousel('next');
       }, time);
 
       set(this, 'autoScroll', interval);

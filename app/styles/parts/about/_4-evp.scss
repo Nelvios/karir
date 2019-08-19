@@ -21,10 +21,12 @@
   .card-panel {
     border-radius: 10px;
 
-    @media #{$medium-and-up} {
+    @media #{$large-and-up} {
+      height: 500px;
       margin-left: 1rem;
       margin-right: 1rem;
     }
+    @media #{$extra-large-and-up} { height: 400px; }
 
     .title {
       position: relative;

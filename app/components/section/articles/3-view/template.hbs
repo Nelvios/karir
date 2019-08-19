@@ -17,8 +17,8 @@
 
   <div class="tags">
     <label>Tags:</label>
-    {{#each article.tags as |tag|}}
-      <button class="btn btn-small tag">{{tag}}</button>
+    {{#each tags as |tag|}}
+      {{#link-to "articles.index" (query-params tags=tag) class="btn btn-small tag"}}{{tag}}{{/link-to}}
     {{else}}
       <span>- none -</span>
     {{/each}}

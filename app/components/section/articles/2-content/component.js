@@ -61,8 +61,6 @@ export default Component.extend(Pagination, {
   }),
 
   total: alias('articles.length'),
-  pageSize: 4,
-
   showArticles: computed('articles.[]', 'size', {
     get() {
       const articles = get(this, 'articles') || [];

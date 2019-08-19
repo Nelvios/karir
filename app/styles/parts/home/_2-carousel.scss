@@ -34,8 +34,10 @@
     box-sizing: border-box;
     overflow: hidden;
 
-    .container {
+    > .container {
       position: relative;
+
+      @media #{$medium-and-up} { min-height: 300px; }
     }
   }
 
@@ -43,25 +45,28 @@
     @media #{$small-and-down} {
       position: relative;
       display: block;
-      margin: -1rem 0 1rem;
+      margin-top: -1rem;
+      margin-bottom: 1rem;
       padding-top: 75%;
     }
 
     @media #{$medium-and-up} {
       position: absolute;
+      top: 0;
+      right: 5%;
+
       width: 400px;
       height: 300px;
-
-      top: -5rem;
-      right: 25%;
-      margin-right: -100px;
+      margin-right: -1rem;
     }
 
     @media #{$large-and-up} {
-      top: -7rem;
+      top: -25px;
+      right: 10%;
+
       width: 550px;
       height: 350px;
-      margin-right: -275px;
+      margin-right: -10rem;
     }
   }
 
@@ -70,10 +75,14 @@
     z-index: 5;
 
     @media #{$medium-and-up} { margin-left: 1rem; }
-    @media #{$large-and-up} { margin-left: -7.5%; }
+    @media #{$large-and-up} { margin-left: -2.5%; }
   }
 
-  .display-1 { margin-bottom: .5em; }
+  .display-1 {
+    margin-bottom: .5em;
+
+    @media #{$medium-and-up} { margin-top: 120px; }
+  }
 
   .indicators .indicator-item {
     margin: 3em 1em;
@@ -85,7 +94,8 @@
     padding: 0 1.5rem;
 
     @media #{$medium-and-up} {
-      margin: 2rem 2rem 0;
+      margin-top: 2rem;
+      margin-left: -2.5%;
       padding: .3rem 1.5rem;
     }
 

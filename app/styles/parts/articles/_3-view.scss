@@ -60,16 +60,16 @@
 
     .image {
       position: relative;
+      height: 80vw;
       margin-top: 2.5em;
       border-radius: 15px;
       overflow: hidden;
 
-      img {
-        width: 100%;
-        border-radius: 15px;
+      @media #{$medium-and-up} { height: 500px; }
 
-        @media #{$medium-and-up} { width: 85%; }
-        @media #{$extra-large-and-up} { width: 75%; }
+      img {
+        height: 100%;
+        border-radius: 15px;
       }
     }
   }
@@ -185,9 +185,15 @@
     }
 
     .tag {
+      @extend .z-depth-1;
       background-color: color('grey', 'base');
+
       font-weight: $font-semibold;
       text-transform: none;
+
+      &:hover, &:focus, &:active {
+        background-color: $primary-color;
+      }
     }
   }
 
@@ -202,7 +208,12 @@
 // Animation
 
 #articles-view {
-  .back > i{
+  .tags .tag {
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s;
+  }
+
+  .back > i {
     -webkit-transition: transform .15s;
     transition: transform .15s;
   }
