@@ -30,7 +30,7 @@
   .carousel-item {
     @extend .valign-wrapper;
     height: 500px;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
     box-sizing: border-box;
     overflow: hidden;
 
@@ -55,7 +55,9 @@
       top: 0;
       right: 5%;
 
-      width: 400px;
+      // width: 400px;
+      width: 60%;
+      max-width: 400px;
       height: 300px;
       margin-right: -1rem;
     }
@@ -64,7 +66,8 @@
       top: -25px;
       right: 10%;
 
-      width: 550px;
+      width: 75%;
+      max-width: 550px;
       height: 350px;
       margin-right: -10rem;
     }
@@ -95,9 +98,10 @@
 
     @media #{$medium-and-up} {
       margin-top: 2rem;
-      margin-left: -2.5%;
+      margin-left: 1rem;
       padding: .3rem 1.5rem;
     }
+    @media #{$large-and-up} { margin-left: -2.5%; }
 
     &:hover, &:focus, &:active {
       transform: translate(0, -.2rem);

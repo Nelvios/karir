@@ -13,7 +13,7 @@ export default Component.extend({
     this._super(...arguments);
     const store = get(this, 'store');
 
-    store.findAll('job').then(result => set(this, 'jobs', result.filterBy('featured', true)));
+    store.findAll('job').then(result => set(this, 'jobs', result.filterBy('featured', true).sortBy('name')));
 
     set(this, 'links', {
       facebook:   'https://www.facebook.com/hashtag/itbca',

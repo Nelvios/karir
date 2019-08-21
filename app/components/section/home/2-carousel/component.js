@@ -11,30 +11,21 @@ export default Component.extend({
     const carousel = this.$('.carousel');
     const scrollTime = 4500;      // in milliseconds
 
-    jQ(window).on('resize.carousel', () => {
-      carousel.carousel({
-        fullWidth: true,
-        indicators: true
-      });
-
-      // Remove extra indicators
-      carousel.find('.indicators').last().siblings('.indicators').remove();
+    carousel.carousel({
+      fullWidth: true,
+      indicators: true
     });
 
-    jQ(window).triggerHandler('resize.carousel');
+    carousel.on('mouseenter.carousel', () => clearTimeout(get(this, 'autoScroll')));
+    carousel.on('mouseleave.carousel', () => this.send('autoScroll', scrollTime));
 
-
-    carousel.mouseenter(() => clearTimeout(get(this, 'autoScroll')));
-    carousel.mouseleave(() => this.send('autoScroll', scrollTime));
-
-    carousel.mouseleave();
+    carousel.triggerHandler('mouseleave.carousel');
   },
 
   willDestroyElement() {
     this._super(...arguments);
 
     clearTimeout(get(this, 'autoScroll'));
-    jQ(window).off('resize.carousel');
   },
 
   actions: {
@@ -49,8 +40,10 @@ export default Component.extend({
 
     autoScroll(time) {
       const carousel = this.$('.carousel');
+
       const interval = setInterval(() => {
-        // carousel.carousel('next');
+        const size = jQ('body').attr('data-size');
+        if(size !== 'sm') carousel.carousel('next');
       }, time);
 
       set(this, 'autoScroll', interval);

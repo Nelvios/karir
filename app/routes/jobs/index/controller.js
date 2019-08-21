@@ -16,7 +16,7 @@ export default Controller.extend({
       if(spec) jobs = jobs.filter(job => job.isSpecialization(spec));
       if(loc) jobs = jobs.filter(job => job.isLocation(loc));
 
-      return jobs;
+      return jobs.sortBy('name');
     }
   }),
 
