@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import { ROOT_URL } from 'karir/utils/properties';
 import { get, computed, isEmpty } from 'karir/utils/short';
 const { attr } = DS;
 
@@ -18,10 +19,10 @@ export default DS.Model.extend({
       const spec = get(this, 'specialization');
       const img = get(this, 'thumbJob');
       const url = {
-        programmer:     '/assets/images/jobs/jobtype-1.png',
-        infrastructure: '/assets/images/jobs/jobtype-4.png',
-        data:           '/assets/images/jobs/jobtype-3.png',
-        others:         '/assets/images/jobs/jobtype-2.png'
+        programmer:     `${ROOT_URL}assets/images/jobs/jobtype-1.png`,
+        infrastructure: `${ROOT_URL}assets/images/jobs/jobtype-4.png`,
+        data:           `${ROOT_URL}assets/images/jobs/jobtype-3.png`,
+        others:         `${ROOT_URL}assets/images/jobs/jobtype-2.png`
       }
 
       return img ? img : url[spec];

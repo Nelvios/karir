@@ -55,6 +55,9 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+
+    // You have to put '/' at the beginning and the end of the rootURL
+    ENV.rootURL = '/it/';
   }
 
   return ENV;

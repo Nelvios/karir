@@ -1,5 +1,5 @@
 import DS from 'ember-data';
-import { MODEL_PREFIX } from 'karir/utils/properties';
+import { ROOT_URL, MODEL_PREFIX } from 'karir/utils/properties';
 import { log } from 'karir/utils/short';
 
 export default DS.RESTSerializer.extend({
@@ -22,6 +22,15 @@ export default DS.RESTSerializer.extend({
 
     log('Response:', payload);
     return this._super(store, model, payload, ...args);
+  },
+
+  _addRootURL(item, property) {
+    let str = item[property];
+
+    if(str.substr(0, 1) === '/') str = str.substr(1);
+    item[property] = `${ROOT_URL}${str}`;
+
+    return item;
   }
 
 });

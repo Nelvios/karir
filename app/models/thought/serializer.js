@@ -12,7 +12,10 @@ export default Serializer.extend({
       tmp = data[i]; data[i] = data[selected]; data[selected] = tmp;
     }
 
-    payload[keys[0]] = data.filter((item, idx) => idx < limit);
+    payload[keys[0]] = data
+        .filter((item, idx) => idx < limit)
+        .map(item => this._addRootURL(item, 'thumbThought'));
+
     return this._super(store, model, payload, ...args);
   }
 
