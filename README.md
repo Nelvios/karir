@@ -13,12 +13,6 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd karir`
-* `npm install`
-
-## Installation
-
 * `git clone http://bcagitlab/ERP/WEBKARIR/microsite-it.git`
 * `cd microsite-it`
 * Ensure that you can connect to the internet, if you have proxy setting you need to modify npm proxy
