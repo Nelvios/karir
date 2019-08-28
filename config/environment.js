@@ -7,14 +7,14 @@ module.exports = function(environment) {
     rootURL: '/',
     locationType: 'auto',
 
-    firebase: {
-      apiKey: "AIzaSyCF3ViCulNV3BJy5IElyoCvfyS8vC9lPR4",
-      authDomain: "web-karir.firebaseapp.com",
-      databaseURL: "https://web-karir.firebaseio.com",
-      projectId: "web-karir",
-      storageBucket: "web-karir.appspot.com",
-      messagingSenderId: "785278576187"
-    },
+    // firebase: {
+    //   apiKey: "AIzaSyCF3ViCulNV3BJy5IElyoCvfyS8vC9lPR4",
+    //   authDomain: "web-karir.firebaseapp.com",
+    //   databaseURL: "https://web-karir.firebaseio.com",
+    //   projectId: "web-karir",
+    //   storageBucket: "web-karir.appspot.com",
+    //   messagingSenderId: "785278576187"
+    // },
 
     EmberENV: {
       FEATURES: {

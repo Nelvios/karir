@@ -25,11 +25,11 @@ You will need the following things properly installed on your computer.
 ### Modules Installed using Ember CLI
 * `ember-cli-sass`
 * `ember-concurrency`
+* `ember-load`
 * `ember-truth-helpers`
 * `liquid-fire`
 * `ember-animated`
 * `ember-cli-jsdoc`
-
 
 ## Running / Development
 
@@ -55,7 +55,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 ### Building
 
 * `ember build` (development)
-* `ember build --environment production` (production)
+* `ember build --environment production` or `npm run build` (production)
 
 ### Deploying
 
