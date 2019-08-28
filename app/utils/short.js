@@ -43,6 +43,9 @@ export {
   Promise,
   hash
 } from 'rsvp';
+export {
+  task
+} from 'ember-concurrency';
 
 // Injection
 export {
@@ -73,11 +76,16 @@ export const run = {
 export { default as jQ } from 'jquery';
 
 // Logger
-// export {
-//   debug as log
-// } from '@ember/debug';
+// import { Logger } from 'ember';
+// export const {
+//   log,
+//   info,
+//   warn,
+//   error
+// } = Logger;
 import { ENVIRONMENT } from 'karir/utils/properties';
 export function log() {
+  // eslint-disable-next-line no-console
   if (ENVIRONMENT === 'development') console.log(...arguments);
 }
 

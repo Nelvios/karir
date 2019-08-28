@@ -10,11 +10,6 @@ module.exports = function(defaults) {
     }
   });
 
-  const imports = {
-    'moment'      : 'node_modules/moment/min/moment.min.js',
-    'materialize' : 'node_modules/materialize-css/dist/js/materialize.min.js'
-  };
-
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
@@ -27,6 +22,11 @@ module.exports = function(defaults) {
   // modules that you would like to import into your application
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
+
+  const imports = {
+    'moment'      : 'node_modules/moment/min/moment.min.js',
+    'materialize' : 'node_modules/materialize-css/dist/js/materialize.min.js'
+  };
 
   for(let path in imports) app.import(imports[path]);
 
