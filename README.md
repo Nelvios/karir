@@ -1,6 +1,6 @@
-# karir
+# WEBKARIR - Microsite IT
 
-The source code for BCA IT Career Microsite
+This module is a part of WEBKARIR that is purposed for IT.
 
 ## Prerequisites
 
@@ -17,9 +17,29 @@ You will need the following things properly installed on your computer.
 * `cd karir`
 * `npm install`
 
+## Installation
+
+* `git clone http://bcagitlab/ERP/WEBKARIR/microsite-it.git`
+* `cd microsite-it`
+* Ensure that you can connect to the internet, if you have proxy setting you need to modify npm proxy
+* `npm install`
+
+### Modules Installed using NPM
+* `moment`
+* `materialize-css`
+
+### Modules Installed using Ember CLI
+* `ember-cli-sass`
+* `ember-concurrency`
+* `ember-truth-helpers`
+* `liquid-fire`
+* `ember-animated`
+* `ember-cli-jsdoc`
+
+
 ## Running / Development
 
-* `ember serve`
+* `ember serve` or `npm start`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
@@ -45,7 +65,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+* 'Commit and push to [BCA Gitlab](http://bcagitlab/ERP/WEBKARIR/microsite-it)
 
 ## Further Reading / Useful Links
 
