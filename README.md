@@ -59,7 +59,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-* 'Commit and push to [BCA Gitlab](http://bcagitlab/ERP/WEBKARIR/microsite-it)
+* Commit and push to [BCA Gitlab](http://bcagitlab/ERP/WEBKARIR/microsite-it)
 
 ## Further Reading / Useful Links
 
