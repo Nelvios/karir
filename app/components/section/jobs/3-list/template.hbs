@@ -13,11 +13,15 @@
             </div>
           </div>
           <div class="card-content">
-            <span class="title">{{truncate job.name 25}}</span>
+            <span class="title">
+              <span class="hide-on-small-only">{{truncate job.name 35}}</span>
+              <span class="hide-on-med-and-up">{{truncate job.name 25}}</span>
+            </span>
           </div>
           <div class="card-action">
             {{!-- {{#link-to "jobs.view" job.id class="btn waves-effect waves-light detail"}}Learn More{{/link-to}} --}}
-            <a href={{job.url}} class="btn waves-effect waves-light detail" target="_blank" rel="noopener">Learn More</a>
+            {{!-- <a href={{job.url}} class="btn waves-effect waves-light detail" target="_blank" rel="noopener">Learn More</a> --}}
+            <a href={{job.url}} class="btn waves-effect waves-light detail">Learn More</a>
           </div>
           {{!-- <a href={{job.url}} class="card-cover hide-on-med-and-up"></a> --}}
         </div>

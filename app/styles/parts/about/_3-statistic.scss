@@ -50,13 +50,14 @@
     @media #{$medium-and-up} {
       height: 350px;
       margin-top: 6rem;
+
+      &:hover {
+        transform: translate(0, -.3rem);
+      }
     }
+
     @media #{$large-and-up} { height: 300px; }
     @media #{$extra-large-and-up} { height: 350px; }
-
-    &:hover, &:focus, &:active {
-      transform: translate(0, -.3rem);
-    }
 
     .image {
       @extend .valign-wrapper;
@@ -129,8 +130,7 @@
   .section-text { color: $text-color; }
 
   .card-panel {
-
-    &:hover, &:focus, &:active {
+    body:not([data-size=sm]) &:hover {
       @extend .z-depth-3;
     }
 

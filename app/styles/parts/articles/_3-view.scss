@@ -165,7 +165,10 @@
   .content {
     color: $text-color;
 
-    @media #{$small-and-down} { font-size: 1.2em; }
+    @media #{$small-and-down} {
+      line-height: 1.75;
+      font-size: 1.1em;
+    }
 
     img {
       @media #{$medium-and-up} {

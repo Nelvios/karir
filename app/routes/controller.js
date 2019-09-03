@@ -1,4 +1,5 @@
 import Controller from '@ember/controller';
+import { ROOT_URL } from 'karir/utils/properties';
 import { jQ } from 'karir/utils/short';
 
 export default Controller.extend({
@@ -21,6 +22,25 @@ export default Controller.extend({
       });
 
       jQ(window).resize();
+
+      this.send('text');
+    },
+
+    text() {
+      const loc = window.location;
+      const text = [
+        '     ____  _____________  ________ ',
+        '  __/ / /_/  _/_  __/ _ )/ ___/ _ |',
+        ' /_  . __// /  / / / _  / /__/ __ |',
+        '/_    __/___/ /_/ /____/\\___/_/ |_|',
+        ' /_/_/                             ',
+        '===================================',
+        'Nice job finding this! Looking for some more?',
+        `Well, you can join us at ${loc.protocol}//${loc.hostname}${ROOT_URL}jobs`
+      ];
+
+      // eslint-disable-next-line no-console
+      console.log(text.join('\n'));
     }
   }
 
