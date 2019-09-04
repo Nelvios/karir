@@ -28,6 +28,7 @@ export default Controller.extend({
 
     text() {
       const loc = window.location;
+      const port = loc.port ? `:${loc.port}` : '';
       const text = ['',
         '     ____  _____________  ________ ',
         '  __/ / /_/  _/_  __/ _ )/ ___/ _ |',
@@ -38,7 +39,7 @@ export default Controller.extend({
         '===================================',
         '',
         'Nice job finding this! Looking for some more?',
-        `Well, you can join us at ${loc.protocol}//${loc.hostname}${ROOT_URL}jobs`
+        `Well, you can join us at ${loc.protocol}//${loc.hostname}${port}${ROOT_URL}jobs`
       ];
 
       // eslint-disable-next-line no-console
