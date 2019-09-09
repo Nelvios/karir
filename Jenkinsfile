@@ -4,6 +4,7 @@ pipeline {
             label 'nodejs' 
         }
     }
+    
     environment {
         GIT_REPO_URL = 'git@bcagitlab.intra.bca.co.id:ERP/WEBKARIR/microsite-it.git'
         GIT_REPO_CRED = 'cicd-sshsecret'
@@ -88,6 +89,7 @@ pipeline {
             }
             steps {
                 script {
+                    sh 'ls'
                     sh 'npm install --verbose'
                     sh 'npm run build'
                 }
