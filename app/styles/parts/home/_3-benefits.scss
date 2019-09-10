@@ -1,0 +1,209 @@
+// Layout
+
+#home-benefits {
+  padding-top: 450px;
+  padding-bottom: 1rem;
+
+  @media #{$medium-and-up} { padding-bottom: 5rem; }
+
+  .section-title {
+    position: relative;
+    margin: 2rem 0;
+    padding-bottom: 1.2rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 2em;
+      left: 50%;
+      bottom: -.25em;
+      margin-left: -1em;
+    }
+  }
+
+  .part {
+    @extend .valign-wrapper;
+    position: relative;
+    margin: 8rem 0 5rem;
+    flex-direction: column;
+
+    .image {
+      position: absolute;
+      width: 100%;
+      top: -8rem;
+
+      > span {
+        display: block;
+        width: 400px;
+        height: 300px;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+    }
+
+    .desc {
+      position: relative;
+      width: 100%;
+      padding-top: 2rem;
+      overflow: hidden;
+
+      .lines {
+        position: absolute;
+        display: none;
+      }
+
+      .line-1 {
+        width: 15rem; height: 8rem;
+        top: 0; left: 25%;
+      }
+
+      .line-2 {
+        width: 15rem; height: 8.5rem;
+        top: 2rem; right: 20%;
+      }
+
+      .line-3 {
+        width: 17rem; height: 8.5rem;
+        top: 0; left: 30%;
+      }
+
+      .title {
+        position: relative;
+        padding-top: 1.6rem;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          width: 4rem;
+        }
+      }
+    }
+
+    @media #{$medium-and-up} {
+      margin-top: 5rem;
+
+      .image, .desc {
+        position: relative;
+        width: 50%;
+        top: 0;
+      }
+
+      .desc {
+        .lines { display: block; }
+        .text { padding: 0; }
+      }
+
+      &:nth-child(even) {
+        flex-direction: row;
+
+        .image > span { margin-right: 5%; }
+        .desc {
+          padding-left: 1rem;
+          .title::before { left: 0; }
+        }
+      }
+
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+
+        .image > span { margin-left: 5%; }
+        .desc {
+          padding-right: 1rem;
+          text-align: right;
+          .title::before { right: 0; }
+        }
+      }
+    }
+  }
+
+  .more {
+    position: relative;
+
+    @media #{$small-and-down} {
+      margin-top: -3rem;
+      margin-bottom: 3rem;
+    }
+
+    > a {
+      &:hover, &:focus, &:active {
+        i { transform: translate(.3em, 0) }
+      }
+    }
+  }
+}
+
+
+// Styling
+
+#home-benefits {
+  background: linear-gradient(#aabcd0 0%, #fefeff 50%, #ffffff 100%);
+
+  .section-title {
+    text-align: center;
+    font-family: $font-heading;
+    font-weight: $font-extrabold;
+    font-size: 2.4em;
+    color: $off-black;
+
+    @media #{$medium-and-up} { font-size: 3em; }
+
+    &::before {
+      border-top: .5rem solid $primary-color;
+    }
+  }
+
+  .part {
+    color: $off-black;
+
+    .image {
+      opacity: .4;
+
+      > span {
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &.image-1 { background-image: url(./images/home/flexi-time.png); }
+        &.image-2 { background-image: url(./images/home/smart-casual-attire.png); }
+        &.image-3 { background-image: url(./images/home/open-space.png); }
+      }
+    }
+
+    .lines {
+      background-image: url(./images/home/lines-ornament.png);
+      background-position: center;
+    }
+
+    .desc {
+      .title {
+        font-family: $font-stack;
+        font-weight: $font-bold;
+        font-size: 2.4em;
+
+        &::before { border-top: .12em solid #9bc8e7; }
+      }
+
+      .text { color: $text-color; }
+    }
+
+    @media #{$medium-and-up} {
+      .image { opacity: 1; }
+    }
+  }
+
+  .more > a {
+    font-weight: $font-bold;
+    font-size: 1.4em;
+  }
+}
+
+
+// Animation
+
+#home-benefits {
+  .more > a > i {
+    -webkit-transition: transform .15s;
+    transition: transform .15s;
+  }
+}

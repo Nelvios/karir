@@ -1,0 +1,59 @@
+import Component from '@ember/component';
+import { jQ, get, set, service } from 'karir/utils/short';
+
+export default Component.extend({
+
+  tagName: 'section',
+  store: service(),
+
+  counter: 0,
+
+  didInsertElement() {
+    this._super(...arguments);
+    const btn = this.$('.btn.apply');
+    const store = get(this, 'store');
+
+    store.findAll('counter').then(result => {
+      const counter = get(result.objectAt(0), 'employCount');
+      set(this, 'counter', counter);
+    });
+
+    jQ(window).on('scroll.apply-btn', () => {
+      const threshold = this._getThreshold() || {};
+      const scroll = jQ(window).scrollTop();
+
+      if(scroll > threshold.top) btn.removeClass('top');
+      else btn.addClass('top');
+
+      if(scroll > threshold.bottom) btn.addClass('bottom');
+      else btn.removeClass('bottom');
+
+    });
+
+    jQ(window).on('resize.apply-btn', () => jQ(window).triggerHandler('scroll.apply-btn'));
+  },
+
+  didUpdate() {
+    this._super(...arguments);
+
+    jQ(window).triggerHandler('resize.apply-btn');
+  },
+
+  willDestroyElement() {
+    this._super(...arguments);
+
+    jQ(window).off('scroll.apply-btn').off('resize.apply-btn');
+  },
+
+  _getThreshold() {
+    const benefits = jQ('#home-benefits > .container');
+    const counter = this.$();
+    const btn = this.$('.btn.apply');
+
+    return {
+      top:    benefits.offset().top - jQ(window).outerHeight() - 30,
+      bottom: counter.offset().top - jQ(window).outerHeight() + btn.height()/2 + 30
+    };
+  }
+
+});

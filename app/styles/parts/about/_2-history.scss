@@ -1,0 +1,112 @@
+// Layout
+
+#about-history {
+  padding: 1rem 0 3rem;
+  @media #{$medium-and-up} { padding-bottom: 5rem; }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10rem;
+  }
+
+  > .container { position: relative; }
+
+  .section-title {
+    position: relative;
+    padding-bottom: .5rem;
+
+    @media #{$medium-and-up} {
+      float: right;
+      margin: 6rem 2rem 3rem 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 2em;
+      left: 50%;
+      bottom: -.25em;
+      margin-left: -1em;
+    }
+  }
+
+  .screen {
+    position: relative;
+    margin-top: 10rem;
+    padding: 0 1rem;
+
+    @media #{$medium-and-up} {
+      padding: 0 2rem;
+      clear: both;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2rem;
+      clear: both;
+    }
+
+    .photo {
+      width: 100%;
+      margin-top: -6rem;
+
+      @media #{$medium-and-up} {
+        float: left;
+        width: 50%;
+        margin: -3rem 2rem 1rem 0;
+      }
+    }
+
+    .text {
+      @media #{$medium-and-up} { padding-top: 3rem; }
+    }
+  }
+}
+
+
+// Styling
+
+#about-history {
+  background-color: #03a9f5;
+  background-image: url(./images/home/pattern-thoughts.png);
+  background-attachment: fixed;
+  background-position: center;
+
+  &::before { background-color: #f0f4f7; }
+
+  .section-title {
+    text-align: center;
+    font-family: $font-heading;
+    font-weight: $font-extrabold;
+    font-size: 2.4em;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+
+    @media #{$medium-and-up} { font-size: 3em; }
+
+    &::before { border-top: .5rem solid white; }
+  }
+
+  .screen {
+    @extend .z-depth-1;
+    background-color: white;
+
+    @media #{$medium-and-up} {
+      box-shadow: 4px 8px 7px rgba(black, .15);
+    }
+
+    .photo {
+      @extend .z-depth-2;
+    }
+
+    .text { color: $text-color; }
+  }
+}
+
+
+// Animation

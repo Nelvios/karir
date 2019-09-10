@@ -1,0 +1,120 @@
+// Layout
+
+#about-location {
+  padding: 3rem 0;
+
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 12rem;
+  //   bottom: 0;
+  //   width: 100%;
+  // }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    clear: both;
+  }
+
+  > .container { position: relative; }
+
+  .section-title {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-bottom: .5rem;
+
+    @media #{$small-and-down} { margin-top: 0; }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 2em;
+      right: 50%;
+      bottom: -.25em;
+      margin-right: -1em;
+
+      @media #{$medium-and-up} { right: 8rem; }
+    }
+  }
+
+  .section-text {
+    @media #{$medium-and-up} {
+      float: right;
+      width: 50%;
+    }
+  }
+
+  .image {
+    position: relative;
+    width: 100%;
+    margin: 2rem 0;
+    z-index: 1;
+
+    @media #{$medium-and-up} {
+      position: absolute;
+      top: 3.5rem;
+      width: 48%;
+    }
+
+    img {
+      width: 100%;
+      @media #{$medium-and-up} { margin-top: -2rem; }
+      @media #{$extra-large-and-up} { margin-top: -4rem; }
+    }
+  }
+}
+
+
+// Styling
+
+#about-location {
+  background-color: #f0f4f7;
+  background-image: linear-gradient(white, #f0f4f7);
+
+  // &::before {
+  //   background-color: #a7d3ef;
+  //   background-image: url(./images/home/pattern-thoughts.png);
+  //   background-attachment: fixed;
+  //   background-position: center;
+  //   opacity: .8;
+  // }
+
+  .section-title {
+    text-align: center;
+    font-family: $font-heading;
+    font-weight: $font-extrabold;
+    font-size: 2.4em;
+    color: $off-black;
+
+    @media #{$medium-and-up} {
+      text-align: right;
+      font-size: 3em;
+    }
+
+    &::before { border-top: .5rem solid $primary-color; }
+  }
+
+  .section-text {
+    color: $text-color;
+    @media #{$medium-and-up} { text-align: right; }
+  }
+
+  .image {
+    .title {
+      text-align: center;
+      font-weight: $font-black;
+      font-size: 2em;
+      text-transform: uppercase;
+
+      color: #0070b8;
+      text-shadow: .06em .08em rgba(black, .25);
+
+      @media #{$medium-and-up} { font-size: 2.5em; }
+    }
+  }
+}
+
+
+// Animation

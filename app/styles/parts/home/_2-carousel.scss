@@ -1,0 +1,225 @@
+// Layout
+
+.liquid-container {
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  transform: none !important;
+}
+
+#home-carousel {
+  margin-top: -150px;
+  margin-bottom: -350px;
+
+  box-sizing: content-box;
+  z-index: 1;
+
+  .box {
+    position: relative;
+    border-radius: 4em;
+  }
+
+  .btn-floating {
+    position: absolute;
+    top: 50%;
+    margin: -15px 1rem 0;
+
+    &.btn-prev { left: 0; }
+    &.btn-next { right: 0; }
+  }
+
+  .carousel-item {
+    @extend .valign-wrapper;
+    height: 500px;
+    padding-bottom: 4rem;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    > .container {
+      position: relative;
+
+      @media #{$medium-and-up} { min-height: 300px; }
+    }
+  }
+
+  .image {
+    @media #{$small-and-down} {
+      position: relative;
+      display: block;
+      margin-top: -1rem;
+      margin-bottom: 1rem;
+      padding-top: 75%;
+    }
+
+    @media #{$medium-and-up} {
+      position: absolute;
+      top: 0;
+      right: 5%;
+
+      // width: 400px;
+      width: 60%;
+      max-width: 400px;
+      height: 300px;
+      margin-right: -1rem;
+    }
+
+    @media #{$large-and-up} {
+      top: -25px;
+      right: 10%;
+
+      width: 75%;
+      max-width: 550px;
+      height: 350px;
+      margin-right: -10rem;
+    }
+  }
+
+  .display-1, .display-2 {
+    position: relative;
+    z-index: 5;
+
+    @media #{$medium-and-up} { margin-left: 1rem; }
+    @media #{$large-and-up} { margin-left: -2.5%; }
+  }
+
+  .display-1 {
+    margin-bottom: .5em;
+
+    @media #{$medium-and-up} { margin-top: 120px; }
+  }
+
+  .indicators .indicator-item {
+    margin: 3em 1em;
+  }
+
+  .btn.apply {
+    height: inherit;
+    margin-top: 1.5rem;
+    padding: 0 1.5rem;
+
+    @media #{$medium-and-up} {
+      margin-top: 2rem;
+      margin-left: 1rem;
+      padding: .3rem 1.5rem;
+    }
+    @media #{$large-and-up} { margin-left: -2.5%; }
+
+    &:hover, &:focus, &:active {
+      transform: translate(0, -.2rem);
+    }
+  }
+}
+
+
+// Styling
+
+#home-carousel {
+  @media #{$small-and-down} { text-align: center; }
+
+  .box {
+    background-color: #e2ebf4;
+    box-shadow: 0 .2rem 1.4rem .1rem rgba(#555, .1);
+  }
+
+  .btn-floating {
+    background-color: #f8f8f8;
+
+    i {
+      font-size: 2em;
+      color: $text-color;
+    }
+
+    &:hover, &:focus, &:active {
+      background-color: white;
+      i { color: $off-black; }
+    }
+  }
+
+  .image {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @media #{$medium-and-up} { opacity: 1; }
+  }
+
+  .img-1 { background-image: url(./images/home/5-MASCOT.png);          }
+  .img-2 { background-image: url(./images/home/1-BIT.png);          }
+  .img-3 { background-image: url(./images/home/2-PROFESSIONAL.png); }
+  // .img-4 { background-image: url(./images/home/3-INTERNSHIP.png);   }
+  // .img-5 { background-image: url(./images/home/4-PPTI.png);         }
+
+  .display-1, .display-2 {
+    line-height: 1.2em;
+    user-select: none;
+  }
+
+  .display-1 {
+    font-family: $font-heading;
+    font-weight: $font-bold;
+    font-size: 1.1em;
+    letter-spacing: -.03rem;
+    color: $text-color;
+
+    @media #{$large-and-up} { font-size: 1.4em; }
+    @media #{$extra-large-and-up} { font-size: 1.6em; }
+  }
+
+  .display-2 {
+    line-height: 1em;
+    font-weight: $font-black;
+    font-size: 2.2em;
+    color: $off-black;
+    text-shadow: 0.09em 0.12em rgba(black, .1);
+
+    @media #{$large-and-up} { font-size: 2.5em; }
+    @media #{$extra-large-and-up} { font-size: 3em; }
+  }
+
+  .indicators {
+    .indicator-item {
+      background-color: transparent;
+      border: .15em solid white;
+      box-shadow: .4em .4em .8em .2em rgba(black, .12);
+
+      &.active {
+        background-color: #00b7f1;
+        border: .15em solid #00b7f1;
+      }
+    }
+  }
+
+  .btn.apply {
+    background-image: radial-gradient(circle at center, #f39934 25%, #f67d50 85%);
+    border-radius: 50px;
+    font-weight: $font-bold;
+
+    @media #{$medium-and-up} { font-size: 1.2em; }
+
+    &:hover, &:focus, &:active {
+      @extend .z-depth-2;
+    }
+  }
+}
+
+
+// Animation
+
+#home-carousel {
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+
+  .btn-floating {
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+
+    i {
+      -webkit-transition: color .15s;
+      transition: color .15s;
+    }
+  }
+
+  .btn.apply {
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s;
+  }
+}

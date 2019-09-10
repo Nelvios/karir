@@ -1,0 +1,381 @@
+// Layout
+
+#articles-content {
+  margin-top: -17rem;
+  padding-top: 19rem;
+  padding-bottom: 2rem;
+
+  @media #{$medium-and-up} { margin-top: -18rem; }
+  @media #{$large-and-up} {
+    margin-top: -24rem;
+    padding-top: 25rem;
+  }
+  @media #{$extra-large-and-up} {
+    margin-top: -27rem;
+    padding-top: 28rem;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 60rem;
+    z-index: 0;
+  }
+
+  > .container {
+    position: relative;
+  }
+
+  .section-title {
+    position: relative;
+    margin: 2rem 0 4rem 0;
+    padding-bottom: 1.2rem;
+    padding-top: 2rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 8rem;
+      left: 50%;
+      bottom: -.6rem;
+      margin-left: -4rem;
+    }
+  }
+
+  .select-wrapper {
+    margin: 0 .75rem;
+    border-radius: 25px;
+
+    .dropdown-trigger {
+      margin-bottom: 0;
+      padding: 0 1.2rem;
+      box-sizing: border-box;
+    }
+
+    .dropdown-content {
+      border-radius: 21.75px;
+    }
+
+    .caret { margin-right: .5rem; }
+  }
+
+  .tags {
+    position: relative;
+    margin: 1.5rem 0;
+    padding: 0 .75rem;
+
+    .tag {
+      margin-right: .5em;
+      margin-bottom: 1em;
+      box-sizing: content-box;
+      border-radius: 1.5em;
+
+      &:hover, &:focus, &:active {
+        transform: translate(0, .2rem);
+      }
+    }
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+    @media #{$medium-and-up} {
+      flex-direction: column;
+      margin: 1.4rem .7rem;
+    }
+
+    &:hover, &:focus, &:active {
+      transform: translate(0, -.4em);
+    }
+
+    .card-image {
+      @extend .valign-wrapper;
+      flex-direction: column;
+      position: relative;
+      height: 0;
+      padding-top: 75%;
+      overflow: hidden;
+
+      @media #{$small-and-down} {
+        width: 40%;
+        padding-top: 40%;
+      }
+
+      .image {
+        @extend .valign-wrapper;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .card-content {
+      padding: 1.2em 2em;
+
+      @media #{$small-and-down} { width: 60%; }
+
+      .date, .title { display: block; }
+      .title {
+        height: 3em;
+        overflow: hidden;
+
+        @media #{$small-and-down} { height: auto; }
+      }
+    }
+
+    .card-action {
+      padding: 1.2em 2em;
+
+      .read {
+        float: right;
+        margin-right: 0;
+
+        &:hover, &:focus, &:active {
+          i { transform: translate(.2em, 0); }
+        }
+      }
+    }
+
+    .cover {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .btn.more {
+    display: block;
+    height: auto;
+    margin: 2rem auto;
+    padding: 2.5px 1.2rem 2.5px 1.6rem;
+    border-radius: 25px;
+  }
+
+  ul#month-list {
+    position: fixed;
+    top: 100px;
+    right: 0;
+
+    width: 15%;
+    margin: 0;
+    padding: 0 .75rem;
+
+    &.top {
+      position: absolute;
+      top: 37.5rem;
+      @media #{$extra-large-and-up} { top: 40.5rem; }
+    }
+
+    &.bottom {
+      position: absolute;
+      top: initial;
+      bottom: 10rem;
+    }
+
+    > li > a {
+      display: block;
+      padding: .25em .5em .25em 0;
+
+      &:hover, &:focus, &:active {
+        padding-right: 1em;
+      }
+    }
+  }
+}
+
+
+// Styling
+
+#articles-content {
+  background: white;
+
+  &::before {
+    background-color: white;
+    background-image: linear-gradient(#d8e2eb, white);
+  }
+
+  > .container {
+    border-top: 1px solid color('grey', 'lighten-1');
+  }
+
+  .section-title{
+    text-align: center;
+    font-family: $font-heading;
+    font-weight: $font-extrabold;
+    font-size: 3rem;
+    color: $off-black;
+
+    &::before{
+      border-top: .6rem solid $primary-color;
+    }
+  }
+
+  .select-wrapper {
+    border: 1px solid color('grey', 'base');
+    background-color: color('grey', 'lighten-4');
+    box-shadow: 2px 3px 7px rgba(black, .3);
+
+    .dropdown-trigger {
+      border-bottom: none;
+      font-weight: $font-semibold;
+      color: $text-color;
+
+      &::selection { background-color: transparent; }
+
+      &:hover, &:focus, &:active {
+        color: $off-black;
+      }
+    }
+
+    .dropdown-content {
+      font-weight: $font-semibold;
+
+      li:not(.disabled) > span { color: $off-black; }
+    }
+  }
+
+  .tags {
+    .tag {
+      background-color: color('grey', 'lighten-4');
+      border: 2px solid $primary-color;
+
+      font-weight: $font-semibold;
+      color: $off-black;
+      text-transform: none;
+      cursor: pointer;
+
+      &:active, &.active {
+        background-color: $primary-color;
+        color: white;
+      }
+
+      &:hover, &:focus, &:active {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .card {
+    border-radius: 15px;
+    font-size: .55em;
+
+    @media #{$medium-and-up} { font-size: .7em; }
+    @media #{$large-and-up} { font-size: .8em; }
+
+    &:hover, &:focus, &:active {
+      @extend .z-depth-3;
+    }
+
+    .card-content {
+      color: $off-black;
+
+      .date {
+        font-size: 1.4em;
+        color: color('grey', 'base');
+      }
+
+      .title {
+        font-weight: $font-bold;
+        font-size: 1.8em;
+        letter-spacing: -.025em;
+
+        @media #{$small-and-down} { font-size: 4.5vw; }
+      }
+    }
+
+    .card-action {
+      font-size: 1.2em;
+
+      .date { color: color('grey', 'base'); }
+      .read {
+        color: $primary-color;
+        text-transform: none;
+        i { font-size: 1.5em; }
+      }
+    }
+  }
+
+  .btn.more {
+    background-color: transparent;
+    border: .15em solid $primary-color;
+    box-shadow: 2px 3px 7px rgba(black, .3),
+                inset 2px 3px 7px rgba(black, .2);
+
+    font-weight: $font-semibold;
+    letter-spacing: .05em;
+    color: $primary-color;
+    text-shadow: 1px 2px 3px rgba(black, .2);
+    text-transform: none;
+
+    &:hover, &:focus, &:active {
+      // background-color: rgba(black, .07);
+      background-color: $primary-color;
+      box-shadow: 1px 2px 7px rgba(black, .3);
+
+      color: white;
+      text-shadow: -1px -2px 1px rgba(black, .1);
+    }
+  }
+
+  .not-found {
+    font-size: 1.2em;
+    text-align: center;
+    color: $text-color;
+  }
+
+  ul#month-list > li > a {
+    border-right: .3em solid transparent;
+    text-align: right;
+    font-weight: $font-semibold;
+    font-size: 1em;
+    color: $off-black;
+
+    &.active {
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+  }
+}
+
+
+//Animation
+
+#articles-content {
+  .tags .tag {
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s;
+  }
+
+  .card {
+    -webkit-transition: transform .3s, box-shadow .3s;
+    transition: transform .3s, box-shadow .3s;
+
+    .read > i {
+      -webkit-transition: transform .15s, color .15s;
+      transition: transform .15s, color .15s;
+    }
+  }
+
+  .btn.more {
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s;
+    -webkit-transition-property: background-color, box-shadow, color, text-shadow;
+    transition-property: background-color, box-shadow, color, text-shadow;
+  }
+
+  ul#month-list > li > a {
+    -webkit-transition: padding .3s, color .3s;
+    transition: padding .3s, color .3s;
+  }
+}

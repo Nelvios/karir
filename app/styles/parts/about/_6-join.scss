@@ -1,0 +1,56 @@
+// Layout
+
+#about-join {
+  padding: 5rem 0;
+
+  .section-title {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-bottom: .5rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 2em;
+      left: 50%;
+      bottom: -.1em;
+      margin-left: -1em;
+    }
+  }
+
+  .text {
+    max-width: 350px;
+    margin: 0 auto;
+
+    span { margin-bottom: .5em; }
+  }
+}
+
+
+// Styling
+
+#about-join {
+  background: linear-gradient(#f0f4f7, #cedce5);
+
+  .section-title {
+    text-align: center;
+    font-family: $font-heading;
+    font-weight: $font-extrabold;
+    font-size: 1.5em;
+    color: $off-black;
+    letter-spacing: .025em;
+
+    @media #{$medium-and-up} { font-size: 2em; }
+
+    &::before { border-top: .3rem solid $primary-color; }
+  }
+
+  .text {
+    font-weight: $font-semibold;
+    font-size: 1.2em;
+    color: $text-color;
+  }
+}
+
+
+// Animation

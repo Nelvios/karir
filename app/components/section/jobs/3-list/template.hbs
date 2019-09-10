@@ -1,0 +1,47 @@
+<div class="container">
+  <h2 class="section-title center">Available Jobs</h2>
+
+  <div class="row">
+
+    {{#each showJobs as |job|}}
+      <div class="col s12 m6 l4">
+
+        <div class="card">
+          <div class="card-image">
+            <div class="image">
+              <img src={{job.jobImage}} alt="Job Image" class="responsive-img">
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="title">
+              <span class="hide-on-small-only">{{truncate job.name 35}}</span>
+              <span class="hide-on-med-and-up">{{truncate job.name 25}}</span>
+            </span>
+          </div>
+          <div class="card-action">
+            {{!-- {{#link-to "jobs.view" job.id class="btn waves-effect waves-light detail"}}Learn More{{/link-to}} --}}
+            {{!-- <a href={{job.url}} class="btn waves-effect waves-light detail" target="_blank" rel="noopener">Learn More</a> --}}
+            <a href={{job.url}} class="btn waves-effect waves-light detail">Learn More</a>
+          </div>
+          {{!-- <a href={{job.url}} class="card-cover hide-on-med-and-up"></a> --}}
+        </div>
+
+      </div>
+    {{else}}
+
+      <div class="not-found">
+        <p>We are so sorry that the position you are looking for is currently not available.</p>
+        <img src="./assets/images/sad-fox.png" alt="Sad Fox" width="200">
+        <p class="text-bold"><big>But please don't give up just yet!</big></p>
+        <p>You can always look for <a href="./jobs" class="text-bold" {{action clear}}>other positions available</a> or just <span class="text-bold">stalk us</span> at the links below to receive updates on our new position.</p>
+      </div>
+
+    {{/each}}
+
+  </div>
+
+  {{#if isMore}}
+    <button class="btn more" {{action "more"}}>View More {{icon "arrow_downward"}}</button>
+  {{/if}}
+
+</div>

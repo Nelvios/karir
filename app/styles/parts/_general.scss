@@ -1,0 +1,92 @@
+// Layout
+
+body {
+  @media #{$small-and-down} { overflow-x: hidden; }
+
+  > .ember-view {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+    > section {
+      flex: 1 0 auto;
+    }
+  }
+}
+
+section { position: relative; }
+
+.d-none   { display: none   !important; }
+.d-block  { display: block  !important; }
+.d-inline { display: inline !important; }
+.d-inline-block { display: inline-block !important; }
+.d-flex   { display: flex   !important; }
+
+.no-float { float: none !important; }
+
+
+// Styling
+
+body {
+  background-color: color('grey', 'darken-4');
+  font-family: $font-stack;
+  color: white;
+
+  &.navbar-top {
+    background-color: #015daa;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+}
+
+:focus { outline: none; }
+
+.text-italic      { font-style: italic            !important; }
+.text-underlined  { text-decoration: underline    !important; }
+.text-crossed     { text-decoration: line-through !important; }
+
+.justify-align  { text-align: justify !important; }
+
+.primary-bg         { background-color: $primary-color          !important; }
+.primary-light-bg   { background-color: $primary-color-light    !important; }
+.primary-dark-bg    { background-color: $primary-color-dark     !important; }
+.secondary-bg       { background-color: $secondary-color        !important; }
+.secondary-light-bg { background-color: $secondary-color-light  !important; }
+.secondary-dark-bg  { background-color: $secondary-color-dark   !important; }
+.tertiary-bg        { background-color: $tertiary-color         !important; }
+.success-bg         { background-color: $success-color          !important; }
+.error-bg           { background-color: $error-color            !important; }
+
+.primary-text   { color: $primary-color   !important; }
+.secondary-text { color: $secondary-color !important; }
+.tertiary-text  { color: $tertiary-color  !important; }
+.success-text   { color: $success-color   !important; }
+.error-text     { color: $error-color     !important; }
+
+.no-wrap    { white-space: nowrap !important; }
+.clickable  { cursor: pointer !important; }
+
+
+// Overrides
+
+.material-icons { width: 1em; vertical-align: -.25em; }
+.carousel .indicators > .indicator-item { cursor: pointer; }
+i.right { margin-left: .5rem; }
+i.left { margin-right: .5rem; }
+
+.btn:hover, .btn:focus, .btn:active {
+  &.primary-bg    { background-color: lighten($primary-color, 5%) !important;   }
+  &.secondary-bg  { background-color: lighten($secondary-color, 5%) !important; }
+  &.success-bg    { background-color: lighten($success-color, 5%) !important;   }
+  &.error-bg      { background-color: lighten($error-color, 5%) !important;     }
+}
+
+
+// Animation
+
+body {
+  -webkit-transition-duration: .3s;
+  transition-duration: .3s;
+}

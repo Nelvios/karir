@@ -1,0 +1,64 @@
+<ul id="month-list" class="top hide-on-med-and-down">
+  <li>{{#link-to "articles.index" (query-params month=null)}}All Months{{/link-to}}</li>
+  {{#each monthList as |m|}}
+    <li>{{#link-to "articles.index" (query-params month=(date m "MMMYY"))}}{{date m "MMMM 'YY"}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+<div class="container">
+
+  <h2 class="section-title">News &amp; Articles</h2>
+
+  <div class="input-field hide-on-large-only">
+    {{#input/input-select value=month placeholder="All Month" isPlaceholderDisabled=false}}
+      {{#each monthList as |m|}}
+        <option value={{date m "MMMYY"}}>{{date m "MMMM YYYY"}}</option>
+      {{/each}}
+    {{/input/input-select}}
+  </div>
+
+  <div class="tags">
+    {{#each tagList as |tag|}}
+      <button class="btn btn-small waves-effect waves-light tag {{if tag.isActive "active"}}" {{action "tagToggle" tag.name}}>{{tag.name}}</button>
+    {{/each}}
+  </div>
+
+  <div class="row">
+    {{#each showArticles as |article|}}
+
+      <div class="col s12 m6 xl4">
+
+        <div class="card">
+          <div class="card-image">
+            <div class="image"><img alt="thumb" src={{article.thumbImage}}></div>
+          </div>
+          <div class="card-content" title={{article.title}}>
+            <span class="date mb-2 hide-on-med-and-up">{{date article.date}}</span>
+            <span class="title">{{truncate article.title 35}}</span>
+          </div>
+          <div class="card-action hide-on-small-only">
+            <span class="date">{{date article.date}}</span>
+            {{#link-to "articles.view" article.id class="read"}}Read{{icon "chevron_right"}}{{/link-to}}
+          </div>
+          {{#link-to "articles.view" article.id class="cover hide-on-med-and-up"}}{{/link-to}}
+        </div>
+
+      </div>
+
+    {{else}}
+
+      <div class="not-found">
+        <p>Oh no! The articles you are looking for were stolen ...</p>
+        <img src="./assets/images/thief-fox.png" alt="Thief Fox" width="200">
+        <p class="text-bold"><big>Don't worry, it will be recovered soon.</big></p>
+        <p>You can always read <a href="./jobs" class="text-bold" {{action clear}}>other news &amp; articles</a> or just <span class="text-bold">stalk us</span> at the links below to receive updates on our newest articles.</p>
+      </div>
+
+    {{/each}}
+  </div>
+
+  {{#if isMore}}
+    <button class="btn waves-effect more" {{action "more"}}>View More {{icon "arrow_downward"}}</button>
+  {{/if}}
+
+</div>

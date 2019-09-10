@@ -1,0 +1,182 @@
+// Layout
+
+#about-statistic {
+  box-sizing: content-box;
+  padding: 3rem 0 2rem;
+  margin-top: -1rem;
+
+  @media #{$medium-and-up} {
+    padding-bottom: 300px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 800px;
+  }
+
+  .section-title {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-bottom: .5rem;
+
+    @media #{$small-and-down} { margin-top: 1rem; }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 2em;
+      left: 50%;
+      bottom: -.25em;
+      margin-left: -1em;
+
+      @media #{$medium-and-up} { left: 8rem; }
+    }
+  }
+
+  .section-text {
+    position: relative;
+    @media #{$small-and-down} { margin-bottom: 2rem; }
+  }
+
+  .card-panel {
+    position: relative;
+    margin: 4rem 0 2rem;
+    border-radius: 10px;
+    z-index: 1;
+
+    @media #{$medium-and-up} {
+      height: 350px;
+      margin-top: 6rem;
+
+      &:hover {
+        transform: translate(0, -.3rem);
+      }
+    }
+
+    @media #{$large-and-up} { height: 300px; }
+    @media #{$extra-large-and-up} { height: 350px; }
+
+    .image {
+      @extend .valign-wrapper;
+      flex-direction: column;
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: -80px auto 2rem;
+      border-radius: 50%;
+
+      img {
+        position: absolute;
+        bottom: 0;
+        height: 90%;
+      }
+    }
+  }
+
+  .population {
+    position: relative;
+    width: 80%;
+    margin: -2rem auto 0;
+
+    @media #{$medium-and-up} {
+      position: absolute;
+      bottom: 2rem;
+      width: 400px;
+    }
+
+    img { width: 100%; }
+
+    .numbers span {
+      display: inline-block;
+      width: 23%;
+
+      @media #{$medium-and-up} {
+        width: auto;
+        margin: 0 2.2rem;
+      }
+      @media #{$large-and-up} { margin: 0 1.85rem; }
+    }
+  }
+}
+
+
+// Styling
+
+#about-statistic {
+  background-color: white;
+
+  &::before {
+    background-image: linear-gradient(#f0f4f7, white);
+  }
+
+  .section-title {
+    text-align: center;
+    font-family: $font-heading;
+    font-weight: $font-extrabold;
+    font-size: 2.4em;
+    color: $off-black;
+
+    @media #{$medium-and-up} {
+      text-align: left;
+      font-size: 3em;
+    }
+
+    &::before { border-top: .5rem solid $primary-color; }
+  }
+
+  .section-text { color: $text-color; }
+
+  .card-panel {
+    body:not([data-size=sm]) &:hover {
+      @extend .z-depth-3;
+    }
+
+    .image { background-color: #a7d3ef; }
+
+    .title {
+      text-align: center;
+      font-weight: $font-bold;
+      font-size: 1.4em;
+      color: $off-black;
+    }
+
+    .desc { color: $text-color; }
+  }
+
+  .population {
+    font-weight: $font-semibold;
+    font-size: 1.2em;
+
+    .title {
+      text-align: center;
+      font-weight: $font-bold;
+      font-size: 1.15em;
+      color: $tertiary-color;
+    }
+
+    .numbers {
+      text-align: center;
+      color: $text-color;
+    }
+  }
+}
+
+
+// Animation
+
+#about-statistic {
+  .card-panel {
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+
+    .image {
+      -webkit-transition-duration: .3s;
+      transition-duration: .3s;
+    }
+  }
+}

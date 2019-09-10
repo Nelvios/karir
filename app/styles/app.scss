@@ -1,0 +1,23 @@
+// Fonts
+// @import 'fonts';
+
+// Materialize
+@import 'materialize';
+
+// Custom
+@import 'custom';
+
+//ember paper
+// @import 'ember-paper';
+
+.svg-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+
+  > svg {
+    position: absolute;
+    display: block;
+  }
+}

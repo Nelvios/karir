@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col s6 m4">
+      <h5>Site Map</h5>
+      <ul class="site-map">
+        <li><a href="https://bca.co.id">BCA</a></li>
+        <li><a href="https://karir.bca.co.id">Careers</a></li>
+        <li><a href="mailto://recruitment@bca.co.id">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="col s6 m4">
+      <h5>Job Highlight</h5>
+      <ul class="job-highlight">
+        {{#each jobs as |job|}}
+          <li><a href={{job.url}} target="_blank" rel="noopener">{{job.name}}</a></li>
+        {{/each}}
+        <li class="more">{{#link-to "jobs"}}More Jobs{{icon "arrow_forward" class="ml-1"}}{{/link-to}}</li>
+      </ul>
+    </div>
+
+    <div class="col s12 m4 l4">
+      <h5>Stalk Us</h5>
+      <ul class="social-content">
+        <li>
+          <a href={{links.facebook}} class="facebook">
+            <img src="{{root-url}}assets/images/social/facebook-white.png" alt="facebook">
+          </a>
+        </li>
+        <li>
+          <a href={{links.instagram}} class="instagram">
+            <img src="{{root-url}}assets/images/social/instagram-white.png" alt="instagram">
+          </a>
+        </li>
+        {{!-- <li>
+          <a href={{links.twitter}} class="twitter">
+            <img src="{{root-url}}assets/images/social/twitter-white.png" alt="twitter">
+          </a>
+        </li> --}}
+        <li>
+          <a href={{links.linkedin}} class="linkedin">
+            <img src="{{root-url}}assets/images/social/linkedin-white.png" alt="linkedin">
+          </a>
+        </li>
+        <li>
+          <a href={{links.youtube}} class="youtube">
+            <img src="{{root-url}}assets/images/social/youtube-white.png" alt="youtube">
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="small valign-wrapper">
+    <span class="valign-wrapper">
+      <span class="image"></span>
+      <span class="ml-1">BCA TERDAFTAR DAN DIAWASI OLEH OJK</span>
+    </span>
+    <span class="copyright">Copyright &copy;2019 PT Bank Central Asia Tbk, All Rights Reserved</span>
+  </div>
+</div>

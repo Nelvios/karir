@@ -1,0 +1,43 @@
+$sizes: (
+  "0": 0rem,
+  "1": .25rem,
+  "2": .5rem,
+  "3": .75rem,
+  "4": 1rem,
+  "5": 1.5rem,
+  "6": 2rem,
+  "7": 3rem,
+  "auto": auto
+);
+
+$percents: (
+  "0": 0%,
+  "20": 20%,
+  "50": 50%,
+  "80": 80%,
+  "100": 100%,
+  "auto": auto
+);
+
+@each $size_num, $size in $sizes {
+  .m-#{$size_num}  { margin: $size; }
+  .mt-#{$size_num} { margin-top: $size; }
+  .mb-#{$size_num} { margin-bottom: $size; }
+  .ml-#{$size_num} { margin-left: $size; }
+  .mr-#{$size_num} { margin-right: $size; }
+  .mx-#{$size_num} { margin-left: $size; margin-right: $size; }
+  .my-#{$size_num} { margin-top: $size; margin-bottom: $size; }
+
+  .p-#{$size_num}  { padding: $size; }
+  .pt-#{$size_num} { padding-top: $size; }
+  .pb-#{$size_num} { padding-bottom: $size; }
+  .pl-#{$size_num} { padding-left: $size; }
+  .pr-#{$size_num} { padding-right: $size; }
+  .px-#{$size_num} { padding-left: $size; padding-right: $size; }
+  .py-#{$size_num} { padding-top: $size; padding-bottom: $size; }
+}
+
+@each $percent_num, $percent in $percents {
+  .w-#{$percent_num} { width: $percent }
+  .h-#{$percent_num} { height: $percent }
+}

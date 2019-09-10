@@ -1,0 +1,41 @@
+<div class="ornaments">
+  <span class="ornament ornament-1"></span>
+  <span class="ornament ornament-2 hide-on-small-only"></span>
+  <span class="ornament ornament-3 hide-on-small-only"></span>
+</div>
+
+<div class="container">
+  <h2 class="title">Wanna Know More ?</h2>
+
+  <div class="featured">
+
+    <span class="featured-title">Check it Out</span>
+    <div class="photo"><img src={{top.thumbImage}} alt="article-image"></div>
+
+    <div class="card">
+      <div class="card-content">{{truncate top.title 60}}</div>
+      <div class="card-action">
+        <span class="date">{{date top.date}}</span>
+        {{#link-to "articles.view" top.id class="read"}}
+          Read{{icon "chevron_right"}}
+        {{/link-to}}
+      </div>
+    </div>
+
+    <div class="slider">
+      <div class="btn-prev">
+        <button class="btn-floating waves-effect btn-small" {{action "prev"}}>{{icon "chevron_left"}}</button>
+      </div>
+
+      <div class="btn-next">
+        <button class="btn-floating waves-effect btn-small" {{action "next"}}>{{icon "chevron_right"}}</button>
+      </div>
+    </div>
+
+    <ul class="indicators">
+      {{#each counters as |count idx|}}
+        <li class="indicator-item {{if (eq index idx) "active"}}"><a href="" {{action "jump" idx}}> </a></li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
