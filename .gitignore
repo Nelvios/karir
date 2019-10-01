@@ -9,9 +9,11 @@
 /node_modules/
 
 # misc
+/.npmrc
 /.sass-cache
 /connect.lock
 /coverage/
+/Jenkinsfile
 /libpeerconnection.log
 /npm-debug.log*
 /testem.log
