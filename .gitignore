@@ -9,14 +9,14 @@
 /node_modules/
 
 # misc
-/.npmrc
 /.sass-cache
+/Jenkinsfile
 /connect.lock
 /coverage/
-/Jenkinsfile
 /libpeerconnection.log
 /npm-debug.log*
 /testem.log
+/upload/
 /yarn-error.log
 
 # ember-try
