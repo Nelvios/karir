@@ -22,6 +22,17 @@ export { merge };
 export function clone(obj) {
   return merge({}, obj);
 }
+export function deep_clone(obj) {
+  let cloned = clone(obj);
+
+  for(let prop in cloned) {
+    if(typeof cloned[prop] === 'object') {
+      cloned[prop] = deep_clone(cloned[prop]);
+    }
+  }
+
+  return cloned;
+}
 
 // Utilities
 export {
