@@ -88,6 +88,7 @@ pipeline {
             }
             steps {
                 script {
+                    sh 'ls'
                     sh 'npm install --verbose'
                     sh 'npm run build'
                 }
