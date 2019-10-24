@@ -9,9 +9,7 @@
 /node_modules/
 
 # misc
-/.npmrc
 /.sass-cache
-/Jenkinsfile
 /connect.lock
 /coverage/
 /libpeerconnection.log
